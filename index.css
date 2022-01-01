@@ -1,0 +1,123 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Quattrocento Sans", sans-serif;
+  background-color: #141414;
+  color: #e7e7e7;
+}
+
+.container {
+  margin: auto;
+  max-width: 64rem;
+  position: relative;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.heading {
+  font-family: "Quattrocento", serif;
+  letter-spacing: -0.05ch;
+  font-weight: 400;
+}
+
+.heading-1 {
+  font-size: 8rem;
+}
+
+.sub-heading {
+  font-size: 2rem;
+}
+
+.body {
+  font-size: 1.5rem;
+}
+
+.bright-dot {
+  color: #faac00;
+}
+
+.social-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 10rem;
+}
+
+.link {
+  color: #faac00;
+  transition: color 100ms ease-in;
+}
+
+.link:hover,
+.link:focus {
+  color: #ffdf99;
+}
+
+.link > i {
+  font-size: 1.5rem;
+}
+
+.my-pic {
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
+  height: 100%;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .heading-1 {
+    font-size: 4rem;
+  }
+
+  .body {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    max-width: 100%;
+    margin-top: 2rem;
+    justify-content: space-around;
+  }
+
+  .link > i {
+    font-size: 1.25rem;
+  }
+
+  .my-pic {
+    border-radius: 50%;
+    height: 6rem;
+    width: 6rem;
+    object-fit: cover;
+    object-position: top;
+    top: -1rem;
+    left: 14rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .my-pic {
+    border-radius: 50%;
+    height: 12rem;
+    width: 12rem;
+    object-fit: cover;
+    object-position: top;
+    top: -1rem;
+    left: 25rem;
+  }
+}
+
+@media (min-width: 980px) {
+  .my-pic {
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    width: initial;
+    top: initial;
+    left: initial;
+  }
+}
