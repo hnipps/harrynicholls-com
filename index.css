@@ -5,6 +5,7 @@ body {
   font-family: "Quattrocento Sans", sans-serif;
   background-color: #141414;
   color: #e7e7e7;
+  height: 100%;
 }
 
 .container {
@@ -15,7 +16,7 @@ body {
   padding-right: 2rem;
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
+  height: 100%;
   flex-direction: column;
 }
 
