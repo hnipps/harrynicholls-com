@@ -88,6 +88,21 @@ body {
   width: 100%;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-container {
+  margin: auto;
+  max-width: 30rem;
+  text-align: center;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
   .heading-1 {
     font-size: 4rem;
@@ -106,19 +121,8 @@ body {
   .link > i {
     font-size: 1.25rem;
   }
-}
 
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.status-container {
-  margin: auto;
-  max-width: 30rem;
-  text-align: center;
-}
-
-.text-link:hover {
-  text-decoration: underline;
+  .flex-container {
+    display: block;
+  }
 }
