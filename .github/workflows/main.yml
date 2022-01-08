@@ -22,7 +22,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: "Configure AWS Credentials"
+        # You may pin to the exact commit or the version.
+        # uses: aws-actions/configure-aws-credentials@ea7b857d8a33dc2fb4ef5a724500044281b49a5e
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
 
       # Runs a single command using the runners shell
       - name: Sync S3 bucket
-        run: aws s3 cp . s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "max-age=0,no-cache,no-store,must-revalidate" --include "*" --exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --recursive
+        run: aws s3 cp . s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "max-age=0,no-cache,no-store,must-revalidate" --include "*" --exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --exclude ".github/*" --recursive
