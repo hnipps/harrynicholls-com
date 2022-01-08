@@ -13,6 +13,10 @@ body {
   position: relative;
   padding-left: 2rem;
   padding-right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .heading {
@@ -41,12 +45,27 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  max-width: 10rem;
+  max-width: 20rem;
+  margin: 32px auto;
 }
 
 .link {
   color: #faac00;
-  transition: color 100ms ease-in;
+  transition: all 100ms ease-in;
+  padding: 4px;
+  text-decoration: none;
+}
+
+.link-inline {
+  margin: -4px;
+}
+
+.link-icon {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link:hover,
@@ -54,8 +73,19 @@ body {
   color: #ffdf99;
 }
 
+.link:focus {
+  outline: none;
+  color: #141414;
+  background-color: #cc8b00;
+  border-radius: 5px;
+}
+
 .link > i {
   font-size: 1.5rem;
+}
+
+.divider {
+  width: 100%;
 }
 
 .my-pic {
@@ -94,6 +124,21 @@ body {
     top: -1rem;
     left: 14rem;
   }
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-container {
+  margin: auto;
+  max-width: 30rem;
+  text-align: center;
+}
+
+.text-link:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 600px) {
