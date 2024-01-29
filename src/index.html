@@ -39,10 +39,9 @@
           <!-- TODO: Wrap each letter in a span with unique ID, then randomly assign font-face -->
           <span id="x0048-1">H</span><span id="x0069-1">i</span
           ><span id="x002E-1" class="bright-dot">.</span><br /><span>I</span
-          ><span>'</span><span>m</span><span> </span
-          ><span id="x0048-2">H</span><span id="x0061-1">a</span
-          ><span id="x0072-1">r</span><span id="x0072-2">r</span
-          ><span id="x0079-1">y</span
+          ><span>'</span><span>m</span><span> </span><span id="x0048-2">H</span
+          ><span id="x0061-1">a</span><span id="x0072-1">r</span
+          ><span id="x0072-2">r</span><span id="x0079-1">y</span
           ><span id="x002E-2" class="bright-dot">.</span>
         </h1>
         <div class="flex-container">
@@ -54,7 +53,7 @@
         </div>
         <hr class="divider" />
         <div class="status-container">
-          <p class="body"><em>Current status:</em> Tech Lead @ Tim Hortons.</p>
+          <p class="body"><em class="status-label">Current status:</em> Tech Lead @ Tim Hortons.</p>
         </div>
         <div class="link-container">
           <a class="button" href="/portfolio.html">About.</a>
@@ -104,80 +103,208 @@
           >
         </div>
       </div>
-      <div class="social-links">
-        <!-- <a
-          class="link link-icon"
-          href="https://twitter.com/0xSwan"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a
-          class="link link-icon"
-          href="https://www.linkedin.com/in/harry-nicholls-91779959/"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><i class="fab fa-linkedin-in"></i
-        ></a> -->
-        <!-- <a
-          class="link link-icon"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://etherscan.io/address/0xD02bf9b3DA78BEc791014EB3cEecA65990cb046F"
-          ><i class="fab fa-ethereum"></i
-        ></a>
-        <a
-          class="link link-icon"
-          href="mailto:harry.m.nicholls@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><i class="far fa-envelope"></i
-        ></a> -->
-      </div>
     </main>
     <script>
-      const unicodeChars = [
-        "x0048",
-        "x0069",
-        "x002E",
-        "x0049",
-        "x0027",
-        "x006D",
-        "x0061",
-        "x0072",
-        "x0079",
-      ];
-
-      const fonts = [
-        "Helvetica",
-        "Arial",
-        "Arial Black",
-        "Verdana",
-        "Tahoma",
-        "Trebuchet MS",
-        "Impact",
-        "Gill Sans",
-        "Times New Roman",
-        "Georgia",
-        "Palatino",
-        "Baskerville",
-        "Andalé Mono",
-        "Courier",
-        "Lucida",
-        "Monaco",
-        "Bradley Hand",
-        "Brush Script MT",
-        "Luminari",
-        "Comic Sans MS",
-      ];
-
-      const fontFamilyMap = unicodeChars.reduce((acc, unicodeValue) => {
-        const innerResult = fonts.map(
-          (fontName) => `${fontName}-${unicodeValue}`
-        );
-
-        return { ...acc, [unicodeValue]: innerResult };
-      }, {});
+      const fontFamilyMap = {
+        x0048: [
+          "Helvetica-x0048",
+          "Arial-x0048",
+          "Arial Black-x0048",
+          "Verdana-x0048",
+          "Tahoma-x0048",
+          "Trebuchet MS-x0048",
+          "Impact-x0048",
+          "Gill Sans-x0048",
+          "Times New Roman-x0048",
+          "Georgia-x0048",
+          "Palatino-x0048",
+          "Baskerville-x0048",
+          "Andalé Mono-x0048",
+          "Courier-x0048",
+          "Lucida-x0048",
+          "Monaco-x0048",
+          "Bradley Hand-x0048",
+          "Brush Script MT-x0048",
+          "Luminari-x0048",
+          "Comic Sans MS-x0048",
+        ],
+        x0069: [
+          "Helvetica-x0069",
+          "Arial-x0069",
+          "Arial Black-x0069",
+          "Verdana-x0069",
+          "Tahoma-x0069",
+          "Trebuchet MS-x0069",
+          "Impact-x0069",
+          "Gill Sans-x0069",
+          "Times New Roman-x0069",
+          "Georgia-x0069",
+          "Palatino-x0069",
+          "Baskerville-x0069",
+          "Andalé Mono-x0069",
+          "Courier-x0069",
+          "Lucida-x0069",
+          "Monaco-x0069",
+          "Bradley Hand-x0069",
+          "Brush Script MT-x0069",
+          "Luminari-x0069",
+          "Comic Sans MS-x0069",
+        ],
+        x002E: [
+          "Helvetica-x002E",
+          "Arial-x002E",
+          "Arial Black-x002E",
+          "Verdana-x002E",
+          "Tahoma-x002E",
+          "Trebuchet MS-x002E",
+          "Impact-x002E",
+          "Gill Sans-x002E",
+          "Times New Roman-x002E",
+          "Georgia-x002E",
+          "Palatino-x002E",
+          "Baskerville-x002E",
+          "Andalé Mono-x002E",
+          "Courier-x002E",
+          "Lucida-x002E",
+          "Monaco-x002E",
+          "Bradley Hand-x002E",
+          "Brush Script MT-x002E",
+          "Luminari-x002E",
+          "Comic Sans MS-x002E",
+        ],
+        x0049: [
+          "Helvetica-x0049",
+          "Arial-x0049",
+          "Arial Black-x0049",
+          "Verdana-x0049",
+          "Tahoma-x0049",
+          "Trebuchet MS-x0049",
+          "Impact-x0049",
+          "Gill Sans-x0049",
+          "Times New Roman-x0049",
+          "Georgia-x0049",
+          "Palatino-x0049",
+          "Baskerville-x0049",
+          "Andalé Mono-x0049",
+          "Courier-x0049",
+          "Lucida-x0049",
+          "Monaco-x0049",
+          "Bradley Hand-x0049",
+          "Brush Script MT-x0049",
+          "Luminari-x0049",
+          "Comic Sans MS-x0049",
+        ],
+        x0027: [
+          "Helvetica-x0027",
+          "Arial-x0027",
+          "Arial Black-x0027",
+          "Verdana-x0027",
+          "Tahoma-x0027",
+          "Trebuchet MS-x0027",
+          "Impact-x0027",
+          "Gill Sans-x0027",
+          "Times New Roman-x0027",
+          "Georgia-x0027",
+          "Palatino-x0027",
+          "Baskerville-x0027",
+          "Andalé Mono-x0027",
+          "Courier-x0027",
+          "Lucida-x0027",
+          "Monaco-x0027",
+          "Bradley Hand-x0027",
+          "Brush Script MT-x0027",
+          "Luminari-x0027",
+          "Comic Sans MS-x0027",
+        ],
+        x006D: [
+          "Helvetica-x006D",
+          "Arial-x006D",
+          "Arial Black-x006D",
+          "Verdana-x006D",
+          "Tahoma-x006D",
+          "Trebuchet MS-x006D",
+          "Impact-x006D",
+          "Gill Sans-x006D",
+          "Times New Roman-x006D",
+          "Georgia-x006D",
+          "Palatino-x006D",
+          "Baskerville-x006D",
+          "Andalé Mono-x006D",
+          "Courier-x006D",
+          "Lucida-x006D",
+          "Monaco-x006D",
+          "Bradley Hand-x006D",
+          "Brush Script MT-x006D",
+          "Luminari-x006D",
+          "Comic Sans MS-x006D",
+        ],
+        x0061: [
+          "Helvetica-x0061",
+          "Arial-x0061",
+          "Arial Black-x0061",
+          "Verdana-x0061",
+          "Tahoma-x0061",
+          "Trebuchet MS-x0061",
+          "Impact-x0061",
+          "Gill Sans-x0061",
+          "Times New Roman-x0061",
+          "Georgia-x0061",
+          "Palatino-x0061",
+          "Baskerville-x0061",
+          "Andalé Mono-x0061",
+          "Courier-x0061",
+          "Lucida-x0061",
+          "Monaco-x0061",
+          "Bradley Hand-x0061",
+          "Brush Script MT-x0061",
+          "Luminari-x0061",
+          "Comic Sans MS-x0061",
+        ],
+        x0072: [
+          "Helvetica-x0072",
+          "Arial-x0072",
+          "Arial Black-x0072",
+          "Verdana-x0072",
+          "Tahoma-x0072",
+          "Trebuchet MS-x0072",
+          "Impact-x0072",
+          "Gill Sans-x0072",
+          "Times New Roman-x0072",
+          "Georgia-x0072",
+          "Palatino-x0072",
+          "Baskerville-x0072",
+          "Andalé Mono-x0072",
+          "Courier-x0072",
+          "Lucida-x0072",
+          "Monaco-x0072",
+          "Bradley Hand-x0072",
+          "Brush Script MT-x0072",
+          "Luminari-x0072",
+          "Comic Sans MS-x0072",
+        ],
+        x0079: [
+          "Helvetica-x0079",
+          "Arial-x0079",
+          "Arial Black-x0079",
+          "Verdana-x0079",
+          "Tahoma-x0079",
+          "Trebuchet MS-x0079",
+          "Impact-x0079",
+          "Gill Sans-x0079",
+          "Times New Roman-x0079",
+          "Georgia-x0079",
+          "Palatino-x0079",
+          "Baskerville-x0079",
+          "Andalé Mono-x0079",
+          "Courier-x0079",
+          "Lucida-x0079",
+          "Monaco-x0079",
+          "Bradley Hand-x0079",
+          "Brush Script MT-x0079",
+          "Luminari-x0079",
+          "Comic Sans MS-x0079",
+        ],
+      };
 
       const getRandomFontFamily = (unicode) =>
         fontFamilyMap[unicode][
@@ -188,16 +315,16 @@
         ...document.querySelector("#main-heading").children
       ).filter((node) => Boolean(node.id));
 
-      console.log(headingElements);
-
       headingElements.forEach((el) => {
         setTimeout(() => {
-          setInterval(() => {
-            const fontFamily = getRandomFontFamily(el.id.split("-")[0]);
-            console.log("ping");
-            el.style.fontFamily = `"${fontFamily}", "Quattrocento", serif`;
-          }, Math.floor(Math.random() * 2000));
-        }, Math.max(Math.floor(Math.random() * 10000), 500));
+          setInterval(
+            () => {
+              const fontFamily = getRandomFontFamily(el.id.split("-")[0]);
+              el.style.fontFamily = `"${fontFamily}", "Quattrocento", serif`;
+            },
+            Math.max(Math.floor(Math.random() * 5000), 200)
+          );
+        }, Math.floor(Math.random() * 3000));
       });
     </script>
   </body>
