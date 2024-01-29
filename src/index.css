@@ -5,12 +5,13 @@ body {
   font-family: "Quattrocento Sans", sans-serif;
   background-color: #141414;
   color: #e7e7e7;
-  height: 100%;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .video-container {
   position: relative;
+  height: 100%;
 }
 
 .video-container video {
@@ -38,12 +39,6 @@ body {
   letter-spacing: -0.05ch;
   font-weight: 400;
   line-height: 1.2;
-}
-
-.heading-switch {
-  font-family: "Courier", monospace;
-  letter-spacing: -0.05ch;
-  font-weight: 400;
 }
 
 .heading-1 {
@@ -120,6 +115,10 @@ body {
   text-align: center;
 }
 
+.status-label {
+  margin-right: 0.5rem;
+}
+
 .text-link:hover {
   text-decoration: underline;
 }
@@ -154,16 +153,25 @@ body {
 }
 
 #main-heading {
-  height: 20rem;
+  height: 16rem;
 }
 
 @media (max-width: 600px) {
+  html,
+  body {
+    overflow-y: scroll;
+  }
+
+  #main-heading {
+    height: 9rem;
+  }
+
   .heading-1 {
     font-size: 4rem;
   }
 
   .body {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .social-links {
@@ -178,1159 +186,1096 @@ body {
 
   .flex-container {
     display: block;
+  }
 
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  .status-container .body {
+    font-size: 1rem;
+  }
+
+  .link-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 100%;
+    margin-top: 2rem;
   }
 }
 
 @font-face {
-  font-family: "xCourier";
-  src: local("Courier");
+  font-family: "Helvetica-x0048";
+  src: local("Helvetica");
   unicode-range: U+0048;
 }
 
 @font-face {
-  font-family: "versioxtwo";
-  src: local("Trebuchet MS");
-  unicode-range: U+0061;
+  font-family: "Helvetica-x0069";
+  src: local("Helvetica");
+  unicode-range: U+0069;
 }
 
 @font-face {
-  font-family: "versioxtwo";
-  src: local("Luminari");
-  unicode-range: U+0079;
+  font-family: "Helvetica-x002E";
+  src: local("Helvetica");
+  unicode-range: U+002E;
 }
 
 @font-face {
-  font-family: "versioxtwo";
-  src: local("Monaco");
+  font-family: "Helvetica-x0049";
+  src: local("Helvetica");
   unicode-range: U+0049;
 }
 
 @font-face {
-  font-family: "versioxtwo";
-  src: local("Baskerville");
+  font-family: "Helvetica-x0027";
+  src: local("Helvetica");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Helvetica-x006D";
+  src: local("Helvetica");
   unicode-range: U+006D;
 }
 
 @font-face {
-  font-family: "versioxtwo";
+  font-family: "Helvetica-x0061";
+  src: local("Helvetica");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Helvetica-x0072";
+  src: local("Helvetica");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Helvetica-x0079";
+  src: local("Helvetica");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Arial-x0048";
+  src: local("Arial");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Arial-x0069";
+  src: local("Arial");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Arial-x002E";
+  src: local("Arial");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Arial-x0049";
+  src: local("Arial");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Arial-x0027";
+  src: local("Arial");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Arial-x006D";
+  src: local("Arial");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Arial-x0061";
+  src: local("Arial");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Arial-x0072";
+  src: local("Arial");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Arial-x0079";
+  src: local("Arial");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Arial Black-x0048";
   src: local("Arial Black");
   unicode-range: U+0048;
 }
 
 @font-face {
-  font-family: "versioxtwo";
+  font-family: "Arial Black-x0069";
+  src: local("Arial Black");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Arial Black-x002E";
+  src: local("Arial Black");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Arial Black-x0049";
+  src: local("Arial Black");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Arial Black-x0027";
+  src: local("Arial Black");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Arial Black-x006D";
+  src: local("Arial Black");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Arial Black-x0061";
+  src: local("Arial Black");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Arial Black-x0072";
+  src: local("Arial Black");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Arial Black-x0079";
+  src: local("Arial Black");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Verdana-x0048";
+  src: local("Verdana");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Verdana-x0069";
+  src: local("Verdana");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Verdana-x002E";
+  src: local("Verdana");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Verdana-x0049";
+  src: local("Verdana");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Verdana-x0027";
+  src: local("Verdana");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Verdana-x006D";
+  src: local("Verdana");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Verdana-x0061";
+  src: local("Verdana");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Verdana-x0072";
+  src: local("Verdana");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Verdana-x0079";
+  src: local("Verdana");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Tahoma-x0048";
+  src: local("Tahoma");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Tahoma-x0069";
+  src: local("Tahoma");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Tahoma-x002E";
+  src: local("Tahoma");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Tahoma-x0049";
+  src: local("Tahoma");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Tahoma-x0027";
+  src: local("Tahoma");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Tahoma-x006D";
+  src: local("Tahoma");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Tahoma-x0061";
+  src: local("Tahoma");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Tahoma-x0072";
+  src: local("Tahoma");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Tahoma-x0079";
+  src: local("Tahoma");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x0048";
+  src: local("Trebuchet MS");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x0069";
+  src: local("Trebuchet MS");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x002E";
+  src: local("Trebuchet MS");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x0049";
+  src: local("Trebuchet MS");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x0027";
+  src: local("Trebuchet MS");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x006D";
+  src: local("Trebuchet MS");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x0061";
+  src: local("Trebuchet MS");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x0072";
+  src: local("Trebuchet MS");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Trebuchet MS-x0079";
+  src: local("Trebuchet MS");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Impact-x0048";
+  src: local("Impact");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Impact-x0069";
+  src: local("Impact");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Impact-x002E";
+  src: local("Impact");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Impact-x0049";
+  src: local("Impact");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Impact-x0027";
+  src: local("Impact");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Impact-x006D";
+  src: local("Impact");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Impact-x0061";
+  src: local("Impact");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Impact-x0072";
+  src: local("Impact");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Impact-x0079";
+  src: local("Impact");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Gill Sans-x0048";
+  src: local("Gill Sans");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Gill Sans-x0069";
+  src: local("Gill Sans");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Gill Sans-x002E";
+  src: local("Gill Sans");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Gill Sans-x0049";
+  src: local("Gill Sans");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Gill Sans-x0027";
+  src: local("Gill Sans");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Gill Sans-x006D";
+  src: local("Gill Sans");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Gill Sans-x0061";
+  src: local("Gill Sans");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Gill Sans-x0072";
+  src: local("Gill Sans");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Gill Sans-x0079";
+  src: local("Gill Sans");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Times New Roman-x0048";
+  src: local("Times New Roman");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Times New Roman-x0069";
+  src: local("Times New Roman");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Times New Roman-x002E";
+  src: local("Times New Roman");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Times New Roman-x0049";
+  src: local("Times New Roman");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Times New Roman-x0027";
+  src: local("Times New Roman");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Times New Roman-x006D";
+  src: local("Times New Roman");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Times New Roman-x0061";
+  src: local("Times New Roman");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Times New Roman-x0072";
+  src: local("Times New Roman");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Times New Roman-x0079";
+  src: local("Times New Roman");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Georgia-x0048";
+  src: local("Georgia");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Georgia-x0069";
+  src: local("Georgia");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Georgia-x002E";
+  src: local("Georgia");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Georgia-x0049";
+  src: local("Georgia");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Georgia-x0027";
+  src: local("Georgia");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Georgia-x006D";
+  src: local("Georgia");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Georgia-x0061";
+  src: local("Georgia");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Georgia-x0072";
+  src: local("Georgia");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Georgia-x0079";
+  src: local("Georgia");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Palatino-x0048";
+  src: local("Palatino");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Palatino-x0069";
+  src: local("Palatino");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Palatino-x002E";
+  src: local("Palatino");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Palatino-x0049";
+  src: local("Palatino");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Palatino-x0027";
+  src: local("Palatino");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Palatino-x006D";
+  src: local("Palatino");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Palatino-x0061";
+  src: local("Palatino");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Palatino-x0072";
+  src: local("Palatino");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Palatino-x0079";
+  src: local("Palatino");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Baskerville-x0048";
+  src: local("Baskerville");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Baskerville-x0069";
+  src: local("Baskerville");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Baskerville-x002E";
+  src: local("Baskerville");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Baskerville-x0049";
+  src: local("Baskerville");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Baskerville-x0027";
+  src: local("Baskerville");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Baskerville-x006D";
+  src: local("Baskerville");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Baskerville-x0061";
+  src: local("Baskerville");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Baskerville-x0072";
+  src: local("Baskerville");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Baskerville-x0079";
+  src: local("Baskerville");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x0048";
+  src: local("Andalé Mono");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x0069";
+  src: local("Andalé Mono");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x002E";
+  src: local("Andalé Mono");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x0049";
+  src: local("Andalé Mono");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x0027";
+  src: local("Andalé Mono");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x006D";
+  src: local("Andalé Mono");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x0061";
+  src: local("Andalé Mono");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x0072";
+  src: local("Andalé Mono");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Andalé Mono-x0079";
+  src: local("Andalé Mono");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Courier-x0048";
+  src: local("Courier");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Courier-x0069";
+  src: local("Courier");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Courier-x002E";
+  src: local("Courier");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Courier-x0049";
+  src: local("Courier");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Courier-x0027";
+  src: local("Courier");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Courier-x006D";
+  src: local("Courier");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Courier-x0061";
+  src: local("Courier");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Courier-x0072";
+  src: local("Courier");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Courier-x0079";
+  src: local("Courier");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Lucida-x0048";
+  src: local("Lucida");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Lucida-x0069";
+  src: local("Lucida");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Lucida-x002E";
+  src: local("Lucida");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Lucida-x0049";
+  src: local("Lucida");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Lucida-x0027";
+  src: local("Lucida");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Lucida-x006D";
+  src: local("Lucida");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Lucida-x0061";
+  src: local("Lucida");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Lucida-x0072";
+  src: local("Lucida");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Lucida-x0079";
+  src: local("Lucida");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Monaco-x0048";
+  src: local("Monaco");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Monaco-x0069";
+  src: local("Monaco");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Monaco-x002E";
+  src: local("Monaco");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Monaco-x0049";
+  src: local("Monaco");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Monaco-x0027";
+  src: local("Monaco");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Monaco-x006D";
+  src: local("Monaco");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Monaco-x0061";
+  src: local("Monaco");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Monaco-x0072";
+  src: local("Monaco");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Monaco-x0079";
+  src: local("Monaco");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x0048";
+  src: local("Bradley Hand");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x0069";
+  src: local("Bradley Hand");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x002E";
+  src: local("Bradley Hand");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x0049";
+  src: local("Bradley Hand");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x0027";
+  src: local("Bradley Hand");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x006D";
+  src: local("Bradley Hand");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x0061";
+  src: local("Bradley Hand");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x0072";
+  src: local("Bradley Hand");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Bradley Hand-x0079";
+  src: local("Bradley Hand");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x0048";
+  src: local("Brush Script MT");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x0069";
+  src: local("Brush Script MT");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x002E";
+  src: local("Brush Script MT");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x0049";
+  src: local("Brush Script MT");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x0027";
+  src: local("Brush Script MT");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x006D";
+  src: local("Brush Script MT");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x0061";
+  src: local("Brush Script MT");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x0072";
+  src: local("Brush Script MT");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Brush Script MT-x0079";
+  src: local("Brush Script MT");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Luminari-x0048";
+  src: local("Luminari");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Luminari-x0069";
+  src: local("Luminari");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Luminari-x002E";
+  src: local("Luminari");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Luminari-x0049";
+  src: local("Luminari");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Luminari-x0027";
+  src: local("Luminari");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Luminari-x006D";
+  src: local("Luminari");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Luminari-x0061";
+  src: local("Luminari");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Luminari-x0072";
+  src: local("Luminari");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Luminari-x0079";
+  src: local("Luminari");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Comic Sans MS-x0048";
+  src: local("Comic Sans MS");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Comic Sans MS-x0069";
+  src: local("Comic Sans MS");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Comic Sans MS-x002E";
+  src: local("Comic Sans MS");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Comic Sans MS-x0049";
+  src: local("Comic Sans MS");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Comic Sans MS-x0027";
+  src: local("Comic Sans MS");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Comic Sans MS-x006D";
+  src: local("Comic Sans MS");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Comic Sans MS-x0061";
+  src: local("Comic Sans MS");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Comic Sans MS-x0072";
   src: local("Comic Sans MS");
   unicode-range: U+0072;
 }
 
 @font-face {
-  font-family: "versioxtwo";
-  src: local("Luminari");
-  unicode-range: U+002E;
+  font-family: "Comic Sans MS-x0079";
+  src: local("Comic Sans MS");
+  unicode-range: U+0079;
 }
-
-#first-line {
-  font-family: "H-Courier", "Quattrocento", serif;
-}
-
-#second-line {
-  font-family: "version-two", "Quattrocento", serif;
-}
-
-#first-r {
-  font-family: "Quattrocento", serif;
-}
-
-#second-r {
-  font-family: "version-two", "Quattrocento", serif;
-}
-
-#first-dot {
-  font-family: "version-two", "Quattrocento", serif;
-}
-
-#second-dot {
-  font-family: "Quattrocento", serif;
-}
-
-@font-face {
-    font-family: "Helvetica-x0048";
-    src: local("Helvetica");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Helvetica-x0069";
-    src: local("Helvetica");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Helvetica-x002E";
-    src: local("Helvetica");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Helvetica-x0049";
-    src: local("Helvetica");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Helvetica-x0027";
-    src: local("Helvetica");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Helvetica-x006D";
-    src: local("Helvetica");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Helvetica-x0061";
-    src: local("Helvetica");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Helvetica-x0072";
-    src: local("Helvetica");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Helvetica-x0079";
-    src: local("Helvetica");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Arial-x0048";
-    src: local("Arial");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Arial-x0069";
-    src: local("Arial");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Arial-x002E";
-    src: local("Arial");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Arial-x0049";
-    src: local("Arial");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Arial-x0027";
-    src: local("Arial");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Arial-x006D";
-    src: local("Arial");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Arial-x0061";
-    src: local("Arial");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Arial-x0072";
-    src: local("Arial");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Arial-x0079";
-    src: local("Arial");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x0048";
-    src: local("Arial Black");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x0069";
-    src: local("Arial Black");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x002E";
-    src: local("Arial Black");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x0049";
-    src: local("Arial Black");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x0027";
-    src: local("Arial Black");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x006D";
-    src: local("Arial Black");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x0061";
-    src: local("Arial Black");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x0072";
-    src: local("Arial Black");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Arial Black-x0079";
-    src: local("Arial Black");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x0048";
-    src: local("Verdana");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x0069";
-    src: local("Verdana");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x002E";
-    src: local("Verdana");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x0049";
-    src: local("Verdana");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x0027";
-    src: local("Verdana");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x006D";
-    src: local("Verdana");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x0061";
-    src: local("Verdana");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x0072";
-    src: local("Verdana");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Verdana-x0079";
-    src: local("Verdana");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x0048";
-    src: local("Tahoma");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x0069";
-    src: local("Tahoma");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x002E";
-    src: local("Tahoma");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x0049";
-    src: local("Tahoma");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x0027";
-    src: local("Tahoma");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x006D";
-    src: local("Tahoma");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x0061";
-    src: local("Tahoma");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x0072";
-    src: local("Tahoma");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Tahoma-x0079";
-    src: local("Tahoma");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x0048";
-    src: local("Trebuchet MS");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x0069";
-    src: local("Trebuchet MS");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x002E";
-    src: local("Trebuchet MS");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x0049";
-    src: local("Trebuchet MS");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x0027";
-    src: local("Trebuchet MS");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x006D";
-    src: local("Trebuchet MS");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x0061";
-    src: local("Trebuchet MS");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x0072";
-    src: local("Trebuchet MS");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Trebuchet MS-x0079";
-    src: local("Trebuchet MS");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Impact-x0048";
-    src: local("Impact");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Impact-x0069";
-    src: local("Impact");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Impact-x002E";
-    src: local("Impact");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Impact-x0049";
-    src: local("Impact");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Impact-x0027";
-    src: local("Impact");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Impact-x006D";
-    src: local("Impact");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Impact-x0061";
-    src: local("Impact");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Impact-x0072";
-    src: local("Impact");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Impact-x0079";
-    src: local("Impact");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x0048";
-    src: local("Gill Sans");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x0069";
-    src: local("Gill Sans");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x002E";
-    src: local("Gill Sans");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x0049";
-    src: local("Gill Sans");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x0027";
-    src: local("Gill Sans");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x006D";
-    src: local("Gill Sans");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x0061";
-    src: local("Gill Sans");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x0072";
-    src: local("Gill Sans");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Gill Sans-x0079";
-    src: local("Gill Sans");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x0048";
-    src: local("Times New Roman");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x0069";
-    src: local("Times New Roman");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x002E";
-    src: local("Times New Roman");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x0049";
-    src: local("Times New Roman");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x0027";
-    src: local("Times New Roman");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x006D";
-    src: local("Times New Roman");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x0061";
-    src: local("Times New Roman");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x0072";
-    src: local("Times New Roman");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Times New Roman-x0079";
-    src: local("Times New Roman");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x0048";
-    src: local("Georgia");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x0069";
-    src: local("Georgia");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x002E";
-    src: local("Georgia");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x0049";
-    src: local("Georgia");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x0027";
-    src: local("Georgia");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x006D";
-    src: local("Georgia");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x0061";
-    src: local("Georgia");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x0072";
-    src: local("Georgia");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Georgia-x0079";
-    src: local("Georgia");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x0048";
-    src: local("Palatino");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x0069";
-    src: local("Palatino");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x002E";
-    src: local("Palatino");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x0049";
-    src: local("Palatino");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x0027";
-    src: local("Palatino");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x006D";
-    src: local("Palatino");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x0061";
-    src: local("Palatino");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x0072";
-    src: local("Palatino");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Palatino-x0079";
-    src: local("Palatino");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x0048";
-    src: local("Baskerville");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x0069";
-    src: local("Baskerville");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x002E";
-    src: local("Baskerville");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x0049";
-    src: local("Baskerville");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x0027";
-    src: local("Baskerville");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x006D";
-    src: local("Baskerville");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x0061";
-    src: local("Baskerville");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x0072";
-    src: local("Baskerville");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Baskerville-x0079";
-    src: local("Baskerville");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x0048";
-    src: local("Andalé Mono");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x0069";
-    src: local("Andalé Mono");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x002E";
-    src: local("Andalé Mono");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x0049";
-    src: local("Andalé Mono");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x0027";
-    src: local("Andalé Mono");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x006D";
-    src: local("Andalé Mono");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x0061";
-    src: local("Andalé Mono");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x0072";
-    src: local("Andalé Mono");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Andalé Mono-x0079";
-    src: local("Andalé Mono");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Courier-x0048";
-    src: local("Courier");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Courier-x0069";
-    src: local("Courier");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Courier-x002E";
-    src: local("Courier");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Courier-x0049";
-    src: local("Courier");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Courier-x0027";
-    src: local("Courier");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Courier-x006D";
-    src: local("Courier");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Courier-x0061";
-    src: local("Courier");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Courier-x0072";
-    src: local("Courier");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Courier-x0079";
-    src: local("Courier");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x0048";
-    src: local("Lucida");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x0069";
-    src: local("Lucida");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x002E";
-    src: local("Lucida");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x0049";
-    src: local("Lucida");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x0027";
-    src: local("Lucida");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x006D";
-    src: local("Lucida");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x0061";
-    src: local("Lucida");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x0072";
-    src: local("Lucida");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Lucida-x0079";
-    src: local("Lucida");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x0048";
-    src: local("Monaco");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x0069";
-    src: local("Monaco");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x002E";
-    src: local("Monaco");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x0049";
-    src: local("Monaco");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x0027";
-    src: local("Monaco");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x006D";
-    src: local("Monaco");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x0061";
-    src: local("Monaco");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x0072";
-    src: local("Monaco");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Monaco-x0079";
-    src: local("Monaco");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x0048";
-    src: local("Bradley Hand");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x0069";
-    src: local("Bradley Hand");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x002E";
-    src: local("Bradley Hand");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x0049";
-    src: local("Bradley Hand");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x0027";
-    src: local("Bradley Hand");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x006D";
-    src: local("Bradley Hand");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x0061";
-    src: local("Bradley Hand");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x0072";
-    src: local("Bradley Hand");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Bradley Hand-x0079";
-    src: local("Bradley Hand");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x0048";
-    src: local("Brush Script MT");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x0069";
-    src: local("Brush Script MT");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x002E";
-    src: local("Brush Script MT");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x0049";
-    src: local("Brush Script MT");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x0027";
-    src: local("Brush Script MT");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x006D";
-    src: local("Brush Script MT");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x0061";
-    src: local("Brush Script MT");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x0072";
-    src: local("Brush Script MT");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Brush Script MT-x0079";
-    src: local("Brush Script MT");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x0048";
-    src: local("Luminari");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x0069";
-    src: local("Luminari");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x002E";
-    src: local("Luminari");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x0049";
-    src: local("Luminari");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x0027";
-    src: local("Luminari");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x006D";
-    src: local("Luminari");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x0061";
-    src: local("Luminari");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x0072";
-    src: local("Luminari");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Luminari-x0079";
-    src: local("Luminari");
-    unicode-range: U+0079;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x0048";
-    src: local("Comic Sans MS");
-    unicode-range: U+0048;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x0069";
-    src: local("Comic Sans MS");
-    unicode-range: U+0069;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x002E";
-    src: local("Comic Sans MS");
-    unicode-range: U+002E;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x0049";
-    src: local("Comic Sans MS");
-    unicode-range: U+0049;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x0027";
-    src: local("Comic Sans MS");
-    unicode-range: U+0027;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x006D";
-    src: local("Comic Sans MS");
-    unicode-range: U+006D;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x0061";
-    src: local("Comic Sans MS");
-    unicode-range: U+0061;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x0072";
-    src: local("Comic Sans MS");
-    unicode-range: U+0072;
-  }
-  
-  @font-face {
-    font-family: "Comic Sans MS-x0079";
-    src: local("Comic Sans MS");
-    unicode-range: U+0079;
-  }
