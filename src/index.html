@@ -58,7 +58,10 @@
         </div>
         <hr class="divider" />
         <div class="status-container">
-          <p class="body"><em class="status-label">Current status:</em> Tech Lead @ Tim Hortons.</p>
+          <p class="body">
+            <em class="status-label">Current status:</em> Tech Lead @ Tim
+            Hortons.
+          </p>
         </div>
         <div class="link-container">
           <a class="button" href="/about.html">About</a>
@@ -318,18 +321,21 @@
 
       const headingElements = new Array(
         ...document.querySelector("#main-heading").children
-      ).filter((node) => Boolean(node.id));
+      )
+        .filter((node) => Boolean(node.id))
+        .sort(
+          () => Math.floor(Math.random() * 10) - Math.floor(Math.random() * 10)
+        );
 
+      let offset = 10000;
       headingElements.forEach((el) => {
         setTimeout(() => {
-          setInterval(
-            () => {
-              const fontFamily = getRandomFontFamily(el.id.split("-")[0]);
-              el.style.fontFamily = `"${fontFamily}", "Quattrocento", serif`;
-            },
-            Math.max(Math.floor(Math.random() * 5000), 350)
-          );
-        }, Math.floor(Math.random() * 1000));
+          setInterval(() => {
+            const fontFamily = getRandomFontFamily(el.id.split("-")[0]);
+            el.style.fontFamily = `"${fontFamily}", "Quattrocento", serif`;
+          }, Math.max(Math.floor(Math.random() * 5000), 350));
+        }, offset);
+        offset += Math.max(Math.floor(Math.random() * 10000), 1000);
       });
     </script>
   </body>
