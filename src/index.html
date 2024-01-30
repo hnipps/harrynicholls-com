@@ -30,8 +30,14 @@
     ></script>
   </head>
   <body class="video-container">
-    <video autoplay muted loop>
+    <video class="fuzz" autoplay muted loop>
       <source src="assets/bg-video.mp4" type="video/mp4" />
+    </video>
+    <video class="fg" autoplay muted loop>
+      <source src="assets/bg-video.mp4" type="video/mp4" />
+    </video>
+    <video class="water" autoplay muted loop>
+      <source src="assets/water-2.mp4" type="video/mp4" />
     </video>
     <main class="container">
       <div>
@@ -55,50 +61,50 @@
           <p class="body"><em class="status-label">Current status:</em> Tech Lead @ Tim Hortons.</p>
         </div>
         <div class="link-container">
-          <a class="button" href="/about.html">About.</a>
-          <a class="button" href="/resume.html">Resume.</a>
-          <a class="button" href="/portfolio.html">Portfolio.</a>
+          <a class="button" href="/about.html">About</a>
+          <a class="button" href="/resume.html">Resume</a>
+          <a class="button" href="/portfolio.html">Portfolio</a>
           <a
             class="button"
             href="https://github.com/hnipps"
             target="_blank"
             rel="noopener noreferrer"
-            >GitHub.</a
+            >GitHub</a
           >
           <a
             class="button"
             href="https://brainflow.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
-            >Substack.</a
+            >Substack</a
           >
           <a
             class="button"
             href="https://harrynicholls.medium.com/"
             target="_blank"
             rel="noopener noreferrer"
-            >Medium.</a
+            >Medium</a
           >
           <a
             class="button"
             href="https://twitter.com/0xSwan"
             target="_blank"
             rel="noopener noreferrer"
-            >Twitter.</a
+            >Twitter</a
           >
           <a
             class="button"
             href="https://www.linkedin.com/in/harry-nicholls-91779959/"
             target="_blank"
             rel="noopener noreferrer"
-            >LinkedIn.</a
+            >LinkedIn</a
           >
           <a
             class="button"
             href="mailto:harry.m.nicholls@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            >Email.</a
+            >Email</a
           >
         </div>
       </div>
@@ -321,9 +327,9 @@
               const fontFamily = getRandomFontFamily(el.id.split("-")[0]);
               el.style.fontFamily = `"${fontFamily}", "Quattrocento", serif`;
             },
-            Math.max(Math.floor(Math.random() * 5000), 200)
+            Math.max(Math.floor(Math.random() * 5000), 350)
           );
-        }, Math.floor(Math.random() * 3000));
+        }, Math.floor(Math.random() * 1000));
       });
     </script>
   </body>

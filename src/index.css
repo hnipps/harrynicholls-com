@@ -1,9 +1,13 @@
+:root {
+  --highlight-color: rgb(0, 0, 255);
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Quattrocento Sans", sans-serif;
-  background-color: #141414;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: transparent;
   color: #e7e7e7;
   overflow: hidden;
   min-height: 100vh;
@@ -17,8 +21,26 @@ body {
 .video-container video {
   position: absolute;
   object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.video-container video.fg {
   z-index: 2;
-  opacity: 0.1;
+  opacity: 0.01;
+  pointer-events: none;
+  transition: opacity 3.5s ease-in;
+}
+
+@starting-style {
+  .video-container video.fg {
+    opacity: 1;
+  }
+}
+
+.video-container video.fuzz {
+  z-index: 0;
+  opacity: 0.25;
   pointer-events: none;
 }
 
@@ -54,7 +76,7 @@ body {
 }
 
 .bright-dot {
-  color: #faac00;
+  color: var(--highlight-color);
 }
 
 .social-links {
@@ -66,7 +88,7 @@ body {
 }
 
 .link {
-  color: #faac00;
+  color: var(--highlight-color);
   transition: all 100ms ease-in;
   padding: 4px;
   text-decoration: none;
@@ -92,7 +114,7 @@ body {
 .link:focus {
   outline: none;
   color: #141414;
-  background-color: #faac00;
+  background-color: var(--highlight-color);
   border-radius: 5px;
 }
 
@@ -136,21 +158,26 @@ body {
 }
 
 .button {
-  background-color: transparent;
-  border: 1px solid #faac00;
-  border-radius: 4px;
-  color: white;
+  background-color: #c9c9c9;
+  border: 2px solid #545454;
+  border-bottom: none;
+  border-right: none;
+  color: rgb(30, 30, 30);
+  font-family: Arial, Helvetica, sans-serif;
   padding: 1rem;
-  /* width: 8rem; */
   text-align: center;
   text-decoration: none;
 }
 
 .button:hover,
 .button:focus {
-  background-color: #faac00;
-  color: black;
-  outline: none;
+  background-color: #b3b3b3;
+}
+
+.button:focus {
+  outline-offset: -0.55rem;
+  outline-style: dotted;
+  outline-color: #353535;
 }
 
 #main-heading {
