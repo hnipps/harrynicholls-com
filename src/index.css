@@ -1,12 +1,14 @@
 :root {
-  --highlight-color: rgb(0, 0, 255);
+  /* --highlight-color: white; */
+  --highlight-color: rgb(69, 164, 164);
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Chicago_12, sans-serif;
   background-color: #141414;
   color: #e7e7e7;
   overflow: hidden;
@@ -15,6 +17,7 @@ body {
 
 .video-container {
   position: relative;
+  background: transparent;
   height: 100%;
 }
 
@@ -30,6 +33,11 @@ body {
   opacity: 0.05;
   pointer-events: none;
   transition: opacity 3.5s ease-in;
+}
+
+.video-container video.water {
+    opacity: 1;
+    transition: opacity 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s;
 }
 
 .video-container video.fuzz {
@@ -51,19 +59,13 @@ body {
   flex-direction: column;
 }
 
-.heading {
-  font-family: "Quattrocento", serif;
+.main-heading {
+  font-family: AppleGaramond, serif;
   letter-spacing: -0.05ch;
   font-weight: 400;
   line-height: 1.2;
   opacity: 1;
-  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2.5s;
-}
-
-@starting-style {
-  .heading {
-    opacity: 0;
-  }
+  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 4.5s;
 }
 
 .heading-1 {
@@ -76,6 +78,7 @@ body {
 
 .body {
   font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .bright-dot {
@@ -126,17 +129,18 @@ body {
 }
 
 .divider {
+  border-color: var(--highlight-color);
   width: 100%;
   margin-top: 0;
   opacity: 1;
-  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2.9s;
+  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 4.9s;
 }
 
 .flex-container {
   display: flex;
   justify-content: space-between;
   opacity: 1;
-  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2.8s;
+  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 4.8s;
 }
 
 .status-container {
@@ -144,7 +148,7 @@ body {
   max-width: 30rem;
   text-align: center;
   opacity: 1;
-  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.05s;
+  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.05s;
 }
 
 .status-label {
@@ -165,30 +169,11 @@ body {
   margin: auto;
   margin-top: 3rem;
   opacity: 1;
-  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 3.21s;
+  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.21s;
 }
 
-.button {
-  background-color: #c9c9c9;
-  border: 2px solid #7b7a7a;
-  border-bottom: none;
-  border-right: none;
-  color: rgb(30, 30, 30);
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 1rem;
-  text-align: center;
-  text-decoration: none;
-}
-
-.button:hover,
-.button:focus {
-  background-color: #b3b3b3;
-}
-
-.button:focus {
-  outline-offset: -0.55rem;
-  outline-style: dotted;
-  outline-color: #353535;
+.btn {
+  border-radius: 7px;
 }
 
 #main-heading {
@@ -196,6 +181,8 @@ body {
 }
 
 @starting-style {
+  .video-container video.water,
+  .main-heading,
   .flex-container,
   .divider,
   .status-container,
@@ -1325,5 +1312,131 @@ body {
 @font-face {
   font-family: "Comic Sans MS-x0079";
   src: local("Comic Sans MS");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x0048";
+  src: local("AppleGaramond");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x0069";
+  src: local("AppleGaramond");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x002E";
+  src: local("AppleGaramond");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x0049";
+  src: local("AppleGaramond");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x0027";
+  src: local("AppleGaramond");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x006D";
+  src: local("AppleGaramond");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x0061";
+  src: local("AppleGaramond");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x0072";
+  src: local("AppleGaramond");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "AppleGaramond-x0079";
+  src: local("AppleGaramond");
+  unicode-range: U+0079;
+}
+
+@font-face {
+  font-family: "Chicago_12-x0048";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
+  unicode-range: U+0048;
+}
+
+@font-face {
+  font-family: "Chicago_12-x0069";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
+  unicode-range: U+0069;
+}
+
+@font-face {
+  font-family: "Chicago_12-x002E";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
+  unicode-range: U+002E;
+}
+
+@font-face {
+  font-family: "Chicago_12-x0049";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
+  unicode-range: U+0049;
+}
+
+@font-face {
+  font-family: "Chicago_12-x0027";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
+  unicode-range: U+0027;
+}
+
+@font-face {
+  font-family: "Chicago_12-x006D";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
+  unicode-range: U+006D;
+}
+
+@font-face {
+  font-family: "Chicago_12-x0061";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
+  unicode-range: U+0061;
+}
+
+@font-face {
+  font-family: "Chicago_12-x0072";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
+  unicode-range: U+0072;
+}
+
+@font-face {
+  font-family: "Chicago_12-x0079";
+  src: local("Chicago_12"),
+    url("https://unpkg.com/@sakun/system.css@0.1.11/dist/ChiKareGo2.woff2")
+      format("woff");
   unicode-range: U+0079;
 }

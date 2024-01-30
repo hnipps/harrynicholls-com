@@ -24,6 +24,11 @@
       href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&family=Quattrocento:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
     <script
       src="https://kit.fontawesome.com/c16de944b7.js"
       crossorigin="anonymous"
@@ -41,7 +46,7 @@
     </video>
     <main class="container">
       <div>
-        <h1 id="main-heading" class="heading heading-1">
+        <h1 id="main-heading" class="main-heading heading-1">
           <span id="x0048-1">H</span><span id="x0069-1">i</span
           ><span id="x002E-1" class="bright-dot">.</span><br /><span>I</span
           ><span>'</span><span>m</span><span> </span><span id="x0048-2">H</span
@@ -64,46 +69,46 @@
           </p>
         </div>
         <div class="link-container">
-          <a class="button" href="/about.html">About</a>
-          <a class="button" href="/resume.html">Resume</a>
-          <a class="button" href="/portfolio.html">Portfolio</a>
+          <a class="btn" href="/about.html">About</a>
+          <a class="btn" href="/resume.html">Resume</a>
+          <a class="btn" href="/portfolio.html">Portfolio</a>
           <a
-            class="button"
+            class="btn"
             href="https://github.com/hnipps"
             target="_blank"
             rel="noopener noreferrer"
             >GitHub</a
           >
           <a
-            class="button"
+            class="btn"
             href="https://brainflow.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
             >Substack</a
           >
           <a
-            class="button"
+            class="btn"
             href="https://harrynicholls.medium.com/"
             target="_blank"
             rel="noopener noreferrer"
             >Medium</a
           >
           <a
-            class="button"
+            class="btn"
             href="https://twitter.com/0xSwan"
             target="_blank"
             rel="noopener noreferrer"
             >Twitter</a
           >
           <a
-            class="button"
+            class="btn"
             href="https://www.linkedin.com/in/harry-nicholls-91779959/"
             target="_blank"
             rel="noopener noreferrer"
             >LinkedIn</a
           >
           <a
-            class="button"
+            class="btn"
             href="mailto:harry.m.nicholls@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -135,6 +140,8 @@
           "Brush Script MT-x0048",
           "Luminari-x0048",
           "Comic Sans MS-x0048",
+          "AppleGaramond-x0048",
+          "Chicago_12-x0048",
         ],
         x0069: [
           "Helvetica-x0069",
@@ -157,6 +164,8 @@
           "Brush Script MT-x0069",
           "Luminari-x0069",
           "Comic Sans MS-x0069",
+          "AppleGaramond-x0069",
+          "Chicago_12-x0069",
         ],
         x002E: [
           "Helvetica-x002E",
@@ -179,6 +188,8 @@
           "Brush Script MT-x002E",
           "Luminari-x002E",
           "Comic Sans MS-x002E",
+          "AppleGaramond-x002E",
+          "Chicago_12-x002E",
         ],
         x0049: [
           "Helvetica-x0049",
@@ -201,6 +212,8 @@
           "Brush Script MT-x0049",
           "Luminari-x0049",
           "Comic Sans MS-x0049",
+          "AppleGaramond-x0049",
+          "Chicago_12-x0049",
         ],
         x0027: [
           "Helvetica-x0027",
@@ -223,6 +236,8 @@
           "Brush Script MT-x0027",
           "Luminari-x0027",
           "Comic Sans MS-x0027",
+          "AppleGaramond-x0027",
+          "Chicago_12-x0027",
         ],
         x006D: [
           "Helvetica-x006D",
@@ -245,6 +260,8 @@
           "Brush Script MT-x006D",
           "Luminari-x006D",
           "Comic Sans MS-x006D",
+          "AppleGaramond-x006D",
+          "Chicago_12-x006D",
         ],
         x0061: [
           "Helvetica-x0061",
@@ -267,6 +284,8 @@
           "Brush Script MT-x0061",
           "Luminari-x0061",
           "Comic Sans MS-x0061",
+          "AppleGaramond-x0061",
+          "Chicago_12-x0061",
         ],
         x0072: [
           "Helvetica-x0072",
@@ -289,6 +308,8 @@
           "Brush Script MT-x0072",
           "Luminari-x0072",
           "Comic Sans MS-x0072",
+          "AppleGaramond-x0072",
+          "Chicago_12-x0072",
         ],
         x0079: [
           "Helvetica-x0079",
@@ -311,6 +332,8 @@
           "Brush Script MT-x0079",
           "Luminari-x0079",
           "Comic Sans MS-x0079",
+          "AppleGaramond-x0079",
+          "Chicago_12-x0079",
         ],
       };
 
@@ -332,7 +355,7 @@
         setTimeout(() => {
           setInterval(() => {
             const fontFamily = getRandomFontFamily(el.id.split("-")[0]);
-            el.style.fontFamily = `"${fontFamily}", "Quattrocento", serif`;
+            el.style.fontFamily = `"${fontFamily}", AppleGaramond, serif`;
           }, Math.max(Math.floor(Math.random() * 5000), 350));
         }, offset);
         offset += Math.max(Math.floor(Math.random() * 10000), 1000);
