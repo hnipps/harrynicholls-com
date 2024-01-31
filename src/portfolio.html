@@ -17,31 +17,115 @@
 
     <title>Harry Nicholls</title>
     <link rel="stylesheet" href="/index.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&family=Quattrocento:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
     <script
       src="https://kit.fontawesome.com/c16de944b7.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body class="video-container">
-    <video autoplay muted loop>
+    <video
+      class="fuzz"
+      autoplay
+      muted
+      playsinline
+      disablepictureinpicture
+      loop
+      preload="auto"
+      height="100%"
+    >
       <source src="assets/bg-video.mp4" type="video/mp4" />
+    </video>
+    <video
+      class="fg"
+      autoplay
+      muted
+      playsinline
+      disablepictureinpicture
+      loop
+      preload="auto"
+      height="100%"
+    >
+      <source src="assets/bg-video.mp4" type="video/mp4" />
+    </video>
+    <video
+      class="water"
+      autoplay
+      muted
+      playsinline
+      disablepictureinpicture
+      loop
+      preload="auto"
+      height="100%"
+    >
+      <source src="assets/water.mp4" type="video/mp4" />
     </video>
     <main class="container">
       <div>
-        <h1 class="heading heading-1">
+        <h1 class="hn-heading heading-1">
           Portfolio<span class="bright-dot">.</span>
         </h1>
         <hr class="divider" />
         <div class="link-container">
-          <a class="button" href="#">Covered.</a>
-          <a class="button" href="/portfolio.html">Uniqlo Design System.</a>
+          <button class="btn">LLM Cover Letters</button>
+          <button class="btn">Uniqlo Design System</button>
+        </div>
+
+        <div class="window">
+          <div class="title-bar">
+            <button aria-label="Close" class="close"></button>
+            <h2 class="title">Case study #1: LLM Cover Letter Generator</h2>
+            <button aria-label="Resize" class="resize"></button>
+          </div>
+          <div class="window-pane">
+            <div class="project-metadata">
+              <p class="body">
+                <strong><em>Purpose:</em></strong> Generate cover letters
+              </p>
+              <p class="body">
+                <strong><em>URL:</em></strong>
+                <a
+                  href="https://covered-one.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://covered-one.vercel.app/</a
+                >
+              </p>
+              <div class="tech-list-container">
+                <p class="body">
+                  <strong><em>Tech:</em></strong>
+                </p>
+                <ul class="tech-list">
+                  <li><p class="body">TypeScript</p></li>
+                  <li><p class="body">React</p></li>
+                  <li><p class="body">NextJS</p></li>
+                  <li><p class="body">NodeJS</p></li>
+                  <li><p class="body">Redis</p></li>
+                  <li><p class="body">BullMQ</p></li>
+                  <li><p class="body">Supabase</p></li>
+                  <li><p class="body">OpenAI SDK</p></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <h3 class="body">
+                <strong><em>Description:</em></strong>
+              </h3>
+              <p class="body">
+                Covered (working title) is a web application that generates
+                cover letters.
+              </p>
+              <p class="body">
+                The app takes as input a job description and a summary of the
+                user's experience. Using various prompts the system generates a
+                cover letter for the given role.
+              </p>
+            </div>
+            <div class="image-container">
+              <img src="/assets/llm-cover-letters/1.png" />
+              <img src="/assets/llm-cover-letters/2.png" />
+            </div>
+          </div>
         </div>
       </div>
     </main>

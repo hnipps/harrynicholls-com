@@ -10,7 +10,6 @@ body {
   /* font-family: Arial, Helvetica, sans-serif; */
   font-family: Chicago_12, sans-serif;
   background-color: #141414;
-  color: #e7e7e7;
   overflow: hidden;
   min-height: 100vh;
 }
@@ -59,7 +58,18 @@ body {
   flex-direction: column;
 }
 
+.hn-heading {
+  font-family: AppleGaramond, serif;
+  letter-spacing: -0.05ch;
+  font-weight: 500;
+  line-height: 1.1;
+  /* margin-bottom: -1.85rem; */
+  margin-bottom: 2rem;
+  color: #e7e7e7;
+}
+
 .main-heading {
+  color: #e7e7e7;
   height: 20rem;
   margin-bottom: 2rem;
   font-family: AppleGaramond, serif;
@@ -93,7 +103,12 @@ body {
 
 .body {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 200;
+  font-family: Chicago_12, sans-serif;
+}
+
+.body.light {
+  color: #ffffff;
 }
 
 .bright-dot {
@@ -189,6 +204,46 @@ body {
 
 .btn {
   border-radius: 7px;
+}
+
+.btn-default {
+  border-radius: 10px;
+}
+
+/* Portfolio.html */
+.window {
+  height: 40rem;
+}
+
+.project-metadata {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-metadata p.body {
+  margin: 0.5rem 0;
+}
+
+.tech-list-container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+ul.tech-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.image-container img {
+  max-width: 100%;
+  margin-bottom: 4rem;
 }
 
 @media (max-width: 600px) {
