@@ -42,6 +42,7 @@
       playsinline
       disablepictureinpicture
       loop
+      preload="auto"
       height="100%"
     >
       <source src="assets/bg-video.mp4" type="video/mp4" />
@@ -53,6 +54,7 @@
       playsinline
       disablepictureinpicture
       loop
+      preload="auto"
       height="100%"
     >
       <source src="assets/bg-video.mp4" type="video/mp4" />
@@ -64,6 +66,7 @@
       playsinline
       disablepictureinpicture
       loop
+      preload="auto"
       height="100%"
     >
       <source src="assets/water.mp4" type="video/mp4" />
@@ -374,6 +377,21 @@
           () => Math.floor(Math.random() * 10) - Math.floor(Math.random() * 10)
         );
 
+      const elList = [
+        ".video-container video.water",
+        ".main-heading",
+        ".flex-container",
+        ".divider",
+        ".status-container",
+        ".link-container",
+      ].map((selector) => document.querySelector(selector));
+
+      elList.forEach((el) => (el.style.opacity = 0));
+
+      setTimeout(() => {
+        elList.forEach((el) => (el.style.opacity = 1));
+      }, 0);
+
       let offset = 10000;
       headingElements.forEach((el) => {
         setTimeout(() => {
@@ -381,8 +399,7 @@
             const fontFamily = getRandomFontFamily(el.id.split("-")[0]);
             el.style.fontFamily = `"${fontFamily}", AppleGaramond, serif`;
           }, Math.max(Math.floor(Math.random() * 5000), 350));
-          // }, offset);
-        }, 0);
+        }, offset);
         offset += Math.max(Math.floor(Math.random() * 10000), 1000);
       });
     </script>

@@ -236,17 +236,6 @@ body {
   }
 }
 
-@starting-style {
-  .video-container video.water,
-  .main-heading,
-  .flex-container,
-  .divider,
-  .status-container,
-  .link-container {
-    opacity: 0;
-  }
-}
-
 @font-face {
   font-family: "Helvetica-x0048";
   src: local("Helvetica");
