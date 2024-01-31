@@ -36,8 +36,8 @@ body {
 }
 
 .video-container video.water {
-    opacity: 1;
-    transition: opacity 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s;
+  opacity: 1;
+  transition: opacity 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s;
 }
 
 .video-container video.fuzz {
@@ -60,9 +60,11 @@ body {
 }
 
 .main-heading {
+  height: 20rem;
+  margin-bottom: 2rem;
   font-family: AppleGaramond, serif;
   letter-spacing: -0.05ch;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.2;
   opacity: 1;
   transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 4.5s;
@@ -176,10 +178,6 @@ body {
   border-radius: 7px;
 }
 
-#main-heading {
-  height: 16rem;
-}
-
 @starting-style {
   .video-container video.water,
   .main-heading,
@@ -197,7 +195,7 @@ body {
     overflow-y: scroll;
   }
 
-  #main-heading {
+  .main-heading {
     height: 9rem;
   }
 
