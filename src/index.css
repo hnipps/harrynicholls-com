@@ -178,17 +178,6 @@ body {
   border-radius: 7px;
 }
 
-@starting-style {
-  .video-container video.water,
-  .main-heading,
-  .flex-container,
-  .divider,
-  .status-container,
-  .link-container {
-    opacity: 0;
-  }
-}
-
 @media (max-width: 600px) {
   html,
   body {
@@ -196,7 +185,8 @@ body {
   }
 
   .main-heading {
-    height: 9rem;
+    height: 10rem;
+    margin-bottom: 0.5rem;
   }
 
   .heading-1 {
@@ -230,6 +220,17 @@ body {
     gap: 1rem;
     max-width: 100%;
     margin-top: 2rem;
+  }
+}
+
+@starting-style {
+  .video-container video.water,
+  .main-heading,
+  .flex-container,
+  .divider,
+  .status-container,
+  .link-container {
+    opacity: 0;
   }
 }
 
