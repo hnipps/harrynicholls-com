@@ -35,4 +35,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Sync S3 bucket
-        run: aws s3 cp . s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "max-age=0,no-cache,no-store,must-revalidate" --include "*" --exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --exclude ".github/*" --recursive
+        run: aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "max-age=0,no-cache,no-store,must-revalidate" --include "*" --exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --exclude ".github/*" --recursive
