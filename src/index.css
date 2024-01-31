@@ -70,6 +70,19 @@ body {
   transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 4.5s;
 }
 
+#x0048-2,
+#x0061-1,
+#x0072-1,
+#x0072-2,
+#x0079-1,
+#x002E-2,
+#x0048-1,
+#x0069-1,
+#x002E-1 {
+  height: 10rem;
+  line-height: 0;
+}
+
 .heading-1 {
   font-size: 8rem;
 }
