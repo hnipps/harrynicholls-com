@@ -53,6 +53,7 @@ body {
   position: relative;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -256,21 +257,28 @@ ul.tech-list {
 }
 
 .window.case-study__window.open {
-  position: initial;
+  position: relative;
+  z-index: 2;
 }
 
 .window.case-study__window.closed {
   position: absolute;
   left: -9999px;
+  top: 0;
+}
+
+.window.case-study__window .window-pane {
+  height: calc(100% - 4.1rem);
+  overflow-x: hidden;
 }
 
 .github-container {
-    color: #e7e7e7;
-    font-size: 2rem;
-    position: absolute;
-    right: 2rem;
-    bottom: 2rem;
-    transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.3s;
+  color: #e7e7e7;
+  font-size: 2rem;
+  position: absolute;
+  right: 2.125rem;
+  bottom: 2rem;
+  transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.3s;
 }
 
 @media (max-width: 600px) {
@@ -287,11 +295,6 @@ ul.tech-list {
     top: 0;
     bottom: 0;
     height: auto;
-  }
-
-  .window.case-study__window .window-pane {
-    height: calc(100% - 4.1rem);
-    overflow-x: hidden;
   }
 
   .project-metadata {
