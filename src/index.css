@@ -264,6 +264,15 @@ ul.tech-list {
   left: -9999px;
 }
 
+.github-container {
+    color: #e7e7e7;
+    font-size: 2rem;
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.3s;
+}
+
 @media (max-width: 600px) {
   html,
   body {
