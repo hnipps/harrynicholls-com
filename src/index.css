@@ -12,6 +12,7 @@ body {
   background-color: #141414;
   overflow: hidden;
   min-height: 100vh;
+  scrollbar-width: none;
 }
 
 .video-container {
@@ -56,6 +57,7 @@ body {
   justify-content: space-between;
   height: 100%;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .hn-heading {
@@ -246,10 +248,53 @@ ul.tech-list {
   margin-bottom: 4rem;
 }
 
+.title-bar .title {
+  text-overflow: ellipsis;
+  max-width: 65%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.window.case-study__window.open {
+  position: initial;
+}
+
+.window.case-study__window.closed {
+  position: absolute;
+  left: -9999px;
+}
+
 @media (max-width: 600px) {
   html,
   body {
     overflow-y: scroll;
+  }
+
+  .window.case-study__window.open {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: auto;
+  }
+
+  .window.case-study__window .window-pane {
+    height: calc(100% - 4.1rem);
+    overflow-x: hidden;
+  }
+
+  .project-metadata {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-list-container {
+    grid-column-end: 2;
+  }
+
+  ul.tech-list {
+    grid-template-columns: 1fr 1fr;
   }
 
   .main-heading {
@@ -288,6 +333,10 @@ ul.tech-list {
     gap: 1rem;
     max-width: 100%;
     margin-top: 2rem;
+  }
+
+  body.portfolio .link-container {
+    grid-template-columns: 1fr;
   }
 }
 
