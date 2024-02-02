@@ -142,29 +142,7 @@
       </div>
     </main>
     <script>
-      // Allow elements to fade in from 0 to 1 opactiy
-      const elList = [
-        ".video-container video.water",
-        ".main-heading",
-        ".flex-container",
-        ".divider",
-        ".status-container",
-        ".link-container",
-        ".github-container",
-      ].map((selector) => document.querySelector(selector));
-
-      elList.forEach((el) => (el.style.opacity = 0));
-
-      setTimeout(() => {
-        elList.forEach((el) => (el.style.opacity = 1));
-      }, 0);
-
-      // Change path to index.html to prevent intro animation playing on back nav
-      setTimeout(() => {
-        history.pushState({}, "", "home.html");
-      }, 0);
-
-      // Animate heading characters
+      console.log("HOME");
       const fontFamilyMap = {
         x0048: [
           "Helvetica-x0048",
