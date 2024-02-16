@@ -1,6 +1,7 @@
 :root {
   /* --highlight-color: white; */
   --highlight-color: rgb(69, 164, 164);
+  --dialog-width: 30rem;
 }
 
 html,
@@ -21,6 +22,10 @@ body {
   height: 100%;
 }
 
+.video-wrapper {
+  z-index: -1;
+}
+
 .video-container video {
   position: absolute;
   object-fit: cover;
@@ -29,8 +34,8 @@ body {
 }
 
 .video-container video.fg {
-  z-index: 3;
-  opacity: 0.05;
+  z-index: 30;
+  opacity: 0.1;
   pointer-events: none;
   transition: opacity 3.5s ease-in;
 }
@@ -42,18 +47,14 @@ body {
 
 .video-container video.fuzz {
   z-index: 1;
-  opacity: 0.25;
+  opacity: 0.2;
   pointer-events: none;
 }
 
 .container {
   z-index: 2;
-  margin: auto;
-  max-width: 64rem;
+  width: 100%;
   position: relative;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -256,15 +257,51 @@ ul.tech-list {
   white-space: nowrap;
 }
 
-.window.case-study__window.open {
-  position: relative;
-  z-index: 2;
+.about__dialog {
+  text-align: center;
+  width: var(--dialog-width);
 }
 
+.about__dialog.open {
+  position: fixed;
+  top: calc(30%);
+  left: calc(50% - calc(var(--dialog-width) / 2));
+}
+
+.content-wrapper {
+  z-index: 10;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 64rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+.container.blur {
+  filter: blur(2px);
+}
+
+.about__dialog.open,
+.window.case-study__window.open {
+  position: relative;
+  z-index: 100;
+}
+
+.dialog-backdrop.closed,
+.about__dialog.closed,
 .window.case-study__window.closed {
   position: absolute;
   left: -9999px;
   top: 0;
+}
+
+.dialog-backdrop.open {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
 }
 
 .window.case-study__window .window-pane {
@@ -275,9 +312,9 @@ ul.tech-list {
 .github-container {
   color: #e7e7e7;
   font-size: 2rem;
-  position: absolute;
+  position: fixed;
   right: 2.125rem;
-  bottom: 2rem;
+  top: 2rem;
   transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.3s;
 }
 

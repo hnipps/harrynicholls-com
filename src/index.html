@@ -25,18 +25,6 @@
   </head>
   <body class="video-container">
     <video
-      class="fuzz"
-      autoplay
-      muted
-      playsinline
-      disablepictureinpicture
-      loop
-      preload="auto"
-      height="100%"
-    >
-      <source src="assets/bg-video.mp4" type="video/mp4" />
-    </video>
-    <video
       class="fg"
       autoplay
       muted
@@ -48,20 +36,32 @@
     >
       <source src="assets/bg-video.mp4" type="video/mp4" />
     </video>
-    <video
-      class="water"
-      autoplay
-      muted
-      playsinline
-      disablepictureinpicture
-      loop
-      preload="auto"
-      height="100%"
-    >
-      <source src="assets/water.mp4" type="video/mp4" />
-    </video>
     <main class="container">
-      <div>
+      <video
+        class="fuzz"
+        autoplay
+        muted
+        playsinline
+        disablepictureinpicture
+        loop
+        preload="auto"
+        height="100%"
+      >
+        <source src="assets/bg-video.mp4" type="video/mp4" />
+      </video>
+      <video
+        class="water"
+        autoplay
+        muted
+        playsinline
+        disablepictureinpicture
+        loop
+        preload="auto"
+        height="100%"
+      >
+        <source src="assets/water.mp4" type="video/mp4" />
+      </video>
+      <div class="content-wrapper">
         <a
           class="github-container"
           href="https://github.com/hnipps/harrynicholls-com/"
@@ -93,8 +93,8 @@
           </p>
         </div>
         <div class="link-container">
-          <!-- <a class="btn" href="/about.html">About</a>
-          <a class="btn" href="/resume.html">Resume</a> -->
+          <button class="btn" onclick="toggleDialog()">About</button>
+          <!-- <a class="btn" href="/resume.html">Resume</a> -->
           <a class="btn" href="/portfolio.html">Portfolio</a>
           <a
             class="btn"
@@ -141,6 +141,35 @@
         </div>
       </div>
     </main>
+    <div onclick="toggleDialog()" class="dialog-backdrop closed">
+      <div class="standard-dialog center scale-down about__dialog closed">
+        <h1 class="dialog-text">About Harry Nicholls</h1>
+        <p class="dialog-text">
+          <em>Who am I:</em> A resourceful, empathetic staff software engineer
+          with over 10 years experience in software engineering and delivery.
+          Known for being a creative problem-solver.
+        </p>
+
+        <p class="dialog-text">
+          <em>Career aspirations:</em> I'm passionate about building outstanding
+          user experiences, growing world-class engineering teams, and using my
+          skills positively impact humanity and the planet we inhabit.
+        </p>
+
+        <p class="dialog-text">
+          <em>What I bring:</em> Deep experience in TypeScript, React, and
+          NodeJS. Demonstrable success in architecting, developing, and shipping
+          large-scale web applications and supporting services.
+        </p>
+
+        <p class="dialog-text">
+          <em>Things I love:</em> My partner and 2 (soon to be 3!) children,
+          skiing, coffee, and building the internet.
+        </p>
+        <hr style="border-style: dotted" />
+        <p class="dialog-text">&copy; 2024 Nicholls Inc.</p>
+      </div>
+    </div>
     <script>
       // Allow elements to fade in from 0 to 1 opactiy
       const elList = [
@@ -407,6 +436,45 @@
         }, offset);
         offset += Math.max(Math.floor(Math.random() * 10000), 1000);
       });
+
+      let dialogOpen = false;
+
+      const dialogEl = document.querySelector(".about__dialog");
+      const backdropEl = document.querySelector(".dialog-backdrop");
+      const contentWrapperEl = document.querySelector(".container");
+
+      const initialDialogClassName =
+        "standard-dialog center scale-down about__dialog";
+      const initialBackdropClassName = "dialog-backdrop";
+
+      const handleEsc = (e) => {
+        e.preventDefault();
+        if (e.key === "Escape") {
+          toggleDialog();
+        }
+      };
+
+      function toggleDialog() {
+        dialogEl.className = dialogOpen
+          ? `${initialDialogClassName} closed`
+          : `${initialDialogClassName} open`;
+
+        backdropEl.className = dialogOpen
+          ? `${initialBackdropClassName} closed`
+          : `${initialBackdropClassName} open`;
+
+        contentWrapperEl.className = dialogOpen
+          ? "container"
+          : "container blur";
+
+        dialogOpen = dialogOpen ? false : true;
+
+        if (dialogOpen) {
+          document.addEventListener("keyup", handleEsc);
+        } else {
+          document.removeEventListener("keyup", handleEsc);
+        }
+      }
     </script>
   </body>
 </html>
