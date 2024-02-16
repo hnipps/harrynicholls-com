@@ -206,6 +206,10 @@ body {
   transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.21s;
 }
 
+body.portfolio .link-container {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .btn {
   border-radius: 7px;
 }
@@ -286,8 +290,23 @@ ul.tech-list {
 
 .about__dialog.open,
 .window.case-study__window.open {
-  position: relative;
+  position: absolute;
+  top: 25%;
   z-index: 100;
+}
+
+.case-study__window {
+  box-sizing: border-box;
+}
+
+.window.case-study__window.open {
+  margin: auto;
+  top: 16%;
+  max-width: 80rem;
+  max-height: 50rem;
+  width: 90%;
+  height: 90%;
+  left: calc(50% - min(45%, 40rem));
 }
 
 .dialog-backdrop.closed,
@@ -347,6 +366,10 @@ ul.tech-list {
     top: 0;
     bottom: 0;
     height: auto;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
   }
 
   .project-metadata {
