@@ -258,6 +258,7 @@ ul.tech-list {
 }
 
 .about__dialog {
+  box-sizing: border-box;
   text-align: center;
   width: var(--dialog-width);
 }
@@ -269,6 +270,7 @@ ul.tech-list {
 }
 
 .content-wrapper {
+  box-sizing: border-box;
   z-index: 10;
   margin: 0 auto;
   width: 100%;
@@ -319,9 +321,22 @@ ul.tech-list {
 }
 
 @media (max-width: 600px) {
+  :root {
+    --dialog-width: 100vw;
+  }
+
   html,
   body {
     overflow-y: scroll;
+  }
+
+  .about__dialog.open {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    height: auto;
   }
 
   .window.case-study__window.open {
