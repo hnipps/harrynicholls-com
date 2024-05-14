@@ -178,10 +178,14 @@ body {
 
 .status-container {
   margin: auto;
-  max-width: 30rem;
+  max-width: 40rem;
   text-align: center;
   opacity: 1;
   transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.05s;
+}
+
+.status-container a {
+    color: inherit;
 }
 
 .status-label {
