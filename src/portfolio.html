@@ -82,21 +82,28 @@
         </h1>
         <hr class="divider" />
         <div class="link-container">
-          <button class="btn" onclick="toggleModal()">LLM Cover Letters</button>
+          <button class="btn" onclick="toggleModal('llm-cover-letters')">
+            LLM Cover Letters
+          </button>
+          <button class="btn" onclick="toggleModal('gitrove')">gitrove</button>
         </div>
       </div>
     </main>
 
-    <div class="dialog-backdrop" onclick="toggleModal()">
+    <div
+      class="dialog-backdrop llm-cover-letters"
+      onclick="toggleModal('llm-cover-letters')"
+    >
       <div
         class="window case-study__window closed"
+        data-modal="llm-cover-letters"
         onclick="event.cancelBubble=true;"
       >
         <div class="title-bar">
           <button
             aria-label="Close"
             class="close"
-            onclick="toggleModal()"
+            onclick="toggleModal('llm-cover-letters')"
           ></button>
           <h2 class="title">Case study #1: LLM Cover Letter Generator</h2>
         </div>
@@ -160,11 +167,78 @@
         </div>
       </div>
     </div>
-    <script>
-      let modalOpen = false;
 
-      const modalEl = document.querySelector(".window.case-study__window");
-      const backdropEl = document.querySelector(".dialog-backdrop");
+    <div class="dialog-backdrop gitrove" onclick="toggleModal('gitrove')">
+      <div
+        class="window case-study__window closed"
+        data-modal="gitrove"
+        onclick="event.cancelBubble=true;"
+      >
+        <div class="title-bar">
+          <button
+            aria-label="Close"
+            class="close"
+            onclick="toggleModal('gitrove')"
+          ></button>
+          <h2 class="title">Case study #2: gitrove</h2>
+        </div>
+        <div class="window-pane">
+          <div class="project-metadata">
+            <p class="body">
+              <strong><em>Purpose:</em></strong> Developer analytics and
+              insights
+            </p>
+            <p class="body">
+              <strong><em>URL:</em></strong>
+              <a
+                href="https://gitrove.harrynicholls.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://gitrove.harrynicholls.com</a
+              >
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong><em>Tech:</em></strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">TypeScript</p></li>
+                <li><p class="body">Qwik</p></li>
+                <li><p class="body">Go</p></li>
+                <li><p class="body">Gin</p></li>
+                <li><p class="body">PostgreSQL</p></li>
+                <li><p class="body">Docker</p></li>
+                <li><p class="body">Kubernetes</p></li>
+                <li><p class="body">Tailwind CSS</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="body">
+              <strong><em>Description:</em></strong>
+            </h3>
+            <p class="body">
+              gitrove is a platform for exploring developer analytics and
+              insights using GitHub data.
+            </p>
+            <p class="body">
+              Built with Qwik on the frontend for optimal performance and
+              themability, the application features a Go-based backend using the
+              Gin framework. It leverages PostgreSQL for data persistence and
+              includes a custom Go data ingestion pipeline for processing
+              historical and realtime GitHub events data.
+            </p>
+          </div>
+          <div class="image-container">
+            <img src="/assets/gitrove/1.png" />
+            <img src="/assets/gitrove/2.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let openModal = null;
+
       const contentWrapperEl = document.querySelector(".container");
 
       const initialModalClassName = "window case-study__window";
@@ -172,25 +246,38 @@
 
       const handleEsc = (e) => {
         e.preventDefault();
-        if (e.key === "Escape") {
-          toggleModal();
+        if (e.key === "Escape" && openModal) {
+          toggleModal(openModal);
         }
       };
 
-      function toggleModal() {
-        modalEl.className = modalOpen
+      function toggleModal(modalName) {
+        const modalEl = document.querySelector(
+          `.window.case-study__window[data-modal="${modalName}"]`
+        );
+        const backdropEl = document.querySelector(
+          `.dialog-backdrop.${modalName}`
+        );
+
+        if (!modalEl || !backdropEl) return;
+
+        const isCurrentlyOpen = openModal === modalName;
+
+        modalEl.className = isCurrentlyOpen
           ? `${initialModalClassName} closed`
           : `${initialModalClassName} open`;
 
-        backdropEl.className = modalOpen
-          ? `${initialBackdropClassName} closed`
-          : `${initialBackdropClassName} open`;
+        backdropEl.className = isCurrentlyOpen
+          ? `${initialBackdropClassName} ${modalName} closed`
+          : `${initialBackdropClassName} ${modalName} open`;
 
-        contentWrapperEl.className = modalOpen ? "container" : "container blur";
+        contentWrapperEl.className = isCurrentlyOpen
+          ? "container"
+          : "container blur";
 
-        modalOpen = modalOpen ? false : true;
+        openModal = isCurrentlyOpen ? null : modalName;
 
-        if (modalOpen) {
+        if (openModal) {
           document.addEventListener("keyup", handleEsc);
         } else {
           document.removeEventListener("keyup", handleEsc);
