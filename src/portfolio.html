@@ -82,13 +82,18 @@
         </h1>
         <hr class="divider" />
         <div class="link-container">
-          <button class="btn" onclick="toggleModal('llm-cover-letters')">LLM Cover Letters</button>
-          <button class="btn" onclick="toggleModal('gitrove')">Gitrove</button>
+          <button class="btn" onclick="toggleModal('llm-cover-letters')">
+            LLM Cover Letters
+          </button>
+          <button class="btn" onclick="toggleModal('gitrove')">gitrove</button>
         </div>
       </div>
     </main>
 
-    <div class="dialog-backdrop llm-cover-letters" onclick="toggleModal('llm-cover-letters')">
+    <div
+      class="dialog-backdrop llm-cover-letters"
+      onclick="toggleModal('llm-cover-letters')"
+    >
       <div
         class="window case-study__window closed"
         data-modal="llm-cover-letters"
@@ -175,12 +180,13 @@
             class="close"
             onclick="toggleModal('gitrove')"
           ></button>
-          <h2 class="title">Case study #2: Gitrove</h2>
+          <h2 class="title">Case study #2: gitrove</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
             <p class="body">
-              <strong><em>Purpose:</em></strong> GitHub repository analytics and insights
+              <strong><em>Purpose:</em></strong> Developer analytics and
+              insights
             </p>
             <p class="body">
               <strong><em>URL:</em></strong>
@@ -196,11 +202,14 @@
                 <strong><em>Tech:</em></strong>
               </p>
               <ul class="tech-list">
+                <li><p class="body">TypeScript</p></li>
                 <li><p class="body">Qwik</p></li>
                 <li><p class="body">Go</p></li>
                 <li><p class="body">Gin</p></li>
                 <li><p class="body">PostgreSQL</p></li>
-                <li><p class="body">Go Data Pipeline</p></li>
+                <li><p class="body">Docker</p></li>
+                <li><p class="body">Kubernetes</p></li>
+                <li><p class="body">Tailwind CSS</p></li>
               </ul>
             </div>
           </div>
@@ -209,14 +218,20 @@
               <strong><em>Description:</em></strong>
             </h3>
             <p class="body">
-              Gitrove is a platform for exploring GitHub repository analytics and insights.
+              gitrove is a platform for exploring developer analytics and
+              insights using GitHub data.
             </p>
             <p class="body">
-              Built with Qwik on the frontend for optimal performance, the application
-              features a Go-based backend using the Gin framework. It leverages PostgreSQL
-              for data persistence and includes a custom Go data ingestion pipeline for
-              processing GitHub repository data.
+              Built with Qwik on the frontend for optimal performance and
+              themability, the application features a Go-based backend using the
+              Gin framework. It leverages PostgreSQL for data persistence and
+              includes a custom Go data ingestion pipeline for processing
+              historical and realtime GitHub events data.
             </p>
+          </div>
+          <div class="image-container">
+            <img src="/assets/gitrove/1.png" />
+            <img src="/assets/gitrove/2.png" />
           </div>
         </div>
       </div>
