@@ -37,4 +37,4 @@ jobs:
       - name: Sync S3 bucket
         run: |
           aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "max-age=0,no-cache,no-store,must-revalidate" --include "*" --exclude "src/assets/*" --exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --exclude ".github/*" --recursive
-          aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "public,max-age=63072000" --include "src/assets/*" --recursive
+          aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "public,max-age=63072000" --exclude "*" --include "src/assets/*" --recursive
