@@ -339,12 +339,29 @@ ul.tech-list {
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 20;
+  /* Sit above video.fg (z-index: 30): iOS Safari won't touch-scroll the
+     case study pane while a video layer is stacked on top of it. The
+     grain is redrawn inside the pane instead (.case-study__grain). */
+  z-index: 40;
 }
 
 .window.case-study__window .window-pane {
   height: calc(100% - 4.1rem);
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Pinned over the visible pane (padding included) without taking up space,
+   as a descendant of the scroller so it doesn't block touch scrolling. */
+.video-container .window-pane > video.case-study__grain {
+  position: sticky;
+  top: -1rem;
+  display: block;
+  width: calc(100% + 4rem);
+  height: var(--pane-height, 100%);
+  margin: -1rem -2rem calc(1rem - var(--pane-height, 100%));
+  padding: 0;
 }
 
 .github-container {
