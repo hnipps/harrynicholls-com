@@ -303,12 +303,13 @@ ul.tech-list {
 }
 
 .window.case-study__window.open {
+  position: fixed;
   margin: auto;
-  top: 16%;
+  top: max(5vh, calc(50vh - 25rem));
   max-width: 80rem;
   max-height: 50rem;
   width: 90%;
-  height: 90%;
+  height: 90vh;
   left: calc(50% - min(45%, 40rem));
 }
 
@@ -362,7 +363,7 @@ ul.tech-list {
 
   .window.case-study__window.open {
     margin: 0;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
