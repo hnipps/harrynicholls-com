@@ -339,12 +339,16 @@ ul.tech-list {
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 20;
+  /* Sit above video.fg (z-index: 30): iOS Safari won't touch-scroll the
+     case study pane while a video layer is stacked on top of it. */
+  z-index: 40;
 }
 
 .window.case-study__window .window-pane {
   height: calc(100% - 4.1rem);
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .github-container {
