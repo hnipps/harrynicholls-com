@@ -107,13 +107,13 @@
             class="close"
             onclick="toggleModal('gitrove')"
           ></button>
-          <h2 class="title">Case study #1: gitrove</h2>
+          <h2 class="title"><span class="title-prefix">Case study #1: </span>gitrove</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
             <p class="body">
-              <strong><em>Purpose:</em></strong> Developer analytics and
-              insights
+              <strong><em>Purpose:</em></strong> Daily digest of your GitHub
+              network
             </p>
             <p class="body">
               <strong><em>URL:</em></strong>
@@ -130,13 +130,13 @@
               </p>
               <ul class="tech-list">
                 <li><p class="body">TypeScript</p></li>
-                <li><p class="body">Qwik</p></li>
+                <li><p class="body">Qwik City</p></li>
                 <li><p class="body">Go</p></li>
-                <li><p class="body">Gin</p></li>
                 <li><p class="body">PostgreSQL</p></li>
-                <li><p class="body">Docker</p></li>
-                <li><p class="body">Kubernetes</p></li>
-                <li><p class="body">Tailwind CSS</p></li>
+                <li><p class="body">GitHub API</p></li>
+                <li><p class="body">GH Archive</p></li>
+                <li><p class="body">Stripe</p></li>
+                <li><p class="body">Cloudflare Tunnel</p></li>
               </ul>
             </div>
           </div>
@@ -145,21 +145,46 @@
               <strong><em>Description:</em></strong>
             </h3>
             <p class="body">
-              gitrove is a platform for exploring developer analytics and
-              insights using GitHub data.
+              gitrove is a discovery tool for open-source developers and
+              repositories, built around a personal daily digest. A user signs
+              in with GitHub, and gitrove watches the developers they follow and
+              the repositories they star. Once a day it sends one digest:
+              repositories where several people in their network are
+              converging, new releases from starred repositories, who their
+              follows started following, and everything else.
             </p>
             <p class="body">
-              Built with Qwik on the frontend for optimal performance and
-              themability, the application features a Go-based backend using the
-              Gin framework. It leverages PostgreSQL for data persistence and
-              includes a custom Go data ingestion pipeline for processing
-              historical and realtime GitHub events data.
+              A free Discover page ranks rising developers by language and
+              across 13 topic streams, such as MCP, AI agents and PostgreSQL.
+              Ranking is relative to each developer's own baseline: their last
+              7 days of activity are compared with a 28-day baseline, smoothed
+              by a constant. Minimum event and active-day floors keep out short
+              bursts and bots. A weekly Founder's Digest, one real day of the
+              founder's own digest, is published free on the blog as a sample.
+              Pro has a 14-day trial, with billing through Stripe.
+            </p>
+            <p class="body">
+              The backend is one Go binary on PostgreSQL. It uses the standard
+              library's net/http and pgx, with no web framework. Its subcommands
+              are <code>serve</code>, <code>ingest</code>, <code>migrate</code>,
+              <code>collect</code>, <code>mail</code> and
+              <code>config-check</code>. <code>ingest</code> loads GH Archive
+              hourly event files in a daily batch and is the only writer of the
+              ranking tables, with bot filtering and pruning.
+              <code>collect</code> refreshes each account's network mirror and
+              follow diffs through the GitHub API, and <code>mail</code> renders
+              and sends digests through listmonk. The frontend is
+              server-rendered Qwik City in TypeScript, with plain per-route CSS
+              for a dark monospace design. A pull-based deployer polls main
+              every minute and rolls back automatically. The app runs under
+              systemd behind a Cloudflare Tunnel, and each pull request gets its
+              own preview environment.
             </p>
           </div>
           <div class="image-container">
             <img
               src="/assets/gitrove/v2-1.png"
-              alt="gitrove developer analytics dashboard built from GitHub data"
+              alt="gitrove landing page with the headline 'See which repos are gaining traction with the developers you follow' beside a sample Founder's Digest card"
               width="3168"
               height="2176"
               loading="lazy"
@@ -167,7 +192,15 @@
             />
             <img
               src="/assets/gitrove/v2-2.png"
-              alt="gitrove insights view with charts of GitHub activity"
+              alt="gitrove Discover page ranking rising Go developers by score, with 7-day and 28-day activity counts and topic and language streams in the sidebar"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="/assets/gitrove/v2-3.png"
+              alt="A published Founder's Digest for 12 October 2026, grouped into repositories converging in the network and new releases from starred repositories"
               width="3168"
               height="2176"
               loading="lazy"
@@ -190,7 +223,7 @@
             class="close"
             onclick="toggleModal('crosscheck')"
           ></button>
-          <h2 class="title">Case study #2: Crosscheck</h2>
+          <h2 class="title"><span class="title-prefix">Case study #2: </span>Crosscheck</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
@@ -281,7 +314,7 @@
             class="close"
             onclick="toggleModal('opsdeck')"
           ></button>
-          <h2 class="title">Case study #3: opsdeck</h2>
+          <h2 class="title"><span class="title-prefix">Case study #3: </span>opsdeck</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
@@ -376,7 +409,7 @@
             class="close"
             onclick="toggleModal('go-home')"
           ></button>
-          <h2 class="title">Case study #4: GoHome</h2>
+          <h2 class="title"><span class="title-prefix">Case study #4: </span>GoHome</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
@@ -481,7 +514,7 @@
             class="close"
             onclick="toggleModal('llm-cover-letters')"
           ></button>
-          <h2 class="title">Case study #5: LLM Cover Letters</h2>
+          <h2 class="title"><span class="title-prefix">Case study #5: </span>LLM Cover Letters</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">

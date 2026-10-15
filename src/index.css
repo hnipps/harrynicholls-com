@@ -259,6 +259,7 @@ ul.tech-list {
 }
 
 .case-study__window code {
+  font-size: 0.8em;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
@@ -439,6 +440,13 @@ ul.tech-list {
 
   body.portfolio .link-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Leave room for the project name in the narrow case study title bar. */
+  .title-bar .title .title-prefix {
+    display: none;
   }
 }
 
