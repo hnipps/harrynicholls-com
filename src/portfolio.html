@@ -166,9 +166,9 @@
             <p class="body">
               The backend is one Go binary on PostgreSQL. It uses the standard
               library's net/http and pgx, with no web framework. Its subcommands
-              are <code>serve</code>, <code>ingest</code>, <code>migrate</code>,
-              <code>collect</code>, <code>mail</code> and
-              <code>config-check</code>. <code>ingest</code> loads GH Archive
+              include <code>serve</code>, <code>ingest</code>,
+              <code>migrate</code>, <code>collect</code> and <code>mail</code>.
+              <code>ingest</code> loads GH Archive
               hourly event files in a daily batch and is the only writer of the
               ranking tables, with bot filtering and pruning.
               <code>collect</code> refreshes each account's network mirror and
@@ -351,8 +351,9 @@
               review requested of me, review requested of my team, authored or
               pushed, and commented or reviewed. Anything waiting on the user,
               such as a review request, red CI or a merge conflict, comes first.
-              It is keyboard-driven (j/k, h/l, Space to lift a PR) and can
-              launch Claude Code review skills on selected PRs.
+              It is keyboard-driven (j/k, h/l, Space to lift a PR). Sending
+              selected PRs to Claude Code review skills is designed into the
+              UI, but in the current build that dispatch is simulated.
             </p>
             <p class="body">
               Work and personal organisations live in separate spaces, each
