@@ -82,13 +82,389 @@
         </h1>
         <hr class="divider" />
         <div class="link-container">
+          <button class="btn" onclick="toggleModal('gitrove')">gitrove</button>
+          <button class="btn" onclick="toggleModal('crosscheck')">
+            Crosscheck
+          </button>
+          <button class="btn" onclick="toggleModal('opsdeck')">opsdeck</button>
+          <button class="btn" onclick="toggleModal('go-home')">GoHome</button>
           <button class="btn" onclick="toggleModal('llm-cover-letters')">
             LLM Cover Letters
           </button>
-          <button class="btn" onclick="toggleModal('gitrove')">gitrove</button>
         </div>
       </div>
     </main>
+
+    <div class="dialog-backdrop gitrove" onclick="toggleModal('gitrove')">
+      <div
+        class="window case-study__window closed"
+        data-modal="gitrove"
+        onclick="event.cancelBubble=true;"
+      >
+        <div class="title-bar">
+          <button
+            aria-label="Close"
+            class="close"
+            onclick="toggleModal('gitrove')"
+          ></button>
+          <h2 class="title">Case study #1: gitrove</h2>
+        </div>
+        <div class="window-pane">
+          <div class="project-metadata">
+            <p class="body">
+              <strong><em>Purpose:</em></strong> Developer analytics and
+              insights
+            </p>
+            <p class="body">
+              <strong><em>URL:</em></strong>
+              <a
+                href="https://gitrove.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://gitrove.com</a
+              >
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong><em>Tech:</em></strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">TypeScript</p></li>
+                <li><p class="body">Qwik</p></li>
+                <li><p class="body">Go</p></li>
+                <li><p class="body">Gin</p></li>
+                <li><p class="body">PostgreSQL</p></li>
+                <li><p class="body">Docker</p></li>
+                <li><p class="body">Kubernetes</p></li>
+                <li><p class="body">Tailwind CSS</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="body">
+              <strong><em>Description:</em></strong>
+            </h3>
+            <p class="body">
+              gitrove is a platform for exploring developer analytics and
+              insights using GitHub data.
+            </p>
+            <p class="body">
+              Built with Qwik on the frontend for optimal performance and
+              themability, the application features a Go-based backend using the
+              Gin framework. It leverages PostgreSQL for data persistence and
+              includes a custom Go data ingestion pipeline for processing
+              historical and realtime GitHub events data.
+            </p>
+          </div>
+          <div class="image-container">
+            <img
+              src="/assets/gitrove/v2-1.png"
+              alt="gitrove developer analytics dashboard built from GitHub data"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="/assets/gitrove/v2-2.png"
+              alt="gitrove insights view with charts of GitHub activity"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialog-backdrop crosscheck" onclick="toggleModal('crosscheck')">
+      <div
+        class="window case-study__window closed"
+        data-modal="crosscheck"
+        onclick="event.cancelBubble=true;"
+      >
+        <div class="title-bar">
+          <button
+            aria-label="Close"
+            class="close"
+            onclick="toggleModal('crosscheck')"
+          ></button>
+          <h2 class="title">Case study #2: Crosscheck</h2>
+        </div>
+        <div class="window-pane">
+          <div class="project-metadata">
+            <p class="body">
+              <strong><em>Purpose:</em></strong> Formal verification for
+              AI-generated code
+            </p>
+            <p class="body">
+              <strong><em>URL:</em></strong>
+              <a
+                href="https://github.com/nicholls-inc/crosscheck"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://github.com/nicholls-inc/crosscheck</a
+              >
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong><em>Tech:</em></strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">TypeScript</p></li>
+                <li><p class="body">MCP</p></li>
+                <li><p class="body">Dafny</p></li>
+                <li><p class="body">Lean 4</p></li>
+                <li><p class="body">Rust</p></li>
+                <li><p class="body">Docker</p></li>
+                <li><p class="body">SQLite</p></li>
+                <li><p class="body">Vitest + fast-check</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="body">
+              <strong><em>Description:</em></strong>
+            </h3>
+            <p class="body">
+              Crosscheck is a Claude Code plugin for checking the code an AI
+              assistant writes. It has 30 skills, 5 agents and an MCP server
+              with 7 tools across two engines. With Dafny, a pure functional
+              core is specified and verified, then compiled to Python or Go.
+              With Lean 4, an executable model acts as an oracle for
+              differential random testing of the real implementation. Skills
+              such as /reason, /locate-fault and /trace-execution add
+              structured, semi-formal code analysis.
+            </p>
+            <p class="body">
+              The repository also holds CGV, a contract graph verifier. A Rust
+              extractor, built on ruff's Python parser, reads Django models,
+              dataclasses and pydantic models. It stores their declared field
+              and function constraints in SQLite. A checker written and proved
+              sound in Lean 4 then checks that data passed between calls meets
+              those constraints. Its soundness theorem says exit code 0 means
+              every discovered data path is consistent. CI regenerates a
+              manifest of the protected theorem statements and replays the
+              proofs through Lean's kernel with leanchecker.
+            </p>
+            <p class="body">
+              The Dafny and Lean toolchains run in sandboxed Docker containers
+              with no network access and fixed memory and time limits. The
+              plugin installs from the nicholls marketplace:
+            </p>
+            <p class="body">
+              <code>claude plugin marketplace add nicholls-inc/claude-code-marketplace</code><br />
+              <code>claude plugin install crosscheck@nicholls</code>
+            </p>
+          </div>
+          <blockquote class="case-study__principle">
+            <p class="body">
+              No guarantee rests on the judgment of an LLM. An LLM may draft
+              code, specs and proofs, but only deterministic checks and human
+              judgment count as evidence.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialog-backdrop opsdeck" onclick="toggleModal('opsdeck')">
+      <div
+        class="window case-study__window closed"
+        data-modal="opsdeck"
+        onclick="event.cancelBubble=true;"
+      >
+        <div class="title-bar">
+          <button
+            aria-label="Close"
+            class="close"
+            onclick="toggleModal('opsdeck')"
+          ></button>
+          <h2 class="title">Case study #3: opsdeck</h2>
+        </div>
+        <div class="window-pane">
+          <div class="project-metadata">
+            <p class="body">
+              <strong><em>Purpose:</em></strong> Personal pull request dashboard
+            </p>
+            <p class="body">
+              <strong><em>Access:</em></strong> Private, runs locally
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong><em>Tech:</em></strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">Go</p></li>
+                <li><p class="body">SQLite</p></li>
+                <li><p class="body">net/http</p></li>
+                <li><p class="body">GitHub GraphQL</p></li>
+                <li><p class="body">gh CLI</p></li>
+                <li><p class="body">Vanilla JS</p></li>
+                <li><p class="body">Datadog</p></li>
+                <li><p class="body">Sentry</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="body">
+              <strong><em>Description:</em></strong>
+            </h3>
+            <p class="body">
+              opsdeck is a local-first dashboard that an engineer runs on their
+              own machine against their own gh login. It gathers every pull
+              request they are connected to and sorts them into four bays:
+              review requested of me, review requested of my team, authored or
+              pushed, and commented or reviewed. Anything waiting on the user,
+              such as a review request, red CI or a merge conflict, comes first.
+              It is keyboard-driven (j/k, h/l, Space to lift a PR) and can
+              launch Claude Code review skills on selected PRs.
+            </p>
+            <p class="body">
+              Work and personal organisations live in separate spaces, each
+              with its own SQLite database and bot list. opsdeck also finds PRs
+              opened by the user's GitHub App bots and by local Claude Code
+              sessions, so PRs a login-only query would miss still appear. The
+              metrics view covers merged PRs per week, cycle time at p50 and
+              p90, first-pass yield, revert rate, review response time and
+              review-queue age. Every figure shows its sample size and flags
+              thin samples. An optional production view links Datadog and
+              Sentry deploys to the commits they ship, for deploy frequency,
+              batch size and merge-to-production lead time.
+            </p>
+            <p class="body">
+              It ships as a single Go binary with no runtime dependencies.
+              <code>opsdeck serve</code> binds to loopback only, serves an
+              embedded static UI and a JSON snapshot API, and runs its own
+              scheduler with 60-second and 15-minute ticks. It uses a pure-Go
+              SQLite driver, so no CGO is needed. The screenshots below use
+              invented demo data.
+            </p>
+          </div>
+          <div class="image-container">
+            <img
+              src="/assets/opsdeck/1.png"
+              alt="opsdeck's four bays of open pull requests, with waiting-on-me, red CI and conflict counts in the status strip"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="/assets/opsdeck/2.png"
+              alt="opsdeck Metrics view with 12-week charts for merged PRs, cycle time and reviews given, above a table where every metric shows its sample size"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialog-backdrop go-home" onclick="toggleModal('go-home')">
+      <div
+        class="window case-study__window closed"
+        data-modal="go-home"
+        onclick="event.cancelBubble=true;"
+      >
+        <div class="title-bar">
+          <button
+            aria-label="Close"
+            class="close"
+            onclick="toggleModal('go-home')"
+          ></button>
+          <h2 class="title">Case study #4: GoHome</h2>
+        </div>
+        <div class="window-pane">
+          <div class="project-metadata">
+            <p class="body">
+              <strong><em>Purpose:</em></strong> Self-hosted home server
+              dashboard
+            </p>
+            <p class="body">
+              <strong><em>Access:</em></strong> Private, self-hosted
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong><em>Tech:</em></strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">Go</p></li>
+                <li><p class="body">chi</p></li>
+                <li><p class="body">Bun ORM</p></li>
+                <li><p class="body">PostgreSQL</p></li>
+                <li><p class="body">Docker Engine API</p></li>
+                <li><p class="body">Hotwire Turbo</p></li>
+                <li><p class="body">WebSockets</p></li>
+                <li><p class="body">Go html/template</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="body">
+              <strong><em>Description:</em></strong>
+            </h3>
+            <p class="body">
+              GoHome is a dashboard for homelab servers that run on Docker. It
+              reads containers from the Docker socket and recognises common
+              apps, such as Plex, Jellyfin, Home Assistant, Pi-hole, Nextcloud
+              and the *arr stack, by matching image names, ports and labels
+              against configurable rules. No service has to be registered by
+              hand.
+            </p>
+            <p class="body">
+              Services are grouped into stacks by Compose project. Each card
+              shows whether the service is running, degraded, stopped or
+              starting, with a launch link and Restart, Stop, Start and Logs
+              actions. A status strip shows the Docker socket state and a tally
+              of nominal, degraded and stopped services. Status is never shown
+              by colour alone: each state has its own glyph and text label.
+              There is a keyboard filter (/, j/k, Esc) and a recent-activity
+              feed. The design brief follows Dieter Rams's "less, but better".
+            </p>
+            <p class="body">
+              The backend is a Go service split into handlers, repositories and
+              services. It uses Bun ORM on PostgreSQL, with migrations run at
+              startup. A scheduler runs discovery with retries, a listener
+              follows Docker events, and HTTP, TCP and Docker health checks feed
+              status and metrics. Pages are server-rendered Go templates. Live
+              updates are pushed over WebSockets as Turbo Streams, so there is
+              no SPA framework or JavaScript build step. Config comes from YAML
+              plus environment variables.
+            </p>
+          </div>
+          <div class="image-container">
+            <img
+              src="/assets/go-home/1.png"
+              alt="GoHome dashboard with 24 services grouped into stacks, a Docker socket status strip and running, degraded and starting service cards"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="/assets/go-home/2.png"
+              alt="GoHome home, monitoring and network stacks, including a stopped Node-RED container with a Start button"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="/assets/go-home/3.png"
+              alt="GoHome filtered to degraded services, showing an unhealthy Bazarr card and a restarting Paperless-ngx card"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div
       class="dialog-backdrop llm-cover-letters"
@@ -105,7 +481,7 @@
             class="close"
             onclick="toggleModal('llm-cover-letters')"
           ></button>
-          <h2 class="title">Case study #1: LLM Cover Letter Generator</h2>
+          <h2 class="title">Case study #5: LLM Cover Letters</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
@@ -161,77 +537,22 @@
             </p>
           </div>
           <div class="image-container">
-            <img src="/assets/llm-cover-letters/1.png" />
-            <img src="/assets/llm-cover-letters/2.png" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="dialog-backdrop gitrove" onclick="toggleModal('gitrove')">
-      <div
-        class="window case-study__window closed"
-        data-modal="gitrove"
-        onclick="event.cancelBubble=true;"
-      >
-        <div class="title-bar">
-          <button
-            aria-label="Close"
-            class="close"
-            onclick="toggleModal('gitrove')"
-          ></button>
-          <h2 class="title">Case study #2: gitrove</h2>
-        </div>
-        <div class="window-pane">
-          <div class="project-metadata">
-            <p class="body">
-              <strong><em>Purpose:</em></strong> Developer analytics and
-              insights
-            </p>
-            <p class="body">
-              <strong><em>URL:</em></strong>
-              <a
-                href="https://gitrove.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                >https://gitrove.com</a
-              >
-            </p>
-            <div class="tech-list-container">
-              <p class="body">
-                <strong><em>Tech:</em></strong>
-              </p>
-              <ul class="tech-list">
-                <li><p class="body">TypeScript</p></li>
-                <li><p class="body">Qwik</p></li>
-                <li><p class="body">Go</p></li>
-                <li><p class="body">Gin</p></li>
-                <li><p class="body">PostgreSQL</p></li>
-                <li><p class="body">Docker</p></li>
-                <li><p class="body">Kubernetes</p></li>
-                <li><p class="body">Tailwind CSS</p></li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <h3 class="body">
-              <strong><em>Description:</em></strong>
-            </h3>
-            <p class="body">
-              gitrove is a platform for exploring developer analytics and
-              insights using GitHub data.
-            </p>
-            <p class="body">
-              Built with Qwik on the frontend for optimal performance and
-              themability, the application features a Go-based backend using the
-              Gin framework. It leverages PostgreSQL for data persistence and
-              includes a custom Go data ingestion pipeline for processing
-              historical and realtime GitHub events data.
-            </p>
-          </div>
-          <div class="image-container">
-            <img src="/assets/gitrove/1.png" />
-            <img src="/assets/gitrove/2.png" />
+            <img
+              src="/assets/llm-cover-letters/1.png"
+              alt="Covered's Jobs page listing five saved job postings, with an Add Job button"
+              width="2784"
+              height="1776"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="/assets/llm-cover-letters/2.png"
+              alt="Covered's page for a Staff Software Engineer job, showing a generated cover letter below a Generate button"
+              width="2784"
+              height="1776"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>

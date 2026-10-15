@@ -254,7 +254,19 @@ ul.tech-list {
 
 .image-container img {
   max-width: 100%;
+  height: auto;
   margin-bottom: 4rem;
+}
+
+.case-study__window code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.case-study__principle {
+  margin: 2rem 0 4rem;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid #000;
 }
 
 .title-bar .title {
