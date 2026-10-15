@@ -596,6 +596,34 @@
 
       const contentWrapperEl = document.querySelector(".container");
 
+      // The page-wide grain (video.fg) sits below open modals so iOS can
+      // touch-scroll them, so each open case study gets its own grain layer
+      // inside its scrolling pane.
+      const grainEl = document.querySelector("video.fg");
+      let modalGrainEl = null;
+      const paneResizeObserver = new ResizeObserver(([entry]) => {
+        entry.target.style.setProperty(
+          "--pane-height",
+          `${entry.target.clientHeight}px`
+        );
+      });
+
+      function addModalGrain(modalEl) {
+        const paneEl = modalEl.querySelector(".window-pane");
+        modalGrainEl = grainEl.cloneNode(true);
+        modalGrainEl.classList.add("case-study__grain");
+        paneEl.prepend(modalGrainEl);
+        paneResizeObserver.observe(paneEl);
+        modalGrainEl.play().catch(() => {});
+      }
+
+      function removeModalGrain() {
+        if (!modalGrainEl) return;
+        paneResizeObserver.disconnect();
+        modalGrainEl.remove();
+        modalGrainEl = null;
+      }
+
       const initialModalClassName = "window case-study__window";
       const initialBackdropClassName = "dialog-backdrop";
 
@@ -631,6 +659,9 @@
           : "container blur";
 
         openModal = isCurrentlyOpen ? null : modalName;
+
+        removeModalGrain();
+        if (openModal) addModalGrain(modalEl);
 
         if (openModal) {
           document.addEventListener("keyup", handleEsc);
