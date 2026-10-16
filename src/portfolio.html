@@ -86,6 +86,9 @@
           <button class="btn" onclick="toggleModal('crosscheck')">
             Crosscheck
           </button>
+          <button class="btn" onclick="toggleModal('recommender')">
+            Recommender
+          </button>
           <button class="btn" onclick="toggleModal('opsdeck')">opsdeck</button>
           <button class="btn" onclick="toggleModal('go-home')">GoHome</button>
           <button class="btn" onclick="toggleModal('llm-cover-letters')">
@@ -302,6 +305,127 @@
       </div>
     </div>
 
+    <div class="dialog-backdrop recommender" onclick="toggleModal('recommender')">
+      <div
+        class="window case-study__window closed"
+        data-modal="recommender"
+        onclick="event.cancelBubble=true;"
+      >
+        <div class="title-bar">
+          <button
+            aria-label="Close"
+            class="close"
+            onclick="toggleModal('recommender')"
+          ></button>
+          <h2 class="title"><span class="title-prefix">Case study #3: </span>Recommender</h2>
+        </div>
+        <div class="window-pane">
+          <div class="project-metadata">
+            <p class="body">
+              <strong><em>Purpose:</em></strong> Personal film and TV
+              recommendations for a home Plex server
+            </p>
+            <p class="body">
+              <strong><em>Access:</em></strong> Private, self-hosted
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong><em>Tech:</em></strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">Python</p></li>
+                <li><p class="body">Starlette + Jinja2</p></li>
+                <li><p class="body">scikit-learn</p></li>
+                <li><p class="body">implicit (ALS)</p></li>
+                <li><p class="body">SQLite</p></li>
+                <li><p class="body">Vanilla JS</p></li>
+                <li><p class="body">Docker</p></li>
+                <li><p class="body">Codex + Grok</p></li>
+                <li><p class="body">bubblewrap</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="body">
+              <strong><em>Description:</em></strong>
+            </h3>
+            <p class="body">
+              Trakt, Plex Discover and TMDB lists were not personal enough, so I
+              built a recommender for one person: me. Every night at 04:00 it
+              retrains and publishes two ranked lists of 20 films and 10 series.
+              One tab covers titles already in my Plex library. The other covers
+              titles I don't own yet. Each title gets one verdict: programme it,
+              return it, or rate it liked, meh or didn't like if I have already
+              seen it. Every verdict becomes a training label. On the "Get it"
+              tab, Order print files a request in Seerr, with an 8-second undo
+              window when JavaScript is on. The library list is also mirrored
+              into a "Watch next" collection in Plex, which stays in sync as I
+              triage.
+            </p>
+            <p class="body">
+              My watch history is small, so population data carries most of the
+              weight. ALS item factors come from MovieLens 32M. A bag-of-tokens
+              model of TMDB metadata, with a ridge mapping into the ALS space,
+              gives vectors to new films and series that have no ratings. My
+              labels then train a logistic reranker on six features, blended
+              with popularity. No LLM runs when the page is served. The UI is a
+              "projection booth at night": each title is a reel of film with its
+              poster in a sprocketed frame, actions are enamelled levers, and
+              every triage action has a keyboard shortcut. It renders on the
+              server and works without JavaScript.
+            </p>
+            <p class="body">
+              An autoresearch service improves the ranking model while I sleep.
+              From 01:00 to 05:00 a coding agent, Codex or Grok, runs up to 30
+              experiments of 300 seconds each. It keeps a change only if it
+              improves where the films I actually started ranked in a held-out
+              month. The agent runs in a bubblewrap sandbox with none of my
+              keys, no git history and network access only to its model API and
+              PyPI. It may edit only the model package. My 20 most recent film
+              starts stay hidden from it. Only a deploy gate run from a copy the
+              agent cannot touch scores that data, and it ships a new model only
+              when the score beats the live one. Across the first ten nights,
+              between the agent's changes and my own, the baseline score fell
+              from 0.40 to 0.16, where 0 means every film I started was ranked
+              first.
+            </p>
+          </div>
+          <blockquote class="case-study__principle">
+            <p class="body">
+              The agent proposes and a fixed gate decides. Nothing ships on the
+              agent's own say-so.
+            </p>
+          </blockquote>
+          <div class="image-container">
+            <img
+              src="/assets/recommender/1.png"
+              alt="The In your library tab with The Untouchables at reel 01 beside a ranked list of 20 films, each marked new tonight or up from an earlier reel"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="/assets/recommender/2.png"
+              alt="The Get it tab with Twelve Monkeys at reel 01 and an Order print lever that files a request for a film not yet in the library"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="/assets/recommender/3.png"
+              alt="The Get it tab's series list with Secret Invasion at reel 01, its request status, and ten series marked new tonight, up or down"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="dialog-backdrop opsdeck" onclick="toggleModal('opsdeck')">
       <div
         class="window case-study__window closed"
@@ -314,7 +438,7 @@
             class="close"
             onclick="toggleModal('opsdeck')"
           ></button>
-          <h2 class="title"><span class="title-prefix">Case study #3: </span>opsdeck</h2>
+          <h2 class="title"><span class="title-prefix">Case study #4: </span>opsdeck</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
@@ -410,7 +534,7 @@
             class="close"
             onclick="toggleModal('go-home')"
           ></button>
-          <h2 class="title"><span class="title-prefix">Case study #4: </span>GoHome</h2>
+          <h2 class="title"><span class="title-prefix">Case study #5: </span>GoHome</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
@@ -515,7 +639,7 @@
             class="close"
             onclick="toggleModal('llm-cover-letters')"
           ></button>
-          <h2 class="title"><span class="title-prefix">Case study #5: </span>LLM Cover Letters</h2>
+          <h2 class="title"><span class="title-prefix">Case study #6: </span>LLM Cover Letters</h2>
         </div>
         <div class="window-pane">
           <div class="project-metadata">
