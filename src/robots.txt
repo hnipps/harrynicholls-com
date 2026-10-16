@@ -1,0 +1,11 @@
+# Content signals (https://contentsignals.org):
+# search: building a search index and showing links and short excerpts.
+# ai-input: using content as input to AI models for real-time answers
+#           (retrieval, grounding).
+# ai-train: training or fine-tuning AI models.
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+Sitemap: https://harrynicholls.com/sitemap.xml
