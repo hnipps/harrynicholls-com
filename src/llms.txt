@@ -1,0 +1,27 @@
+# Harry Nicholls
+
+> Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck. Based in the Toronto area, working remotely.
+
+Senior software engineer and technical leader with over 10 years' experience designing, building and shipping software. Works in TypeScript, React, Node.js and Go, on PostgreSQL and SQLite. Builds LLM agents, MCP servers, agent gateways and agentic CI workflows, and uses formal methods (Dafny, Lean 4) to verify AI-generated code.
+
+## Projects
+
+- [gitrove](https://gitrove.com): Daily digest of your GitHub network. Go and PostgreSQL backend, Qwik City frontend.
+- [Crosscheck](https://github.com/nicholls-inc/crosscheck): Claude Code plugin for formally verifying AI-generated code with Dafny and Lean 4, plus a contract graph verifier for Python.
+- [Portfolio](https://harrynicholls.com/portfolio.html): Case studies for gitrove, Crosscheck, opsdeck, GoHome and Covered, with tech stacks and screenshots.
+
+## Profiles
+
+- [GitHub](https://github.com/hnipps)
+- [LinkedIn](https://www.linkedin.com/in/harry-nicholls-91779959/)
+- [X](https://x.com/harrynicholls)
+- [Brainflow on Substack](https://brainflow.substack.com/): Newsletter on agentic AI, rationality, self-improvement and mindfulness
+
+## Contact
+
+- [Email](mailto:harry.m.nicholls@gmail.com): harry.m.nicholls@gmail.com
+
+## Optional
+
+- [Medium](https://harrynicholls.medium.com/): Older writing
+- [Site source](https://github.com/hnipps/harrynicholls-com)

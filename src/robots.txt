@@ -1,0 +1,9 @@
+# Cloudflare Bot Preference Sync prepends its managed rules and Content
+# Signals Policy (search=yes, ai-train=no) above this file. This group only
+# adds what the managed block doesn't declare.
+
+User-agent: *
+Content-Signal: ai-input=yes
+Allow: /
+
+Sitemap: https://harrynicholls.com/sitemap.xml
