@@ -2,7 +2,7 @@
 
 > Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck. Based in the Toronto area, working remotely.
 
-Senior software engineer and technical leader with over 10 years' experience designing, building and shipping software. Works in TypeScript, React, Node.js and Go, on PostgreSQL and SQLite. Builds LLM agents, MCP servers, agent gateways and agentic CI workflows, and uses formal methods (Dafny, Lean 4) to verify AI-generated code.
+Senior software engineer and technical leader with over 10 years' experience designing, building and shipping software. Works in TypeScript, React, Node.js, Python and Go, on PostgreSQL and SQLite. Builds LLM agents, MCP servers, agent gateways and agentic CI workflows, and uses formal methods (Dafny, Lean 4) to verify AI-generated code.
 
 ## Projects
 
