@@ -13,3 +13,8 @@ override.tf.json
 *_override.tf.json
 .terraformrc
 terraform.rc
+
+# Impeccable engine binary (downloaded by the launcher on first run)
+.claude/skills/impeccable/scripts/bin/
+# Local Claude Code settings
+.claude/settings.local.json

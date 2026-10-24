@@ -373,6 +373,42 @@ ul.tech-list {
   transition: opacity 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 5.3s;
 }
 
+/* Mirrors .github-container in the opposite corner. */
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: fixed;
+  left: 2.125rem;
+  top: 2rem;
+  height: 2rem;
+  color: #e7e7e7;
+  font-family: Chicago_12, sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+
+.home-link > i {
+  font-size: 0.875rem;
+  transition: transform 0.2s ease-out;
+}
+
+.home-link:hover,
+.home-link:focus-visible {
+  color: var(--highlight-color);
+}
+
+.home-link:hover > i,
+.home-link:focus-visible > i {
+  transform: translateX(-0.2rem);
+}
+
+.home-link:focus-visible {
+  outline: 1px dotted var(--highlight-color);
+  outline-offset: 0.25rem;
+}
+
 @media (max-width: 600px) {
   :root {
     --dialog-width: 100vw;
@@ -457,6 +493,11 @@ ul.tech-list {
 
   body.portfolio .link-container {
     grid-template-columns: 1fr;
+  }
+
+  /* Clear the fixed corner links above the heading. */
+  body.portfolio .content-wrapper {
+    padding-top: 2rem;
   }
 }
 
