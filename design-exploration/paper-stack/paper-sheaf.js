@@ -1,4 +1,4 @@
-import { materialURL } from './paper-materials.js?v=polish-20261030-1';
+import { materialURL } from './paper-materials.js?v=scroll-20261030-1';
 
 /** The discarded papers are navigation, with native buttons underneath their printed backs. */
 export class PaperSheaf {

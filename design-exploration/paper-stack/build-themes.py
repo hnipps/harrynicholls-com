@@ -23,8 +23,7 @@ def adapt_paths(page):
     page = page.replace('src="screenshots/', 'src="../../screenshots/')
     page = re.sub(r'(href|src)="(prototype\.(?:css|js)|reading-studies.css|symbols-pixels\.(?:css|js)|minimal-data\.(?:css|js))"', r'\1="../../\2"', page)
     page = page.replace('project-stories.html#', '#')
-    page = page.replace('href="index.html"', 'href="../../index.html" target="_top"')
-    page = page.replace('Back to directions', 'Design exploration')
+    page = re.sub(r'<a\b[^>]*href="index.html"[^>]*>Back to directions</a>', '', page)
     def unframe_external(match):
         anchor = match.group(0)
         if 'target=' not in anchor:

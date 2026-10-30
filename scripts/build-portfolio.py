@@ -13,7 +13,6 @@ def publish(source, destination):
     text = source.read_text()
     text = text.replace('../../../src/assets/', '/assets/')
     text = text.replace('../src/assets/', '/assets/')
-    text = text.replace('<a href="../../index.html" target="_top">Design exploration</a>', '')
     destination.write_text(text)
 
 

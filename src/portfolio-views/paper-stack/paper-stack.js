@@ -1,10 +1,10 @@
-import { peelGeometry } from './peel-geometry.js?v=polish-20261030-1';
+import { peelGeometry } from './peel-geometry.js?v=scroll-20261030-1';
 
-import { themes } from './paper-materials.js?v=polish-20261030-1';
-import { PaperSheaf } from './paper-sheaf.js?v=polish-20261030-1';
-import { paperPose,pullPaper } from './paper-return.js?v=polish-20261030-1';
+import { themes } from './paper-materials.js?v=scroll-20261030-1';
+import { PaperSheaf } from './paper-sheaf.js?v=scroll-20261030-1';
+import { paperPose,pullPaper } from './paper-return.js?v=scroll-20261030-1';
 
-import {restorePapers,peelPaper,retrievePaper} from './paper-state.js?v=polish-20261030-1';
+import {restorePapers,peelPaper,retrievePaper} from './paper-state.js?v=scroll-20261030-1';
 
 const storageKey = 'harry-paper-stack-theme';
 const stack = document.querySelector('#stack');
@@ -37,6 +37,40 @@ const nextView = () => deck[1];
 let cornerHovered = false;
 const boundDocuments = new WeakSet();
 const sheaf = new PaperSheaf(sheafRoot,themes,index => selectTheme(index),focusCurrentView,reducedMotion);
+
+// Wheel/touch events over navigation belong to the readable document, not its locked host.
+function scrollCurrentPage(x,y) {
+  sheaf.close();
+  getFrame(active).contentWindow.scrollBy({left:x,top:y,behavior:'instant'});
+}
+sheafRoot.addEventListener('wheel',event=>{
+  if (turning || gesture) return;
+  event.preventDefault();
+  const unit = event.deltaMode===1 ? 16 : event.deltaMode===2 ? innerHeight : 1;
+  scrollCurrentPage(event.deltaX*unit,event.deltaY*unit);
+},{passive:false});
+let sheafTouch = null;
+let sheafPanned = false;
+sheafRoot.addEventListener('pointerdown',event=>{if(event.pointerType!=='touch')sheafPanned=false;});
+sheafRoot.addEventListener('touchstart',event=>{
+  sheafPanned = false;
+  sheafTouch = event.touches.length===1 ? {x:event.touches[0].clientX,y:event.touches[0].clientY} : null;
+},{passive:true});
+sheafRoot.addEventListener('touchmove',event=>{
+  if (!sheafTouch || event.touches.length!==1 || turning) return;
+  const touch = event.touches[0],dx=sheafTouch.x-touch.clientX,dy=sheafTouch.y-touch.clientY;
+  if (!sheafPanned && Math.hypot(dx,dy)<8) return;
+  event.preventDefault();
+  sheafPanned = true;
+  sheafTouch = {x:touch.clientX,y:touch.clientY};
+  scrollCurrentPage(dx,dy);
+},{passive:false});
+sheafRoot.addEventListener('touchend',()=>{sheafTouch=null;});
+sheafRoot.addEventListener('touchcancel',()=>{sheafTouch=null;});
+sheafRoot.addEventListener('click',event=>{
+  if (!sheafPanned || event.detail===0) return;
+  event.preventDefault();event.stopImmediatePropagation();sheafPanned=false;
+},true);
 
 function rememberTheme(index) {
   try {

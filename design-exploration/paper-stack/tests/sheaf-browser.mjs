@@ -1,4 +1,4 @@
-import {Browser,sleep} from './browser-client.mjs';
+import {Browser,sleep,scrollCurrentFrame} from './browser-client.mjs';
 import assert from 'node:assert/strict';
 import {exposedPaperTargets} from './paper-targets.mjs';
 import {mkdirSync,writeFileSync} from 'node:fs';
@@ -8,7 +8,7 @@ const b=await Browser.launch(),p=await b.newPage({width:1440,height:1000});
 const results=[];
 async function check(name,fn){await fn();results.push('PASS '+name);console.log('PASS',name);}
 async function theme(name){for(let n=0;n<180;n++){if(await p.eval(s=>document.body.dataset.theme===s&&!document.body.classList.contains('is-turning'),name))return;await sleep(25);}throw Error('Theme did not settle: '+name);}
-async function scroll(y){await p.eval(n=>document.querySelector('.is-current').contentWindow.scrollTo(0,n),y);await sleep(100);}
+const scroll=y=>scrollCurrentFrame(p,y);
 async function peel(name){await scroll(0);await p.eval(()=>document.querySelector('#peel-corner').click());await theme(name);}
 async function mouse(type,x,y){await p.send('Input.dispatchMouseEvent',{type,x,y,button:type==='mouseMoved'?'none':'left',clickCount:1});}
 async function cards(){return p.eval(()=>[...document.querySelectorAll('[data-paper]')].map(button=>Number(button.dataset.paper)));}

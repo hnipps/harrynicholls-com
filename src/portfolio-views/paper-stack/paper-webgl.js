@@ -1,5 +1,5 @@
-import {sheetMesh,meshTriangles} from './paper-flex.js?v=polish-20261030-1';
-import {materialSVG} from './paper-materials.js?v=polish-20261030-1';
+import {sheetMesh,meshTriangles} from './paper-flex.js?v=scroll-20261030-1';
+import {materialSVG} from './paper-materials.js?v=scroll-20261030-1';
 
 const vertex=`attribute vec3 position;attribute vec2 uv;attribute float facing;
 uniform vec2 viewport;uniform float perspective;varying vec2 texcoord;varying float normal;

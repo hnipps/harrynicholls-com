@@ -48,6 +48,7 @@ node design-exploration/paper-stack/tests/polish-browser.mjs
 node design-exploration/paper-stack/tests/flex-browser.mjs
 node design-exploration/paper-stack/tests/locations-browser.mjs
 node design-exploration/paper-stack/tests/peel-polish-browser.mjs
+node design-exploration/paper-stack/tests/scroll-browser.mjs
 ```
 
 Run the browser checks from the repository root with Node 22+, Chrome/Chromium and the repository served on port 3031 (`python3 -m http.server 3031 --bind 127.0.0.1`). They use the installed design-taste-frontend skill’s dependency-free CDP client; set `DESIGN_TASTE_SKILL` to its directory if it is not installed under `~/.agents/skills/`. `CHROME_PATH` can select a browser executable. `PAPER_STACK_URL` can point the tests at a different server. See [site checks](research/browser-checks.txt), [sheaf checks](research/sheaf-browser-checks.txt), [polish checks](research/polish-browser-checks.txt), [current stable fan review](research/stable-fan-review.md), [earlier polish review](research/polish-review.md), [earlier hover/flip review](research/paper-flip-review.md) and the [earlier design review](research/design-review.md).

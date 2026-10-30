@@ -1,6 +1,6 @@
-import { materialURL } from './paper-materials.js?v=polish-20261030-1';
-import {pagePicture} from './paper-snapshot.js?v=polish-20261030-1';
-import {flexiblePaper} from './paper-webgl.js?v=polish-20261030-1';
+import { materialURL } from './paper-materials.js?v=scroll-20261030-1';
+import {pagePicture} from './paper-snapshot.js?v=scroll-20261030-1';
+import {flexiblePaper} from './paper-webgl.js?v=scroll-20261030-1';
 
 /** Capture the actual paper corner, including a hover transition that is still in flight. */
 export function paperPose(button) {
