@@ -1,5 +1,6 @@
 """Build the paper-stack homepage and its assets into the existing static deployment root."""
 from pathlib import Path
+import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPLORATION = ROOT / 'design-exploration'
@@ -26,6 +27,11 @@ for source in SOURCE.iterdir():
 for source in (SOURCE / 'themes').iterdir():
     if source.suffix in {'.html', '.css', '.js'}:
         publish(source, OUTPUT / 'paper-stack' / 'themes' / source.name)
+
+# Dot matrix's existing graphic is a runtime asset, rather than a review capture.
+(OUTPUT / 'screenshots').mkdir(parents=True, exist_ok=True)
+shutil.copyfile(EXPLORATION / 'screenshots' / 'symbols-pixels-mark.jpg',
+                OUTPUT / 'screenshots' / 'symbols-pixels-mark.jpg')
 
 page = (SOURCE / 'index.html').read_text()
 page = page.replace('<head>', '<head>\n  <base href="/portfolio-views/paper-stack/">')
