@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "deploy": "aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control 'max-age=0,no-cache,no-store,must-revalidate' --include '*' --exclude '.git/*' --exclude 'terraform/*' --exclude '.DS_Store' --exclude '.gitignore' --exclude '.github/*' --exclude 'manifest.arkb' --recursive"
+    "deploy": "npm run build && aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control 'max-age=0,no-cache,no-store,must-revalidate' --include '*' --exclude '.git/*' --exclude 'terraform/*' --exclude '.DS_Store' --exclude '.gitignore' --exclude '.github/*' --exclude 'manifest.arkb' --recursive",
+    "build": "python3 scripts/build-portfolio.py"
   }
 }

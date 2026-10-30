@@ -144,7 +144,7 @@ try {
   const fallback=await p.eval(()=>({main:!!document.querySelector('#first-sheet').contentDocument.querySelector('main'),links:document.querySelectorAll('.no-script a').length}));
   assert.equal(fallback.main,true);assert.equal(fallback.links,6);
  });
- await check('existing variants and production source remain untouched',async()=>{
+ await check('standalone variants and committed site files match preservation fixtures',async()=>{
   const hashes=JSON.parse(readFileSync(new URL('./preserved.json',import.meta.url),'utf8'));
   for(const [file,hash] of Object.entries(hashes))assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'),hash,file);
 

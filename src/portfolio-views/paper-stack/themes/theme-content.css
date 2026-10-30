@@ -1,0 +1,25 @@
+/* Only the experiment's copies load this file. Every project remains in its chosen theme. */
+html { scroll-behavior:auto; }
+body { min-height:100vh; }
+.complete-story { scroll-margin-top:24px; }
+.complete-story .story-content { padding-top:24px; }
+.complete-story .image-container { grid-column:1 / -1; }
+.personal-letter .complete-story { margin-top:64px; }
+.personal-letter .complete-story h2 { margin-bottom:14px; }
+.personal-letter .complete-story summary { color:var(--accent); }
+/* The peel owns the motion. A newly exposed page is already painted and ready to read. */
+.arrive,.atlas-arrive,.matrix-arrive,.screen-strip img { animation:none !important; }
+@media(max-width:600px) {
+ .complete-story .story-content { display:block; }
+ .complete-story h2 { overflow-wrap:anywhere; }
+}
+@media(max-width:600px) {
+ /* The lifted corner has a small physical footprint; keep it clear of the masthead. */
+ .navigation { padding-top:64px !important; }
+}
+/* Letter questions contain their complete notes, rather than a second index at the foot. */
+.personal-letter .letter-entry .complete-story { margin:24px 0 32px; padding:0; }
+.personal-letter .letter-entry .story-content { padding-top:18px; display:block; }
+.personal-letter .letter-entry .project-metadata { margin-bottom:28px; }
+.personal-letter .letter-entry .story-content h3 { margin-top:28px; }
+.personal-letter .letter-entry .image-container { margin-top:28px; }

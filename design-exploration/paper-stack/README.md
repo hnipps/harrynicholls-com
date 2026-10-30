@@ -1,6 +1,6 @@
 # Paper stack
 
-A separate, working portfolio experiment. Open <http://127.0.0.1:3031/design-exploration/paper-stack/> while serving the repository root on port 3031.
+The source for the live portfolio homepage and its standalone design exploration. Open <http://127.0.0.1:3031/design-exploration/paper-stack/> while serving the repository root on port 3031.
 
 The first visit starts as **A personal letter**, with no papers in the bottom-right. After 550ms, its top-left corner lifts and settles with a short spring. The corner belongs to the document and scrolls away as the visitor reads. Click the corner to play the peel, or drag it down/right. Release below 36% of the viewport diagonal to spring back; release beyond that point to finish. Dragging remains reversible until release. Each newly exposed sheet has a slightly different resting angle and spring frequency.
 
@@ -57,3 +57,11 @@ The [flexible paper review](research/flexible-review.md) and [flight checks](res
 This is a local design study. Nothing has been deployed.
 
 The [page-location checks](tests/locations-browser.mjs) verify repeated retrieval, dynamic curl targets, bare HTML as the permanent floor, reload, reset and migration of old saved sessions. The [location review](research/locations-review.md) describes the state change.
+
+## Site homepage
+
+The paper stack is the main site experience. `npm run build` generates `src/index.html` and `src/portfolio-views/` from this source and the shared theme files. `npm run deploy` runs that build before the existing static upload. The root homepage keeps canonical, social and structured metadata from `site-head.html`; only standalone theme documents retain `noindex`.
+
+To review the deployable site locally, run `npm run build`, then `python3 -m http.server 3033 --bind 127.0.0.1 --directory src` and open `http://127.0.0.1:3033/`. Set `PAPER_STACK_URL=http://127.0.0.1:3033/` to run browser checks against the actual homepage. Browser checking still needs access to the source tree for its preservation fixtures. Edit source files here rather than the generated copies in `src/portfolio-views/`.
+
+This integration supersedes earlier research notes describing the stack as an isolated local-only study. Those notes are historical validation records. The gallery remains available under `design-exploration/`, while the deployed root serves the full paper experience directly. No deployment is performed by creating the PR.
