@@ -1,0 +1,4 @@
+1440px: five options; four source filters; all prototype frames load; phone/desktop switching; no retired choices, overflow, missing local assets, or runtime errors
+768px: five options; four source filters; all prototype frames load; phone/desktop switching; no retired choices, overflow, missing local assets, or runtime errors
+390px: five options; four source filters; all prototype frames load; phone/desktop switching; no retired choices, overflow, missing local assets, or runtime errors
+Existing shortlisted prototypes, shared project stories/styles/scripts, and production source hashes unchanged.

@@ -1,0 +1,39 @@
+{
+  "slug": "symbols-pixels",
+  "name": "Dot matrix",
+  "board": "Symbols and Pixels",
+  "seed": 7401,
+  "direction": "The page is the object",
+  "concept": "A software portfolio drawn as a living print specimen.",
+  "idea": "Harry\u2019s initials and his real product screens become a language of dots, pixels, and readable software.",
+  "palette": [
+    "#ffffff",
+    "#151515",
+    "#cf202f"
+  ],
+  "type": "Arial throughout; a custom bitmap monogram carries the expressive role.",
+  "layout": "A wide two-part opening with a large raster identity specimen, followed by paired product prints and a quiet case-study reading surface.",
+  "interaction": "Switch actual project interfaces between dot-matrix prints and their original screenshots.",
+  "strength": "Playful and tactile without relying on retro window chrome; the visual language is made from the person and the software.",
+  "tradeoff": "Halftone images communicate character rather than interface detail; the original-screen switch is essential for close reading.",
+  "references": [
+    {
+      "id": 4927365,
+      "title": "Studies in Perception, 1966",
+      "url": "https://www.are.na/block/4927365",
+      "thumbnail": "references/symbols-4927365.jpg"
+    },
+    {
+      "id": 12819742,
+      "title": "TASE \u201920",
+      "url": "https://www.are.na/block/12819742",
+      "thumbnail": "references/symbols-12819742.jpg"
+    },
+    {
+      "id": 2783943,
+      "title": "A Survey of Life-Forms, J. H. Conway",
+      "url": "https://www.are.na/block/2783943",
+      "thumbnail": "references/symbols-2783943.jpg"
+    }
+  ]
+}

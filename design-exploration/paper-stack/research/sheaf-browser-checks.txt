@@ -1,0 +1,17 @@
+PASS first visit has no sheaf, papers or visible Change view label
+PASS the corner precedes the page in keyboard reading order
+PASS corner follows the document top and disappears on scroll
+PASS letter reverse has its muted plus print, reflected with the fold
+PASS a discard leaves briefly before arriving as one unlabelled paper
+PASS discarded paper stays in reach while the curl scrolls away
+PASS mouse hover spreads the paper without changing the view
+PASS the selected paper flies back into the page and swaps the history
+PASS revisiting sheets creates no duplicate papers
+PASS nested corners expose five named, unlabelled papers at 1440px
+PASS nested corners expose five named, unlabelled papers at 768px
+PASS nested corners expose five named, unlabelled papers at 390px
+PASS arrow keys move through the papers and Escape closes the fan
+PASS first touch spreads the sheaf and each paper has an exposed thumb target
+PASS theme and ordered paper history survive a reload
+PASS keyboard selection works without motion and reset empties the sheaf
+No browser runtime exceptions.

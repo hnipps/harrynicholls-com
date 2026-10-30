@@ -1,0 +1,2 @@
+PASS desktop: continuous source pose, connected deforming mesh, five flight poses, cleanup, live page and resting corner
+PASS mobile: continuous source pose, connected deforming mesh, five flight poses, cleanup, live page and resting corner

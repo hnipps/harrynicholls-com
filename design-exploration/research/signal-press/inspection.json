@@ -1,0 +1,2197 @@
+{
+ "url": "http://127.0.0.1:3031/design-exploration/signal-press.html",
+ "at": "2026-10-30T15:10:01.797Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.4,
+    0.38,
+    0.58,
+    1,
+    1,
+    1,
+    0.8,
+    0.59
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 19,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 6567,
+     "screens": 7.3,
+     "words": 480,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 8,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "v2-1.png",
+      "1.png",
+      "1.png",
+      "1.png",
+      "1.png",
+      "v2-1.png",
+      "v2-2.png",
+      "v2-3.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Harry Nicholls",
+     "words": 2,
+     "chars": 14,
+     "lines": 2,
+     "size": 244,
+     "vw": 16.9,
+     "font": "Impact",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.87,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.54,
+     "top": 125,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Harry Nicholls",
+     "words": 2,
+     "lines": 2,
+     "size": 244,
+     "font": "Impact"
+    },
+    "headings": [
+     {
+      "text": "Harry Nicholls",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 244,
+      "vw": 16.9,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.87,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.54,
+      "top": 125,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Selected work",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.24,
+      "top": 645,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "gitrove",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 100,
+      "vw": 6.9,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.79,
+      "top": 820,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Crosscheck",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 100,
+      "vw": 6.9,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.79,
+      "top": 1030,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Crosscheck",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.11,
+      "top": 1056,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Recommender",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 100,
+      "vw": 6.9,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.79,
+      "top": 1240,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "opsdeck",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 100,
+      "vw": 6.9,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.79,
+      "top": 1451,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "GoHome",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 100,
+      "vw": 6.9,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.79,
+      "top": 1662,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "LLM Cover Letters",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 100,
+      "vw": 6.9,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.79,
+      "top": 1872,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "About me",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 2197,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Inside gitrove",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2604,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "How it works",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.59,
+      "top": 2751,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Let’s talk",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 6294,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "harry.m.nicholls@gmail.com",
+      "words": 1,
+      "chars": 26,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.48,
+      "top": 6385,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 14,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Arial",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "Impact",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      18,
+      24,
+      28,
+      32,
+      40,
+      64,
+      100,
+      244
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "Arial",
+      "size": 18,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13.2
+     },
+     "measureChars": 76,
+     "max": {
+      "size": 244,
+      "vw": 16.9,
+      "font": "Impact",
+      "text": "HarryNicholls"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ddf252",
+     "bodyBgHsl": {
+      "h": 68,
+      "s": 0.86,
+      "l": 0.64
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#172218",
+       "top": 2157,
+       "hsl": {
+        "h": 125,
+        "s": 0.19,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#f5f7df",
+       "top": 2572,
+       "hsl": {
+        "h": 65,
+        "s": 0.6,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#172218",
+       "share": 0.85
+      },
+      {
+       "color": "#ddf252",
+       "share": 0.15
+      }
+     ],
+     "button": {
+      "bg": "#172218",
+      "hsl": {
+       "h": 125,
+       "s": 0.19,
+       "l": 0.11
+      },
+      "fg": "#ddf252"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 5,
+     "radius": 0,
+     "height": 49,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Explore my work",
+      "All work",
+      "Developer tools",
+      "At home"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 8,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 4,
+     "fixed": false,
+     "height": 101,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 6567,
+    "margins": {
+     "left": 28,
+     "right": 28
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 101,
+      "height": 545,
+      "words": 29,
+      "media": 0,
+      "middle": 64,
+      "heading": {
+       "text": "Nicholls",
+       "size": 244,
+       "tag": "h1"
+      },
+      "left": 28,
+      "right": 140,
+      "textLeft": 28,
+      "textRight": 140,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#work.work",
+      "tag": "section",
+      "top": 645,
+      "height": 1391,
+      "words": 60,
+      "media": 5,
+      "middle": 380,
+      "heading": {
+       "text": "gitrove",
+       "size": 100,
+       "tag": "span"
+      },
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 28,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#about.about",
+      "tag": "section",
+      "top": 2157,
+      "height": 295,
+      "words": 74,
+      "media": 0,
+      "middle": 242,
+      "heading": {
+       "text": "About me",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 68,
+      "right": 269,
+      "textLeft": 68,
+      "textRight": 269,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#gitrove-story.story",
+      "tag": "section",
+      "top": 2572,
+      "height": 3554,
+      "words": 312,
+      "media": 3,
+      "middle": 0,
+      "heading": {
+       "text": "Inside gitrove",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 60,
+      "right": 60,
+      "textLeft": 60,
+      "textRight": 238,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer#contact",
+      "tag": "footer",
+      "top": 6246,
+      "height": 321,
+      "words": 12,
+      "media": 0,
+      "middle": 547,
+      "heading": {
+       "text": "Let’s talk",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 28,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Harry Nicholls",
+      "size": 244,
+      "top": 125,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 524,
+      "n": 7
+     },
+     {
+      "x": 28,
+      "n": 3
+     },
+     {
+      "x": 60,
+      "n": 2
+     },
+     {
+      "x": 535,
+      "n": 2
+     },
+     {
+      "x": 864,
+      "n": 1
+     },
+     {
+      "x": 1220,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 16,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.14,
+    "voidBox": {
+     "x": 420,
+     "y": 600,
+     "w": 600,
+     "h": 300
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 6,
+   "filled": [
+    0.39,
+    0.34,
+    0.79,
+    0.92,
+    0.92,
+    0.64
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 19,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 5581,
+     "screens": 5.5,
+     "words": 480,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 8,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "v2-1.png",
+      "1.png",
+      "1.png",
+      "1.png",
+      "1.png",
+      "v2-1.png",
+      "v2-2.png",
+      "v2-3.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Harry Nicholls",
+     "words": 2,
+     "chars": 14,
+     "lines": 2,
+     "size": 138.2,
+     "vw": 18,
+     "font": "Impact",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.87,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.57,
+     "top": 169,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Harry Nicholls",
+     "words": 2,
+     "lines": 2,
+     "size": 138.2,
+     "font": "Impact"
+    },
+    "headings": [
+     {
+      "text": "Harry Nicholls",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 138.2,
+      "vw": 18,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.87,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.57,
+      "top": 169,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Selected work",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 506,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "gitrove",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 53.8,
+      "vw": 7,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 675,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Crosscheck",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 53.8,
+      "vw": 7,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 885,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Crosscheck",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.21,
+      "top": 899,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Recommender",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 53.8,
+      "vw": 7,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 1095,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "opsdeck",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 53.8,
+      "vw": 7,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 1306,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "GoHome",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 53.8,
+      "vw": 7,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 1517,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "LLM Cover Letters",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 53.8,
+      "vw": 7,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.6,
+      "top": 1727,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "About me",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.25,
+      "top": 2040,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Inside gitrove",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 2559,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "How it works",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 2958,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Let’s talk",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 5344,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "harry.m.nicholls@gmail.com",
+      "words": 1,
+      "chars": 26,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.68,
+      "top": 5418,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 14,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Arial",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "Impact",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      18,
+      28,
+      32,
+      40,
+      48,
+      54,
+      138
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Arial",
+      "size": 18,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13.2
+     },
+     "measureChars": 72,
+     "max": {
+      "size": 138.2,
+      "vw": 18,
+      "font": "Impact",
+      "text": "HarryNicholls"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ddf252",
+     "bodyBgHsl": {
+      "h": 68,
+      "s": 0.86,
+      "l": 0.64
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#172218",
+       "top": 2000,
+       "hsl": {
+        "h": 125,
+        "s": 0.19,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#f5f7df",
+       "top": 2527,
+       "hsl": {
+        "h": 65,
+        "s": 0.6,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#172218",
+       "share": 0.85
+      },
+      {
+       "color": "#ddf252",
+       "share": 0.15
+      }
+     ],
+     "button": {
+      "bg": "#172218",
+      "hsl": {
+       "h": 125,
+       "s": 0.19,
+       "l": 0.11
+      },
+      "fg": "#ddf252"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 5,
+     "radius": 0,
+     "height": 49,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Explore my work",
+      "All work",
+      "Developer tools",
+      "At home"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 8,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 4,
+     "fixed": false,
+     "height": 101,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 5581,
+    "margins": {
+     "left": 28,
+     "right": 28
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 101,
+      "height": 405,
+      "words": 30,
+      "media": 0,
+      "middle": 32,
+      "heading": {
+       "text": "Harry",
+       "size": 138,
+       "tag": "h1"
+      },
+      "left": 28,
+      "right": 52,
+      "textLeft": 28,
+      "textRight": 52,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#work.work",
+      "tag": "section",
+      "top": 506,
+      "height": 1375,
+      "words": 60,
+      "media": 5,
+      "middle": 11,
+      "heading": {
+       "text": "gitrove",
+       "size": 54,
+       "tag": "span"
+      },
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 28,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#about.about",
+      "tag": "section",
+      "top": 2000,
+      "height": 407,
+      "words": 74,
+      "media": 0,
+      "middle": 74,
+      "heading": {
+       "text": "About me",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 68,
+      "right": 92,
+      "textLeft": 68,
+      "textRight": 92,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#gitrove-story.story",
+      "tag": "section",
+      "top": 2527,
+      "height": 2649,
+      "words": 312,
+      "media": 3,
+      "middle": 0,
+      "heading": {
+       "text": "Inside gitrove",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 60,
+      "right": 60,
+      "textLeft": 60,
+      "textRight": 61,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer#contact",
+      "tag": "footer",
+      "top": 5296,
+      "height": 285,
+      "words": 12,
+      "media": 0,
+      "middle": 49,
+      "heading": {
+       "text": "Let’s talk",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 28,
+      "textLeft": 28,
+      "textRight": 28,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Harry Nicholls",
+      "size": 138,
+      "top": 169,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 60,
+      "n": 9
+     },
+     {
+      "x": 28,
+      "n": 3
+     },
+     {
+      "x": 311,
+      "n": 2
+     },
+     {
+      "x": 497,
+      "n": 1
+     },
+     {
+      "x": 548,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 16,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.38,
+    0.36,
+    0.59,
+    0.86,
+    0.92,
+    0.92,
+    0.55
+   ],
+   "motion": {
+    "elements": 19,
+    "css": 19,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 5635,
+     "screens": 6.7,
+     "words": 480,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "v2-1.png",
+      "v2-2.png",
+      "v2-3.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Harry Nicholls",
+     "words": 2,
+     "chars": 14,
+     "lines": 2,
+     "size": 109.2,
+     "vw": 28,
+     "font": "Impact",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.87,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 142,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Harry Nicholls",
+     "words": 2,
+     "lines": 2,
+     "size": 109.2,
+     "font": "Impact"
+    },
+    "headings": [
+     {
+      "text": "Harry Nicholls",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 109.2,
+      "vw": 28,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.87,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 142,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A product engineer building AI products, agent infrastructure, and useful things for everyday life.",
+      "words": 14,
+      "chars": 99,
+      "lines": 4,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 368,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Selected work",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.55,
+      "top": 761,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "gitrove",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.58,
+      "top": 988,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Crosscheck",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.58,
+      "top": 1162,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Recommender",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.58,
+      "top": 1337,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "opsdeck",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.58,
+      "top": 1536,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "GoHome",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.58,
+      "top": 1710,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "LLM Cover Letters",
+      "words": 3,
+      "chars": 17,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.58,
+      "top": 1866,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "About me",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 2103,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Inside gitrove",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 2687,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "How it works",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 3136,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Let’s talk",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 5391,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "harry.m.nicholls@gmail.com",
+      "words": 1,
+      "chars": 26,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Impact",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.67,
+      "top": 5457,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 14,
+     "maxLines": 4,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Arial",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "Impact",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      18,
+      24,
+      28,
+      36,
+      40,
+      109
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Arial",
+      "size": 18,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13.2
+     },
+     "measureChars": 35,
+     "max": {
+      "size": 109.2,
+      "vw": 28,
+      "font": "Impact",
+      "text": "HarryNicholls"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ddf252",
+     "bodyBgHsl": {
+      "h": 68,
+      "s": 0.86,
+      "l": 0.64
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#172218",
+       "top": 2075,
+       "hsl": {
+        "h": 125,
+        "s": 0.19,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#f5f7df",
+       "top": 2663,
+       "hsl": {
+        "h": 65,
+        "s": 0.6,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#172218",
+       "share": 0.85
+      },
+      {
+       "color": "#ddf252",
+       "share": 0.15
+      }
+     ],
+     "button": {
+      "bg": "#172218",
+      "hsl": {
+       "h": 125,
+       "s": 0.19,
+       "l": 0.11
+      },
+      "fg": "#ddf252"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 2,
+     "radius": 0,
+     "height": 49,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Explore my work"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 3,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 4,
+     "fixed": false,
+     "height": 122,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 5635,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "header.navigation",
+      "tag": "header",
+      "top": 0,
+      "height": 122,
+      "words": 5,
+      "media": 0,
+      "middle": 10,
+      "heading": null,
+      "left": 20,
+      "right": 196,
+      "textLeft": 20,
+      "textRight": 196,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 122,
+      "height": 639,
+      "words": 30,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Harry",
+       "size": 109,
+       "tag": "h1"
+      },
+      "left": 20,
+      "right": 25,
+      "textLeft": 20,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#work.work",
+      "tag": "section",
+      "top": 761,
+      "height": 1234,
+      "words": 60,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "gitrove",
+       "size": 36,
+       "tag": "span"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#about.about",
+      "tag": "section",
+      "top": 2075,
+      "height": 509,
+      "words": 74,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "About me",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 40,
+      "right": 45,
+      "textLeft": 40,
+      "textRight": 45,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#gitrove-story.story",
+      "tag": "section",
+      "top": 2663,
+      "height": 2600,
+      "words": 312,
+      "media": 3,
+      "middle": 0,
+      "heading": {
+       "text": "Inside gitrove",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 38,
+      "right": 38,
+      "textLeft": 38,
+      "textRight": 38,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer#contact",
+      "tag": "footer",
+      "top": 5343,
+      "height": 292,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Let’s talk",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 110,
+      "textLeft": 20,
+      "textRight": 110,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Harry Nicholls",
+      "size": 109,
+      "top": 142,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 38,
+      "n": 11
+     },
+     {
+      "x": 20,
+      "n": 4
+     },
+     {
+      "x": 272,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 16,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/explorations/signal-press/desktop-fold.jpg",
+   "pages": [
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/explorations/signal-press/desktop-page-01.jpg",
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/explorations/signal-press/desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/explorations/signal-press/tablet-fold.jpg",
+   "pages": [
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/explorations/signal-press/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/explorations/signal-press/mobile-fold.jpg",
+   "pages": [
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/explorations/signal-press/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

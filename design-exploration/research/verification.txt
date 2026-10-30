@@ -1,0 +1,17 @@
+working-index at 1440: no overflow; story and controls work by keyboard
+open-studio at 1440: no overflow; story and controls work by keyboard
+personal-letter at 1440: no overflow; story and controls work by keyboard
+signal-press at 1440: no overflow; story and controls work by keyboard
+night-shift at 1440: no overflow; story and controls work by keyboard
+working-index at 768: no overflow; story and controls work by keyboard
+open-studio at 768: no overflow; story and controls work by keyboard
+personal-letter at 768: no overflow; story and controls work by keyboard
+signal-press at 768: no overflow; story and controls work by keyboard
+night-shift at 768: no overflow; story and controls work by keyboard
+working-index at 390: no overflow; story and controls work by keyboard
+open-studio at 390: no overflow; story and controls work by keyboard
+personal-letter at 390: no overflow; story and controls work by keyboard
+signal-press at 390: no overflow; story and controls work by keyboard
+night-shift at 390: no overflow; story and controls work by keyboard
+Gallery: source filters, compare selection, desktop/phone switching, and responsive layout pass
+All six studies: local links/assets return HTTP 200; content remains visible without JavaScript

@@ -1,0 +1,191 @@
+[
+  {
+    "slug": "working-index",
+    "name": "Working index",
+    "board": "Crosscheck",
+    "seed": 7310,
+    "direction": "The quiet instrument",
+    "concept": "A useful directory, with the engineer close at hand.",
+    "idea": "Harry\u2019s collection of personally useful tools becomes a searchable public index.",
+    "palette": [
+      "#f7f8f4",
+      "#222d25",
+      "#386146"
+    ],
+    "type": "Arial throughout; compact titles, generous line spacing.",
+    "layout": "A calm introduction above a searchable six-project index and a strip of real interfaces.",
+    "interaction": "Search the project index by name, purpose, or category.",
+    "strength": "Fast to scan; puts engineering substance before presentation.",
+    "tradeoff": "The least expressive option. The work has to carry the personality.",
+    "references": [
+      {
+        "id": 51969734,
+        "title": "Physical Intelligence",
+        "url": "https://www.are.na/block/51969734"
+      },
+      {
+        "id": 51969625,
+        "title": "Hamilton Ulmer",
+        "url": "https://www.are.na/block/51969625"
+      },
+      {
+        "id": 51969613,
+        "title": "Filip Gres",
+        "url": "https://www.are.na/block/51969613"
+      }
+    ]
+  },
+  {
+    "slug": "personal-letter",
+    "name": "A personal letter",
+    "board": "Crosscheck",
+    "seed": 7311,
+    "direction": "The page is the object",
+    "concept": "A personal journal, organised around the questions behind the projects.",
+    "idea": "Harry\u2019s account of engineering, fatherhood, and making becomes a personal letter with working links.",
+    "palette": [
+      "#f6f2e7",
+      "#302f2a",
+      "#a03932"
+    ],
+    "type": "Georgia prose and questions, with small Arial project labels. Warm paper and muted red links.",
+    "layout": "An intimate opening letter flows into six expandable project questions, then pictures and longer notes.",
+    "interaction": "Open a question to reveal the project behind it; follow its story or unfold the complete gitrove case study.",
+    "strength": "A personal voice and a useful archive; the questions make the projects approachable.",
+    "tradeoff": "More reading, with project previews behind native disclosures. A separate picture collection supports visual browsing.",
+    "references": [
+      {
+        "id": 51969640,
+        "title": "Einar Wahlstr\u00f8m",
+        "url": "https://wahlstroem.no/",
+        "thumbnail": "references/51969640.png"
+      },
+      {
+        "id": 51969625,
+        "title": "Hamilton Ulmer",
+        "url": "https://www.hamiltonulmer.com/",
+        "thumbnail": "references/51969625.png"
+      },
+      {
+        "id": 19290565,
+        "title": "Balfron Tower: a building archive",
+        "url": "https://www.balfrontower.org/",
+        "thumbnail": "references/19290565.png"
+      }
+    ]
+  },
+  {
+    "slug": "signal-press",
+    "name": "Signal press",
+    "board": "Slow Victory",
+    "seed": 7320,
+    "direction": "The name as a monument",
+    "concept": "A software portfolio with the force of a printed poster.",
+    "idea": "Harry\u2019s name and the names of his own tools become the typography of a software poster.",
+    "palette": [
+      "#ddf252",
+      "#172218",
+      "#f7f7ef"
+    ],
+    "type": "Impact display lettering, with Arial text. Flat colour and tightly set type.",
+    "layout": "A large two-line name on an acid-yellow field, then oversized project names interrupted by real screens.",
+    "interaction": "Filter the project roll by all work, developer tools, or home projects.",
+    "strength": "Most assertive; memorable at a glance and distinct from a typical engineering portfolio.",
+    "tradeoff": "The poster voice is louder than the quiet personal practice. It needs restraint in the case studies.",
+    "references": [
+      {
+        "id": 17004512,
+        "title": "Maison Jar lettering",
+        "url": "https://www.are.na/block/17004512"
+      },
+      {
+        "id": 5982207,
+        "title": "Churchward type specimen",
+        "url": "https://www.are.na/block/5982207"
+      },
+      {
+        "id": 12307042,
+        "title": "New world energy",
+        "url": "https://www.are.na/block/12307042"
+      }
+    ]
+  },
+  {
+    "slug": "symbols-pixels",
+    "name": "Dot matrix",
+    "board": "Symbols and Pixels",
+    "seed": 7401,
+    "direction": "The page is the object",
+    "concept": "A software portfolio drawn as a living print specimen.",
+    "idea": "Harry\u2019s initials and his real product screens become a language of dots, pixels, and readable software.",
+    "palette": [
+      "#ffffff",
+      "#151515",
+      "#cf202f"
+    ],
+    "type": "Arial throughout; a custom bitmap monogram carries the expressive role.",
+    "layout": "A wide two-part opening with a large raster identity specimen, followed by paired product prints and a quiet case-study reading surface.",
+    "interaction": "Switch actual project interfaces between dot-matrix prints and their original screenshots.",
+    "strength": "Playful and tactile without relying on retro window chrome; the visual language is made from the person and the software.",
+    "tradeoff": "Halftone images communicate character rather than interface detail; the original-screen switch is essential for close reading.",
+    "references": [
+      {
+        "id": 4927365,
+        "title": "Studies in Perception, 1966",
+        "url": "https://www.are.na/block/4927365",
+        "thumbnail": "references/symbols-4927365.jpg"
+      },
+      {
+        "id": 12819742,
+        "title": "TASE \u201920",
+        "url": "https://www.are.na/block/12819742",
+        "thumbnail": "references/symbols-12819742.jpg"
+      },
+      {
+        "id": 2783943,
+        "title": "A Survey of Life-Forms, J. H. Conway",
+        "url": "https://www.are.na/block/2783943",
+        "thumbnail": "references/symbols-2783943.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "minimal-data",
+    "name": "Project atlas",
+    "board": "Minimal Data",
+    "seed": 7412,
+    "direction": "The split stage",
+    "concept": "An engineering practice, seen through its actual materials.",
+    "idea": "Harry\u2019s six real projects and their listed technologies become a readable project atlas.",
+    "palette": [
+      "#f4f5f3",
+      "#14211f",
+      "#154ada"
+    ],
+    "type": "Arial throughout; large names, compact tabular figures, white-on-cobalt data.",
+    "layout": "A stable introductory column beside a large incidence matrix, followed by real interface images and a full project reading panel.",
+    "interaction": "Choose a technology to highlight the matching projects and read an exact count from the six-project inventory.",
+    "strength": "Makes the engineering practice tangible and explorable, using real relationships rather than decorative charts.",
+    "tradeoff": "More analytical than the personal letter. Five selected technologies are a useful lens, not a complete list of everything each project uses.",
+    "references": [
+      {
+        "id": 2460808,
+        "title": "Scientific diagram on blue",
+        "url": "https://www.are.na/block/2460808",
+        "thumbnail": "references/minimal-2460808.jpg"
+      },
+      {
+        "id": 38095013,
+        "title": "Diagram Engineer",
+        "url": "https://www.are.na/block/38095013",
+        "thumbnail": "references/minimal-38095013.jpg"
+      },
+      {
+        "id": 27214693,
+        "title": "SPIN / Neri Oxman infographic",
+        "url": "https://www.are.na/block/27214693",
+        "thumbnail": "references/minimal-27214693.jpg"
+      }
+    ]
+  }
+]

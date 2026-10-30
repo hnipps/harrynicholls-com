@@ -1,0 +1,53 @@
+{
+  "columns": [
+    "Go",
+    "TypeScript",
+    "Python",
+    "PostgreSQL",
+    "SQLite"
+  ],
+  "projects": [
+    {
+      "name": "gitrove",
+      "listed": [
+        "Go",
+        "TypeScript",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "name": "Crosscheck",
+      "listed": [
+        "TypeScript",
+        "SQLite"
+      ]
+    },
+    {
+      "name": "Recommender",
+      "listed": [
+        "Python",
+        "SQLite"
+      ]
+    },
+    {
+      "name": "opsdeck",
+      "listed": [
+        "Go",
+        "SQLite"
+      ]
+    },
+    {
+      "name": "GoHome",
+      "listed": [
+        "Go",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "name": "LLM Cover Letters",
+      "listed": [
+        "TypeScript"
+      ]
+    }
+  ]
+}

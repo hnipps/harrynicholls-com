@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "design-exploration/paper-stack/index.html"
+        ],
+        "createdAt": "2026-10-30T20:01:36.209Z",
+        "reason": "Portfolio paper geometry intentionally clips live page surfaces and reverse-side printing. The curl and navigation are separate body-level layers; clipping does not contain menus or tooltips."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "design-exploration/paper-stack/index.html"
+        ],
+        "createdAt": "2026-10-30T20:05:01.018Z",
+        "reason": "Existing native host control font; portfolio typography remains inside the unchanged theme documents. This motion refinement preserves the incumbent type choices."
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "design-exploration/paper-stack/index.html"
+        ],
+        "createdAt": "2026-10-30T20:05:01.176Z",
+        "reason": "User confirmed A personal letter as the preferred theme. Its existing cream paper palette is deliberate and preserved in the approved Tactile paper refinement."
+      }
+    ]
+  }
+}

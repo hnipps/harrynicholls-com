@@ -1,0 +1,39 @@
+{
+  "slug": "minimal-data",
+  "name": "Project atlas",
+  "board": "Minimal Data",
+  "seed": 7412,
+  "direction": "The split stage",
+  "concept": "An engineering practice, seen through its actual materials.",
+  "idea": "Harry\u2019s six real projects and their listed technologies become a readable project atlas.",
+  "palette": [
+    "#f4f5f3",
+    "#14211f",
+    "#154ada"
+  ],
+  "type": "Arial throughout; large names, compact tabular figures, white-on-cobalt data.",
+  "layout": "A stable introductory column beside a large incidence matrix, followed by real interface images and a full project reading panel.",
+  "interaction": "Choose a technology to highlight the matching projects and read an exact count from the six-project inventory.",
+  "strength": "Makes the engineering practice tangible and explorable, using real relationships rather than decorative charts.",
+  "tradeoff": "More analytical than the personal letter. Five selected technologies are a useful lens, not a complete list of everything each project uses.",
+  "references": [
+    {
+      "id": 2460808,
+      "title": "Scientific diagram on blue",
+      "url": "https://www.are.na/block/2460808",
+      "thumbnail": "references/minimal-2460808.jpg"
+    },
+    {
+      "id": 38095013,
+      "title": "Diagram Engineer",
+      "url": "https://www.are.na/block/38095013",
+      "thumbnail": "references/minimal-38095013.jpg"
+    },
+    {
+      "id": 27214693,
+      "title": "SPIN / Neri Oxman infographic",
+      "url": "https://www.are.na/block/27214693",
+      "thumbnail": "references/minimal-27214693.jpg"
+    }
+  ]
+}
