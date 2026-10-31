@@ -36,18 +36,6 @@ let deck = [0,1,2,3,4,5];
 const nextView = () => deck[1];
 let cornerHovered = false;
 const boundDocuments = new WeakSet();
-const safeArea = Object.assign(document.createElement('div'),{ id:'safe-area' });
-document.body.append(safeArea);
-
-function keepClearOfDevice(doc) {
-  const inset = getComputedStyle(safeArea);
-  const root = doc.documentElement.style;
-  root.paddingTop = inset.paddingTop;
-  root.paddingRight = inset.paddingRight;
-  root.paddingBottom = inset.paddingBottom;
-  root.paddingLeft = inset.paddingLeft;
-  root.scrollPaddingTop = `calc(${inset.paddingTop} + 24px)`;
-}
 const sheaf = new PaperSheaf(sheafRoot,themes,index => selectTheme(index),focusCurrentView,reducedMotion);
 
 // Wheel/touch events over navigation belong to the readable document, not its locked host.
@@ -127,7 +115,8 @@ function restPosition() {
 function paint(position) {
   pointer = position;
   const current = getFrame(active);
-  const scrollY = current.contentWindow?.scrollY || 0;
+  // iOS rubber-banding reports a negative scroll; the corner stays put rather than opening further.
+  const scrollY = Math.max(0, current.contentWindow?.scrollY || 0);
   const geometry = peelGeometry(innerWidth, innerHeight, position,scrollY);
   current.style.clipPath = geometry.clip;
   for (const path of [paper,shadow,print,edge]) path.setAttribute('d',geometry.path);
@@ -186,7 +175,7 @@ function updateControls() {
     pattern.innerHTML = `<g fill="${theme.print}" stroke="${theme.print}">${theme.mark}</g>`;
     print.setAttribute('opacity',theme.opacity);
   }
-  positionCorner(getFrame(active).contentWindow?.scrollY || 0);
+  positionCorner(Math.max(0, getFrame(active).contentWindow?.scrollY || 0));
   status.textContent = `${theme.name}. ${last ? 'The last sheet. Use Put the paper back to start again.' : `Lift the top-left corner to reveal ${themes[nextView()].name}.`}${discarded.length ? ` ${discarded.length} previously opened ${discarded.length === 1 ? 'view is' : 'views are'} available in the paper sheaf.` : ''}`;
 }
 
@@ -222,14 +211,14 @@ function observeFrame(frame) {
     const doc = frame.contentDocument;
     if (!doc || boundDocuments.has(doc)) return;
     boundDocuments.add(doc);
-    keepClearOfDevice(doc);
+    doc.documentElement.style.overscrollBehavior = 'none';
     let scrollFrame = 0;
     frame.contentWindow.addEventListener('scroll',() => {
       if (frame !== frames.get(active) || turning) return;
       cancelAnimationFrame(scrollFrame);
       scrollFrame = requestAnimationFrame(() => {
         if (!corner.hidden || frame.contentWindow.scrollY < 160) paint(pointer);
-        else { frame.style.clipPath = ''; positionCorner(frame.contentWindow.scrollY); }
+        else { frame.style.clipPath = ''; positionCorner(Math.max(0, frame.contentWindow.scrollY)); }
       });
     },{ passive:true });
     doc.addEventListener('pointerdown',() => {
@@ -411,7 +400,6 @@ window.addEventListener('keydown',event => {
   }
 });
 window.addEventListener('resize',() => {
-  for (const frame of frames.values()) if (frame.contentDocument) keepClearOfDevice(frame.contentDocument);
   if (gesture) endGesture({ pointerId:gesture.id },true);
   if (!turning && active < themes.length - 1) { stopAnimation(); paint(restPosition()); }
 });
