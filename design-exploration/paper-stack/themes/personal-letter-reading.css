@@ -1,0 +1,6 @@
+.personal-letter .navigation > a {
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+}
+.personal-letter .entry-content .study-return { margin-top:28px; }
