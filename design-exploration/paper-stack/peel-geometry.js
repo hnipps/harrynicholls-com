@@ -42,12 +42,24 @@ export function peelGeometry(width, height, pointer, scrollY=0) {
     const offset = 2 * (distance - point.x * normal.x - point.y * normal.y);
     return { x:point.x + normal.x * offset, y:point.y + normal.y * offset };
   });
+  // A barely lifted corner stands up off the page, so seen from above it is foreshortened toward
+  // the crease; a long drag pulls it flat. The shadow falls where the flat flap would land.
+  const flatness = Math.min(1, Math.max(0, (length - 90) / 330));
+  const reach = .62 + .38 * flatness * flatness * (3 - 2 * flatness);
+  const curled = lifted.map((point, i) => {
+    const offset = (1 + reach) * (distance - point.x * normal.x - point.y * normal.y);
+    if (Math.abs(offset) < 1e-6) return folded[i];
+    return { x:point.x + normal.x * offset, y:point.y + normal.y * offset };
+  });
   // The crease endpoints are attached to the sheet; only free corners can curl.
-  const contacts = folded.filter(point => Math.abs(point.x * normal.x + point.y * normal.y - distance) < .01);
+  const contacts = curled.filter(point => Math.abs(point.x * normal.x + point.y * normal.y - distance) < .01);
+  const radius = Math.min(18, length * .07);
   return {
-    normal, distance, remaining, folded,
+    normal, distance, remaining, folded, reach,
     clip:remaining.length > 2 ? `polygon(${remaining.map(point => `${point.x}px ${point.y}px`).join(',')})` : 'polygon(0 0,0 0,0 0)',
-    path:length < 1 ? '' : curvedOutline(folded, Math.min(18, length * .07), contacts),
+    path:length < 1 ? '' : curvedOutline(curled, radius, contacts),
+    shadowPath:length < 1 ? '' : curvedOutline(folded, radius * 1.6, folded.filter(point => contacts.some(contact => Math.hypot(contact.x - point.x, contact.y - point.y) < .01))),
+    tip:{ x:normal.x * distance * (1 + reach), y:normal.y * distance * (1 + reach) },
     center:{ x:normal.x * distance, y:normal.y * distance }
   };
 }
