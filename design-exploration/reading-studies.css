@@ -1,0 +1,108 @@
+/* Two reading studies, refined from the owner's selected references. */
+.visually-hidden { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.working-index { --ground:#f7f0e7; --surface:#eee6d9; --ink:#4d4942; --accent:#3d547d; --body:17px; --small:14px; --lead:18px; --heading:17px; --title:21px; }
+.working-index .page { max-width:688px; padding-inline:24px; }
+.working-index .navigation { display:block; padding:60px 0 0; }
+.working-index h1 { font:600 21px/1.3 Arial,Helvetica,sans-serif; letter-spacing:-.025em; max-width:none; margin:0 0 4px; }
+.working-index .navigation p { margin:0 0 8px; font-size:15px; }
+.working-index nav { gap:18px; font-size:13px; }
+.working-index nav a { padding-block:4px; text-decoration:underline; }
+.working-index .hero { display:block; padding:32px 0 42px; font-family:Georgia,'Times New Roman',serif; line-height:1.6; }
+.working-index .introduction { font-size:17px; }
+.working-index .hero p { margin-bottom:0; }
+.working-index .desk-object { width:280px; max-width:90%; margin:28px auto 24px; }
+.working-index .desk-object img { aspect-ratio:1.7; object-fit:cover; object-position:top; }
+.working-index figcaption { font:13px/1.5 Arial,Helvetica,sans-serif; margin-top:8px; color:var(--ink); }
+.working-index h2 { font:400 16px/1.4 Arial,Helvetica,sans-serif; letter-spacing:0; }
+.working-index .section-top { align-items:center; gap:16px; margin-bottom:8px; }
+.working-index .work h2 { margin:0; }
+.working-index .search-label { font-size:13px; margin:0; width:170px; }
+.working-index input { width:100%; padding:8px 10px; border:0; background:var(--surface); min-height:36px; }
+.working-index .search-status { font-size:13px; margin-bottom:8px; }
+.working-index .project-link { grid-template-columns:115px minmax(0,1fr) 94px; gap:16px; padding:13px 0; }
+.working-index .project-title { font:400 14px/1.5 Arial,Helvetica,sans-serif; letter-spacing:0; text-decoration:underline; }
+.working-index .project-purpose { font-size:14px; line-height:1.5; }
+.working-index .project-category { font-size:13px; text-align:right; }
+.working-index .screen-strip { gap:12px; margin-top:24px; }
+.working-index .about { margin-top:56px; display:block; }
+.working-index .about h2 { margin-bottom:18px; }
+.working-index .about p { font:17px/1.6 Georgia,'Times New Roman',serif; margin-bottom:18px; }
+.working-index .story { margin:56px 0 0; padding:0; background:transparent; }
+.working-index .story h2 { margin-bottom:12px; }
+.working-index .story-content { display:block; padding-top:20px; }
+.working-index .story-content h3 { font-size:20px; margin:28px 0 16px; }
+.working-index .story-content p { font-size:16px; }
+.working-index .project-metadata { margin-bottom:28px; }
+.working-index .project-metadata p { margin-bottom:8px; }
+.working-index .image-container { margin-top:28px; }
+.working-index footer { padding:56px 0 32px; }
+.working-index footer h2 { margin-bottom:14px; }
+.working-index .email { font:16px/1.5 Georgia,'Times New Roman',serif; letter-spacing:0; text-decoration:underline; }
+.working-index .footer-bottom { font-size:13px; gap:14px; margin-top:28px; }
+.personal-letter { --ground:#f6f2e7; --ink:#302f2a; --accent:#a03932; --surface:#eee7d9; --title:20px; --heading:20px; --body:19px; --small:16px; --lead:20px; }
+.personal-letter .page { max-width:856px; margin:0 auto; padding-inline:64px; background:transparent; }
+.personal-letter .navigation { padding:44px 0 0; align-items:baseline; font:14px/1.5 Arial,Helvetica,sans-serif; }
+.personal-letter h1 { margin:0; font:600 20px/1.4 Georgia,'Times New Roman',serif; letter-spacing:0; }
+.personal-letter .navigation a { color:var(--accent); text-decoration:underline; }
+.personal-letter .hero { padding:74px 0 58px; max-width:590px; line-height:1.85; }
+.personal-letter .introduction { font-size:21px; line-height:1.7; }
+.personal-letter .hero p { margin-bottom:26px; }
+.personal-letter .hero a,.personal-letter .about a,.personal-letter .letter-postscript a,.personal-letter .entry-content a { color:var(--accent); background:#f0e4d0; }
+.personal-letter .hero .letter-signoff { font-style:italic; margin:0; }
+.personal-letter h2 { font:600 16px/1.5 Arial,Helvetica,sans-serif; letter-spacing:0; }
+.personal-letter .work h2 { margin-bottom:24px; }
+.personal-letter .letter-projects { display:grid; gap:4px; }
+.personal-letter .letter-entry summary { display:grid; grid-template-columns:36px minmax(0,1fr) 130px; align-items:baseline; gap:12px; padding:14px 0; list-style:none; font-size:18px; line-height:1.5; }
+.personal-letter .letter-entry summary::-webkit-details-marker { display:none; }
+.personal-letter .letter-entry summary > span:nth-child(2) { text-decoration:underline; text-underline-offset:.22em; text-decoration-color:var(--accent); }
+.personal-letter .letter-entry summary:hover > span:nth-child(2),.personal-letter .letter-entry[open] summary > span:nth-child(2) { color:var(--accent); }
+.personal-letter .entry-number { font:13px/1.5 Arial,Helvetica,sans-serif; }
+.personal-letter .entry-number::before { content:'+'; display:inline-block; color:var(--accent); font-size:18px; }
+.personal-letter .letter-entry[open] .entry-number::before { content:'−'; }
+.personal-letter .entry-name { font:13px/1.5 Arial,Helvetica,sans-serif; justify-self:end; text-align:right; }
+.personal-letter .entry-content { margin:8px 0 28px 48px; max-width:570px; }
+.personal-letter details:not([open]) > .entry-content { display:none; }
+.personal-letter .entry-content p { font-size:17px; line-height:1.7; margin-bottom:18px; }
+.personal-letter .entry-content img { width:100%; }
+.personal-letter .letter-postscript { font-size:16px; margin:28px 0 0 48px; }
+.personal-letter .about { margin-top:76px; gap:24px; }
+.personal-letter .about p { font-size:18px; line-height:1.8; }
+.personal-letter .project-pictures { margin-top:64px; }
+.personal-letter .screen-strip { margin-top:24px; gap:28px 20px; }
+.personal-letter figcaption { margin-top:8px; font:13px/1.5 Arial,Helvetica,sans-serif; }
+.personal-letter .story { padding:0; background:transparent; margin:64px 0 0; }
+.personal-letter .story h2 { margin-bottom:14px; }
+.personal-letter .story summary { color:var(--accent); text-decoration:underline; }
+.personal-letter .story-content p { font-size:17px; }
+.personal-letter .story-content h3 { font-size:22px; }
+.personal-letter footer { padding-top:64px; }
+.personal-letter footer h2 { margin-bottom:18px; }
+.personal-letter .email { color:var(--accent); text-decoration:underline; font-size:19px; letter-spacing:0; }
+.personal-letter .footer-bottom { font-size:13px; gap:16px; margin-top:40px; }
+/* The reference pages are deliberately still, document-sized reading surfaces. */
+.working-index .arrive,.personal-letter .arrive,.working-index .screen-strip img,.personal-letter .screen-strip img { animation:none; }
+.working-index .screen-strip a:hover img,.personal-letter .screen-strip a:hover img { transform:none; }
+@media(max-width:600px) {
+ .working-index .page { padding-inline:24px; }
+ .working-index .navigation { padding-top:32px; }
+ .working-index .hero { padding:28px 0 36px; }
+ .working-index .section-top { flex-direction:row; align-items:center; }
+ .working-index .search-label { width:145px; }
+ .working-index .project-link { grid-template-columns:100px minmax(0,1fr); gap:6px 14px; padding-block:15px; }
+ .working-index .project-category { display:none; }
+ .working-index .footer-bottom span { width:100%; }
+ .personal-letter .page { margin:0 auto; padding-inline:24px; }
+ .personal-letter .navigation { padding-top:28px; gap:12px; flex-wrap:nowrap; }
+ .personal-letter h1 { font-size:19px; }
+ .personal-letter .navigation a { font-size:13px; white-space:nowrap; }
+ .personal-letter .hero { padding:48px 0 40px; }
+ .personal-letter .introduction { font-size:20px; }
+ .personal-letter .hero p { font-size:18px; line-height:1.8; }
+ .personal-letter .letter-entry summary { grid-template-columns:26px minmax(0,1fr); gap:6px 12px; font-size:18px; padding-block:16px; }
+ .personal-letter .entry-name { grid-column:2; justify-self:start; text-align:left; }
+ .personal-letter .entry-content { margin-left:38px; }
+ .personal-letter .letter-postscript { margin-left:38px; }
+ .personal-letter .about { margin-top:56px; }
+ .personal-letter .story { padding:0; margin-inline:0; }
+ .personal-letter .email { font-size:18px; }
+}

@@ -1,0 +1,2303 @@
+{
+ "url": "http://127.0.0.1:3031/design-exploration/",
+ "at": "2026-10-30T16:27:52.708Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.4,
+    0.63,
+    0.76,
+    0.76,
+    0.82,
+    0.84,
+    0.78,
+    0.78,
+    0.58
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 7763,
+     "screens": 8.6,
+     "words": 423,
+     "img": 25,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 10,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "working-index-desktop.jpg",
+      "working-index-mobile.jpg",
+      "personal-letter-desktop.jpg",
+      "personal-letter-mobile.jpg",
+      "signal-press-desktop.jpg",
+      "signal-press-mobile.jpg",
+      "symbols-pixels-desktop.jpg",
+      "symbols-pixels-mobile.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Five ways forward",
+     "words": 3,
+     "chars": 17,
+     "lines": 1,
+     "size": 64,
+     "vw": 4.4,
+     "font": "Georgia",
+     "weight": 400,
+     "tracking": -0.05,
+     "leading": 1.05,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Five ways forward",
+     "words": 3,
+     "lines": 1,
+     "size": 64,
+     "font": "Georgia"
+    },
+    "headings": [
+     {
+      "text": "Five ways forward",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.49,
+      "top": 113,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Compare two directions",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 341,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Choose a direction to explore",
+      "words": 5,
+      "chars": 29,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 1229,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Working index",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.17,
+      "top": 1390,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "A personal letter",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 2639,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Signal press",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.14,
+      "top": 3889,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Dot matrix",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.12,
+      "top": 5139,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Project atlas",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.14,
+      "top": 6389,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "What feels like you?",
+      "words": 4,
+      "chars": 20,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 7529,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Arial",
+       "share": 0.99,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      18,
+      20,
+      24,
+      32,
+      40,
+      64
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Arial",
+      "size": 16,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13
+     },
+     "measureChars": 100,
+     "max": {
+      "size": 64,
+      "vw": 4.4,
+      "font": "Georgia",
+      "text": "Five ways forward"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.03,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Crosscheck",
+      "above": "Working index",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 1353
+     },
+     {
+      "text": "Crosscheck",
+      "above": "A personal letter",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 2603
+     },
+     {
+      "text": "Slow Victory",
+      "above": "Signal press",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 3853
+     },
+     {
+      "text": "Symbols and Pixels",
+      "above": "Dot matrix",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 5102
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#eceeeb",
+     "bodyBgHsl": {
+      "h": 100,
+      "s": 0.08,
+      "l": 0.93
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 1321,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#eceeeb",
+       "top": 1519,
+       "hsl": {
+        "h": 100,
+        "s": 0.08,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#202822",
+       "share": 0.98
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#dce3da",
+      "hsl": {
+       "h": 107,
+       "s": 0.14,
+       "l": 0.87
+      },
+      "fg": "#202822"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 20,
+     "inHero": 5,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Explore the directions",
+      "Desktop",
+      "Phone",
+      "Reset both previews"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 25,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "iframe",
+      "ratio": 0.12
+     },
+     {
+      "type": "iframe",
+      "ratio": 0.12
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 81,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 7763,
+    "margins": {
+     "left": 58,
+     "right": 58
+    },
+    "sections": [
+     {
+      "sel": "section.gallery-intro",
+      "tag": "section",
+      "top": 81,
+      "height": 260,
+      "words": 50,
+      "media": 0,
+      "middle": 233,
+      "heading": {
+       "text": "Five ways forward",
+       "size": 64,
+       "tag": "h1"
+      },
+      "left": 58,
+      "right": 77,
+      "textLeft": 58,
+      "textRight": 77,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#compare.comparison",
+      "tag": "section",
+      "top": 341,
+      "height": 768,
+      "words": 36,
+      "media": 2,
+      "middle": 28,
+      "heading": {
+       "text": "Compare two directions",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 58,
+      "right": 58,
+      "textLeft": 58,
+      "textRight": 58,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#directions.directions",
+      "tag": "section",
+      "top": 1229,
+      "height": 6252,
+      "words": 723,
+      "media": 22,
+      "middle": 0,
+      "heading": {
+       "text": "Working index",
+       "size": 40,
+       "tag": "h3"
+      },
+      "left": 58,
+      "right": 58,
+      "textLeft": 58,
+      "textRight": 76,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.gallery-footer",
+      "tag": "footer",
+      "top": 7481,
+      "height": 282,
+      "words": 37,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "What feels like you?",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 58,
+      "right": 773,
+      "textLeft": 58,
+      "textRight": 773,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Five ways forward",
+      "size": 64,
+      "top": 113,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 90,
+      "n": 15
+     },
+     {
+      "x": 58,
+      "n": 5
+     },
+     {
+      "x": 736,
+      "n": 4
+     },
+     {
+      "x": 834,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 25,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.1,
+    "voidBox": {
+     "x": 720,
+     "y": 300,
+     "w": 720,
+     "h": 180
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#eceeeb",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 58,
+     "right": 58
+    },
+    "hero": {
+     "text": "Five ways forward",
+     "words": 3,
+     "chars": 17,
+     "lines": 1,
+     "size": 64,
+     "vw": 4.4,
+     "font": "Georgia",
+     "weight": 400,
+     "tracking": -0.05,
+     "leading": 1.05,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 5,
+    "layout": {
+     "panels": 5,
+     "firstScreen": 0,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 41,
+       "at": 2382,
+       "panel": "Working index"
+      },
+      {
+       "gap": 41,
+       "at": 3632,
+       "panel": "A personal letter"
+      },
+      {
+       "gap": 41,
+       "at": 4882,
+       "panel": "Signal press"
+      },
+      {
+       "gap": 41,
+       "at": 6132,
+       "panel": "Dot matrix"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 5,
+     "radii": [
+      [
+       0,
+       5
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      16,
+      18,
+      20,
+      24,
+      32,
+      40,
+      64
+     ]
+    },
+    "title": {
+     "text": "Five ways forward",
+     "size": 64,
+     "top": 113
+    },
+    "colourShare": 0.096
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.54,
+    0.69,
+    0.83,
+    0.87,
+    0.76,
+    0.76,
+    0.71
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 6252,
+     "screens": 6.1,
+     "words": 423,
+     "img": 25,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 10,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "working-index-desktop.jpg",
+      "working-index-mobile.jpg",
+      "personal-letter-desktop.jpg",
+      "personal-letter-mobile.jpg",
+      "signal-press-desktop.jpg",
+      "signal-press-mobile.jpg",
+      "symbols-pixels-desktop.jpg",
+      "symbols-pixels-mobile.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Five ways forward",
+     "words": 3,
+     "chars": 17,
+     "lines": 1,
+     "size": 48,
+     "vw": 6.3,
+     "font": "Georgia",
+     "weight": 400,
+     "tracking": -0.05,
+     "leading": 1.05,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Five ways forward",
+     "words": 3,
+     "lines": 1,
+     "size": 48,
+     "font": "Georgia"
+    },
+    "headings": [
+     {
+      "text": "Five ways forward",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 113,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Compare two directions",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 358,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Choose a direction to explore",
+      "words": 5,
+      "chars": 29,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.49,
+      "top": 1112,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Working index",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.32,
+      "top": 1393,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "A personal letter",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.35,
+      "top": 2335,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Signal press",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.25,
+      "top": 3278,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Dot matrix",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 4221,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Project atlas",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 5164,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "What feels like you?",
+      "words": 4,
+      "chars": 20,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6018,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Arial",
+       "share": 0.99,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      18,
+      20,
+      24,
+      32,
+      40,
+      48
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Arial",
+      "size": 16,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13
+     },
+     "measureChars": 80,
+     "max": {
+      "size": 48,
+      "vw": 6.3,
+      "font": "Georgia",
+      "text": "Five ways forward"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.03,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Crosscheck",
+      "above": "Working index",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 1356
+     },
+     {
+      "text": "Crosscheck",
+      "above": "A personal letter",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 2299
+     },
+     {
+      "text": "Symbols and Pixels",
+      "above": "Dot matrix",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 4184
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#eceeeb",
+     "bodyBgHsl": {
+      "h": 100,
+      "s": 0.08,
+      "l": 0.93
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 1324,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#202822",
+       "share": 0.98
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#dce3da",
+      "hsl": {
+       "h": 107,
+       "s": 0.14,
+       "l": 0.87
+      },
+      "fg": "#202822"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 20,
+     "inHero": 5,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Explore the directions",
+      "Desktop",
+      "Phone",
+      "Reset both previews"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "iframe",
+      "ratio": 0.11
+     },
+     {
+      "type": "iframe",
+      "ratio": 0.11
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 81,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 6252,
+    "margins": {
+     "left": 31,
+     "right": 49
+    },
+    "sections": [
+     {
+      "sel": "section.gallery-intro",
+      "tag": "section",
+      "top": 81,
+      "height": 277,
+      "words": 50,
+      "media": 0,
+      "middle": 36,
+      "heading": {
+       "text": "Five ways forward",
+       "size": 48,
+       "tag": "h1"
+      },
+      "left": 31,
+      "right": 54,
+      "textLeft": 31,
+      "textRight": 54,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#compare.comparison",
+      "tag": "section",
+      "top": 358,
+      "height": 635,
+      "words": 36,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Compare two directions",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 31,
+      "textLeft": 31,
+      "textRight": 49,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.directions-top",
+      "tag": "div",
+      "top": 1112,
+      "height": 171,
+      "words": 15,
+      "media": 0,
+      "middle": 5,
+      "heading": {
+       "text": "Choose a direction to explore",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 160,
+      "textLeft": 31,
+      "textRight": 178,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.direction-list",
+      "tag": "div",
+      "top": 1324,
+      "height": 4646,
+      "words": 707,
+      "media": 22,
+      "middle": 0,
+      "heading": {
+       "text": "Working index",
+       "size": 40,
+       "tag": "h3"
+      },
+      "left": 63,
+      "right": 63,
+      "textLeft": 63,
+      "textRight": 63,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.gallery-footer",
+      "tag": "footer",
+      "top": 5970,
+      "height": 282,
+      "words": 37,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "What feels like you?",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 128,
+      "textLeft": 31,
+      "textRight": 128,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Five ways forward",
+      "size": 48,
+      "top": 113,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 63,
+      "n": 15
+     },
+     {
+      "x": 31,
+      "n": 5
+     },
+     {
+      "x": 400,
+      "n": 4
+     },
+     {
+      "x": 444,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 25,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#eceeeb",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 31,
+     "right": 49
+    },
+    "hero": {
+     "text": "Five ways forward",
+     "words": 3,
+     "chars": 17,
+     "lines": 1,
+     "size": 48,
+     "vw": 6.3,
+     "font": "Georgia",
+     "weight": 400,
+     "tracking": -0.05,
+     "leading": 1.05,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 5,
+    "layout": {
+     "panels": 5,
+     "firstScreen": 0,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 41,
+       "at": 2078,
+       "panel": "Working index"
+      },
+      {
+       "gap": 41,
+       "at": 3021,
+       "panel": "A personal letter"
+      },
+      {
+       "gap": 41,
+       "at": 3964,
+       "panel": "Signal press"
+      },
+      {
+       "gap": 41,
+       "at": 4906,
+       "panel": "Dot matrix"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 5,
+     "radii": [
+      [
+       0,
+       5
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      16,
+      18,
+      20,
+      24,
+      32,
+      40,
+      48
+     ]
+    },
+    "title": {
+     "text": "Five ways forward",
+     "size": 48,
+     "top": 113
+    },
+    "colourShare": 0.091
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.47,
+    0.71,
+    0.71,
+    0.84,
+    0.85,
+    0.84,
+    0.84,
+    0.87,
+    0.8
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 7276,
+     "screens": 8.6,
+     "words": 423,
+     "img": 25,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "working-index-desktop.jpg",
+      "personal-letter-desktop.jpg",
+      "signal-press-desktop.jpg",
+      "symbols-pixels-desktop.jpg",
+      "minimal-data-desktop.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Five ways forward",
+     "words": 3,
+     "chars": 17,
+     "lines": 1,
+     "size": 48,
+     "vw": 12.3,
+     "font": "Georgia",
+     "weight": 400,
+     "tracking": -0.05,
+     "leading": 1.05,
+     "top": 142,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Five ways forward",
+     "words": 3,
+     "lines": 1,
+     "size": 48,
+     "font": "Georgia"
+    },
+    "headings": [
+     {
+      "text": "Five ways forward",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 48,
+      "vw": 12.3,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.05,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 142,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Compare two directions",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 551,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Choose a direction to explore",
+      "words": 5,
+      "chars": 29,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.85,
+      "top": 1748,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Working index",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 2078,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "A personal letter",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.55,
+      "top": 3043,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Signal press",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 4008,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Dot matrix",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 4973,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Project atlas",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 5966,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "What feels like you?",
+      "words": 4,
+      "chars": 20,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Arial",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 6893,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Arial",
+       "share": 0.99,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      18,
+      20,
+      28,
+      32,
+      48
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Arial",
+      "size": 16,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13
+     },
+     "measureChars": 40,
+     "max": {
+      "size": 48,
+      "vw": 12.3,
+      "font": "Georgia",
+      "text": "Five ways forward"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.03,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Crosscheck",
+      "above": "Working index",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 2041
+     },
+     {
+      "text": "Crosscheck",
+      "above": "A personal letter",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 3006
+     },
+     {
+      "text": "Slow Victory",
+      "above": "Signal press",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 3971
+     },
+     {
+      "text": "Symbols and Pixels",
+      "above": "Dot matrix",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 4936
+     },
+     {
+      "text": "Minimal Data",
+      "above": "Project atlas",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 16,
+      "top": 5929
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#eceeeb",
+     "bodyBgHsl": {
+      "h": 100,
+      "s": 0.08,
+      "l": 0.93
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 2017,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#eceeeb",
+       "top": 3442,
+       "hsl": {
+        "h": 100,
+        "s": 0.08,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#202822",
+       "share": 0.98
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#dce3da",
+      "hsl": {
+       "h": 107,
+       "s": 0.14,
+       "l": 0.87
+      },
+      "fg": "#202822"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 20,
+     "inHero": 5,
+     "radius": 0,
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Explore the directions",
+      "Desktop",
+      "Phone",
+      "Reset both previews"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 19,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 5,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 2017
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 118,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 7276,
+    "margins": {
+     "left": 20,
+     "right": 23
+    },
+    "sections": [
+     {
+      "sel": "section.gallery-intro",
+      "tag": "section",
+      "top": 118,
+      "height": 433,
+      "words": 50,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Five ways forward",
+       "size": 48,
+       "tag": "h1"
+      },
+      "left": 20,
+      "right": 23,
+      "textLeft": 20,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#compare.comparison",
+      "tag": "section",
+      "top": 551,
+      "height": 1117,
+      "words": 36,
+      "media": 2,
+      "middle": 0,
+      "heading": {
+       "text": "Compare two directions",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.directions-top",
+      "tag": "div",
+      "top": 1748,
+      "height": 229,
+      "words": 15,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Choose a direction to explore",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 32,
+      "textLeft": 20,
+      "textRight": 38,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.direction-list",
+      "tag": "div",
+      "top": 2017,
+      "height": 4828,
+      "words": 657,
+      "media": 15,
+      "middle": 0,
+      "heading": {
+       "text": "Working index",
+       "size": 32,
+       "tag": "h3"
+      },
+      "left": 36,
+      "right": 37,
+      "textLeft": 36,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.gallery-footer",
+      "tag": "footer",
+      "top": 6845,
+      "height": 431,
+      "words": 37,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "What feels like you?",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 59,
+      "textLeft": 20,
+      "textRight": 59,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Five ways forward",
+      "size": 48,
+      "top": 142,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 36,
+      "n": 19
+     },
+     {
+      "x": 20,
+      "n": 6
+     }
+    ],
+    "leftBlocks": 25,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#eceeeb",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 20,
+     "right": 26
+    },
+    "hero": {
+     "text": "Five ways forward",
+     "words": 3,
+     "chars": 17,
+     "lines": 1,
+     "size": 48,
+     "vw": 12.3,
+     "font": "Georgia",
+     "weight": 400,
+     "tracking": -0.05,
+     "leading": 1.05,
+     "top": 142,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 5,
+    "layout": {
+     "panels": 5,
+     "firstScreen": 0,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 41,
+       "at": 2801,
+       "panel": "Working index"
+      },
+      {
+       "gap": 41,
+       "at": 3766,
+       "panel": "A personal letter"
+      },
+      {
+       "gap": 41,
+       "at": 4731,
+       "panel": "Signal press"
+      },
+      {
+       "gap": 41,
+       "at": 5724,
+       "panel": "Dot matrix"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 5,
+     "radii": [
+      [
+       0,
+       5
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      16,
+      18,
+      20,
+      28,
+      32,
+      48
+     ]
+    },
+    "title": {
+     "text": "Five ways forward",
+     "size": 48,
+     "top": 142
+    },
+    "colourShare": 0
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "below-fold",
+   "width": 1440,
+   "message": "Only 0 of 5 blocks start on the first 1440px screen.",
+   "fix": "Every block the brief names shows its header and first rows on the first desktop screen: size the headline block to its question, cap long lists with \"View all\", and put time-sensitive blocks before long tables."
+  },
+  {
+   "level": "WARN",
+   "id": "panel-void",
+   "width": 1440,
+   "message": "4 card(s) hold a blank band inside: 41px in \"Working index\", 41px in \"A personal letter\", 41px in \"Signal press\".",
+   "fix": "A card stretches to its neighbour only when it has content to fill. Keep a legend or a note directly under its chart (only an action or a total may sit at a stretched card's foot), let a short card keep its own height (align-items: start), and let a filtered block shrink to its rows."
+  },
+  {
+   "level": "WARN",
+   "id": "app-title-size",
+   "width": 1440,
+   "message": "The h1 is 64px (\"Five ways forward\").",
+   "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/desktop-fold.jpg",
+   "pages": [
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/desktop-page-01.jpg",
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/desktop-page-02.jpg",
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/tablet-fold.jpg",
+   "pages": [
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/tablet-page-01.jpg",
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/mobile-fold.jpg",
+   "pages": [
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/mobile-page-01.jpg",
+    "/Users/harry.nicholls/repos/harrynicholls-com/.taste-skill/round2-gallery/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

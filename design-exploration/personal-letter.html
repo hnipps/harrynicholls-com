@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>A personal letter · Harry Nicholls</title><link rel="stylesheet" href="prototype.css"><link rel="stylesheet" href="reading-studies.css"><script src="prototype.js" defer></script></head><body class="personal-letter"><a class="skip-link" href="#main">Skip to content</a><div class="page"><header class="navigation"><h1>Hello, I’m Harry.</h1><a href="#contact">Write to me</a></header><main id="main"><section class="hero"><p class="introduction">I’m a product engineer, a dad of three, and a woodworker. I live in the Toronto area and work remotely.</p><p>I build AI products and their infrastructure at <a href="https://ev.energy/">ev.energy</a>. Outside that, I tend to make the tools I want to use: something to read, a way to check my work, a little less friction in the day.</p><p>This page brings those projects together. Each begins with a question. Open one to see what I made of it.</p><p class="letter-signoff">Harry</p></section><section id="work" class="work"><h2>Some questions, some projects</h2><div class="letter-projects"><details class="letter-entry"><summary><span class="entry-number" aria-hidden="true"></span><span>What’s worth discovering on GitHub?</span><span class="entry-name">gitrove</span></summary><div class="entry-content"><p>Daily discoveries from your GitHub network. <a href="#gitrove-story">Read about gitrove</a>.</p><a href="#gitrove-story" aria-label="Read about gitrove"><img src="../src/assets/gitrove/v2-1.png" alt="gitrove interface" width="3168" height="2176" loading="lazy"></a></div></details><details class="letter-entry"><summary><span class="entry-number" aria-hidden="true"></span><span>How can I check the code an AI writes?</span><span class="entry-name">Crosscheck</span></summary><div class="entry-content"><p>Formal verification for AI-generated code. <a href="project-stories.html#crosscheck">Read about Crosscheck</a>.</p></div></details><details class="letter-entry"><summary><span class="entry-number" aria-hidden="true"></span><span>What should we watch tonight?</span><span class="entry-name">Recommender</span></summary><div class="entry-content"><p>Film and TV recommendations that learn my taste. <a href="project-stories.html#recommender">Read about Recommender</a>.</p><a href="project-stories.html#recommender" aria-label="Read about Recommender"><img src="../src/assets/recommender/1.png" alt="Recommender interface" width="3168" height="2176" loading="lazy"></a></div></details><details class="letter-entry"><summary><span class="entry-number" aria-hidden="true"></span><span>Which pull requests need my attention?</span><span class="entry-name">opsdeck</span></summary><div class="entry-content"><p>The pull requests that need me, in one place. <a href="project-stories.html#opsdeck">Read about opsdeck</a>.</p><a href="project-stories.html#opsdeck" aria-label="Read about opsdeck"><img src="../src/assets/opsdeck/1.png" alt="opsdeck interface" width="3168" height="2176" loading="lazy"></a></div></details><details class="letter-entry"><summary><span class="entry-number" aria-hidden="true"></span><span>What’s running on my home server?</span><span class="entry-name">GoHome</span></summary><div class="entry-content"><p>One home for the services on my home server. <a href="project-stories.html#go-home">Read about GoHome</a>.</p><a href="project-stories.html#go-home" aria-label="Read about GoHome"><img src="../src/assets/go-home/1.png" alt="GoHome interface" width="3168" height="2176" loading="lazy"></a></div></details><details class="letter-entry"><summary><span class="entry-number" aria-hidden="true"></span><span>Could a cover letter start closer to the job?</span><span class="entry-name">LLM Cover Letters</span></summary><div class="entry-content"><p>Cover letters shaped around the job. <a href="project-stories.html#llm-cover-letters">Read about LLM Cover Letters</a>.</p><a href="project-stories.html#llm-cover-letters" aria-label="Read about LLM Cover Letters"><img src="../src/assets/llm-cover-letters/1.png" alt="LLM Cover Letters interface" width="3168" height="2176" loading="lazy"></a></div></details></div><p class="letter-postscript">If you’d rather browse the pictures, <a href="#project-pictures">here are a few things I’ve made</a>.</p></section><section id="about" class="about"><h2>A little more about me</h2><div><p>I’m a software engineer, a dad of three, and a woodworker, based in the Toronto area and working remotely.</p><p>At ev.energy, I build AI products and their infrastructure: MCP servers, agent gateways, and agentic CI workflows. I care about useful products, strong engineering teams, and work that’s good for people and the planet.</p><p>You can find my writing on <a href="https://brainflow.substack.com/">Substack</a> and <a href="https://harrynicholls.medium.com/">Medium</a>, and my code on <a href="https://github.com/hnipps">GitHub</a>.</p></div></section><section id="project-pictures" class="project-pictures"><h2>A few things I’ve made</h2><div class="screen-strip"><figure><a href="#gitrove-story"><img src="../src/assets/gitrove/v2-1.png" alt="gitrove interface" width="3168" height="2176" loading="lazy"></a><figcaption>gitrove</figcaption></figure><figure><a href="project-stories.html#recommender"><img src="../src/assets/recommender/1.png" alt="Recommender interface" width="3168" height="2176" loading="lazy"></a><figcaption>Recommender</figcaption></figure><figure><a href="project-stories.html#opsdeck"><img src="../src/assets/opsdeck/1.png" alt="opsdeck interface" width="3168" height="2176" loading="lazy"></a><figcaption>opsdeck</figcaption></figure><figure><a href="project-stories.html#go-home"><img src="../src/assets/go-home/1.png" alt="GoHome interface" width="3168" height="2176" loading="lazy"></a><figcaption>GoHome</figcaption></figure></div></section><section id="gitrove-story" class="story"><h2>Inside gitrove</h2><details><summary>Read the full case study</summary><div class="story-content">
+          <div class="project-metadata">
+            <p class="body">
+              <strong>Purpose:</strong> Daily digest of your GitHub
+              network
+            </p>
+            <p class="body">
+              <strong>URL:</strong>
+              <a
+                href="https://gitrove.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://gitrove.com</a
+              >
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong>Tech:</strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">TypeScript</p></li>
+                <li><p class="body">Qwik City</p></li>
+                <li><p class="body">Go</p></li>
+                <li><p class="body">PostgreSQL</p></li>
+                <li><p class="body">GitHub API</p></li>
+                <li><p class="body">GH Archive</p></li>
+                <li><p class="body">Stripe</p></li>
+                <li><p class="body">Cloudflare Tunnel</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3>How it works</h3>
+            <p class="body">
+              gitrove is a discovery tool for open-source developers and
+              repositories, built around a personal daily digest. A user signs
+              in with GitHub, and gitrove watches the developers they follow and
+              the repositories they star. Once a day it sends one digest:
+              repositories where several people in their network are
+              converging, new releases from starred repositories, who their
+              follows started following, and everything else.
+            </p>
+            <p class="body">
+              A free Discover page ranks rising developers by language and
+              across 13 topic streams, such as MCP, AI agents and PostgreSQL.
+              Ranking is relative to each developer's own baseline: their last
+              7 days of activity are compared with a 28-day baseline, smoothed
+              by a constant. Minimum event and active-day floors keep out short
+              bursts and bots. A weekly Founder's Digest, one real day of the
+              founder's own digest, is published free on the blog as a sample.
+              Pro has a 14-day trial, with billing through Stripe.
+            </p>
+            <p class="body">
+              The backend is one Go binary on PostgreSQL. It uses the standard
+              library's net/http and pgx, with no web framework. Its subcommands
+              include <code>serve</code>, <code>ingest</code>,
+              <code>migrate</code>, <code>collect</code> and <code>mail</code>.
+              <code>ingest</code> loads GH Archive
+              hourly event files in a daily batch and is the only writer of the
+              ranking tables, with bot filtering and pruning.
+              <code>collect</code> refreshes each account's network mirror and
+              follow diffs through the GitHub API, and <code>mail</code> renders
+              and sends digests through listmonk. The frontend is
+              server-rendered Qwik City in TypeScript, with plain per-route CSS
+              for a dark monospace design. A pull-based deployer polls main
+              every minute and rolls back automatically. The app runs under
+              systemd behind a Cloudflare Tunnel, and each pull request gets its
+              own preview environment.
+            </p>
+          </div>
+          <div class="image-container">
+            <img
+              src="../src/assets/gitrove/v2-1.png"
+              alt="gitrove landing page with the headline 'See which repos are gaining traction with the developers you follow' beside a sample Founder's Digest card"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="../src/assets/gitrove/v2-2.png"
+              alt="gitrove Discover page ranking rising Go developers by score, with 7-day and 28-day activity counts and topic and language streams in the sidebar"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="../src/assets/gitrove/v2-3.png"
+              alt="A published Founder's Digest for 12 October 2026, grouped into repositories converging in the network and new releases from starred repositories"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div></details></section></main><footer id="contact"><h2>Keep in touch</h2><a class="email" href="mailto:harry.m.nicholls@gmail.com">harry.m.nicholls<wbr>@gmail.com</a><div class="footer-bottom"><a href="https://www.linkedin.com/in/harry-nicholls-91779959/">LinkedIn</a><a href="https://x.com/harrynicholls">X</a><a href="index.html">Back to directions</a><span>© 2026 Nicholls Inc.</span></div></footer></div></body></html>

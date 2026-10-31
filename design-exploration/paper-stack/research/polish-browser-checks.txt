@@ -1,0 +1,12 @@
+PASS bare HTML retains native fonts and links in a centered reading column
+PASS bare screenshots have manageable sizes and keep their aspect ratios
+PASS bare HTML has no overflow at 1440px
+PASS bare HTML has no overflow at 768px
+PASS bare HTML has no overflow at 390px
+PASS paper shadows use no composited drop-shadow filter
+PASS all five papers remain reachable throughout hover at 1440px
+PASS all five papers remain reachable throughout hover at 768px
+PASS all five papers remain reachable throughout hover at 390px
+PASS keyboard focus highlights the fold without a rectangular border
+PASS pointer use removes the keyboard emphasis without removing accessibility
+No browser runtime exceptions.

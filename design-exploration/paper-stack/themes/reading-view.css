@@ -1,0 +1,19 @@
+/* Shared reading refinements, loaded only by the five styled papers. */
+.footer-bottom a,.email,.study-return a {
+  display:inline-flex;
+  align-items:center;
+  min-width:44px;
+  min-height:44px;
+}
+.footer-bottom { align-items:center; }
+.story-content .story-preview { display:block; margin-block:28px; }
+.story-content h3:not(:first-child) { margin-top:36px; }
+.story-image { display:block; }
+.story-image span { display:block; margin-top:8px; font-size:14px; }
+.story-image:hover span { text-decoration:underline; }
+.study-return { grid-column:1 / -1; margin:12px 0 0; }
+.story-content { overflow-wrap:anywhere; }
+.reading-only { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@media(max-width:600px) {
+  .story-content .case-study__principle { margin-inline:0; }
+}

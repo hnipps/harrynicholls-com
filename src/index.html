@@ -1,30 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head prefix="og: https://ogp.me/ns#">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!doctype html>
+<!--
 
-    <meta property="og:title" content="Harry Nicholls" />
-    <meta
+                         .  *      .             .
+                _..-~~-.._              .                  .
+             .-~     _    ~-.                     .
+            /    .-~~ ~-.    \          _.._
+           /    /  .-.   \    \      .-~    ~-.
+       _.-~    /  /   \   \    `-._ /  _      \
+    .-~       /  /     \   `-.     ~-./ ~-.    |
+   /   _..---'  /       `-._  `--.._    \  \   /
+  / .-~   _..--'       _    ~--.._  ~-.  |  | /
+ / /   .-~          .-~ ~-.       ~-.  \ /  /'
+| |   /          .-~      /\         \  `  /       /\
+ \ \  `-._    .-~       /  \    /\    `--'       /  \
+  `-.`-.__ `--'       _/    \__/  \__          _/    \_
+~~~~~`-.__~--..____.-~   ~~~   ~~~   ~--..__.-~   ~~~   ~~~~
+  ~~~    ~~~     ~~~~~    ~~~     ~~~~~    ~~~    ~~~~~
+
+    A little wave for the source-viewers.
+    An original ASCII sketch after Hokusai's The Great Wave off Kanagawa.
+    Hello, curious person. The interesting things are often underneath.
+    Welcome to Harry's corner of the web. Thanks for looking closely.
+
+-->
+<html lang="en">
+<head>
+  <base href="/portfolio-views/paper-stack/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:title" content="Harry Nicholls" />
+<meta
       name="description"
       content="Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck."
     />
-    <meta
+<meta
       property="og:description"
       content="Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck."
     />
-    <meta
+<meta
       property="og:image"
       content="https://www.harrynicholls.com/assets/hi-im-harry-2.png"
     />
-    <meta name="twitter:site" content="@harrynicholls" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@harrynicholls" />
-
-    <link rel="canonical" href="https://harrynicholls.com/" />
-    <link rel="describedby" type="text/plain" href="/llms.txt" />
-    <script type="application/ld+json">
+<meta name="twitter:site" content="@harrynicholls" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@harrynicholls" />
+<link rel="canonical" href="https://harrynicholls.com/" />
+<link rel="describedby" type="text/plain" href="/llms.txt" />
+<script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
@@ -74,488 +96,43 @@
       }
     </script>
 
-    <title>Harry Nicholls</title>
-    <link rel="stylesheet" href="/index.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
-    <script
-      src="https://kit.fontawesome.com/c16de944b7.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body class="video-container">
-    <video
-      class="fg"
-      autoplay
-      muted
-      playsinline
-      disablepictureinpicture
-      loop
-      preload="auto"
-      height="100%"
-      width="100%"
-    >
-      <source src="assets/bg-video.mp4" type="video/mp4" />
-    </video>
-    <main class="container">
-      <video
-        class="fuzz"
-        autoplay
-        muted
-        playsinline
-        disablepictureinpicture
-        loop
-        preload="auto"
-        height="100%"
-        width="100%"
-      >
-        <source src="assets/bg-video.mp4" type="video/mp4" />
-      </video>
-      <video
-        class="water"
-        autoplay
-        muted
-        playsinline
-        disablepictureinpicture
-        loop
-        preload="auto"
-        height="100%"
-        width="100%"
-      >
-        <source src="assets/water.mp4" type="video/mp4" />
-      </video>
-      <div class="content-wrapper">
-        <a
-          class="github-container"
-          href="https://github.com/hnipps/harrynicholls-com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-        <h1 id="main-heading" class="main-heading heading-1">
-          <span id="x0048-1">H</span><span id="x0069-1">i</span
-          ><span id="x002E-1" class="bright-dot">.</span><br /><span>I</span
-          ><span>'</span><span>m</span><span> </span><span id="x0048-2">H</span
-          ><span id="x0061-1">a</span><span id="x0072-1">r</span
-          ><span id="x0072-2">r</span><span id="x0079-1">y</span
-          ><span id="x002E-2" class="bright-dot">.</span>
-        </h1>
-        <div class="flex-container">
-          <p class="body light">Dad.</p>
-          <p class="body light">Software engineer.</p>
-          <p class="body light">Problem-solver.</p>
-          <p class="body light">Woodworker.</p>
-          <p class="body light">Technical leader.</p>
-        </div>
-        <hr class="divider" />
-        <div class="status-container">
-          <p class="body light">
-            <em class="status-label">Current status:</em> Senior Product Engineer
-            @
-            <a
-              href="https://ev.energy/"
-              target="_blank"
-              rel="noreferrer noopener"
-              >ev.energy</a
-            >.
-          </p>
-        </div>
-        <div class="link-container">
-          <button class="btn" onclick="toggleDialog()">About</button>
-          <!-- <a class="btn" href="/resume.html">Resume</a> -->
-          <a class="btn" href="/portfolio.html">Portfolio</a>
-          <a
-            class="btn"
-            href="https://github.com/hnipps"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-          <a
-            class="btn"
-            href="https://brainflow.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Substack</a
-          >
-          <a
-            class="btn"
-            href="https://harrynicholls.medium.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Medium</a
-          >
-          <a
-            class="btn"
-            href="https://x.com/harrynicholls"
-            target="_blank"
-            rel="noopener noreferrer"
-            >X</a
-          >
-          <a
-            class="btn"
-            href="https://www.linkedin.com/in/harry-nicholls-91779959/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            class="btn"
-            href="mailto:harry.m.nicholls@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Email</a
-          >
-        </div>
-      </div>
-    </main>
-    <div onclick="toggleDialog()" class="dialog-backdrop closed">
-      <div class="standard-dialog center scale-down about__dialog closed">
-        <h1 class="dialog-text">About Harry Nicholls</h1>
-        <p class="dialog-text">
-          <em>Who I am:</em> A senior software engineer and technical leader
-          with over 10 years' experience designing, building and shipping
-          software, based in the Toronto area and working remotely. I'm a Senior Product Engineer at ev.energy, where I build
-          AI products and the agent infrastructure behind them: MCP servers,
-          agent gateways and agentic CI workflows.
-        </p>
-
-        <p class="dialog-text">
-          <em>What I'm building:</em> On the side, I run
-          <a href="https://gitrove.com" target="_blank" rel="noopener noreferrer">gitrove</a>,
-          a daily digest of your GitHub network, and
-          <a href="https://github.com/nicholls-inc/crosscheck" target="_blank" rel="noopener noreferrer">Crosscheck</a>,
-          a Claude Code plugin that formally verifies AI-generated code. More
-          in the <a href="/portfolio.html">portfolio</a>.
-        </p>
-
-        <p class="dialog-text">
-          <em>What I bring:</em> Deep experience in TypeScript, React and
-          Node.js, plus Python and Go services on PostgreSQL and SQLite. Hands-on
-          with LLM agents, MCP and formal methods (Dafny, Lean 4). A track record of
-          architecting and shipping large-scale web applications and the
-          services behind them.
-        </p>
-
-        <p class="dialog-text">
-          <em>What I care about:</em> Building products people enjoy using,
-          growing strong engineering teams, and doing work that's good for
-          people and the planet.
-        </p>
-
-        <p class="dialog-text">
-          <em>Things I love:</em> My partner and our three kids, skiing, coffee,
-          woodworking and building the internet.
-        </p>
-        <hr style="border-style: dotted" />
-        <p class="dialog-text">&copy; 2026 Nicholls Inc.</p>
-      </div>
-    </div>
-    <script>
-      // Allow elements to fade in from 0 to 1 opactiy
-      const elList = [
-        ".video-container video.water",
-        ".main-heading",
-        ".flex-container",
-        ".divider",
-        ".status-container",
-        ".link-container",
-        ".github-container",
-      ].map((selector) => document.querySelector(selector));
-
-      elList.forEach((el) => (el.style.opacity = 0));
-
-      setTimeout(() => {
-        elList.forEach((el) => (el.style.opacity = 1));
-      }, 0);
-
-      // Change path to index.html to prevent intro animation playing on back nav
-      setTimeout(() => {
-        history.pushState({}, "", "home.html");
-      }, 0);
-
-      // Animate heading characters
-      const fontFamilyMap = {
-        x0048: [
-          "Helvetica-x0048",
-          "Arial-x0048",
-          "Arial Black-x0048",
-          "Verdana-x0048",
-          "Tahoma-x0048",
-          "Trebuchet MS-x0048",
-          "Impact-x0048",
-          "Gill Sans-x0048",
-          "Times New Roman-x0048",
-          "Georgia-x0048",
-          "Palatino-x0048",
-          "Baskerville-x0048",
-          "Andalé Mono-x0048",
-          "Courier-x0048",
-          "Lucida-x0048",
-          "Monaco-x0048",
-          "Bradley Hand-x0048",
-          "Brush Script MT-x0048",
-          "Luminari-x0048",
-          "Comic Sans MS-x0048",
-          "AppleGaramond-x0048",
-          "Chicago_12-x0048",
-        ],
-        x0069: [
-          "Helvetica-x0069",
-          "Arial-x0069",
-          "Arial Black-x0069",
-          "Verdana-x0069",
-          "Tahoma-x0069",
-          "Trebuchet MS-x0069",
-          "Impact-x0069",
-          "Gill Sans-x0069",
-          "Times New Roman-x0069",
-          "Georgia-x0069",
-          "Palatino-x0069",
-          "Baskerville-x0069",
-          "Andalé Mono-x0069",
-          "Courier-x0069",
-          "Lucida-x0069",
-          "Monaco-x0069",
-          "Bradley Hand-x0069",
-          "Brush Script MT-x0069",
-          "Luminari-x0069",
-          "Comic Sans MS-x0069",
-          "AppleGaramond-x0069",
-          "Chicago_12-x0069",
-        ],
-        x002E: [
-          "Helvetica-x002E",
-          "Arial-x002E",
-          "Arial Black-x002E",
-          "Verdana-x002E",
-          "Tahoma-x002E",
-          "Trebuchet MS-x002E",
-          "Impact-x002E",
-          "Gill Sans-x002E",
-          "Times New Roman-x002E",
-          "Georgia-x002E",
-          "Palatino-x002E",
-          "Baskerville-x002E",
-          "Andalé Mono-x002E",
-          "Courier-x002E",
-          "Lucida-x002E",
-          "Monaco-x002E",
-          "Bradley Hand-x002E",
-          "Brush Script MT-x002E",
-          "Luminari-x002E",
-          "Comic Sans MS-x002E",
-          "AppleGaramond-x002E",
-          "Chicago_12-x002E",
-        ],
-        x0049: [
-          "Helvetica-x0049",
-          "Arial-x0049",
-          "Arial Black-x0049",
-          "Verdana-x0049",
-          "Tahoma-x0049",
-          "Trebuchet MS-x0049",
-          "Impact-x0049",
-          "Gill Sans-x0049",
-          "Times New Roman-x0049",
-          "Georgia-x0049",
-          "Palatino-x0049",
-          "Baskerville-x0049",
-          "Andalé Mono-x0049",
-          "Courier-x0049",
-          "Lucida-x0049",
-          "Monaco-x0049",
-          "Bradley Hand-x0049",
-          "Brush Script MT-x0049",
-          "Luminari-x0049",
-          "Comic Sans MS-x0049",
-          "AppleGaramond-x0049",
-          "Chicago_12-x0049",
-        ],
-        x0027: [
-          "Helvetica-x0027",
-          "Arial-x0027",
-          "Arial Black-x0027",
-          "Verdana-x0027",
-          "Tahoma-x0027",
-          "Trebuchet MS-x0027",
-          "Impact-x0027",
-          "Gill Sans-x0027",
-          "Times New Roman-x0027",
-          "Georgia-x0027",
-          "Palatino-x0027",
-          "Baskerville-x0027",
-          "Andalé Mono-x0027",
-          "Courier-x0027",
-          "Lucida-x0027",
-          "Monaco-x0027",
-          "Bradley Hand-x0027",
-          "Brush Script MT-x0027",
-          "Luminari-x0027",
-          "Comic Sans MS-x0027",
-          "AppleGaramond-x0027",
-          "Chicago_12-x0027",
-        ],
-        x006D: [
-          "Helvetica-x006D",
-          "Arial-x006D",
-          "Arial Black-x006D",
-          "Verdana-x006D",
-          "Tahoma-x006D",
-          "Trebuchet MS-x006D",
-          "Impact-x006D",
-          "Gill Sans-x006D",
-          "Times New Roman-x006D",
-          "Georgia-x006D",
-          "Palatino-x006D",
-          "Baskerville-x006D",
-          "Andalé Mono-x006D",
-          "Courier-x006D",
-          "Lucida-x006D",
-          "Monaco-x006D",
-          "Bradley Hand-x006D",
-          "Brush Script MT-x006D",
-          "Luminari-x006D",
-          "Comic Sans MS-x006D",
-          "AppleGaramond-x006D",
-          "Chicago_12-x006D",
-        ],
-        x0061: [
-          "Helvetica-x0061",
-          "Arial-x0061",
-          "Arial Black-x0061",
-          "Verdana-x0061",
-          "Tahoma-x0061",
-          "Trebuchet MS-x0061",
-          "Impact-x0061",
-          "Gill Sans-x0061",
-          "Times New Roman-x0061",
-          "Georgia-x0061",
-          "Palatino-x0061",
-          "Baskerville-x0061",
-          "Andalé Mono-x0061",
-          "Courier-x0061",
-          "Lucida-x0061",
-          "Monaco-x0061",
-          "Bradley Hand-x0061",
-          "Brush Script MT-x0061",
-          "Luminari-x0061",
-          "Comic Sans MS-x0061",
-          "AppleGaramond-x0061",
-          "Chicago_12-x0061",
-        ],
-        x0072: [
-          "Helvetica-x0072",
-          "Arial-x0072",
-          "Arial Black-x0072",
-          "Verdana-x0072",
-          "Tahoma-x0072",
-          "Trebuchet MS-x0072",
-          "Impact-x0072",
-          "Gill Sans-x0072",
-          "Times New Roman-x0072",
-          "Georgia-x0072",
-          "Palatino-x0072",
-          "Baskerville-x0072",
-          "Andalé Mono-x0072",
-          "Courier-x0072",
-          "Lucida-x0072",
-          "Monaco-x0072",
-          "Bradley Hand-x0072",
-          "Brush Script MT-x0072",
-          "Luminari-x0072",
-          "Comic Sans MS-x0072",
-          "AppleGaramond-x0072",
-          "Chicago_12-x0072",
-        ],
-        x0079: [
-          "Helvetica-x0079",
-          "Arial-x0079",
-          "Arial Black-x0079",
-          "Verdana-x0079",
-          "Tahoma-x0079",
-          "Trebuchet MS-x0079",
-          "Impact-x0079",
-          "Gill Sans-x0079",
-          "Times New Roman-x0079",
-          "Georgia-x0079",
-          "Palatino-x0079",
-          "Baskerville-x0079",
-          "Andalé Mono-x0079",
-          "Courier-x0079",
-          "Lucida-x0079",
-          "Monaco-x0079",
-          "Bradley Hand-x0079",
-          "Brush Script MT-x0079",
-          "Luminari-x0079",
-          "Comic Sans MS-x0079",
-          "AppleGaramond-x0079",
-          "Chicago_12-x0079",
-        ],
-      };
-
-      const getRandomFontFamily = (unicode) =>
-        fontFamilyMap[unicode][
-          Math.floor(Math.random() * fontFamilyMap[unicode].length)
-        ];
-
-      const headingElements = new Array(
-        ...document.querySelector("#main-heading").children
-      )
-        .filter((node) => Boolean(node.id))
-        .sort(
-          () => Math.floor(Math.random() * 10) - Math.floor(Math.random() * 10)
-        );
-
-      let offset = 10000;
-      headingElements.forEach((el) => {
-        setTimeout(() => {
-          setInterval(() => {
-            const fontFamily = getRandomFontFamily(el.id.split("-")[0]);
-            el.style.fontFamily = `"${fontFamily}", AppleGaramond, serif`;
-          }, Math.max(Math.floor(Math.random() * 5000), 350));
-        }, offset);
-        offset += Math.max(Math.floor(Math.random() * 10000), 1000);
-      });
-
-      let dialogOpen = false;
-
-      const dialogEl = document.querySelector(".about__dialog");
-      const backdropEl = document.querySelector(".dialog-backdrop");
-      const contentWrapperEl = document.querySelector(".container");
-
-      const initialDialogClassName =
-        "standard-dialog center scale-down about__dialog";
-      const initialBackdropClassName = "dialog-backdrop";
-
-      const handleEsc = (e) => {
-        e.preventDefault();
-        if (e.key === "Escape") {
-          toggleDialog();
-        }
-      };
-
-      function toggleDialog() {
-        dialogEl.className = dialogOpen
-          ? `${initialDialogClassName} closed`
-          : `${initialDialogClassName} open`;
-
-        backdropEl.className = dialogOpen
-          ? `${initialBackdropClassName} closed`
-          : `${initialBackdropClassName} open`;
-
-        contentWrapperEl.className = dialogOpen
-          ? "container"
-          : "container blur";
-
-        dialogOpen = dialogOpen ? false : true;
-
-        if (dialogOpen) {
-          document.addEventListener("keyup", handleEsc);
-        } else {
-          document.removeEventListener("keyup", handleEsc);
-        }
-      }
-    </script>
-  </body>
+  <meta name="theme-color" content="#f6f2e7">
+  <title>Harry Nicholls | Product Engineer</title>
+  <link rel="stylesheet" href="paper-stack.css?v=scroll-20261030-1">
+  <script type="module" src="paper-stack.js?v=scroll-20261030-1"></script>
+</head>
+<body>
+  <button id="peel-corner" type="button" aria-label="Peel to reveal Signal press. Click, or drag down and right."><span class="sr-only">Reveal the next view</span></button>
+  <main id="stack" aria-label="Harry Nicholls’s portfolio">
+    <iframe class="sheet is-current" id="first-sheet" src="themes/personal-letter.html" title="Harry Nicholls — A personal letter"></iframe>
+    <iframe class="sheet is-under" id="second-sheet" src="themes/signal-press.html" title="Harry Nicholls — Signal press" aria-hidden="true" inert tabindex="-1"></iframe>
+  </main>
+  <svg id="paper-curl" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="paper-shade" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#d3d0c4"/>
+        <stop offset=".18" stop-color="#f0ece0"/>
+        <stop offset=".62" stop-color="#fffdf5"/>
+        <stop offset="1" stop-color="#e0dccf"/>
+      </linearGradient>
+      <pattern id="reverse-pattern" patternUnits="userSpaceOnUse" width="20" height="20"></pattern>
+      <filter id="curl-shadow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="5"/>
+      </filter>
+    </defs>
+    <path id="fold-shadow" fill="#161914" opacity=".25" filter="url(#curl-shadow)"/>
+    <path id="fold-paper" fill="url(#paper-shade)"/>
+    <path id="fold-print" fill="url(#reverse-pattern)"/>
+    <path id="fold-crease" fill="none" stroke="#302f2a" stroke-opacity=".12" stroke-width="1.2"/>
+    <path id="fold-edge" fill="none" stroke="#fffef7" stroke-opacity=".65" stroke-width="1.25"/>
+  </svg>
+  <div id="drag-shield" aria-hidden="true"></div>
+  <p id="drag-hint" aria-hidden="true"></p>
+  <nav id="paper-sheaf" aria-label="Previously opened portfolio views" hidden>
+    <p id="sheaf-help" class="sr-only">Discarded views. Focus or tap to spread the papers. Use the arrow keys to choose a paper and Enter to bring it back. Escape puts the papers away.</p>
+    <div id="discarded-papers"></div>
+  </nav>
+  <p id="view-status" class="sr-only" role="status" aria-live="polite"></p>
+  <noscript><style>.paper-sheaf,#paper-sheaf,#peel-corner,#paper-curl{display:none}.sheet{height:calc(100% - 80px)}</style><nav class="no-script" aria-label="Choose a portfolio view"><a href="themes/personal-letter.html">A personal letter</a> · <a href="themes/signal-press.html">Signal press</a> · <a href="themes/symbols-pixels.html">Dot matrix</a> · <a href="themes/minimal-data.html">Project atlas</a> · <a href="themes/working-index.html">Working index</a> · <a href="themes/bare-html.html">HTML</a></nav></noscript>
+</body>
 </html>

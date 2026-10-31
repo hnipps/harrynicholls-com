@@ -1,0 +1,10 @@
+.symbols-pixels .other-projects a { min-height:44px; padding-block:10px; }
+.symbols-pixels .gallery-originals { margin:32px 0 0; }
+.symbols-pixels .gallery-originals button {
+  min-height:44px;
+  padding:10px 16px;
+  border:0;
+  color:var(--ink);
+  background:var(--surface);
+  cursor:pointer;
+}

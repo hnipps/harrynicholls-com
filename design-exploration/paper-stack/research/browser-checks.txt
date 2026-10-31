@@ -1,0 +1,42 @@
+PASS initial letter and curled corner within two seconds
+PASS reversible drag below threshold springs back
+PASS releasing past threshold completes the live peel
+PASS single click auto-plays the next peel
+PASS chosen view survives a reload
+PASS personal-letter: complete content and layout at 1440px
+PASS personal-letter: complete content and layout at 768px
+PASS personal-letter: complete content and layout at 390px
+PASS personal-letter: project links reveal same-theme case studies
+PASS signal-press: complete content and layout at 1440px
+PASS signal-press: complete content and layout at 768px
+PASS signal-press: complete content and layout at 390px
+PASS signal-press: project links reveal same-theme case studies
+PASS Signal press filters still work
+PASS symbols-pixels: complete content and layout at 1440px
+PASS symbols-pixels: complete content and layout at 768px
+PASS symbols-pixels: complete content and layout at 390px
+PASS symbols-pixels: project links reveal same-theme case studies
+PASS Dot matrix original-image control still works
+PASS minimal-data: complete content and layout at 1440px
+PASS minimal-data: complete content and layout at 768px
+PASS minimal-data: complete content and layout at 390px
+PASS minimal-data: project links reveal same-theme case studies
+PASS Project atlas data controls still work
+PASS working-index: complete content and layout at 1440px
+PASS working-index: complete content and layout at 768px
+PASS working-index: complete content and layout at 390px
+PASS working-index: project links reveal same-theme case studies
+PASS Working index search still works
+PASS bare-html: complete content and layout at 1440px
+PASS bare-html: complete content and layout at 768px
+PASS bare-html: complete content and layout at 390px
+PASS bare-html: project links reveal same-theme case studies
+PASS final HTML uses native serif text and bright-blue links
+PASS the single header reset returns to the letter without reloading and saves it
+PASS touch drag can complete a peel on a phone
+PASS switching themes preserves the current case study
+PASS reduced motion switches immediately and supports keyboard activation
+PASS storage-disabled browsers can still select and peel themes
+PASS no-JavaScript visitors can read the letter and open every theme
+PASS existing variants and production source remain untouched
+No browser runtime exceptions.

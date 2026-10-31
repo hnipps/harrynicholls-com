@@ -1,0 +1,4 @@
+1440px: no overflow, four derived halftone previews, keyboard toggle and pressed state, original case study present, no runtime exceptions
+768px: no overflow, four derived halftone previews, keyboard toggle and pressed state, original case study present, no runtime exceptions
+390px: no overflow, four derived halftone previews, keyboard toggle and pressed state, original case study present, no runtime exceptions
+Without JavaScript, original images and all reading/links remain available.

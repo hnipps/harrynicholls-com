@@ -107,111 +107,51 @@
       }
     </script>
 
-    <title>Harry Nicholls</title>
-    <link rel="stylesheet" href="/index.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
-    <script
-      src="https://kit.fontawesome.com/c16de944b7.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>Work | Harry Nicholls</title>
+
+
+
+  <link rel="stylesheet" href="/index.css" />
+    <script src="/index.js" defer></script>
   </head>
-  <body class="video-container portfolio">
-    <video
-      class="fg"
-      autoplay
-      muted
-      playsinline
-      disablepictureinpicture
-      loop
-      preload="auto"
-      height="100%"
-      width="100%"
-    >
-      <source src="assets/bg-video.mp4" type="video/mp4" />
-    </video>
-    <main class="container">
-      <video
-        class="fuzz"
-        autoplay
-        muted
-        playsinline
-        disablepictureinpicture
-        loop
-        preload="auto"
-        height="100%"
-        width="100%"
-      >
-        <source src="assets/bg-video.mp4" type="video/mp4" />
-      </video>
-      <video
-        class="water"
-        autoplay
-        muted
-        playsinline
-        disablepictureinpicture
-        loop
-        preload="auto"
-        height="100%"
-        width="100%"
-      >
-        <source src="assets/water.mp4" type="video/mp4" />
-      </video>
-      <div class="content-wrapper">
-        <a class="home-link" href="/home.html">
-          <i class="fas fa-arrow-left" aria-hidden="true"></i>Home
-        </a>
-        <a
-          class="github-container"
-          href="https://github.com/hnipps/harrynicholls-com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-
-        <h1 class="hn-heading heading-1">
-          Portfolio<span class="bright-dot">.</span>
-        </h1>
-        <hr class="divider" />
-        <div class="link-container">
-          <button class="btn" onclick="toggleModal('gitrove')">gitrove</button>
-          <button class="btn" onclick="toggleModal('crosscheck')">
-            Crosscheck
-          </button>
-          <button class="btn" onclick="toggleModal('recommender')">
-            Recommender
-          </button>
-          <button class="btn" onclick="toggleModal('opsdeck')">opsdeck</button>
-          <button class="btn" onclick="toggleModal('go-home')">GoHome</button>
-          <button class="btn" onclick="toggleModal('llm-cover-letters')">
-            LLM Cover Letters
-          </button>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header frame">
+      <a class="wordmark" href="/">Harry Nicholls</a>
+      <nav aria-label="Main navigation">
+        <a href="/portfolio.html">Work</a>
+        <a href="/#about">About</a>
+        <a href="/#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header><main id="main">
+      <section class="hero frame" aria-labelledby="page-heading">
+        <h1 id="page-heading"><span>Selected work</span></h1>
+        <div class="hero-bottom">
+          <div><p class="hero-description">Software for open-source discovery, AI verification, and the little things that make a day work better.</p>
+          <p class="current-role">Currently at <a href="https://ev.energy/" target="_blank" rel="noopener noreferrer">ev.energy</a>. Independently building <a href="https://gitrove.com" target="_blank" rel="noopener noreferrer">gitrove</a> and <a href="https://github.com/nicholls-inc/crosscheck" target="_blank" rel="noopener noreferrer">Crosscheck</a>.</p></div>
+          <a class="button" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
         </div>
-      </div>
-    </main>
-
-    <div class="dialog-backdrop gitrove" onclick="toggleModal('gitrove')">
-      <div
-        class="window case-study__window closed"
-        data-modal="gitrove"
-        onclick="event.cancelBubble=true;"
-      >
-        <div class="title-bar">
-          <button
-            aria-label="Close"
-            class="close"
-            onclick="toggleModal('gitrove')"
-          ></button>
-          <h2 class="title"><span class="title-prefix">Case study #1: </span>gitrove</h2>
+      </section><section class="work frame" id="work" aria-labelledby="work-heading">
+        <div class="section-intro">
+          <h2 id="work-heading" data-reveal>Selected work</h2>
+          <p data-reveal>Products I use, problems I care about.<br>Open a project to read the story.</p>
         </div>
-        <div class="window-pane">
+        <div class="project-index"><details class="project" id="gitrove">
+            <summary>
+              <span class="project-name">gitrove</span>
+              <span class="project-description">Daily discoveries from your GitHub network.<span class="project-tech">Go, TypeScript, PostgreSQL</span></span>
+              <span class="project-preview"><img src="/assets/gitrove/v2-1.png" alt="gitrove project interface" width="3168" height="2176" loading="lazy" decoding="async" /></span>
+              <span class="project-toggle"><span class="read-label">Read case study</span><span class="close-label">Close case study</span><span class="toggle-symbol" aria-hidden="true">+</span></span>
+            </summary>
+            <div class="case-study" aria-label="gitrove case study">
           <div class="project-metadata">
             <p class="body">
-              <strong><em>Purpose:</em></strong> Daily digest of your GitHub
+              <strong>Purpose:</strong> Daily digest of your GitHub
               network
             </p>
             <p class="body">
-              <strong><em>URL:</em></strong>
+              <strong>URL:</strong>
               <a
                 href="https://gitrove.com"
                 target="_blank"
@@ -221,7 +161,7 @@
             </p>
             <div class="tech-list-container">
               <p class="body">
-                <strong><em>Tech:</em></strong>
+                <strong>Tech:</strong>
               </p>
               <ul class="tech-list">
                 <li><p class="body">TypeScript</p></li>
@@ -236,9 +176,7 @@
             </div>
           </div>
           <div>
-            <h3 class="body">
-              <strong><em>Description:</em></strong>
-            </h3>
+            <h3>How it works</h3>
             <p class="body">
               gitrove is a discovery tool for open-source developers and
               repositories, built around a personal daily digest. A user signs
@@ -303,31 +241,21 @@
             />
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="dialog-backdrop crosscheck" onclick="toggleModal('crosscheck')">
-      <div
-        class="window case-study__window closed"
-        data-modal="crosscheck"
-        onclick="event.cancelBubble=true;"
-      >
-        <div class="title-bar">
-          <button
-            aria-label="Close"
-            class="close"
-            onclick="toggleModal('crosscheck')"
-          ></button>
-          <h2 class="title"><span class="title-prefix">Case study #2: </span>Crosscheck</h2>
-        </div>
-        <div class="window-pane">
+          </details><details class="project" id="crosscheck">
+            <summary>
+              <span class="project-name">Crosscheck</span>
+              <span class="project-description">Formal verification for AI-generated code.<span class="project-tech">TypeScript, Dafny, Lean 4</span></span>
+              <span class="project-preview"><span class="verification-preview" aria-hidden="true">Crosscheck<br><span>Code. Proof. Confidence.</span></span></span>
+              <span class="project-toggle"><span class="read-label">Read case study</span><span class="close-label">Close case study</span><span class="toggle-symbol" aria-hidden="true">+</span></span>
+            </summary>
+            <div class="case-study" aria-label="Crosscheck case study">
           <div class="project-metadata">
             <p class="body">
-              <strong><em>Purpose:</em></strong> Formal verification for
+              <strong>Purpose:</strong> Formal verification for
               AI-generated code
             </p>
             <p class="body">
-              <strong><em>URL:</em></strong>
+              <strong>URL:</strong>
               <a
                 href="https://github.com/nicholls-inc/crosscheck"
                 target="_blank"
@@ -337,7 +265,7 @@
             </p>
             <div class="tech-list-container">
               <p class="body">
-                <strong><em>Tech:</em></strong>
+                <strong>Tech:</strong>
               </p>
               <ul class="tech-list">
                 <li><p class="body">TypeScript</p></li>
@@ -352,9 +280,7 @@
             </div>
           </div>
           <div>
-            <h3 class="body">
-              <strong><em>Description:</em></strong>
-            </h3>
+            <h3>How it works</h3>
             <p class="body">
               Crosscheck is a Claude Code plugin for checking the code an AI
               assistant writes. It has 30 skills, 5 agents and an MCP server
@@ -394,35 +320,25 @@
             </p>
           </blockquote>
         </div>
-      </div>
-    </div>
-
-    <div class="dialog-backdrop recommender" onclick="toggleModal('recommender')">
-      <div
-        class="window case-study__window closed"
-        data-modal="recommender"
-        onclick="event.cancelBubble=true;"
-      >
-        <div class="title-bar">
-          <button
-            aria-label="Close"
-            class="close"
-            onclick="toggleModal('recommender')"
-          ></button>
-          <h2 class="title"><span class="title-prefix">Case study #3: </span>Recommender</h2>
-        </div>
-        <div class="window-pane">
+          </details><details class="project" id="recommender">
+            <summary>
+              <span class="project-name">Recommender</span>
+              <span class="project-description">A film and TV recommender that learns my taste.<span class="project-tech">Python, machine learning</span></span>
+              <span class="project-preview"><img src="/assets/recommender/1.png" alt="Recommender project interface" width="3168" height="2176" loading="lazy" decoding="async" /></span>
+              <span class="project-toggle"><span class="read-label">Read case study</span><span class="close-label">Close case study</span><span class="toggle-symbol" aria-hidden="true">+</span></span>
+            </summary>
+            <div class="case-study" aria-label="Recommender case study">
           <div class="project-metadata">
             <p class="body">
-              <strong><em>Purpose:</em></strong> Personal film and TV
+              <strong>Purpose:</strong> Personal film and TV
               recommendations for a home Plex server
             </p>
             <p class="body">
-              <strong><em>Access:</em></strong> Private, self-hosted
+              <strong>Access:</strong> Private, self-hosted
             </p>
             <div class="tech-list-container">
               <p class="body">
-                <strong><em>Tech:</em></strong>
+                <strong>Tech:</strong>
               </p>
               <ul class="tech-list">
                 <li><p class="body">Python</p></li>
@@ -438,9 +354,7 @@
             </div>
           </div>
           <div>
-            <h3 class="body">
-              <strong><em>Description:</em></strong>
-            </h3>
+            <h3>How it works</h3>
             <p class="body">
               Trakt, Plex Discover and TMDB lists were not personal enough, so I
               built a recommender for one person: me. Every night at 04:00 it
@@ -507,34 +421,24 @@
             />
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="dialog-backdrop opsdeck" onclick="toggleModal('opsdeck')">
-      <div
-        class="window case-study__window closed"
-        data-modal="opsdeck"
-        onclick="event.cancelBubble=true;"
-      >
-        <div class="title-bar">
-          <button
-            aria-label="Close"
-            class="close"
-            onclick="toggleModal('opsdeck')"
-          ></button>
-          <h2 class="title"><span class="title-prefix">Case study #4: </span>opsdeck</h2>
-        </div>
-        <div class="window-pane">
+          </details><details class="project" id="opsdeck">
+            <summary>
+              <span class="project-name">opsdeck</span>
+              <span class="project-description">A personal dashboard for the pull requests that need me.<span class="project-tech">Go, SQLite, GitHub GraphQL</span></span>
+              <span class="project-preview"><img src="/assets/opsdeck/1.png" alt="opsdeck project interface" width="3168" height="2176" loading="lazy" decoding="async" /></span>
+              <span class="project-toggle"><span class="read-label">Read case study</span><span class="close-label">Close case study</span><span class="toggle-symbol" aria-hidden="true">+</span></span>
+            </summary>
+            <div class="case-study" aria-label="opsdeck case study">
           <div class="project-metadata">
             <p class="body">
-              <strong><em>Purpose:</em></strong> Personal pull request dashboard
+              <strong>Purpose:</strong> Personal pull request dashboard
             </p>
             <p class="body">
-              <strong><em>Access:</em></strong> Private, runs locally
+              <strong>Access:</strong> Private, runs locally
             </p>
             <div class="tech-list-container">
               <p class="body">
-                <strong><em>Tech:</em></strong>
+                <strong>Tech:</strong>
               </p>
               <ul class="tech-list">
                 <li><p class="body">Go</p></li>
@@ -549,9 +453,7 @@
             </div>
           </div>
           <div>
-            <h3 class="body">
-              <strong><em>Description:</em></strong>
-            </h3>
+            <h3>How it works</h3>
             <p class="body">
               opsdeck is a local-first dashboard that an engineer runs on their
               own machine against their own gh login. It gathers every pull
@@ -603,35 +505,25 @@
             />
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="dialog-backdrop go-home" onclick="toggleModal('go-home')">
-      <div
-        class="window case-study__window closed"
-        data-modal="go-home"
-        onclick="event.cancelBubble=true;"
-      >
-        <div class="title-bar">
-          <button
-            aria-label="Close"
-            class="close"
-            onclick="toggleModal('go-home')"
-          ></button>
-          <h2 class="title"><span class="title-prefix">Case study #5: </span>GoHome</h2>
-        </div>
-        <div class="window-pane">
+          </details><details class="project" id="go-home">
+            <summary>
+              <span class="project-name">GoHome</span>
+              <span class="project-description">One home for the services on my home server.<span class="project-tech">Go, PostgreSQL, Docker</span></span>
+              <span class="project-preview"><img src="/assets/go-home/1.png" alt="GoHome project interface" width="3168" height="2176" loading="lazy" decoding="async" /></span>
+              <span class="project-toggle"><span class="read-label">Read case study</span><span class="close-label">Close case study</span><span class="toggle-symbol" aria-hidden="true">+</span></span>
+            </summary>
+            <div class="case-study" aria-label="GoHome case study">
           <div class="project-metadata">
             <p class="body">
-              <strong><em>Purpose:</em></strong> Self-hosted home server
+              <strong>Purpose:</strong> Self-hosted home server
               dashboard
             </p>
             <p class="body">
-              <strong><em>Access:</em></strong> Private, self-hosted
+              <strong>Access:</strong> Private, self-hosted
             </p>
             <div class="tech-list-container">
               <p class="body">
-                <strong><em>Tech:</em></strong>
+                <strong>Tech:</strong>
               </p>
               <ul class="tech-list">
                 <li><p class="body">Go</p></li>
@@ -646,9 +538,7 @@
             </div>
           </div>
           <div>
-            <h3 class="body">
-              <strong><em>Description:</em></strong>
-            </h3>
+            <h3>How it works</h3>
             <p class="body">
               GoHome is a dashboard for homelab servers that run on Docker. It
               reads containers from the Docker socket and recognises common
@@ -705,33 +595,20 @@
             />
           </div>
         </div>
-      </div>
-    </div>
-
-    <div
-      class="dialog-backdrop llm-cover-letters"
-      onclick="toggleModal('llm-cover-letters')"
-    >
-      <div
-        class="window case-study__window closed"
-        data-modal="llm-cover-letters"
-        onclick="event.cancelBubble=true;"
-      >
-        <div class="title-bar">
-          <button
-            aria-label="Close"
-            class="close"
-            onclick="toggleModal('llm-cover-letters')"
-          ></button>
-          <h2 class="title"><span class="title-prefix">Case study #6: </span>LLM Cover Letters</h2>
-        </div>
-        <div class="window-pane">
+          </details><details class="project" id="llm-cover-letters">
+            <summary>
+              <span class="project-name">LLM Cover Letters</span>
+              <span class="project-description">Cover letters shaped around the job and your experience.<span class="project-tech">TypeScript, React, Next.js</span></span>
+              <span class="project-preview"><img src="/assets/llm-cover-letters/1.png" alt="LLM Cover Letters project interface" width="3168" height="2176" loading="lazy" decoding="async" /></span>
+              <span class="project-toggle"><span class="read-label">Read case study</span><span class="close-label">Close case study</span><span class="toggle-symbol" aria-hidden="true">+</span></span>
+            </summary>
+            <div class="case-study" aria-label="LLM Cover Letters case study">
           <div class="project-metadata">
             <p class="body">
-              <strong><em>Purpose:</em></strong> Generate cover letters
+              <strong>Purpose:</strong> Generate cover letters
             </p>
             <p class="body">
-              <strong><em>URL:</em></strong>
+              <strong>URL:</strong>
               <a
                 href="https://covered-one.vercel.app/"
                 target="_blank"
@@ -740,7 +617,7 @@
               >
             </p>
             <p class="body">
-              <strong><em>Demo:</em></strong>
+              <strong>Demo:</strong>
               <a
                 href="https://youtu.be/zzYzMSi5mqY"
                 target="_blank"
@@ -750,7 +627,7 @@
             </p>
             <div class="tech-list-container">
               <p class="body">
-                <strong><em>Tech:</em></strong>
+                <strong>Tech:</strong>
               </p>
               <ul class="tech-list">
                 <li><p class="body">TypeScript</p></li>
@@ -765,9 +642,7 @@
             </div>
           </div>
           <div>
-            <h3 class="body">
-              <strong><em>Description:</em></strong>
-            </h3>
+            <h3>How it works</h3>
             <p class="body">
               Covered (working title) is a web application that generates cover
               letters.
@@ -797,86 +672,38 @@
             />
           </div>
         </div>
+          </details></div>
+      </section><section class="about frame" id="about" aria-labelledby="about-heading">
+        <div class="about-heading">
+          <h2 id="about-heading" data-reveal>About me</h2>
+          <p data-reveal>Based in the Toronto area.<br>Working remotely.</p>
+        </div>
+        <div class="about-copy">
+          <p class="statement" data-reveal>I’m a software engineer, a dad of three, and a woodworker. I like making things that earn their place in someone’s day.</p>
+          <p data-reveal>I’m a Senior Product Engineer at <a href="https://ev.energy/" target="_blank" rel="noopener noreferrer">ev.energy</a>, building AI products and the infrastructure behind them: MCP servers, agent gateways, and agentic CI workflows.</p>
+          <p data-reveal>Over the past 10 years, I’ve designed, built, and shipped software, led engineering teams, and worked across TypeScript, React, Node.js, Python, Go, and PostgreSQL. Lately, I’ve been exploring formal methods with Dafny and Lean 4.</p>
+          <p data-reveal>I care about products people enjoy using, strong engineering teams, and work that’s good for people and the planet. Away from a screen, you’ll find me with my partner and our three kids, skiing, making coffee, or in the workshop.</p>
+        </div>
+      </section>
+      <section class="writing frame" id="writing" aria-labelledby="writing-heading">
+        <h2 id="writing-heading" data-reveal>Writing &amp; elsewhere</h2>
+        <div class="writing-links" data-reveal>
+          <a href="https://brainflow.substack.com/" target="_blank" rel="noopener noreferrer">Brainflow on Substack</a>
+          <a href="https://harrynicholls.medium.com/" target="_blank" rel="noopener noreferrer">Writing on Medium</a>
+          <a href="https://github.com/hnipps" target="_blank" rel="noopener noreferrer">Code on GitHub</a>
+          <a href="https://www.are.na/harry-nicholls/crosscheck" target="_blank" rel="noopener noreferrer">Collected on Are.na</a>
+        </div>
+      </section></main><footer class="contact" id="contact">
+      <div class="frame">
+        <h2 data-reveal>Get in touch</h2>
+        <a class="contact-email" data-reveal href="mailto:harry.m.nicholls@gmail.com">harry.m.nicholls<wbr>@gmail.com</a>
+        <div class="footer-links" data-reveal>
+          <a href="https://www.linkedin.com/in/harry-nicholls-91779959/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://x.com/harrynicholls" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://github.com/hnipps/harrynicholls-com/" target="_blank" rel="noopener noreferrer">Site source</a>
+          <span>© 2026 Nicholls Inc.</span>
+        </div>
       </div>
-    </div>
-    <script>
-      let openModal = null;
-
-      const contentWrapperEl = document.querySelector(".container");
-
-      // The page-wide grain (video.fg) sits below open modals so iOS can
-      // touch-scroll them, so each open case study gets its own grain layer
-      // inside its scrolling pane.
-      const grainEl = document.querySelector("video.fg");
-      let modalGrainEl = null;
-      const paneResizeObserver = new ResizeObserver(([entry]) => {
-        entry.target.style.setProperty(
-          "--pane-height",
-          `${entry.target.clientHeight}px`
-        );
-      });
-
-      function addModalGrain(modalEl) {
-        const paneEl = modalEl.querySelector(".window-pane");
-        modalGrainEl = grainEl.cloneNode(true);
-        modalGrainEl.classList.add("case-study__grain");
-        paneEl.prepend(modalGrainEl);
-        paneResizeObserver.observe(paneEl);
-        modalGrainEl.play().catch(() => {});
-      }
-
-      function removeModalGrain() {
-        if (!modalGrainEl) return;
-        paneResizeObserver.disconnect();
-        modalGrainEl.remove();
-        modalGrainEl = null;
-      }
-
-      const initialModalClassName = "window case-study__window";
-      const initialBackdropClassName = "dialog-backdrop";
-
-      const handleEsc = (e) => {
-        e.preventDefault();
-        if (e.key === "Escape" && openModal) {
-          toggleModal(openModal);
-        }
-      };
-
-      function toggleModal(modalName) {
-        const modalEl = document.querySelector(
-          `.window.case-study__window[data-modal="${modalName}"]`
-        );
-        const backdropEl = document.querySelector(
-          `.dialog-backdrop.${modalName}`
-        );
-
-        if (!modalEl || !backdropEl) return;
-
-        const isCurrentlyOpen = openModal === modalName;
-
-        modalEl.className = isCurrentlyOpen
-          ? `${initialModalClassName} closed`
-          : `${initialModalClassName} open`;
-
-        backdropEl.className = isCurrentlyOpen
-          ? `${initialBackdropClassName} ${modalName} closed`
-          : `${initialBackdropClassName} ${modalName} open`;
-
-        contentWrapperEl.className = isCurrentlyOpen
-          ? "container"
-          : "container blur";
-
-        openModal = isCurrentlyOpen ? null : modalName;
-
-        removeModalGrain();
-        if (openModal) addModalGrain(modalEl);
-
-        if (openModal) {
-          document.addEventListener("keyup", handleEsc);
-        } else {
-          document.removeEventListener("keyup", handleEsc);
-        }
-      }
-    </script>
+    </footer>
   </body>
 </html>

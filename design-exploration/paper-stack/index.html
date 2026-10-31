@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+
+                         .  *      .             .
+                _..-~~-.._              .                  .
+             .-~     _    ~-.                     .
+            /    .-~~ ~-.    \          _.._
+           /    /  .-.   \    \      .-~    ~-.
+       _.-~    /  /   \   \    `-._ /  _      \
+    .-~       /  /     \   `-.     ~-./ ~-.    |
+   /   _..---'  /       `-._  `--.._    \  \   /
+  / .-~   _..--'       _    ~--.._  ~-.  |  | /
+ / /   .-~          .-~ ~-.       ~-.  \ /  /'
+| |   /          .-~      /\         \  `  /       /\
+ \ \  `-._    .-~       /  \    /\    `--'       /  \
+  `-.`-.__ `--'       _/    \__/  \__          _/    \_
+~~~~~`-.__~--..____.-~   ~~~   ~~~   ~--..__.-~   ~~~   ~~~~
+  ~~~    ~~~     ~~~~~    ~~~     ~~~~~    ~~~    ~~~~~
+
+    A little wave for the source-viewers.
+    An original ASCII sketch after Hokusai's The Great Wave off Kanagawa.
+    Hello, curious person. The interesting things are often underneath.
+    Welcome to Harry's corner of the web. Thanks for looking closely.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f6f2e7">
+  <title>Harry Nicholls · A personal letter</title>
+  <link rel="stylesheet" href="paper-stack.css?v=scroll-20261030-1">
+  <script type="module" src="paper-stack.js?v=scroll-20261030-1"></script>
+</head>
+<body>
+  <button id="peel-corner" type="button" aria-label="Peel to reveal Signal press. Click, or drag down and right."><span class="sr-only">Reveal the next view</span></button>
+  <main id="stack" aria-label="Harry Nicholls’s portfolio">
+    <iframe class="sheet is-current" id="first-sheet" src="themes/personal-letter.html" title="Harry Nicholls — A personal letter"></iframe>
+    <iframe class="sheet is-under" id="second-sheet" src="themes/signal-press.html" title="Harry Nicholls — Signal press" aria-hidden="true" inert tabindex="-1"></iframe>
+  </main>
+  <svg id="paper-curl" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="paper-shade" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#d3d0c4"/>
+        <stop offset=".18" stop-color="#f0ece0"/>
+        <stop offset=".62" stop-color="#fffdf5"/>
+        <stop offset="1" stop-color="#e0dccf"/>
+      </linearGradient>
+      <pattern id="reverse-pattern" patternUnits="userSpaceOnUse" width="20" height="20"></pattern>
+      <filter id="curl-shadow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="5"/>
+      </filter>
+    </defs>
+    <path id="fold-shadow" fill="#161914" opacity=".25" filter="url(#curl-shadow)"/>
+    <path id="fold-paper" fill="url(#paper-shade)"/>
+    <path id="fold-print" fill="url(#reverse-pattern)"/>
+    <path id="fold-crease" fill="none" stroke="#302f2a" stroke-opacity=".12" stroke-width="1.2"/>
+    <path id="fold-edge" fill="none" stroke="#fffef7" stroke-opacity=".65" stroke-width="1.25"/>
+  </svg>
+  <div id="drag-shield" aria-hidden="true"></div>
+  <p id="drag-hint" aria-hidden="true"></p>
+  <nav id="paper-sheaf" aria-label="Previously opened portfolio views" hidden>
+    <p id="sheaf-help" class="sr-only">Discarded views. Focus or tap to spread the papers. Use the arrow keys to choose a paper and Enter to bring it back. Escape puts the papers away.</p>
+    <div id="discarded-papers"></div>
+  </nav>
+  <p id="view-status" class="sr-only" role="status" aria-live="polite"></p>
+  <noscript><style>.paper-sheaf,#paper-sheaf,#peel-corner,#paper-curl{display:none}.sheet{height:calc(100% - 80px)}</style><nav class="no-script" aria-label="Choose a portfolio view"><a href="themes/personal-letter.html">A personal letter</a> · <a href="themes/signal-press.html">Signal press</a> · <a href="themes/symbols-pixels.html">Dot matrix</a> · <a href="themes/minimal-data.html">Project atlas</a> · <a href="themes/working-index.html">Working index</a> · <a href="themes/bare-html.html">HTML</a></nav></noscript>
+</body>
+</html>
