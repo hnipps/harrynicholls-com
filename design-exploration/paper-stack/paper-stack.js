@@ -109,7 +109,7 @@ function getFrame(index) {
 
 function restPosition() {
   const small = innerWidth <= 600;
-  return { x:((small ? 58 : 88) + [0,5,-3,3,-2][active]) * (cornerHovered ? 1.12 : 1), y:((small ? 53 : 79) + [0,-3,4,-2,2][active]) * (cornerHovered ? 1.08 : 1) };
+  return { x:((small ? 47 : 80) + [0,5,-3,3,-2][active]) * (cornerHovered ? 1.12 : 1), y:((small ? 43 : 72) + [0,-3,4,-2,2][active]) * (cornerHovered ? 1.08 : 1) };
 }
 
 function paint(position) {
@@ -118,20 +118,18 @@ function paint(position) {
   const scrollY = current.contentWindow?.scrollY || 0;
   const geometry = peelGeometry(innerWidth, innerHeight, position,scrollY);
   current.style.clipPath = geometry.clip;
-  for (const path of [paper,print,edge]) path.setAttribute('d',geometry.path);
-  shadow.setAttribute('d',geometry.shadowPath);
+  for (const path of [paper,shadow,print,edge]) path.setAttribute('d',geometry.path);
   shade.setAttribute('x1',geometry.center.x);
   shade.setAttribute('y1',geometry.center.y);
-  shade.setAttribute('x2',geometry.tip.x);
-  shade.setAttribute('y2',geometry.tip.y);
+  shade.setAttribute('x2',position.x);
+  shade.setAttribute('y2',position.y);
   const lift = Math.min(16,Math.hypot(position.x,position.y)*.065);
-  shadow.setAttribute('transform',`translate(${geometry.normal.x * lift * .35} ${geometry.normal.y * lift * .35})`);
+  shadow.setAttribute('transform',`translate(${geometry.normal.x * lift} ${geometry.normal.y * lift})`);
   const contacts = geometry.folded.filter(point => Math.abs(point.x*geometry.normal.x + point.y*geometry.normal.y-geometry.distance)<.01);
   crease.setAttribute('d',contacts.length===2 ? `M${contacts[0].x},${contacts[0].y} L${contacts[1].x},${contacts[1].y}` : '');
   curl.style.opacity = Math.min(1, Math.hypot(position.x,position.y) / 15);
   const { x:nx,y:ny } = geometry.normal;
-  const k = 1 + geometry.reach;
-  pattern.setAttribute('patternTransform',`matrix(${1-k*nx*nx} ${-k*nx*ny} ${-k*nx*ny} ${1-k*ny*ny} ${k*geometry.distance*nx} ${k*geometry.distance*ny})`);
+  pattern.setAttribute('patternTransform',`matrix(${1-2*nx*nx} ${-2*nx*ny} ${-2*nx*ny} ${1-2*ny*ny} ${2*geometry.distance*nx} ${2*geometry.distance*ny})`);
   positionCorner(scrollY);
 }
 

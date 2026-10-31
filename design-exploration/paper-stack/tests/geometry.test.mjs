@@ -64,12 +64,3 @@ test('the lifted corner leaves the viewport as the document scrolls',() => {
   assert.equal(area(away.remaining),390*844);
   assert.ok(partly.remaining.every(point=>point.y>=0&&point.y<=844));
 });
-
-test('a resting corner curls up short of the pointer, and a long drag lays it flat',() => {
-  const resting = peelGeometry(390,844,{ x:58,y:53 });
-  const restingReach = Math.hypot(resting.tip.x,resting.tip.y) / Math.hypot(58,53);
-  assert.ok(restingReach > .7 && restingReach < .9,'the lifted tip is foreshortened toward the crease');
-  assert.ok(/\d/.test(resting.shadowPath) && resting.shadowPath !== resting.path,'the shadow lands beyond the curled paper');
-  const dragged = peelGeometry(1440,1000,{ x:600,y:420 });
-  assert.ok(Math.hypot(dragged.tip.x-600,dragged.tip.y-420) < .001,'a long drag lies flat under the pointer');
-});
