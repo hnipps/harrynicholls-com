@@ -1,0 +1,6 @@
+.minimal-data .atlas-table tbody th a { display:flex; align-items:center; min-height:44px; }
+.minimal-data .atlas-abbreviations { display:none; }
+@media(max-width:1000px) {
+  .minimal-data .atlas-abbreviations { display:block; font-size:14px; line-height:1.6; }
+  .minimal-data .tech-short { font-size:13px; }
+}
