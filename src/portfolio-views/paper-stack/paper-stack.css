@@ -1,16 +1,20 @@
-:root { color-scheme:light; --paper:#f6f2e7; --ink:#302f2a; }
+:root { color-scheme:light; --paper:#f6f2e7; --ink:#302f2a; --device-band:0px; --device-band-color:#fff; }
+/* Phone browsers tint the status bar from the top of the page; a thin band in the device theme gives it a solid colour above the paper. */
+@media (hover:none) and (pointer:coarse) { :root { --device-band:6px; } }
+@media (prefers-color-scheme:dark) { :root { --device-band-color:#000; } }
+#device-band { position:fixed; left:0; right:0; top:0; height:var(--device-band); background:var(--device-band-color); z-index:20; pointer-events:none; }
 * { box-sizing:border-box; }
 html,body { margin:0; width:100%; height:100%; overflow:hidden; overscroll-behavior:none; background:var(--paper); }
 button { font:14px/1.4 Arial,Helvetica,sans-serif; color:inherit; cursor:pointer; }
 button:focus-visible { outline:3px solid currentColor; outline-offset:5px; }
-#stack { position:absolute; inset:0; }
+#stack { position:absolute; inset:var(--device-band) 0 0; }
 .sheet { position:absolute; inset:0; width:100%; height:100%; border:0; background:var(--sheet-paper,#fff); display:none; transform-origin:0 0; }
 .sheet.is-current { display:block; z-index:2; }
 .sheet.is-under { display:block; z-index:1; pointer-events:none; }
 .sheet.is-returning { display:block; z-index:9; pointer-events:none; }
 /* These track the active document's scroll, rather than following the viewport. */
-#paper-curl { position:absolute; inset:0; width:100%; height:100%; z-index:4; overflow:visible; pointer-events:none; }
-#peel-corner { position:absolute; left:0; top:0; width:104px; height:104px; z-index:5; padding:0; border:0; background:transparent; color:var(--ink); cursor:grab; touch-action:none; -webkit-tap-highlight-color:transparent; clip-path:polygon(0 0,100% 0,100% 65%,65% 100%,0 100%); }
+#paper-curl { position:absolute; left:0; top:var(--device-band); width:100%; height:calc(100% - var(--device-band)); z-index:4; overflow:visible; pointer-events:none; }
+#peel-corner { position:absolute; left:0; top:var(--device-band); width:104px; height:104px; z-index:5; padding:0; border:0; background:transparent; color:var(--ink); cursor:grab; touch-action:none; -webkit-tap-highlight-color:transparent; clip-path:polygon(0 0,100% 0,100% 65%,65% 100%,0 100%); }
 #peel-corner:focus-visible { outline:0; }
 #peel-corner:disabled { cursor:wait; }
 #peel-corner[hidden],#paper-curl[hidden],#paper-sheaf[hidden] { display:none; }
