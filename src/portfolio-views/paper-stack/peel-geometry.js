@@ -14,9 +14,10 @@ export function clipHalfPlane(points, normal, distance, keepFront) {
   return result;
 }
 
-export function curvedOutline(points, radius) {
+export function curvedOutline(points, radius, fixedPoints=[]) {
   if (points.length < 3) return '';
   const round = (point, toward) => {
+    if (fixedPoints.includes(point)) return point;
     const length = Math.hypot(toward.x - point.x, toward.y - point.y);
     const ratio = Math.min(radius / Math.max(1, length), .2);
     return { x:point.x + (toward.x - point.x) * ratio, y:point.y + (toward.y - point.y) * ratio };
@@ -41,10 +42,12 @@ export function peelGeometry(width, height, pointer, scrollY=0) {
     const offset = 2 * (distance - point.x * normal.x - point.y * normal.y);
     return { x:point.x + normal.x * offset, y:point.y + normal.y * offset };
   });
+  // The crease endpoints are attached to the sheet; only free corners can curl.
+  const contacts = folded.filter(point => Math.abs(point.x * normal.x + point.y * normal.y - distance) < .01);
   return {
     normal, distance, remaining, folded,
     clip:remaining.length > 2 ? `polygon(${remaining.map(point => `${point.x}px ${point.y}px`).join(',')})` : 'polygon(0 0,0 0,0 0)',
-    path:length < 1 ? '' : curvedOutline(folded, Math.min(18, length * .07)),
+    path:length < 1 ? '' : curvedOutline(folded, Math.min(18, length * .07), contacts),
     center:{ x:normal.x * distance, y:normal.y * distance }
   };
 }

@@ -38,6 +38,24 @@ test('the completion target clears every viewport corner',() => {
   }
 });
 
+test('the rendered curl reaches both crease endpoints without rounding them away',() => {
+  for (const [width,height] of [[1440,1000],[390,844]]) {
+    for (const pointer of [{x:47,y:43},{x:80,y:72},{x:240,y:180},{x:width*.8,y:height*.2}]) {
+      const geometry = peelGeometry(width,height,pointer);
+      const curves = [...geometry.path.matchAll(/Q([\d.e+,-]+) ([\d.e+,-]+)/g)];
+      let contacts = 0;
+      geometry.folded.forEach((point,i) => {
+        if (Math.abs(point.x * geometry.normal.x + point.y * geometry.normal.y - geometry.distance) >= .01) return;
+        contacts += 1;
+        assert.equal(curves[i][1],`${point.x},${point.y}`);
+        assert.equal(curves[i][2],`${point.x},${point.y}`);
+      });
+      assert.equal(contacts,2);
+      assert.ok(curves.some(curve => curve[1] !== curve[2]),'the free tip keeps its curve');
+    }
+  }
+});
+
 test('the lifted corner leaves the viewport as the document scrolls',() => {
   const before = peelGeometry(390,844,{ x:47,y:43 },0);
   const partly = peelGeometry(390,844,{ x:47,y:43 },20);

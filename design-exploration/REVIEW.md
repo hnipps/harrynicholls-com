@@ -22,7 +22,7 @@ Working index and A personal letter have been refined from the newly requested l
 
 # Five shortlisted portfolio directions
 
-Working index, A personal letter, and Signal press remain unchanged. Two subagents developed Dot matrix from Symbols and Pixels and Project atlas from Minimal Data. The gallery now compares those five options; Open studio, Night shift, and the baseline are excluded. Production source is unchanged by this round.
+Working index, A personal letter, and Signal press remain unchanged. Two subagents developed Dot matrix from Symbols and Pixels and Project atlas from Minimal Data. The gallery now compares those five options; Open studio, Night shift, and the baseline are excluded. The separate earlier galaxy storyboard is preserved outside the shortlist. Production source is unchanged by this round.
 
 ## New reference studies
 
@@ -130,3 +130,7 @@ No package dependencies, production routes, deployment files, or current portfol
 Final screenshot critiques and individual design/usability/creativity/content scores are recorded in `research/critique.md`. These are self-assessments of the studies, not a recommended winner.
 
 The updated shortlist gallery inspector reports zero FAIL and two accepted app-mode warnings: the consistent gap above each Compare action is deliberate grouping (`panel-void`), and the display title introduces a design review (`app-title-size`). The gallery contains exactly three studies and three selector options; all local gallery links respond successfully.
+
+## Galaxy exploration
+
+The new study uses a quiet dithered astronomical field inspired by gitrove, with regions for Work, About, Writing, and Contact, and individual stars for six projects. It compares Beside the star, The reading space, and Around the star using the same gitrove content. Open `galaxy/NOTES.md` for scope, interaction details, and validation. This is a Canvas 2D and HTML storyboard; the proposed HTML-in-Canvas API is not implemented yet.
