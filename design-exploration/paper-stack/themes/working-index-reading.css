@@ -1,0 +1,10 @@
+.working-index .search-empty { margin-bottom:28px; }
+.working-index .search-empty p { margin-bottom:12px; }
+.working-index .search-empty button {
+  min-height:44px;
+  padding:10px 16px;
+  border:0;
+  background:var(--accent);
+  color:var(--ground);
+  cursor:pointer;
+}
