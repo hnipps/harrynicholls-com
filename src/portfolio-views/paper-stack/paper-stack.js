@@ -36,6 +36,18 @@ let deck = [0,1,2,3,4,5];
 const nextView = () => deck[1];
 let cornerHovered = false;
 const boundDocuments = new WeakSet();
+const safeArea = Object.assign(document.createElement('div'),{ id:'safe-area' });
+document.body.append(safeArea);
+
+function keepClearOfDevice(doc) {
+  const inset = getComputedStyle(safeArea);
+  const root = doc.documentElement.style;
+  root.paddingTop = inset.paddingTop;
+  root.paddingRight = inset.paddingRight;
+  root.paddingBottom = inset.paddingBottom;
+  root.paddingLeft = inset.paddingLeft;
+  root.scrollPaddingTop = `calc(${inset.paddingTop} + 24px)`;
+}
 const sheaf = new PaperSheaf(sheafRoot,themes,index => selectTheme(index),focusCurrentView,reducedMotion);
 
 // Wheel/touch events over navigation belong to the readable document, not its locked host.
@@ -210,6 +222,7 @@ function observeFrame(frame) {
     const doc = frame.contentDocument;
     if (!doc || boundDocuments.has(doc)) return;
     boundDocuments.add(doc);
+    keepClearOfDevice(doc);
     let scrollFrame = 0;
     frame.contentWindow.addEventListener('scroll',() => {
       if (frame !== frames.get(active) || turning) return;
@@ -398,6 +411,7 @@ window.addEventListener('keydown',event => {
   }
 });
 window.addEventListener('resize',() => {
+  for (const frame of frames.values()) if (frame.contentDocument) keepClearOfDevice(frame.contentDocument);
   if (gesture) endGesture({ pointerId:gesture.id },true);
   if (!turning && active < themes.length - 1) { stopAnimation(); paint(restPosition()); }
 });
