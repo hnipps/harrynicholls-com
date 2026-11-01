@@ -1,10 +1,10 @@
-import { peelGeometry } from './peel-geometry.js?v=scroll-20261030-1';
+import { peelGeometry } from './peel-geometry.js?v=band-20261031-2';
 
-import { themes } from './paper-materials.js?v=scroll-20261030-1';
-import { PaperSheaf } from './paper-sheaf.js?v=scroll-20261030-1';
-import { paperPose,pullPaper } from './paper-return.js?v=scroll-20261030-1';
+import { themes } from './paper-materials.js?v=band-20261031-2';
+import { PaperSheaf } from './paper-sheaf.js?v=band-20261031-2';
+import { paperPose,pullPaper } from './paper-return.js?v=band-20261031-2';
 
-import {restorePapers,peelPaper,retrievePaper} from './paper-state.js?v=scroll-20261030-1';
+import {restorePapers,peelPaper,retrievePaper} from './paper-state.js?v=band-20261031-2';
 
 const storageKey = 'harry-paper-stack-theme';
 const stack = document.querySelector('#stack');
@@ -201,6 +201,7 @@ function setLayers(index) {
 function positionCorner(scrollY) {
   const offPage = active === themes.length - 1 || scrollY > Math.max(pointer.x,pointer.y) + 20;
   corner.hidden = offPage;
+  document.body.classList.toggle('corner-away', offPage);
   curl.toggleAttribute('hidden',offPage);
   corner.style.transform = `translateY(${-scrollY}px)`;
   curl.style.transform = `translateY(${-scrollY}px)`;
