@@ -1,10 +1,10 @@
-import { peelGeometry } from './peel-geometry.js?v=scroll-20261030-1';
+import { peelGeometry } from './peel-geometry.js?v=band-20261031-2';
 
-import { themes } from './paper-materials.js?v=scroll-20261030-1';
-import { PaperSheaf } from './paper-sheaf.js?v=scroll-20261030-1';
-import { paperPose,pullPaper } from './paper-return.js?v=scroll-20261030-1';
+import { themes } from './paper-materials.js?v=band-20261031-2';
+import { PaperSheaf } from './paper-sheaf.js?v=band-20261031-2';
+import { paperPose,pullPaper } from './paper-return.js?v=band-20261031-2';
 
-import {restorePapers,peelPaper,retrievePaper} from './paper-state.js?v=scroll-20261030-1';
+import {restorePapers,peelPaper,retrievePaper} from './paper-state.js?v=band-20261031-2';
 
 const storageKey = 'harry-paper-stack-theme';
 const stack = document.querySelector('#stack');
@@ -115,7 +115,8 @@ function restPosition() {
 function paint(position) {
   pointer = position;
   const current = getFrame(active);
-  const scrollY = current.contentWindow?.scrollY || 0;
+  // iOS rubber-banding reports a negative scroll; the corner stays put rather than opening further.
+  const scrollY = Math.max(0, current.contentWindow?.scrollY || 0);
   const geometry = peelGeometry(innerWidth, innerHeight, position,scrollY);
   current.style.clipPath = geometry.clip;
   for (const path of [paper,shadow,print,edge]) path.setAttribute('d',geometry.path);
@@ -174,7 +175,7 @@ function updateControls() {
     pattern.innerHTML = `<g fill="${theme.print}" stroke="${theme.print}">${theme.mark}</g>`;
     print.setAttribute('opacity',theme.opacity);
   }
-  positionCorner(getFrame(active).contentWindow?.scrollY || 0);
+  positionCorner(Math.max(0, getFrame(active).contentWindow?.scrollY || 0));
   status.textContent = `${theme.name}. ${last ? 'The last sheet. Use Put the paper back to start again.' : `Lift the top-left corner to reveal ${themes[nextView()].name}.`}${discarded.length ? ` ${discarded.length} previously opened ${discarded.length === 1 ? 'view is' : 'views are'} available in the paper sheaf.` : ''}`;
 }
 
@@ -200,6 +201,7 @@ function setLayers(index) {
 function positionCorner(scrollY) {
   const offPage = active === themes.length - 1 || scrollY > Math.max(pointer.x,pointer.y) + 20;
   corner.hidden = offPage;
+  document.body.classList.toggle('corner-away', offPage);
   curl.toggleAttribute('hidden',offPage);
   corner.style.transform = `translateY(${-scrollY}px)`;
   curl.style.transform = `translateY(${-scrollY}px)`;
@@ -210,13 +212,14 @@ function observeFrame(frame) {
     const doc = frame.contentDocument;
     if (!doc || boundDocuments.has(doc)) return;
     boundDocuments.add(doc);
+    doc.documentElement.style.overscrollBehavior = 'none';
     let scrollFrame = 0;
     frame.contentWindow.addEventListener('scroll',() => {
       if (frame !== frames.get(active) || turning) return;
       cancelAnimationFrame(scrollFrame);
       scrollFrame = requestAnimationFrame(() => {
         if (!corner.hidden || frame.contentWindow.scrollY < 160) paint(pointer);
-        else { frame.style.clipPath = ''; positionCorner(frame.contentWindow.scrollY); }
+        else { frame.style.clipPath = ''; positionCorner(Math.max(0, frame.contentWindow.scrollY)); }
       });
     },{ passive:true });
     doc.addEventListener('pointerdown',() => {
