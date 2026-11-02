@@ -14,6 +14,8 @@ try{
    await top();await p.eval(()=>document.querySelector('#peel-corner').click());
    for(let n=0;n<150;n++){if(await p.eval(s=>document.body.dataset.theme===s&&!document.body.classList.contains('is-turning'),slug))break;await sleep(20);}
    assert.equal(await p.eval(()=>document.body.dataset.theme),slug);
+   await wheel(30,30); // The pointer still rests on the corner after a click peels.
+   await top();
    await p.send('Input.dispatchMouseEvent',{type:'mouseMoved',x:width-20,y:height-20});await sleep(350);
    await wheel(width-170,height-340); // Former transparent hover bridge.
    await top();
@@ -21,7 +23,7 @@ try{
    const paper=(await p.eval(exposedPaperTargets))[0];assert.ok(paper);
    await wheel(paper.x,paper.y); // Actual paper button in the outer document.
   }
-  console.log(`PASS ${width}px: scrolling works over the page and stack after every normal-motion peel`);
+  console.log(`PASS ${width}px: scrolling works over the corner, page and stack after every normal-motion peel`);
  }
  await top();await p.send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:1});
  await p.eval(()=>document.querySelector('#paper-sheaf').classList.add('is-expanded'));await sleep(350);
