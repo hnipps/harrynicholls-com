@@ -130,7 +130,7 @@ export class PaperSheaf {
       incoming.animate([
         { transform:`${resting} translateY(190px) rotate(12deg)`, opacity:0 },
         { transform:resting, opacity:1 }
-      ],{ duration:720,delay:160,easing:'cubic-bezier(.18,.8,.2,1)',fill:'backwards' });
+      ],{ duration:620,delay:120,easing:'cubic-bezier(.3,1.32,.52,1)',fill:'backwards' });
     }
   }
 }
