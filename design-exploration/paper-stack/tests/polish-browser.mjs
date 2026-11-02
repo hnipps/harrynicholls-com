@@ -33,7 +33,7 @@ try{
  });
  // Every sheet retains its original slot and depth; only the printed face slides outward.
  for(const [width,height,label]of[[1440,1000,'desktop'],[768,1000,'tablet'],[390,844,'mobile']]){
-  await p.setViewport({width,height});await move(width-20,height-20);await sleep(400);
+  await p.setViewport({width,height});await move(width-20,height-20);await sleep(950);
   await p.screenshot({path:out+`/fan-${label}.jpg`});
   await check(`all five papers remain reachable throughout hover at ${width}px`,async()=>{
    for(const index of [4,3,2,1,0]){
@@ -56,7 +56,7 @@ try{
    assert.deepEqual(await p.eval(()=>JSON.parse(localStorage.getItem('harry-paper-stack-theme-papers'))),['personal-letter','signal-press','symbols-pixels','minimal-data','working-index']);
   });
   await p.screenshot({path:out+`/hover-${label}.jpg`});
-  await move(width/2,100);await sleep(400);
+  await move(width/2,100);await sleep(1150);
   assert.equal(await p.eval(()=>document.querySelector('#paper-sheaf').classList.contains('is-expanded')),false);
  }
  await p.setViewport({width:1440,height:1000});

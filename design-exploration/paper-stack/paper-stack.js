@@ -35,6 +35,7 @@ let discarded = [];
 let deck = [0,1,2,3,4,5];
 const nextView = () => deck[1];
 let cornerHovered = false;
+let cornerReturning = false;
 const boundDocuments = new WeakSet();
 const sheaf = new PaperSheaf(sheafRoot,themes,index => selectTheme(index),focusCurrentView,reducedMotion);
 
@@ -137,9 +138,18 @@ function paint(position) {
 function stopAnimation() {
   cancelAnimationFrame(animation);
   clearTimeout(openingTimer);
+  cornerReturning = false;
 }
 
-function animateTo(target, { duration=650, spring=false }={}) {
+// Curled paper is springy but heavily damped: one ~6% overshoot, a faint
+// counter-swing, then rest. Each sheet's stiffness differs slightly.
+function paperSpring(t) {
+  const damping = .66, frequency = 12.2 * (1 + [0,.04,-.03,.05,-.02][active]);
+  const decay = damping * frequency, ringing = frequency * Math.sqrt(1 - damping ** 2);
+  return 1 - Math.exp(-decay * t) * (Math.cos(ringing * t) + decay / ringing * Math.sin(ringing * t));
+}
+
+function animateTo(target, { duration=760, settle=false }={}) {
   stopAnimation();
   const start = { ...pointer };
   const started = performance.now();
@@ -147,8 +157,8 @@ function animateTo(target, { duration=650, spring=false }={}) {
     if (reducedMotion.matches) { paint(target); resolve(); return; }
     function tick(now) {
       const elapsed = Math.min(1, (now - started) / duration);
-      const eased = spring ? 1 - Math.exp(-7 * elapsed) * Math.cos((13 + active * .3) * elapsed) : 1 - (1 - elapsed) ** 3;
-      paint({ x:start.x + (target.x - start.x) * eased, y:start.y + (target.y - start.y) * eased });
+      const eased = settle ? paperSpring(elapsed) : 1 - (1 - elapsed) ** 3;
+      paint({ x:Math.max(0,start.x + (target.x - start.x) * eased), y:Math.max(0,start.y + (target.y - start.y) * eased) });
       if (elapsed < 1) animation = requestAnimationFrame(tick);
       else { paint(target); resolve(); }
     }
@@ -253,7 +263,7 @@ function completeView(index,previous,{ reset=false,peel=false }={}) {
   pointer = { x:0,y:0 };
   if (index < themes.length - 1) {
     paint(pointer);
-    openingTimer = setTimeout(() => animateTo(restPosition(),{ duration:760,spring:true }),70);
+    openingTimer = setTimeout(() => animateTo(restPosition(),{ duration:820,settle:true }),70);
   }
   focusCurrentView();
 }
@@ -304,7 +314,7 @@ async function commitPeel() {
     document.body.classList.remove('is-turning');
     sheaf.setBusy(false);
     status.textContent = 'This view could not load. You can keep reading or try the corner again.';
-    animateTo(restPosition(),{ spring:true });
+    animateTo(restPosition(),{ settle:true });
   }
 }
 
@@ -349,12 +359,12 @@ async function selectTheme(index, reset=false) {
 corner.addEventListener('pointerenter',event => {
   if (event.pointerType !== 'mouse') return;
   cornerHovered = true;
-  if (!turning && !waitingForTheme && !gesture && Math.hypot(pointer.x,pointer.y)>20) animateTo(restPosition(),{duration:260});
+  if (!turning && !waitingForTheme && !gesture && !cornerReturning && Math.hypot(pointer.x,pointer.y)>20) animateTo(restPosition(),{duration:520,settle:true});
 });
 corner.addEventListener('pointerleave',event => {
   if (event.pointerType !== 'mouse') return;
   cornerHovered = false;
-  if (!turning && !waitingForTheme && !gesture && Math.hypot(pointer.x,pointer.y)>20) animateTo(restPosition(),{duration:420,spring:true});
+  if (!turning && !waitingForTheme && !gesture && !cornerReturning && Math.hypot(pointer.x,pointer.y)>20) animateTo(restPosition(),{duration:620,settle:true});
 });
 corner.addEventListener('pointerdown',event => {
   if (turning || waitingForTheme || event.button !== 0) return;
@@ -387,7 +397,14 @@ function endGesture(event,cancel=false) {
   document.body.classList.remove('is-dragging');
   if (corner.hasPointerCapture(pointerId)) corner.releasePointerCapture(pointerId);
   if (!cancel && (!moved || dragCommitted())) commitPeel();
-  else animateTo(restPosition(),{ duration:650,spring:true });
+  else {
+    cornerHovered = event.pointerType === 'mouse' && document.elementFromPoint(event.clientX,event.clientY) === corner;
+    const settling = animateTo(restPosition(),{ duration:780,settle:true });
+    // Releasing pointer capture can fire pointerleave; it must not replace this
+    // full return with the much shorter hover animation.
+    cornerReturning = true;
+    settling.then(() => { cornerReturning = false; });
+  }
 }
 corner.addEventListener('pointerup',event => endGesture(event));
 corner.addEventListener('pointercancel',event => endGesture(event,true));
@@ -441,7 +458,7 @@ setLayers(initial);
 sheaf.render(discarded);
 if (initial < themes.length - 1) {
   paint({ x:0,y:0 });
-  openingTimer = setTimeout(() => animateTo(restPosition(),{ duration:850,spring:true }),550);
+  openingTimer = setTimeout(() => animateTo(restPosition(),{ duration:900,settle:true }),550);
 }
 const sourceWave = [...document.childNodes].find(node => node.nodeType === 8 && node.textContent.includes('source-viewers'));
 console.info('%c' + (sourceWave?.textContent.trim() || 'Hello, curious person. Thanks for looking closely.'), 'font:12px/1.25 monospace;color:#42657b');

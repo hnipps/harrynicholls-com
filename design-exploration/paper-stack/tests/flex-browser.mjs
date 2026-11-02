@@ -17,9 +17,9 @@ try {
    });
    await page.goto(base,{settleMs:300});
    const mouse=async(type,x,y)=>page.send('Input.dispatchMouseEvent',{type,x,y,button:type==='mouseMoved'?'none':'left',clickCount:1});
-   await mouse('mouseMoved',width-20,height-20);await sleep(400);
+   await mouse('mouseMoved',width-20,height-20);await sleep(950);
    const target=(await page.eval(exposedPaperTargets,{thumb:true})).find(p=>p.index==='0');assert.ok(target);
-   await mouse('mouseMoved',target.x,target.y);await sleep(300);
+   await mouse('mouseMoved',target.x,target.y);await sleep(500);
    await page.screenshot({path:`${out}/hover-${label}.jpg`});
    const source=await page.eval(async()=>{
     const {paperPose}=await import('./paper-return.js');
@@ -41,17 +41,17 @@ try {
     await page.screenshot({path:`${out}/${name}-${label}.jpg`});
    }
    assert.ok(Number(await page.eval(()=>document.querySelector('.paper-flex').dataset.bend))>.01);
-   await page.eval(()=>{document.querySelector('.paper-flex').paperClock.time=1;});await sleep(1100);
+   await page.eval(()=>{document.querySelector('.paper-flex').paperClock.time=1;});await sleep(1250);
    assert.equal(await page.eval(()=>document.body.dataset.theme),'personal-letter');
    assert.equal(await page.eval(()=>document.querySelectorAll('.paper-flex,.paper-return-back,.paper-return-shadow,.paper-return-front-light').length),0);
    const rest=await page.eval(()=>document.querySelector('#fold-paper').getAttribute('d'));
    assert.ok(rest.length>20);
    await page.screenshot({path:`${out}/landed-${label}.jpg`});
    if(label==='desktop') {
-    await mouse('mouseMoved',20,20);await sleep(300);
+    await mouse('mouseMoved',20,20);await sleep(450);
     const hovered=await page.eval(()=>document.querySelector('#fold-paper').getAttribute('d'));assert.notEqual(hovered,rest);
     await page.screenshot({path:`${out}/corner-hover-${label}.jpg`});
-    await mouse('mouseMoved',300,100);await sleep(500);
+    await mouse('mouseMoved',300,100);await sleep(750);
     assert.equal(await page.eval(()=>document.querySelector('#fold-paper').getAttribute('d')),rest);
    }
    assert.deepEqual(page.consoleErrors,[]);
