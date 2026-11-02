@@ -11,7 +11,8 @@ async function scenario(name,{width,height,source,start,at},expectTheme) {
   if(source==='touch')await p.send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:1});
   await p.goto(base+'?reset',{settleMs:1800});
   await start(p);
-  await sleep(120);
+  for(let n=0;n<150&&!await p.eval(()=>document.body.classList.contains('is-turning'));n++)await sleep(20);
+  await sleep(60);
   assert.ok(await p.eval(()=>document.body.classList.contains('is-turning')),`${name}: gesture begins mid-turn`);
   const [x,y]=at(width,height);
   await p.send('Input.synthesizeScrollGesture',{x,y,yDistance:-1400,speed:500,gestureSourceType:source});
@@ -19,7 +20,7 @@ async function scenario(name,{width,height,source,start,at},expectTheme) {
   assert.equal(result.turning,false,`${name}: turn finished during the gesture`);
   assert.equal(result.theme,expectTheme,`${name}: landed on ${expectTheme}`);
   if(result.scrollY<1200)throw new Error(`${name}: landed page scrolled ${result.scrollY}px of 1400px`);
-  assert.deepEqual(p.consoleErrors,[]);
+  assert.deepEqual(p.consoleErrors,[],`${name}: console errors ${JSON.stringify(p.consoleErrors)}`);
   console.log(`PASS ${name}: landed page scrolled ${result.scrollY}px`);
  }catch(error){failures.push(error.message);console.log(`FAIL ${error.message}`);}
  finally{await p.close();}
