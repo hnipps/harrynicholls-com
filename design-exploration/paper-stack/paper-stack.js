@@ -44,12 +44,15 @@ function scrollCurrentPage(x,y) {
   sheaf.close();
   getFrame(active).contentWindow.scrollBy({left:x,top:y,behavior:'instant'});
 }
-sheafRoot.addEventListener('wheel',event=>{
+function forwardWheel(event) {
   if (turning || gesture) return;
   event.preventDefault();
   const unit = event.deltaMode===1 ? 16 : event.deltaMode===2 ? innerHeight : 1;
   scrollCurrentPage(event.deltaX*unit,event.deltaY*unit);
-},{passive:false});
+}
+sheafRoot.addEventListener('wheel',forwardWheel,{passive:false});
+// The pointer is still resting on the corner after a click peels the sheet.
+corner.addEventListener('wheel',forwardWheel,{passive:false});
 let sheafTouch = null;
 let sheafPanned = false;
 sheafRoot.addEventListener('pointerdown',event=>{if(event.pointerType!=='touch')sheafPanned=false;});
