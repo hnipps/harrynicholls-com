@@ -34,7 +34,7 @@ Emotional goals: the calm of an instrument that works, the warmth of a note left
 
 1. A letter, then a log. The person comes first, then the work, in one column of attention.
 2. Questions lead. A project is named by the question that started it; its name is the readout.
-3. The hand is rare. Handwriting appears for the signature and the sign-off, and for one sincere sentence inside a story. Never more than that.
+3. The hand is rare. Handwriting appears twice: the signature and "Keep in touch". A story's one sincere sentence sits on an index card, typed, because the hand misreads at sentence length.
 4. Sincere words, loud surfaces. Copy stays plain; type and colour carry the noise.
 5. Works with nothing switched on. Stories open without JavaScript, and every old link still lands.
 

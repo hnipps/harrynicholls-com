@@ -124,15 +124,17 @@ a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.2em;text-
 .story-content>.project-metadata{grid-column:1;grid-row:1 / span 12;position:sticky;top:5.25rem;display:grid;gap:1rem;border-top:1px solid var(--line);padding-top:.8rem}
 .project-metadata p{font-size:.95rem;line-height:1.45;overflow-wrap:anywhere}
 .project-metadata strong{display:block;color:var(--muted);margin-bottom:.2rem}
-.tech-list{margin-top:.1rem;font-size:.7rem;line-height:1.75}
-.tech-list li{display:inline}
-.tech-list li+li::before{content:"\00a0\00b7  ";color:var(--muted)}
-.tech-list p{display:inline;font:inherit;letter-spacing:inherit}
+.tech-list{margin-top:.1rem;font-size:.7rem;line-height:1.8}
+.tech-list li{white-space:nowrap;break-inside:avoid}
+.tech-list p{font:inherit;letter-spacing:inherit}
 .story-content h4{font-family:var(--display);font-weight:700;letter-spacing:-.018em;font-size:1.3rem;line-height:1.2;margin:2.4rem 0 .6rem;text-wrap:balance}
 .story-content>div:not(.project-metadata)>h4:first-child{margin-top:0}
 .story-content p.body{max-width:66ch;text-wrap:pretty}
 .story-content p.body+p.body{margin-top:1rem}
 .story-content code{font-family:var(--label);font-weight:500;font-size:.86em;font-feature-settings:"tnum","zero";background:var(--surface);padding:.12em .4em;overflow-wrap:anywhere;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.story-content p:has(>code+br)>code{display:block;width:fit-content;max-width:100%;padding:.4em .65em}
+.story-content p:has(>code+br)>code+br+code{margin-top:.4rem}
+.story-content p:has(>code+br)>br{display:none}
 .story-image{display:block;margin-top:1.6rem;text-decoration:none;max-width:60rem}
 .story-image img{width:100%;border:1px solid var(--line);background:var(--surface)}
 .story-image img[width="390"]{width:min(100%,17rem)}
@@ -186,6 +188,7 @@ a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.2em;text-
   .story-content{grid-template-columns:minmax(0,1fr)}
   .story-content>*,.story-content>.project-metadata{grid-column:1;grid-row:auto}
   .story-content>.project-metadata{position:static;margin-bottom:2rem}
+  .tech-list{column-count:2;column-gap:1.5rem}
   .strip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:40rem){
