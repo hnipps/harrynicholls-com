@@ -1,139 +1,683 @@
 <!doctype html>
-<!--
-
-                         .  *      .             .
-                _..-~~-.._              .                  .
-             .-~     _    ~-.                     .
-            /    .-~~ ~-.    \          _.._
-           /    /  .-.   \    \      .-~    ~-.
-       _.-~    /  /   \   \    `-._ /  _      \
-    .-~       /  /     \   `-.     ~-./ ~-.    |
-   /   _..---'  /       `-._  `--.._    \  \   /
-  / .-~   _..--'       _    ~--.._  ~-.  |  | /
- / /   .-~          .-~ ~-.       ~-.  \ /  /'
-| |   /          .-~      /\         \  `  /       /\
- \ \  `-._    .-~       /  \    /\    `--'       /  \
-  `-.`-.__ `--'       _/    \__/  \__          _/    \_
-~~~~~`-.__~--..____.-~   ~~~   ~~~   ~--..__.-~   ~~~   ~~~~
-  ~~~    ~~~     ~~~~~    ~~~     ~~~~~    ~~~    ~~~~~
-
-    A little wave for the source-viewers.
-    An original ASCII sketch after Hokusai's The Great Wave off Kanagawa.
-    Hello, curious person. The interesting things are often underneath.
-    Welcome to Harry's corner of the web. Thanks for looking closely.
-
--->
 <html lang="en">
 <head>
-  <base href="/portfolio-views/paper-stack/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta property="og:title" content="Harry Nicholls" />
-<meta
-      name="description"
-      content="Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck."
-    />
-<meta
-      property="og:description"
-      content="Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck."
-    />
-<meta
-      property="og:image"
-      content="https://www.harrynicholls.com/assets/hi-im-harry-2.png"
-    />
-<meta name="twitter:site" content="@harrynicholls" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:creator" content="@harrynicholls" />
-<link rel="canonical" href="https://harrynicholls.com/" />
-<link rel="describedby" type="text/plain" href="/llms.txt" />
-<script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "url": "https://harrynicholls.com/",
-        "dateModified": "2026-10-16",
-        "mainEntity": {
-          "@type": "Person",
-          "@id": "https://harrynicholls.com/#harry",
-          "name": "Harry Nicholls",
+  <meta property="og:title" content="Harry Nicholls" />
+  <meta
+        name="description"
+        content="Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck."
+      />
+  <meta
+        property="og:description"
+        content="Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck."
+      />
+  <meta
+        property="og:image"
+        content="https://www.harrynicholls.com/assets/hi-im-harry-2.png"
+      />
+  <meta name="twitter:site" content="@harrynicholls" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@harrynicholls" />
+  <link rel="canonical" href="https://harrynicholls.com/" />
+  <link rel="describedby" type="text/plain" href="/llms.txt" />
+  <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
           "url": "https://harrynicholls.com/",
-          "jobTitle": "Senior Product Engineer",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "ev.energy",
-            "url": "https://ev.energy/"
-          },
-          "homeLocation": {
-            "@type": "Place",
-            "name": "Toronto area, Ontario, Canada"
-          },
-          "description": "Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck.",
-          "email": "mailto:harry.m.nicholls@gmail.com",
-          "knowsAbout": [
-            "Software engineering",
-            "Technical leadership",
-            "AI agents",
-            "Model Context Protocol",
-            "Agentic CI workflows",
-            "Formal verification",
-            "TypeScript",
-            "React",
-            "Node.js",
-            "Python",
-            "Go",
-            "PostgreSQL",
-            "Dafny",
-            "Lean 4"
-          ],
-          "sameAs": [
-            "https://github.com/hnipps",
-            "https://www.linkedin.com/in/harry-nicholls-91779959/",
-            "https://x.com/harrynicholls",
-            "https://brainflow.substack.com/",
-            "https://harrynicholls.medium.com/"
-          ]
+          "dateModified": "2026-10-16",
+          "mainEntity": {
+            "@type": "Person",
+            "@id": "https://harrynicholls.com/#harry",
+            "name": "Harry Nicholls",
+            "url": "https://harrynicholls.com/",
+            "jobTitle": "Senior Product Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "ev.energy",
+              "url": "https://ev.energy/"
+            },
+            "homeLocation": {
+              "@type": "Place",
+              "name": "Toronto area, Ontario, Canada"
+            },
+            "description": "Senior Product Engineer at ev.energy, building AI products and agent infrastructure. Founder of gitrove and Crosscheck.",
+            "email": "mailto:harry.m.nicholls@gmail.com",
+            "knowsAbout": [
+              "Software engineering",
+              "Technical leadership",
+              "AI agents",
+              "Model Context Protocol",
+              "Agentic CI workflows",
+              "Formal verification",
+              "TypeScript",
+              "React",
+              "Node.js",
+              "Python",
+              "Go",
+              "PostgreSQL",
+              "Dafny",
+              "Lean 4"
+            ],
+            "sameAs": [
+              "https://github.com/hnipps",
+              "https://www.linkedin.com/in/harry-nicholls-91779959/",
+              "https://x.com/harrynicholls",
+              "https://brainflow.substack.com/",
+              "https://harrynicholls.medium.com/"
+            ]
+          }
         }
-      }
-    </script>
-
-  <meta name="theme-color" content="#f6f2e7">
+  </script>
+  <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
   <title>Harry Nicholls | Product Engineer</title>
-  <link rel="stylesheet" href="paper-stack.css?v=band-20261031-2">
-  <script type="module" src="paper-stack.js?v=band-20261031-2"></script>
+  <link rel="preload" href="/landing/fonts/hyperlegible-sans-700.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/landing/fonts/hyperlegible-sans-400.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/landing/landing.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/landing/landing.js" defer></script>
 </head>
 <body>
-  <button id="peel-corner" type="button" aria-label="Peel to reveal Signal press. Click, or drag down and right."><span class="sr-only">Reveal the next view</span></button>
-  <main id="stack" aria-label="Harry Nicholls’s portfolio">
-    <iframe class="sheet is-current" id="first-sheet" src="themes/personal-letter.html" title="Harry Nicholls — A personal letter"></iframe>
-    <iframe class="sheet is-under" id="second-sheet" src="themes/signal-press.html" title="Harry Nicholls — Signal press" aria-hidden="true" inert tabindex="-1"></iframe>
-  </main>
-  <svg id="paper-curl" aria-hidden="true" focusable="false">
-    <defs>
-      <linearGradient id="paper-shade" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#d3d0c4"/>
-        <stop offset=".18" stop-color="#f0ece0"/>
-        <stop offset=".62" stop-color="#fffdf5"/>
-        <stop offset="1" stop-color="#e0dccf"/>
-      </linearGradient>
-      <pattern id="reverse-pattern" patternUnits="userSpaceOnUse" width="20" height="20"></pattern>
-      <filter id="curl-shadow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
-        <feGaussianBlur stdDeviation="5"/>
-      </filter>
-    </defs>
-    <path id="fold-shadow" fill="#161914" opacity=".25" filter="url(#curl-shadow)"/>
-    <path id="fold-paper" fill="url(#paper-shade)"/>
-    <path id="fold-print" fill="url(#reverse-pattern)"/>
-    <path id="fold-crease" fill="none" stroke="#302f2a" stroke-opacity=".12" stroke-width="1.2"/>
-    <path id="fold-edge" fill="none" stroke="#fffef7" stroke-opacity=".65" stroke-width="1.25"/>
-  </svg>
-  <div id="device-band" aria-hidden="true"></div>
-  <div id="drag-shield" aria-hidden="true"></div>
-  <p id="drag-hint" aria-hidden="true"></p>
-  <nav id="paper-sheaf" aria-label="Previously opened portfolio views" hidden>
-    <p id="sheaf-help" class="sr-only">Discarded views. Focus or tap to spread the papers. Use the arrow keys to choose a paper and Enter to bring it back. Escape puts the papers away.</p>
-    <div id="discarded-papers"></div>
-  </nav>
-  <p id="view-status" class="sr-only" role="status" aria-live="polite"></p>
-  <noscript><style>.paper-sheaf,#paper-sheaf,#peel-corner,#paper-curl{display:none}.sheet{height:calc(100% - 80px)}</style><nav class="no-script" aria-label="Choose a portfolio view"><a href="themes/personal-letter.html">A personal letter</a> · <a href="themes/signal-press.html">Signal press</a> · <a href="themes/symbols-pixels.html">Dot matrix</a> · <a href="themes/minimal-data.html">Project atlas</a> · <a href="themes/working-index.html">Working index</a> · <a href="themes/bare-html.html">HTML</a></nav></noscript>
+  <a class="skip" href="#main">Skip to content</a>
+  <svg class="sprite" aria-hidden="true"><defs><symbol id="spiral" viewBox="0 0 100 100">
+    <path d="M51.1 50.0 L51.1 50.1 L51.1 50.2 L51.1 50.3 L51.1 50.4 L51.1 50.5 L51.1 50.6 L51.1 50.7 L51.0 50.8 L51.0 50.9 L50.9 50.9 L50.8 51.0 L50.8 51.1 L50.7 51.2 L50.6 51.3 L50.5 51.3 L50.4 51.4 L50.3 51.4 L50.2 51.5 L50.1 51.5 L50.0 51.5 L49.8 51.5 L49.7 51.5 L49.6 51.5 L49.4 51.5 L49.3 51.5 L49.2 51.5 L49.1 51.4 L48.9 51.4 L48.8 51.3 L48.7 51.2 L48.6 51.1 L48.5 51.0 L48.4 50.9 L48.3 50.8 L48.2 50.6 L48.1 50.5 L48.1 50.4 L48.0 50.2 L48.0 50.0 L47.9 49.9 L47.9 49.7 L47.9 49.5 L47.9 49.4 L48.0 49.2 L48.0 49.0 L48.1 48.8 L48.1 48.7 L48.2 48.5 L48.3 48.3 L48.4 48.2 L48.6 48.0 L48.7 47.9 L48.9 47.8 L49.0 47.6 L49.2 47.5 L49.4 47.4 L49.6 47.4 L49.8 47.3 L50.0 47.2 L50.2 47.2 L50.5 47.2 L50.7 47.2 L50.9 47.2 L51.2 47.3 L51.4 47.3 L51.6 47.4 L51.9 47.5 L52.1 47.6 L52.3 47.8 L52.5 47.9 L52.7 48.1 L52.9 48.3 L53.1 48.5 L53.2 48.8 L53.4 49.0 L53.5 49.3 L53.6 49.6 L53.7 49.8 L53.7 50.1 L53.8 50.4 L53.8 50.8 L53.8 51.1 L53.7 51.4 L53.7 51.7 L53.6 52.0 L53.4 52.3 L53.3 52.6 L53.1 52.9 L52.9 53.2 L52.7 53.5 L52.4 53.8 L52.2 54.0 L51.9 54.2 L51.5 54.4 L51.2 54.6 L50.8 54.8 L50.5 54.9 L50.1 55.0 L49.7 55.1 L49.3 55.1 L48.8 55.1 L48.4 55.1 L48.0 55.0 L47.5 54.9 L47.1 54.7 L46.7 54.6 L46.3 54.4 L45.9 54.1 L45.5 53.8 L45.1 53.5 L44.8 53.2 L44.5 52.8 L44.2 52.4 L43.9 51.9 L43.7 51.4 L43.5 50.9 L43.4 50.4 L43.2 49.9 L43.2 49.3 L43.1 48.8 L43.1 48.2 L43.2 47.6 L43.3 47.1 L43.5 46.5 L43.7 45.9 L43.9 45.3 L44.2 44.8 L44.6 44.3 L45.0 43.8 L45.4 43.3 L45.9 42.8 L46.5 42.4 L47.0 42.0 L47.7 41.7 L48.3 41.4 L49.0 41.2 L49.7 41.0 L50.4 40.8 L51.2 40.8 L51.9 40.7 L52.7 40.8 L53.5 40.9 L54.3 41.1 L55.0 41.3 L55.8 41.6 L56.5 42.0 L57.3 42.4 L58.0 42.9 L58.7 43.5 L59.3 44.1 L59.9 44.8 L60.4 45.5 L60.9 46.3 L61.3 47.1 L61.7 48.0 L62.0 49.0 L62.2 49.9 L62.4 50.9 L62.5 51.9 L62.5 53.0 L62.4 54.0 L62.2 55.1 L61.9 56.1 L61.6 57.2 L61.1 58.2 L60.6 59.2 L60.0 60.2 L59.3 61.1 L58.5 62.0 L57.6 62.8 L56.7 63.6 L55.7 64.3 L54.6 64.9 L53.4 65.5 L52.2 65.9 L50.9 66.3 L49.6 66.6 L48.3 66.8 L46.9 66.8 L45.5 66.8 L44.1 66.6 L42.7 66.3 L41.2 65.9 L39.8 65.4 L38.5 64.8 L37.1 64.0 L35.8 63.1 L34.6 62.1 L33.4 61.0 L32.3 59.8 L31.3 58.5 L30.4 57.1 L29.6 55.6 L28.9 54.0 L28.3 52.3 L27.9 50.6 L27.6 48.8 L27.4 47.0 L27.3 45.1 L27.5 43.2 L27.7 41.3 L28.2 39.4 L28.8 37.5 L29.5 35.6 L30.5 33.8 L31.5 32.0 L32.8 30.3 L34.2 28.7 L35.7 27.1 L37.4 25.7 L39.2 24.4 L41.2 23.2 L43.2 22.1 L45.4 21.3 L47.7 20.5 L50.0 20.0 L52.5 19.6 L55.0 19.5 L57.5 19.5 L60.1 19.7 L62.6 20.2 L65.2 20.9 L67.8 21.7 L70.3 22.8 L72.7 24.2 L75.1 25.7 L77.4 27.4 L79.5 29.4 L81.6 31.5 L83.4 33.9 L85.1 36.4 L86.7 39.1 L88.0 41.9 L89.1 44.9 L90.0 48.0" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M92.0 39.2 L90.0 48.0 L83.7 41.6" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol></defs></svg>
+  <div class="page">
+    <header class="nav">
+      <a class="who" href="/"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#spiral"/></svg><span>Harry Nicholls</span></a>
+      <a class="write" href="#contact">Write to me</a>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="hero">
+        <h1>Hello, I’m Harry.</h1>
+        <div class="letter">
+          <p class="intro">I’m a product engineer, a dad of three, and a woodworker. I live in the Toronto area and work remotely.</p>
+          <p>I build AI products and their infrastructure at <a href="https://ev.energy/" target="_blank" rel="noopener noreferrer">ev.energy</a>. Outside that, I tend to make the tools I want to use: something to read, a way to check my work, a little less friction in the day.</p>
+          <p>This page brings those projects together. Each begins with a question. Open one to see what I made of it.</p>
+          <p class="sign">Harry</p>
+        </div>
+      </section>
+      <section id="work" class="work">
+        <h2 class="log-head"><span>Some questions, some projects</span><span>(06)</span></h2>
+        <details class="entry">
+          <summary><span class="no">01</span><span class="q">What’s worth discovering on GitHub?</span><span class="nm">gitrove</span><span class="tog" aria-hidden="true"></span></summary>
+          <div class="story" id="gitrove-story">
+            <h3 class="story-title">Inside gitrove</h3>
+            <p class="lede">Daily discoveries from your GitHub network.</p>
+            <div class="story-content">
+          <div class="project-metadata">
+            <p class="body">
+              <strong>Purpose:</strong> Daily digest of your GitHub
+              network
+            </p>
+            <p class="body">
+              <strong>URL:</strong>
+              <a
+                href="https://gitrove.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://gitrove.com</a
+              >
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong>Tech:</strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">TypeScript</p></li>
+                <li><p class="body">Qwik City</p></li>
+                <li><p class="body">Go</p></li>
+                <li><p class="body">PostgreSQL</p></li>
+                <li><p class="body">GitHub API</p></li>
+                <li><p class="body">GH Archive</p></li>
+                <li><p class="body">Stripe</p></li>
+                <li><p class="body">Cloudflare Tunnel</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+<h4>A daily digest</h4>
+            <p class="body">
+              gitrove is a discovery tool for open-source developers and
+              repositories, built around a personal daily digest. A user signs
+              in with GitHub, and gitrove watches the developers they follow and
+              the repositories they star. Once a day it sends one digest:
+              repositories where several people in their network are
+              converging, new releases from starred repositories, who their
+              follows started following, and everything else.
+            </p>
+<a class="story-image story-preview" href="/assets/gitrove/v2-1.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/gitrove/v2-1.png"
+              alt="gitrove interface"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+<a class="story-image story-preview" href="/assets/gitrove/v2-1.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/gitrove/v2-1.png"
+              alt="gitrove landing page with the headline 'See which repos are gaining traction with the developers you follow' beside a sample Founder's Digest card"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+            <h4>Discovering new projects</h4>
+<p class="body">
+              A free Discover page ranks rising developers by language and
+              across 13 topic streams, such as MCP, AI agents and PostgreSQL.
+              Ranking is relative to each developer's own baseline: their last
+              7 days of activity are compared with a 28-day baseline, smoothed
+              by a constant. Minimum event and active-day floors keep out short
+              bursts and bots. A weekly Founder's Digest, one real day of the
+              founder's own digest, is published free on the blog as a sample.
+              Pro has a 14-day trial, with billing through Stripe.
+            </p>
+            <h4>Architecture and delivery</h4>
+<p class="body">
+              The backend is one Go binary on PostgreSQL. It uses the standard
+              library's net/http and pgx, with no web framework. Its subcommands
+              include <code>serve</code>, <code>ingest</code>,
+              <code>migrate</code>, <code>collect</code> and <code>mail</code>.
+              <code>ingest</code> loads GH Archive
+              hourly event files in a daily batch and is the only writer of the
+              ranking tables, with bot filtering and pruning.
+              <code>collect</code> refreshes each account's network mirror and
+              follow diffs through the GitHub API, and <code>mail</code> renders
+              and sends digests through listmonk. The frontend is
+              server-rendered Qwik City in TypeScript, with plain per-route CSS
+              for a dark monospace design. A pull-based deployer polls main
+              every minute and rolls back automatically. The app runs under
+              systemd behind a Cloudflare Tunnel, and each pull request gets its
+              own preview environment.
+            </p>
+          </div>
+          <div class="image-container">
+
+            <a class="story-image" href="/assets/gitrove/v2-2.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/gitrove/v2-2.png"
+              alt="gitrove Discover page ranking rising Go developers by score, with 7-day and 28-day activity counts and topic and language streams in the sidebar"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+            <a class="story-image" href="/assets/gitrove/v2-3.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/gitrove/v2-3.png"
+              alt="A published Founder's Digest for 12 October 2026, grouped into repositories converging in the network and new releases from starred repositories"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+          </div>
+        <p class="study-return"><a href="#work">Back to questions</a></p>
+            </div>
+          </div>
+        </details>
+        <details class="entry">
+          <summary><span class="no">02</span><span class="q">How can I check the code an AI writes?</span><span class="nm">Crosscheck</span><span class="tog" aria-hidden="true"></span></summary>
+          <div class="story" id="crosscheck">
+            <h3 class="story-title">Crosscheck</h3>
+            <p class="lede">Formal verification for AI-generated code.</p>
+            <div class="story-content">
+          <div class="project-metadata">
+            <p class="body">
+              <strong>Purpose:</strong> Formal verification for
+              AI-generated code
+            </p>
+            <p class="body">
+              <strong>URL:</strong>
+              <a
+                href="https://github.com/nicholls-inc/crosscheck"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://github.com/nicholls-inc/crosscheck</a
+              >
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong>Tech:</strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">TypeScript</p></li>
+                <li><p class="body">MCP</p></li>
+                <li><p class="body">Dafny</p></li>
+                <li><p class="body">Lean 4</p></li>
+                <li><p class="body">Rust</p></li>
+                <li><p class="body">Docker</p></li>
+                <li><p class="body">SQLite</p></li>
+                <li><p class="body">Vitest + fast-check</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h4>Two verification engines</h4>
+            <p class="body">
+              Crosscheck is a Claude Code plugin for checking the code an AI
+              assistant writes. It has 30 skills, 5 agents and an MCP server
+              with 7 tools across two engines. With Dafny, a pure functional
+              core is specified and verified, then compiled to Python or Go.
+              With Lean 4, an executable model acts as an oracle for
+              differential random testing of the real implementation. Skills
+              such as /reason, /locate-fault and /trace-execution add
+              structured, semi-formal code analysis.
+            </p>
+            <h4>Checking contracts across calls</h4><p class="body">
+              The repository also holds CGV, a contract graph verifier. A Rust
+              extractor, built on ruff's Python parser, reads Django models,
+              dataclasses and pydantic models. It stores their declared field
+              and function constraints in SQLite. A checker written and proved
+              sound in Lean 4 then checks that data passed between calls meets
+              those constraints. Its soundness theorem says exit code 0 means
+              every discovered data path is consistent. CI regenerates a
+              manifest of the protected theorem statements and replays the
+              proofs through Lean's kernel with leanchecker.
+            </p>
+            <h4>Sandboxed toolchains</h4><p class="body">
+              The Dafny and Lean toolchains run in sandboxed Docker containers
+              with no network access and fixed memory and time limits. The
+              plugin installs from the nicholls marketplace:
+            </p>
+            <p class="body">
+              <code>claude plugin marketplace add nicholls-inc/claude-code-marketplace</code><br />
+              <code>claude plugin install crosscheck@nicholls</code>
+            </p>
+          </div>
+          <figure class="note"><div class="card"><span class="tape" aria-hidden="true"></span><blockquote><p>No guarantee rests on the judgment of an LLM. An LLM may draft code, specs and proofs, but only deterministic checks and human judgment count as evidence.</p></blockquote></div></figure>
+        <p class="study-return"><a href="#work">Back to questions</a></p>
+            </div>
+          </div>
+        </details>
+        <details class="entry">
+          <summary><span class="no">03</span><span class="q">What should we watch tonight?</span><span class="nm">Recommender</span><span class="tog" aria-hidden="true"></span></summary>
+          <div class="story" id="recommender">
+            <h3 class="story-title">Recommender</h3>
+            <p class="lede">Film and TV recommendations that learn my taste.</p>
+            <div class="story-content">
+          <div class="project-metadata">
+            <p class="body">
+              <strong>Purpose:</strong> Personal film and TV
+              recommendations for a home Plex server
+            </p>
+            <p class="body">
+              <strong>Access:</strong> Private, self-hosted
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong>Tech:</strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">Python</p></li>
+                <li><p class="body">Starlette + Jinja2</p></li>
+                <li><p class="body">scikit-learn</p></li>
+                <li><p class="body">implicit (ALS)</p></li>
+                <li><p class="body">SQLite</p></li>
+                <li><p class="body">Vanilla JS</p></li>
+                <li><p class="body">Docker</p></li>
+                <li><p class="body">Codex + Grok</p></li>
+                <li><p class="body">bubblewrap</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+<h4>Choosing what to watch</h4>
+            <p class="body">
+              Trakt, Plex Discover and TMDB lists were not personal enough, so I
+              built a recommender for one person: me. Every night at 04:00 it
+              retrains and publishes two ranked lists of 20 films and 10 series.
+              One tab covers titles already in my Plex library. The other covers
+              titles I don't own yet. Each title gets one verdict: programme it,
+              return it, or rate it liked, meh or didn't like if I have already
+              seen it. Every verdict becomes a training label. On the "Get it"
+              tab, Order print files a request in Seerr, with an 8-second undo
+              window when JavaScript is on. The library list is also mirrored
+              into a "Watch next" collection in Plex, which stays in sync as I
+              triage.
+            </p>
+<a class="story-image story-preview" href="/assets/recommender/1.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/recommender/1.png"
+              alt="The In your library tab with The Untouchables at reel 01 beside a ranked list of 20 films, each marked new tonight or up from an earlier reel"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+            <h4>Learning my taste</h4>
+<p class="body">
+              My watch history is small, so population data carries most of the
+              weight. ALS item factors come from MovieLens 32M. A bag-of-tokens
+              model of TMDB metadata, with a ridge mapping into the ALS space,
+              gives vectors to new films and series that have no ratings. My
+              labels then train a logistic reranker on six features, blended
+              with popularity. No LLM runs when the page is served. The UI is a
+              "projection booth at night": each title is a reel of film with its
+              poster in a sprocketed frame, actions are enamelled levers, and
+              every triage action has a keyboard shortcut. It renders on the
+              server and works without JavaScript.
+            </p>
+            <h4>Improving the model overnight</h4>
+<p class="body">
+              An autoresearch service improves the ranking model while I sleep.
+              From 01:00 to 05:00 a coding agent, Codex or Grok, runs up to 30
+              experiments of 300 seconds each. It keeps a change only if it
+              improves where the films I actually started ranked in a held-out
+              month. The agent runs in a bubblewrap sandbox with none of my
+              keys, no git history and network access only to its model API and
+              PyPI. It may edit only the model package. My 20 most recent film
+              starts stay hidden from it. Only a deploy gate run from a copy the
+              agent cannot touch scores that data, and it ships a new model only
+              when the score beats the live one. Across the first ten nights,
+              between the agent's changes and my own, the baseline score fell
+              from 0.40 to 0.16, where 0 means every film I started was ranked
+              first.
+            </p>
+          </div>
+          <figure class="note"><div class="card"><span class="tape" aria-hidden="true"></span><blockquote><p>The agent proposes and a fixed gate decides. Nothing ships on the agent's own say-so.</p></blockquote></div></figure>
+          <div class="image-container">
+
+            <a class="story-image" href="/assets/recommender/2.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/recommender/2.png"
+              alt="The Get it tab on a phone, with Twelve Monkeys at reel 01 and the Order print and Return levers pinned to the bottom of the screen"
+              width="390"
+              height="844"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+          </div>
+        <p class="study-return"><a href="#work">Back to questions</a></p>
+            </div>
+          </div>
+        </details>
+        <details class="entry">
+          <summary><span class="no">04</span><span class="q">Which pull requests need my attention?</span><span class="nm">opsdeck</span><span class="tog" aria-hidden="true"></span></summary>
+          <div class="story" id="opsdeck">
+            <h3 class="story-title">opsdeck</h3>
+            <p class="lede">The pull requests that need me, in one place.</p>
+            <div class="story-content">
+          <div class="project-metadata">
+            <p class="body">
+              <strong>Purpose:</strong> Personal pull request dashboard
+            </p>
+            <p class="body">
+              <strong>Access:</strong> Private, runs locally
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong>Tech:</strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">Go</p></li>
+                <li><p class="body">SQLite</p></li>
+                <li><p class="body">net/http</p></li>
+                <li><p class="body">GitHub GraphQL</p></li>
+                <li><p class="body">gh CLI</p></li>
+                <li><p class="body">Vanilla JS</p></li>
+                <li><p class="body">Datadog</p></li>
+                <li><p class="body">Sentry</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+<h4>Pull requests that need attention</h4>
+            <p class="body">
+              opsdeck is a local-first dashboard that an engineer runs on their
+              own machine against their own gh login. It gathers every pull
+              request they are connected to and sorts them into four bays:
+              review requested of me, review requested of my team, authored or
+              pushed, and commented or reviewed. Anything waiting on the user,
+              such as a review request, red CI or a merge conflict, comes first.
+              It is keyboard-driven (j/k, h/l, Space to lift a PR). Sending
+              selected PRs to Claude Code review skills is designed into the
+              UI, but in the current build that dispatch is simulated.
+            </p>
+<a class="story-image story-preview" href="/assets/opsdeck/1.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/opsdeck/1.png"
+              alt="opsdeck's four bays of open pull requests, with waiting-on-me, red CI and conflict counts in the status strip"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+            <h4>Separate spaces and useful metrics</h4>
+<p class="body">
+              Work and personal organisations live in separate spaces, each
+              with its own SQLite database and bot list. opsdeck also finds PRs
+              opened by the user's GitHub App bots and by local Claude Code
+              sessions, so PRs a login-only query would miss still appear. The
+              metrics view covers merged PRs per week, cycle time at p50 and
+              p90, first-pass yield, revert rate, review response time and
+              review-queue age. Every figure shows its sample size and flags
+              thin samples. An optional production view links Datadog and
+              Sentry deploys to the commits they ship, for deploy frequency,
+              batch size and merge-to-production lead time.
+            </p>
+            <h4>Running locally</h4>
+<p class="body">
+              It ships as a single Go binary with no runtime dependencies.
+              <code>opsdeck serve</code> binds to loopback only, serves an
+              embedded static UI and a JSON snapshot API, and runs its own
+              scheduler with 60-second and 15-minute ticks. It uses a pure-Go
+              SQLite driver, so no CGO is needed. The screenshots below use
+              invented demo data.
+            </p>
+          </div>
+          <div class="image-container">
+
+            <a class="story-image" href="/assets/opsdeck/2.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/opsdeck/2.png"
+              alt="opsdeck Metrics view with 12-week charts for merged PRs, cycle time and reviews given, above a table where every metric shows its sample size"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+          </div>
+        <p class="study-return"><a href="#work">Back to questions</a></p>
+            </div>
+          </div>
+        </details>
+        <details class="entry">
+          <summary><span class="no">05</span><span class="q">What’s running on my home server?</span><span class="nm">GoHome</span><span class="tog" aria-hidden="true"></span></summary>
+          <div class="story" id="go-home">
+            <h3 class="story-title">GoHome</h3>
+            <p class="lede">One home for the services on my home server.</p>
+            <div class="story-content">
+          <div class="project-metadata">
+            <p class="body">
+              <strong>Purpose:</strong> Self-hosted home server
+              dashboard
+            </p>
+            <p class="body">
+              <strong>Access:</strong> Private, self-hosted
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong>Tech:</strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">Go</p></li>
+                <li><p class="body">chi</p></li>
+                <li><p class="body">Bun ORM</p></li>
+                <li><p class="body">PostgreSQL</p></li>
+                <li><p class="body">Docker Engine API</p></li>
+                <li><p class="body">Hotwire Turbo</p></li>
+                <li><p class="body">WebSockets</p></li>
+                <li><p class="body">Go html/template</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+<h4>Discovering home services</h4>
+            <p class="body">
+              GoHome is a dashboard for homelab servers that run on Docker. It
+              reads containers from the Docker socket and recognises common
+              apps, such as Plex, Jellyfin, Home Assistant, Pi-hole, Nextcloud
+              and the *arr stack, by matching image names, ports and labels
+              against configurable rules. No service has to be registered by
+              hand.
+            </p>
+<a class="story-image story-preview" href="/assets/go-home/1.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/go-home/1.png"
+              alt="GoHome dashboard with 24 services grouped into stacks, a Docker socket status strip and running, degraded and starting service cards"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+            <h4>Service status and controls</h4>
+<p class="body">
+              Services are grouped into stacks by Compose project. Each card
+              shows whether the service is running, degraded, stopped or
+              starting, with a launch link and Restart, Stop, Start and Logs
+              actions. A status strip shows the Docker socket state and a tally
+              of nominal, degraded and stopped services. Status is never shown
+              by colour alone: each state has its own glyph and text label.
+              There is a keyboard filter (/, j/k, Esc) and a recent-activity
+              feed. The design brief follows Dieter Rams's "less, but better".
+            </p>
+            <h4>Architecture and live updates</h4>
+<p class="body">
+              The backend is a Go service split into handlers, repositories and
+              services. It uses Bun ORM on PostgreSQL, with migrations run at
+              startup. A scheduler runs discovery with retries, a listener
+              follows Docker events, and HTTP, TCP and Docker health checks feed
+              status and metrics. Pages are server-rendered Go templates. Live
+              updates are pushed over WebSockets as Turbo Streams, so there is
+              no SPA framework or JavaScript build step. Config comes from YAML
+              plus environment variables.
+            </p>
+          </div>
+          <div class="image-container">
+
+            <a class="story-image" href="/assets/go-home/2.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/go-home/2.png"
+              alt="GoHome home, monitoring and network stacks, including a stopped Node-RED container with a Start button"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+            <a class="story-image" href="/assets/go-home/3.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/go-home/3.png"
+              alt="GoHome filtered to degraded services, showing an unhealthy Bazarr card and a restarting Paperless-ngx card"
+              width="3168"
+              height="2176"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+          </div>
+        <p class="study-return"><a href="#work">Back to questions</a></p>
+            </div>
+          </div>
+        </details>
+        <details class="entry">
+          <summary><span class="no">06</span><span class="q">Could a cover letter start closer to the job?</span><span class="nm">LLM Cover Letters</span><span class="tog" aria-hidden="true"></span></summary>
+          <div class="story" id="llm-cover-letters">
+            <h3 class="story-title">LLM Cover Letters</h3>
+            <p class="lede">Cover letters shaped around the job.</p>
+            <div class="story-content">
+          <div class="project-metadata">
+            <p class="body">
+              <strong>Purpose:</strong> Generate cover letters
+            </p>
+            <p class="body">
+              <strong>URL:</strong>
+              <a
+                href="https://covered-one.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://covered-one.vercel.app/</a
+              >
+            </p>
+            <p class="body">
+              <strong>Demo:</strong>
+              <a
+                href="https://youtu.be/zzYzMSi5mqY"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://youtu.be/zzYzMSi5mqY</a
+              >
+            </p>
+            <div class="tech-list-container">
+              <p class="body">
+                <strong>Tech:</strong>
+              </p>
+              <ul class="tech-list">
+                <li><p class="body">TypeScript</p></li>
+                <li><p class="body">React</p></li>
+                <li><p class="body">NextJS</p></li>
+                <li><p class="body">NodeJS</p></li>
+                <li><p class="body">Redis</p></li>
+                <li><p class="body">BullMQ</p></li>
+                <li><p class="body">Supabase</p></li>
+                <li><p class="body">OpenAI SDK</p></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+<h4>How it works</h4>
+            <p class="body">
+              Covered (working title) is a web application that generates cover
+              letters.
+            </p>
+<a class="story-image story-preview" href="/assets/llm-cover-letters/1.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/llm-cover-letters/1.png"
+              alt="Covered's Jobs page listing five saved job postings, with an Add Job button"
+              width="2784"
+              height="1776"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+            <p class="body">
+              The app takes as input a job description and a summary of the
+              user's experience. Using various prompts the system generates a
+              cover letter for the given role.
+            </p>
+          </div>
+          <div class="image-container">
+
+            <a class="story-image" href="/assets/llm-cover-letters/2.png" target="_blank" rel="noopener noreferrer"><img
+              src="/assets/llm-cover-letters/2.png"
+              alt="Covered's page for a Staff Software Engineer job, showing a generated cover letter below a Generate button"
+              width="2784"
+              height="1776"
+              loading="lazy"
+              decoding="async"
+            /><span>Open full-size screenshot (opens in a new tab)</span></a>
+          </div>
+        <p class="study-return"><a href="#work">Back to questions</a></p>
+            </div>
+          </div>
+        </details>
+        <p class="postscript">If you’d rather browse the pictures, <a href="#project-pictures">here are a few things I’ve made</a>.</p>
+      </section>
+      <section id="about" class="about">
+        <h2 class="rail-head">A little more about me</h2>
+        <div class="about-body"><p>At ev.energy, I build AI products and their infrastructure: MCP servers, agent gateways, and agentic CI workflows. I care about useful products, strong engineering teams, and work that’s good for people and the planet.</p><p>You can find my writing on <a href="https://brainflow.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a> and <a href="https://harrynicholls.medium.com/" target="_blank" rel="noopener noreferrer">Medium</a>, and my code on <a href="https://github.com/hnipps" target="_blank" rel="noopener noreferrer">GitHub</a>.</p></div>
+      </section>
+      <section id="project-pictures" class="strip">
+        <h2 class="rail-head">A few things I’ve made</h2>
+        <div class="strip-grid">
+        <figure><a href="#gitrove-story"><img src="/assets/gitrove/v2-1.png" alt="gitrove interface" width="3168" height="2176" loading="lazy" decoding="async"></a><figcaption>gitrove</figcaption></figure>
+        <figure><a href="#recommender"><img src="/assets/recommender/1.png" alt="Recommender interface" width="3168" height="2176" loading="lazy" decoding="async"></a><figcaption>Recommender</figcaption></figure>
+        <figure><a href="#opsdeck"><img src="/assets/opsdeck/1.png" alt="opsdeck interface" width="3168" height="2176" loading="lazy" decoding="async"></a><figcaption>opsdeck</figcaption></figure>
+        <figure><a href="#go-home"><img src="/assets/go-home/1.png" alt="GoHome interface" width="3168" height="2176" loading="lazy" decoding="async"></a><figcaption>GoHome</figcaption></figure>
+        </div>
+      </section>
+    </main>
+    <footer class="foot" id="contact">
+      <h2>Keep in touch</h2>
+      <a class="email" href="mailto:harry.m.nicholls@gmail.com">harry.m.nicholls<wbr>@gmail.com</a>
+      <div class="foot-row">
+        <a href="https://www.linkedin.com/in/harry-nicholls-91779959/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/harrynicholls" target="_blank" rel="noopener noreferrer">X</a>
+        <span>© 2026 Nicholls Inc.</span>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

@@ -1,4 +1,6 @@
-"""Build the paper-stack homepage and its assets into the existing static deployment root."""
+"""Publish the six paper-stack portfolio views into the static deployment root.
+
+The home page (src/index.html) is not built here; see the note at the end."""
 from pathlib import Path
 import shutil
 
@@ -33,9 +35,7 @@ for source in (SOURCE / 'themes').iterdir():
 shutil.copyfile(EXPLORATION / 'screenshots' / 'symbols-pixels-mark.jpg',
                 OUTPUT / 'screenshots' / 'symbols-pixels-mark.jpg')
 
-page = (SOURCE / 'index.html').read_text()
-page = page.replace('<head>', '<head>\n  <base href="/portfolio-views/paper-stack/">')
-page = page.replace('  <meta name="robots" content="noindex">', (SOURCE / 'site-head.html').read_text())
-page = page.replace('<title>Harry Nicholls · A personal letter</title>', '<title>Harry Nicholls | Product Engineer</title>')
-(ROOT / 'src' / 'index.html').write_text(page)
-print('Built src/index.html and six complete portfolio views.')
+# The home page is src/index.html, written by hand with its assets in src/landing/.
+# This script no longer generates it: the paper stack came off the home page on
+# 2026-11-11 and its six views are published here unlinked.
+print('Published six portfolio views to src/portfolio-views/ (src/index.html is hand-written).')

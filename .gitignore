@@ -21,3 +21,6 @@ terraform.rc
 
 # Local design research and browser captures
 .taste-skill/
+
+# Impeccable review captures
+.impeccable/review/
