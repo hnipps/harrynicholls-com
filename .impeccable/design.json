@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T00:00:00Z",
+  "title": "Design System: harrynicholls.com",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Photocopy Paper", "canonical": "oklch(0.955 0 0)", "srgbApprox": "#f0f0f0", "theme": "light", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "surface": { "role": "neutral", "displayName": "Surface Grey", "canonical": "oklch(0.905 0 0)", "srgbApprox": "#dfdfdf", "theme": "light", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "oklch(0.14 0 0)", "srgbApprox": "#090909", "theme": "light", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "muted": { "role": "neutral", "displayName": "Muted Grey", "canonical": "oklch(0.44 0 0)", "srgbApprox": "#525252", "theme": "light", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "signal-text": { "role": "primary", "displayName": "Signal", "canonical": "oklch(0.56 0.205 32)", "srgbApprox": "#d22b0d", "theme": "light", "tonalRamp": ["oklch(0.15 0.205 32)", "oklch(0.27 0.205 32)", "oklch(0.38 0.205 32)", "oklch(0.50 0.205 32)", "oklch(0.62 0.205 32)", "oklch(0.73 0.205 32)", "oklch(0.85 0.205 32)", "oklch(0.95 0.205 32)"] },
+      "track-text": { "role": "tertiary", "displayName": "Track", "canonical": "oklch(0.40 0.19 264)", "srgbApprox": "#0d37ab", "theme": "light", "tonalRamp": ["oklch(0.15 0.19 264)", "oklch(0.27 0.19 264)", "oklch(0.38 0.19 264)", "oklch(0.50 0.19 264)", "oklch(0.62 0.19 264)", "oklch(0.73 0.19 264)", "oklch(0.85 0.19 264)", "oklch(0.95 0.19 264)"] },
+      "hazard": { "role": "secondary", "displayName": "Hazard", "canonical": "oklch(0.90 0.20 122)", "srgbApprox": "#c8f23c", "theme": "both", "tonalRamp": ["oklch(0.15 0.20 122)", "oklch(0.27 0.20 122)", "oklch(0.38 0.20 122)", "oklch(0.50 0.20 122)", "oklch(0.62 0.20 122)", "oklch(0.73 0.20 122)", "oklch(0.85 0.20 122)", "oklch(0.95 0.20 122)"] },
+      "mark": { "role": "secondary", "displayName": "Highlighter, at rest", "canonical": "oklch(0.90 0.20 122 / .6)", "theme": "light", "tonalRamp": ["oklch(0.15 0.20 122)", "oklch(0.27 0.20 122)", "oklch(0.38 0.20 122)", "oklch(0.50 0.20 122)", "oklch(0.62 0.20 122)", "oklch(0.73 0.20 122)", "oklch(0.85 0.20 122)", "oklch(0.95 0.20 122)"] },
+      "card": { "role": "neutral", "displayName": "Index Card", "canonical": "oklch(0.99 0.004 90)", "srgbApprox": "#fdfcf9", "theme": "both", "tonalRamp": ["oklch(0.15 0.004 90)", "oklch(0.27 0.004 90)", "oklch(0.38 0.004 90)", "oklch(0.50 0.004 90)", "oklch(0.62 0.004 90)", "oklch(0.73 0.004 90)", "oklch(0.85 0.004 90)", "oklch(0.95 0.004 90)"] },
+      "card-ink": { "role": "neutral", "displayName": "Card Ink", "canonical": "oklch(0.14 0 0)", "srgbApprox": "#090909", "theme": "both", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "paper-dark": { "role": "neutral", "displayName": "Photocopy Paper, dark", "canonical": "oklch(0.16 0 0)", "srgbApprox": "#0d0d0d", "theme": "dark", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "surface-dark": { "role": "neutral", "displayName": "Surface Grey, dark", "canonical": "oklch(0.22 0 0)", "srgbApprox": "#1b1b1b", "theme": "dark", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "ink-dark": { "role": "neutral", "displayName": "Ink, dark", "canonical": "oklch(0.93 0 0)", "srgbApprox": "#e8e8e8", "theme": "dark", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "muted-dark": { "role": "neutral", "displayName": "Muted Grey, dark", "canonical": "oklch(0.70 0 0)", "srgbApprox": "#9e9e9e", "theme": "dark", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.38 0 0)", "oklch(0.50 0 0)", "oklch(0.62 0 0)", "oklch(0.73 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "signal-text-dark": { "role": "primary", "displayName": "Signal, dark", "canonical": "oklch(0.70 0.20 32)", "srgbApprox": "#ff6247", "theme": "dark", "tonalRamp": ["oklch(0.15 0.20 32)", "oklch(0.27 0.20 32)", "oklch(0.38 0.20 32)", "oklch(0.50 0.20 32)", "oklch(0.62 0.20 32)", "oklch(0.73 0.20 32)", "oklch(0.85 0.20 32)", "oklch(0.95 0.20 32)"] },
+      "track-text-dark": { "role": "tertiary", "displayName": "Track, dark", "canonical": "oklch(0.72 0.14 264)", "srgbApprox": "#77a2fc", "theme": "dark", "tonalRamp": ["oklch(0.15 0.14 264)", "oklch(0.27 0.14 264)", "oklch(0.38 0.14 264)", "oklch(0.50 0.14 264)", "oklch(0.62 0.14 264)", "oklch(0.73 0.14 264)", "oklch(0.85 0.14 264)", "oklch(0.95 0.14 264)"] },
+      "mark-dark": { "role": "secondary", "displayName": "Highlighter at rest, dark", "canonical": "oklch(0.90 0.20 122 / .2)", "theme": "dark", "tonalRamp": ["oklch(0.15 0.20 122)", "oklch(0.27 0.20 122)", "oklch(0.38 0.20 122)", "oklch(0.50 0.20 122)", "oklch(0.62 0.20 122)", "oklch(0.73 0.20 122)", "oklch(0.85 0.20 122)", "oklch(0.95 0.20 122)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The greeting only. Uppercase, one line filling the hero column (11.2cqi, fallback clamp(2.6rem, 10.4vw, 7.8rem)); two lines at 19.4cqi, line-height 1.02, at 40rem and below." },
+      "headline": { "displayName": "Headline", "purpose": "The question in each log row. Sentence case, balanced." },
+      "headline-contact": { "displayName": "Headline, contact", "purpose": "The email address in the contact block, underlined at 0.07em." },
+      "title": { "displayName": "Title", "purpose": "Sub-headings inside a story." },
+      "lede": { "displayName": "Lede", "purpose": "First paragraph of the letter and of About; each story's one-line summary (max 34ch)." },
+      "body": { "displayName": "Body", "purpose": "Running text. 36rem columns for the letter and About, 66ch in stories." },
+      "body-small": { "displayName": "Body small", "purpose": "Values in the story metadata column." },
+      "label": { "displayName": "Label", "purpose": "Anything that counts, labels or names: nav, section rule heads, row numbers, project names, metadata keys, tech lists (0.7rem), strip captions, footer row. Uppercase." },
+      "caption": { "displayName": "Caption", "purpose": "The sentence under a story screenshot. Label face, sentence case." },
+      "code": { "displayName": "Code", "purpose": "Inline code in the label face on Surface. There is no monospace face." },
+      "note": { "displayName": "Note", "purpose": "The sentence on the index card; line height equals the card's 28px ruling. Typed versus handwritten is an open decision." },
+      "hand": { "displayName": "Hand", "purpose": "The signature, in Signal, rotated -3deg. The ss03 capital H is an open decision." },
+      "hand-large": { "displayName": "Hand large", "purpose": "\"Keep in touch\", in Signal, rotated -2deg." }
+    },
+    "shadows": [
+      { "name": "card-on-desk", "value": "0 1px 1px oklch(0 0 0 / .12), 0 2px 4px oklch(0 0 0 / .08), 0 14px 28px -14px oklch(0 0 0 / .4)", "purpose": "The index card only. Nothing else in the system casts a shadow." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "The only easing. Fast out, long settle, no bounce." },
+      { "name": "t-control", "value": "350ms", "purpose": "Hover and state changes on controls: colour shifts, the 3px nudge, the toggle closing." },
+      { "name": "t-type", "value": "600ms", "purpose": "Type-scale movement: the story wipe and the spiral's nudge." },
+      { "name": "nudge", "value": "translateX(3px)", "purpose": "The hover response for row questions, captions and the spiral." },
+      { "name": "wipe", "value": "clip-path: inset(0 100% 0 0) to inset(0 0 0 0), 600ms", "purpose": "An opened story reveals left to right." },
+      { "name": "write", "value": "clip-path: inset(-20% 100% -20% 0) to inset(-20% -10% -20% 0), 900ms, 350ms delay", "purpose": "The signature is written once on load when scripts and motion are both on." },
+      { "name": "tilt", "value": "-1.4deg", "purpose": "Rotation of the index card. The signature sits at -3deg and \"Keep in touch\" at -2deg." },
+      { "name": "reduced-motion", "value": "all durations .001ms, delays 0s", "purpose": "Under prefers-reduced-motion: reduce every animation and transition collapses." }
+    ],
+    "breakpoints": [
+      { "name": "story-stack", "value": "52rem" },
+      { "name": "narrow", "value": "40rem" }
+    ],
+    "themes": {
+      "switch": "prefers-color-scheme",
+      "darkOverrides": ["paper", "surface", "ink", "muted", "signal-text", "track-text", "mark"],
+      "fixedAcrossThemes": ["hazard", "card", "card-ink"]
+    },
+    "openDecisions": [
+      "Desk-note card: built typed in Hyperlegible Sans Bold; handwriting there needs the owner's approval of the typed card or the sentences supplied in his own hand.",
+      "Signature capital H: uses the font's ss03 alternate and can read as a K; needs sign-off or a vector of the real signature.",
+      "og:image: still the previous site's social card; does not match this page."
+    ]
+  },
+  "components": [
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "One row over a 1px ink rule: spiral mark and name left, a single text link right. Same at every width.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-who\" href=\"#\"><svg viewBox=\"0 0 100 100\" aria-hidden=\"true\"><path d=\"M50 50 C52 50 54 52 53.8 54 C53 58 46 58 43.5 53 C40 46 46 39 53 40.8 C63 43 66 56 58 63 C48 71 31 66 27.6 51 C24 33 40 18 58 19.6 C73 21 86 32 90 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M92 39.2 L90 48 L83.7 41.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>Harry Nicholls</span></a><a class=\"ds-nav-write\" href=\"#\">Write to me</a></header>",
+      "css": ".ds-nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 0 .95rem; border-bottom: 1px solid var(--ink, oklch(0.14 0 0)); color: var(--ink, oklch(0.14 0 0)); font-family: \"Space Grotesk\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-feature-settings: \"tnum\", \"zero\"; font-size: .74rem; line-height: 1.5; } .ds-nav a { color: inherit; text-decoration: none; } .ds-nav-who { display: inline-flex; align-items: center; gap: .7rem; } .ds-nav-who svg { width: 1.6rem; height: 1.6rem; flex: none; transition: transform 600ms cubic-bezier(.16,1,.3,1); } .ds-nav-who:hover svg { transform: translateX(3px); } .ds-nav-write { padding: .15rem 0; box-shadow: inset 0 -1.5px 0 var(--signal-text, oklch(0.56 0.205 32)); transition: color 350ms cubic-bezier(.16,1,.3,1); } .ds-nav-write:hover { color: var(--signal-text, oklch(0.56 0.205 32)); } .ds-nav a:focus-visible { outline: 3px solid var(--track-text, oklch(0.40 0.19 264)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Section rule head",
+      "kind": "custom",
+      "refersTo": "rule-head",
+      "description": "A section's own heading in the label voice over a 1px rule, with an optional bracketed count. Never stacked above a display heading.",
+      "html": "<h2 class=\"ds-rule-head\"><span>Some questions, some projects</span><span>(06)</span></h2>",
+      "css": ".ds-rule-head { display: flex; justify-content: space-between; gap: 1rem; margin: 0; padding-bottom: .7rem; border-bottom: 1px solid var(--ink, oklch(0.14 0 0)); color: var(--muted, oklch(0.44 0 0)); font-family: \"Space Grotesk\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-feature-settings: \"tnum\", \"zero\"; font-size: .74rem; line-height: 1.5; }"
+    },
+    {
+      "name": "Log row",
+      "kind": "custom",
+      "refersTo": "log-row",
+      "description": "The signature component: a native details row of number, question, project name and a plus that closes to a bar. Opens a story that wipes in left to right.",
+      "html": "<details class=\"ds-entry\"><summary><span class=\"ds-entry-no\">02</span><span class=\"ds-entry-q\">How can I check the code an AI writes?</span><span class=\"ds-entry-nm\">Crosscheck</span><span class=\"ds-entry-tog\" aria-hidden=\"true\"></span></summary><div class=\"ds-entry-story\">Formal verification for AI-generated code.</div></details>",
+      "css": ".ds-entry { border-top: 1px solid var(--ink, oklch(0.14 0 0)); border-bottom: 1px solid var(--ink, oklch(0.14 0 0)); color: var(--ink, oklch(0.14 0 0)); } .ds-entry > summary { display: grid; grid-template-columns: 3.4rem minmax(0,1fr) auto 1.5rem; gap: .25rem 1rem; align-items: baseline; padding: 1.05rem 0 .95rem; cursor: pointer; list-style: none; background: var(--paper, oklch(0.955 0 0)); } .ds-entry > summary::-webkit-details-marker { display: none; } .ds-entry-no, .ds-entry-nm { font-family: \"Space Grotesk\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-feature-settings: \"tnum\", \"zero\"; font-size: .74rem; line-height: 1.5; } .ds-entry-no { color: var(--signal-text, oklch(0.56 0.205 32)); } .ds-entry-nm { color: var(--muted, oklch(0.44 0 0)); text-align: right; white-space: nowrap; } .ds-entry-q { font-family: \"Hyperlegible Sans\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 700; letter-spacing: -.022em; font-size: clamp(1.3rem, 2.7vw, 2.05rem); line-height: 1.12; text-wrap: balance; transition: transform 350ms cubic-bezier(.16,1,.3,1), color 350ms cubic-bezier(.16,1,.3,1); } .ds-entry-tog { position: relative; width: .95rem; height: .95rem; align-self: center; justify-self: end; } .ds-entry-tog::before, .ds-entry-tog::after { content: \"\"; position: absolute; background: currentColor; } .ds-entry-tog::before { left: 0; right: 0; top: calc(50% - 1px); height: 2px; } .ds-entry-tog::after { top: 0; bottom: 0; left: calc(50% - 1px); width: 2px; transition: transform 350ms cubic-bezier(.16,1,.3,1); } .ds-entry[open] > summary .ds-entry-tog::after { transform: scaleY(0); } .ds-entry > summary:hover .ds-entry-q, .ds-entry[open] > summary .ds-entry-q { color: var(--signal-text, oklch(0.56 0.205 32)); } .ds-entry > summary:hover .ds-entry-q { transform: translateX(3px); } .ds-entry > summary:focus-visible { outline: 3px solid var(--track-text, oklch(0.40 0.19 264)); outline-offset: -3px; } .ds-entry[open] > summary { border-bottom: 1px solid var(--ink, oklch(0.14 0 0)); } .ds-entry-story { padding: 1.75rem 0 2rem 4.4rem; font-family: \"Hyperlegible Sans\", \"Helvetica Neue\", Arial, sans-serif; font-size: clamp(1.25rem, 2.1vw, 1.5rem); line-height: 1.42; } @media (prefers-reduced-motion: no-preference) { .ds-entry[open] > .ds-entry-story { animation: ds-wipe 600ms cubic-bezier(.16,1,.3,1) both; } @keyframes ds-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } } }"
+    },
+    {
+      "name": "Inline link (highlighter)",
+      "kind": "custom",
+      "refersTo": "link-highlight",
+      "description": "Links inside prose: a Hazard highlight behind the words and a 1.5px Signal line beneath; full Hazard on hover.",
+      "html": "<p class=\"ds-prose\">I build AI products and their infrastructure at <a class=\"ds-link\" href=\"#\">ev.energy</a>.</p>",
+      "css": ".ds-prose { margin: 0; max-width: 36rem; color: var(--ink, oklch(0.14 0 0)); font-family: \"Hyperlegible Sans\", \"Helvetica Neue\", Arial, sans-serif; font-size: 1.0625rem; line-height: 1.55; } .ds-link { color: inherit; text-decoration: none; background: var(--mark, oklch(0.90 0.20 122 / .6)); padding: 0 .14em; box-shadow: inset 0 -1.5px 0 var(--signal-text, oklch(0.56 0.205 32)); transition: background 350ms cubic-bezier(.16,1,.3,1); } .ds-link:hover { background: var(--hazard, oklch(0.90 0.20 122)); color: oklch(0.14 0 0); } .ds-link:focus-visible { outline: 3px solid var(--track-text, oklch(0.40 0.19 264)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Inline code",
+      "kind": "chip",
+      "refersTo": "code-chip",
+      "description": "Code in the label face on Surface, square. There is no monospace face.",
+      "html": "<p class=\"ds-code-line\">Its subcommands include <code class=\"ds-code\">serve</code>, <code class=\"ds-code\">ingest</code> and <code class=\"ds-code\">migrate</code>.</p>",
+      "css": ".ds-code-line { margin: 0; color: var(--ink, oklch(0.14 0 0)); font-family: \"Hyperlegible Sans\", \"Helvetica Neue\", Arial, sans-serif; font-size: 1.0625rem; line-height: 1.55; } .ds-code { font-family: \"Space Grotesk\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 500; font-size: .86em; font-feature-settings: \"tnum\", \"zero\"; background: var(--surface, oklch(0.905 0 0)); padding: .12em .4em; }"
+    },
+    {
+      "name": "Story metadata",
+      "kind": "custom",
+      "refersTo": "rule-head",
+      "description": "A narrow column topped by an ink rule: label-voice keys in Muted, small body values, a label-voice tech list.",
+      "html": "<div class=\"ds-meta\"><p><strong>Purpose:</strong> Personal pull request dashboard</p><p><strong>Access:</strong> Private, runs locally</p><div><p><strong>Tech:</strong></p><ul class=\"ds-meta-tech\"><li>Go</li><li>SQLite</li><li>net/http</li></ul></div></div>",
+      "css": ".ds-meta { display: grid; gap: 1rem; max-width: 15rem; border-top: 1px solid var(--ink, oklch(0.14 0 0)); padding-top: .8rem; color: var(--ink, oklch(0.14 0 0)); font-family: \"Hyperlegible Sans\", \"Helvetica Neue\", Arial, sans-serif; } .ds-meta p { margin: 0; font-size: .95rem; line-height: 1.45; } .ds-meta strong, .ds-meta-tech { font-family: \"Space Grotesk\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-feature-settings: \"tnum\", \"zero\"; } .ds-meta strong { display: block; color: var(--muted, oklch(0.44 0 0)); margin-bottom: .2rem; font-size: .74rem; line-height: 1.5; } .ds-meta-tech { margin: .1rem 0 0; padding: 0; list-style: none; font-size: .7rem; line-height: 1.8; }"
+    },
+    {
+      "name": "Desk note (index card)",
+      "kind": "card",
+      "refersTo": "desk-note-card",
+      "description": "One ruled index card closing a story, tilted -1.4deg, the only shadowed object. Keeps its light colours on dark. Typed text is an open decision.",
+      "html": "<figure class=\"ds-note\"><div class=\"ds-note-card\"><blockquote><p>The agent proposes and a fixed gate decides. Nothing ships on the agent's own say-so.</p></blockquote></div></figure>",
+      "css": ".ds-note { margin: 0; padding: .5rem 0 1rem; } .ds-note-card { position: relative; width: min(29rem, 100%); background-color: var(--card, oklch(0.99 0.004 90)); color: var(--card-ink, oklch(0.14 0 0)); transform: rotate(-1.4deg); padding: 3.5rem 1.6rem 1.75rem; background-image: linear-gradient(oklch(0.62 0.16 25 / .55), oklch(0.62 0.16 25 / .55)), linear-gradient(to bottom, transparent 27px, oklch(0.75 0.06 240 / .55) 27px); background-size: 100% 1.5px, 100% 28px; background-position: 0 2.6rem, 0 calc(3.5rem + 23px); background-repeat: no-repeat, repeat-y; box-shadow: 0 1px 1px oklch(0 0 0 / .12), 0 2px 4px oklch(0 0 0 / .08), 0 14px 28px -14px oklch(0 0 0 / .4); } .ds-note-card blockquote { margin: 0; } .ds-note-card p { margin: 0; font-family: \"Hyperlegible Sans\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 700; letter-spacing: -.012em; font-size: 1.2rem; line-height: 28px; text-wrap: pretty; }"
+    },
+    {
+      "name": "Signature",
+      "kind": "custom",
+      "refersTo": "signature",
+      "description": "The hand, in Signal, rotated -3deg; written once on load with a left-to-right wipe. The ss03 capital H is an open decision.",
+      "html": "<p class=\"ds-sign\">Harry</p>",
+      "css": ".ds-sign { margin: .5rem 0 0; display: inline-block; font-family: \"Casimir Dunmore\", cursive; font-feature-settings: \"ss03\"; font-size: clamp(3.4rem, 6.2vw, 4.6rem); line-height: 1; color: var(--signal-text, oklch(0.56 0.205 32)); transform: rotate(-3deg); transform-origin: left bottom; padding-right: .2em; } @media (prefers-reduced-motion: no-preference) { .ds-sign { animation: ds-write 900ms cubic-bezier(.16,1,.3,1) 350ms both; } @keyframes ds-write { from { clip-path: inset(-20% 100% -20% 0); } to { clip-path: inset(-20% -10% -20% 0); } } }"
+    },
+    {
+      "name": "Contact block",
+      "kind": "custom",
+      "refersTo": "email-link",
+      "description": "The hand heading, the email as a large bold underlined link, then a label-voice footer row over a 1px rule.",
+      "html": "<footer class=\"ds-foot\"><h2 class=\"ds-foot-hand\">Keep in touch</h2><a class=\"ds-foot-email\" href=\"#\">name@example.com</a><div class=\"ds-foot-row\"><a href=\"#\">LinkedIn</a><a href=\"#\">X</a><span>© 2026 Nicholls Inc.</span></div></footer>",
+      "css": ".ds-foot { color: var(--ink, oklch(0.14 0 0)); } .ds-foot-hand { margin: 0; display: inline-block; font-family: \"Casimir Dunmore\", cursive; font-weight: 400; font-size: clamp(3rem, 7.4vw, 5.4rem); line-height: 1; color: var(--signal-text, oklch(0.56 0.205 32)); transform: rotate(-2deg); transform-origin: left bottom; padding-right: .2em; } .ds-foot-email { display: block; width: fit-content; max-width: 100%; margin-top: 1.1rem; color: inherit; font-family: \"Hyperlegible Sans\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 700; letter-spacing: -.03em; font-size: clamp(1.45rem, 4.6vw, 3.4rem); line-height: 1.1; text-decoration-color: var(--signal-text, oklch(0.56 0.205 32)); text-decoration-thickness: .07em; text-underline-offset: .14em; overflow-wrap: anywhere; transition: color 350ms cubic-bezier(.16,1,.3,1); } .ds-foot-email:hover { color: var(--signal-text, oklch(0.56 0.205 32)); } .ds-foot-row { display: flex; gap: .5rem 1.75rem; flex-wrap: wrap; align-items: baseline; margin-top: 3rem; padding-top: .85rem; border-top: 1px solid var(--ink, oklch(0.14 0 0)); color: var(--muted, oklch(0.44 0 0)); font-family: \"Space Grotesk\", \"Helvetica Neue\", Arial, sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-feature-settings: \"tnum\", \"zero\"; font-size: .74rem; line-height: 1.5; } .ds-foot-row a { text-decoration: none; color: var(--ink, oklch(0.14 0 0)); padding: .2rem 0; transition: color 350ms cubic-bezier(.16,1,.3,1); } .ds-foot-row a:hover { color: var(--signal-text, oklch(0.56 0.205 32)); } .ds-foot-row span { margin-left: auto; } .ds-foot a:focus-visible { outline: 3px solid var(--track-text, oklch(0.40 0.19 264)); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Letter, Then a Log",
+    "overview": "The page is a signed letter whose postscript is a numbered log of questions. The ground is photocopy-grey paper with no chroma, the ink is near-black, and every division is a 1px ink rule with square corners. Three voices do all the talking: Hyperlegible Sans says things, Space Grotesk in tracked caps counts and labels things, and a felt-tip hand in Signal red-orange signs them. The feeling is the calm of an instrument that works, with the warmth of a note left on a desk.\n\nColour is livery, not decoration. Signal marks the hand, the row numbers and whatever is open or under the pointer. Hazard is a highlighter pulled behind inline links. Track is the focus ring. Nothing else on the page has a hue, apart from the full-colour screenshots held inside ink rules and one ruled index card.\n\nThe system is one hand-written static page: one stylesheet of custom properties, no framework, no build step. Stories open through native `<details>`, so the page works with scripts off. Light and dark themes follow `prefers-color-scheme` and swap seven tokens; nothing else changes. The page rejects cream or beige \"artisanal\" paper, gradient text, glass cards, glow effects, and mono-on-black terminal dark mode.",
+    "keyCharacteristics": [
+      "Chroma-free grey ground, near-black ink, 1px ink rules, square corners throughout.",
+      "Three type voices with fixed jobs: say (Hyperlegible Sans), count (Space Grotesk caps), sign (Casimir Dunmore).",
+      "Three livery colours with fixed jobs: Signal for state and the hand, Hazard for the highlighter, Track for focus.",
+      "A full-width caps greeting, then a narrow letter column pushed right, then a full-width log.",
+      "Motion on one axis only: 3px nudges to the right and left-to-right wipes, no bounce.",
+      "Flat everywhere except one tilted index card, the only object that casts a shadow."
+    ],
+    "rules": [
+      { "name": "The No-Chroma Ground Rule", "body": "Paper, Surface, Ink and Muted carry zero chroma in both themes. The page ground is never tinted warm or cool. The index card is the single warm-white object.", "section": "colors" },
+      { "name": "The Livery Rule", "body": "Each colour has one job. Signal marks state and the hand. Hazard highlights links. Track rings focus. None of them fills a panel, a button or a background area.", "section": "colors" },
+      { "name": "The Text-Token Rule", "body": "Signal and Track are applied through their `-text` tokens, which change on dark. Hazard and the card colours are fixed across themes.", "section": "colors" },
+      { "name": "The Three Voices Rule", "body": "Hyperlegible Sans says things, Space Grotesk counts and labels things, the hand signs things. A fourth face is never added, and no voice does another's job.", "section": "typography" },
+      { "name": "The Caps Rule", "body": "Uppercase belongs to the greeting and to the label voice. Questions, sub-headings, the email and captions are sentence case.", "section": "typography" },
+      { "name": "The Two Hands Rule", "body": "The hand appears twice on a page, at word length: the signature and \"Keep in touch\". It is always Signal, always tilted, and never the only place a fact appears.", "section": "typography" },
+      { "name": "The One Object Rule", "body": "Only the index card casts a shadow, and only the card and the hand are tilted (card -1.4deg, signature -3deg, \"Keep in touch\" -2deg). Everything else is flat and square to the page.", "section": "elevation" },
+      { "name": "The Hairline Rule", "body": "Rules are 1px and Ink. They separate; they never box text in. The only framed things are images.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep Paper, Surface, Ink and Muted at zero chroma in both themes, and let rules use Ink.",
+      "Do give each colour its one job: Signal for state and the hand, Hazard behind links, Track for the focus ring.",
+      "Do use the `-text` tokens for Signal and Track so the dark theme stays above 4.5:1.",
+      "Do set anything that counts, labels or names in the label voice: Space Grotesk 500, 0.74rem, +0.06em, caps, tabular figures, slashed zero.",
+      "Do answer hover with the same pair everywhere: Signal colour and a 3px move to the right, 350ms, `cubic-bezier(.16, 1, .3, 1)`.",
+      "Do frame screenshots in a 1px Ink rule and leave them in full colour.",
+      "Do build disclosure on native `<details>` so the page works with scripts off, and give every animation a reduced-motion path."
+    ],
+    "donts": [
+      "Don't tint the page ground. No cream or beige paper; the index card is the only warm-white object.",
+      "Don't round a corner or add a shadow to anything but the index card.",
+      "Don't use Signal, Hazard or Track as a panel, button or section fill.",
+      "Don't set sentences in the hand, use it more than twice on a page, or let it be the only place a fact appears.",
+      "Don't set questions or sub-headings in caps; caps are for the greeting and the label voice.",
+      "Don't add a fourth typeface or a monospace face; code uses the label face on Surface.",
+      "Don't use gradient text, glass cards, glow effects, or mono-on-black terminal styling.",
+      "Don't add bounce, vertical slides or fades; motion is a rightward nudge or a left-to-right wipe."
+    ]
+  }
+}

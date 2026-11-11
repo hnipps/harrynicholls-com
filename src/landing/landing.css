@@ -21,7 +21,6 @@
   --hazard:oklch(0.90 0.20 122);
   --mark:oklch(0.90 0.20 122 / .6);
   --card-ink:oklch(0.14 0 0);
-  --card-muted:oklch(0.44 0 0);
   /* type */
   --display:"Hyperlegible Sans","Helvetica Neue",Arial,sans-serif;
   --label:"Space Grotesk","Helvetica Neue",Arial,sans-serif;
@@ -66,7 +65,7 @@ a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.2em;text-
 .sprite{position:absolute;width:0;height:0}
 
 /* the label voice: Space Grotesk, caps, tracked, tabular with a slashed zero */
-.nav,.log-head,.no,.nm,.strip figcaption,.rail-head,.foot-row,.project-metadata strong,.tech-list,.story-image span,.study-return,.note figcaption{
+.nav,.log-head,.no,.nm,.strip figcaption,.rail-head,.foot-row,.project-metadata strong,.tech-list,.story-image span,.study-return{
   font-family:var(--label);font-weight:500;text-transform:uppercase;letter-spacing:.06em;font-feature-settings:"tnum","zero";font-size:.74rem;line-height:1.5}
 
 .page{max-width:76rem;margin:0 auto;padding:0 var(--gutter)}
