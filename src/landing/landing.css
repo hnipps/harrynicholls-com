@@ -62,27 +62,17 @@ a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.2em;text-
 :focus-visible{outline:3px solid var(--track-text);outline-offset:3px}
 .skip{position:absolute;left:-999rem;top:.75rem;z-index:10;background:var(--ink);color:var(--paper);padding:.6rem .9rem;text-decoration:none}
 .skip:focus{left:var(--gutter)}
-.sprite{position:absolute;width:0;height:0}
 
 /* the label voice: Space Grotesk, caps, tracked, tabular with a slashed zero */
-.nav,.log-head,.no,.nm,.strip figcaption,.rail-head,.foot-row,.project-metadata strong,.tech-list,.story-image span,.study-return{
+.log-head,.no,.nm,.strip figcaption,.rail-head,.foot-row,.project-metadata strong,.tech-list,.story-image span,.study-return{
   font-family:var(--label);font-weight:500;text-transform:uppercase;letter-spacing:.06em;font-feature-settings:"tnum","zero";font-size:.74rem;line-height:1.5}
 
 .page{max-width:76rem;margin:0 auto;padding:0 var(--gutter)}
 
-/* nav */
-.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0 .95rem;border-bottom:1px solid var(--line)}
-.nav a{text-decoration:none}
-.nav .who{display:inline-flex;align-items:center;gap:.7rem}
-.nav .who svg{width:1.6rem;height:1.6rem;flex:none;transition:transform var(--t-type) var(--ease)}
-.nav .who:hover svg{transform:translateX(3px)}
-.nav .write{padding:.15rem 0;box-shadow:inset 0 -1.5px 0 var(--signal-text);transition:color var(--t-control) var(--ease)}
-.nav .write:hover{color:var(--signal-text)}
-
-/* letter */
-.hero{container-type:inline-size;padding:clamp(1.75rem,4vw,3rem) 0 clamp(2.5rem,5vw,4rem)}
-.hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:-.045em;font-size:clamp(2.6rem,10.4vw,7.8rem);font-size:11.2cqi;line-height:1;margin-left:-.045em;white-space:nowrap}
-.letter{display:grid;gap:1.2rem;max-width:36rem;margin:clamp(1.5rem,3vw,2.25rem) 0 0 auto;margin-right:clamp(0rem,9vw,8rem)}
+/* letter: the greeting hangs in the left margin, on the baseline of the letter's first line */
+.hero{display:grid;grid-template-columns:minmax(max-content,1fr) minmax(0,36rem);column-gap:clamp(1.5rem,4vw,3.5rem);padding:clamp(3.5rem,9vw,7rem) clamp(0rem,9vw,8rem) clamp(2.5rem,5vw,4rem) 0}
+.hero h1{align-self:baseline;font-family:var(--voice);font-weight:400;font-feature-settings:"ss03";font-size:clamp(3.6rem,7vw,6rem);line-height:1;color:var(--signal-text);transform:rotate(-3deg);transform-origin:left bottom;padding-right:.2em;white-space:nowrap}
+.letter{display:grid;gap:1.2rem;max-width:36rem;align-self:baseline}
 .letter p{text-wrap:pretty}
 .letter .intro{font-size:clamp(1.25rem,2.1vw,1.5rem);line-height:1.42}
 .letter a,.about a,.postscript a,.story a:not(.story-image){text-decoration:none;background:var(--mark);padding:0 .14em;box-shadow:inset 0 -1.5px 0 var(--signal-text);transition:background var(--t-control) var(--ease)}
@@ -192,9 +182,8 @@ a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.2em;text-
 }
 @media (max-width:40rem){
   :root{--rail:2.2rem;--gap:.6rem}
-  .letter,.about-body{margin-right:0}
-  .hero h1{font-size:clamp(3rem,18vw,4.5rem);font-size:19.4cqi;line-height:1.02}
-  .hero h1 span{display:block}
+  .about-body{margin-right:0}
+  .hero{grid-template-columns:minmax(0,1fr);row-gap:1.5rem;padding-right:0}
   .entry>summary{grid-template-columns:var(--rail) minmax(0,1fr) 1.25rem;padding:.95rem 0 .85rem}
   .nm{grid-column:2;grid-row:2;text-align:left;white-space:normal}
   .tog{grid-column:3;grid-row:1;align-self:start;margin-top:.45rem}

@@ -20,12 +20,6 @@ colors:
   track-text-dark: "oklch(0.72 0.14 264)"
   mark-dark: "oklch(0.90 0.20 122 / .2)"
 typography:
-  display:
-    fontFamily: "Hyperlegible Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "11.2cqi"
-    fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "-0.045em"
   headline:
     fontFamily: "Hyperlegible Sans, Helvetica Neue, Arial, sans-serif"
     fontSize: "clamp(1.3rem, 2.7vw, 2.05rem)"
@@ -95,6 +89,12 @@ typography:
     fontSize: "clamp(3rem, 7.4vw, 5.4rem)"
     fontWeight: 400
     lineHeight: 1
+  hand-greeting:
+    fontFamily: "Casimir Dunmore, cursive"
+    fontSize: "clamp(3.6rem, 7vw, 6rem)"
+    fontWeight: 400
+    lineHeight: 1
+    fontFeature: "\"ss03\""
 rounded:
   none: "0px"
 spacing:
@@ -108,10 +108,9 @@ spacing:
   measure: "36rem"
   page: "76rem"
 components:
-  nav:
-    textColor: "{colors.ink}"
-    typography: "{typography.label}"
-    padding: "1.1rem 0 0.95rem"
+  greeting:
+    textColor: "{colors.signal-text}"
+    typography: "{typography.hand-greeting}"
   rule-head:
     textColor: "{colors.muted}"
     typography: "{typography.label}"
@@ -182,7 +181,7 @@ The system is one hand-written static page: one stylesheet of custom properties,
 - Chroma-free grey ground, near-black ink, 1px ink rules, square corners throughout.
 - Three type voices with fixed jobs: say (Hyperlegible Sans), count (Space Grotesk caps), sign (Casimir Dunmore).
 - Three livery colours with fixed jobs: Signal for state and the hand, Hazard for the highlighter, Track for focus.
-- A full-width caps greeting, then a narrow letter column pushed right, then a full-width log.
+- A handwritten "Hello" in the left margin beside a narrow letter column pushed right, then a full-width log.
 - Motion on one axis only: 3px nudges to the right and left-to-right wipes, no bounce.
 - Flat everywhere except one tilted index card, the only object that casts a shadow.
 
@@ -231,14 +230,14 @@ A photocopy: greys with zero chroma for everything structural, and three saturat
 **Character:** One legible grotesque does both the shouting and the reading, in Bold and Regular only. A second, more mechanical grotesque counts and labels in small tracked caps with tabular figures and a slashed zero. A felt-tip hand signs. All four files are self-hosted Latin subsets with `font-display: swap`; the two Hyperlegible weights are preloaded.
 
 ### Hierarchy
-- **Display** (700, 11.2cqi of the hero column with a `clamp(2.6rem, 10.4vw, 7.8rem)` fallback, line-height 1, -0.045em, uppercase, nowrap): the greeting only. It fills the column edge to edge on one line; at 40rem and below it breaks to two lines at 19.4cqi, line-height 1.02. Its left edge is pulled out by its own tracking so the stem meets the rule above.
+- **Greeting** (hand, 400, `clamp(3.6rem, 7vw, 6rem)`, line-height 1, `"ss03"`, Signal, -3deg from its bottom-left corner, nowrap): "Hello", the page's h1. It hangs in the left margin on the baseline of the letter's first line; at 40rem and below it sits above the letter.
 - **Headline** (700, `clamp(1.3rem, 2.7vw, 2.05rem)`, 1.12, -0.022em, sentence case, balanced): the question in each log row.
 - **Headline, contact** (700, `clamp(1.45rem, 4.6vw, 3.4rem)`, 1.1, -0.03em): the email address, underlined at 0.07em.
 - **Title** (700, 1.3rem, 1.2, -0.018em): sub-headings inside a story, with 2.4rem above and 0.6rem below.
 - **Lede** (400, `clamp(1.25rem, 2.1vw, 1.5rem)`, 1.42): the first paragraph of the letter and of About, and each story's one-line summary (max 34ch).
 - **Body** (400, 1.0625rem, 1.55): running text. Letter and About columns cap at 36rem; story paragraphs at 66ch; `text-wrap: pretty`.
 - **Body small** (400, 0.95rem, 1.45): values in the story metadata column.
-- **Label** (500, 0.74rem, 1.5, +0.06em, uppercase, `"tnum"`, `"zero"`): nav, section rule heads, row numbers, project names, metadata keys, tech lists (0.7rem), strip captions, footer row, "Back to questions".
+- **Label** (500, 0.74rem, 1.5, +0.06em, uppercase, `"tnum"`, `"zero"`): section rule heads, row numbers, project names, metadata keys, tech lists (0.7rem), strip captions, footer row, "Back to questions".
 - **Caption** (500, 0.8rem, +0.02em, sentence case): the line under a story screenshot. The label face without caps, because it is a full sentence.
 - **Code** (500, 0.86em, `"tnum"`, `"zero"`): inline code, in the label face on Surface. There is no monospace face in the system.
 - **Note** (700, 1.2rem on a fixed 28px line, -0.012em): the sentence on the index card; the line height equals the card's ruling.
@@ -247,19 +246,19 @@ A photocopy: greys with zero chroma for everything structural, and three saturat
 ### Named Rules
 **The Three Voices Rule.** Hyperlegible Sans says things, Space Grotesk counts and labels things, the hand signs things. A fourth face is never added, and no voice does another's job.
 
-**The Caps Rule.** Uppercase belongs to the greeting and to the label voice. Questions, sub-headings, the email and captions are sentence case.
+**The Caps Rule.** Uppercase belongs to the label voice. Questions, sub-headings, the email and captions are sentence case.
 
-**The Two Hands Rule.** The hand appears twice on a page, at word length: the signature and "Keep in touch". It is always Signal, always tilted, and never the only place a fact appears.
+**The Three Hands Rule.** The hand appears three times on a page, at word length: the "Hello" greeting, the signature and "Keep in touch". It is always Signal, always tilted, and never the only place a fact appears.
 
 ## Layout
 
-One centred page, 76rem at most, with a fluid gutter (`clamp(1rem, 3.2vw, 2.5rem)`). Inside it there are two widths of attention. Full width belongs to things that are scanned: the nav, the greeting, the log, the screenshot strip, the contact block. A narrow 36rem column pushed to the right (right margin `clamp(0rem, 9vw, 8rem)`) belongs to things that are read: the letter and About.
+One centred page, 76rem at most, with a fluid gutter (`clamp(1rem, 3.2vw, 2.5rem)`). Inside it there are two widths of attention. Full width belongs to things that are scanned: the log, the screenshot strip, the contact block. A narrow 36rem column pushed to the right (right margin `clamp(0rem, 9vw, 8rem)`) belongs to things that are read: the letter and About. The greeting takes whatever is left of the letter's row, on its left.
 
 The log is a four-column row: a number rail (3.4rem), the question, the project name right-aligned, and a 1.5rem toggle, on a 1rem gap, baseline aligned. Everything that hangs under a row (the story, the postscript) indents by rail plus gap so it lines up with the question, not the number. An open story is a two-column grid: a sticky metadata column (11rem to 15rem, topped with an ink rule) and the text column, with a `clamp(1.5rem, 4vw, 3.5rem)` gutter. Story images cap at 60rem and pair up in an auto-fit grid with a 19rem minimum. The screenshot strip is four equal columns on a 1.25rem gap.
 
 Vertical rhythm is fluid rather than stepped: sections open with `clamp(3.5rem, 8vw, 6.5rem)` of space, the contact block with `clamp(4rem, 9vw, 7.5rem)`. Rows are tight (about 1rem above and below) so six questions read as one list.
 
-Two breakpoints. At 52rem and below the story drops to one column, the metadata column stops sticking, the tech list runs in two columns, and the strip becomes two by two. At 40rem and below the rail narrows to 2.2rem and the gap to 0.6rem, the greeting breaks to two lines, the project name moves under its question, the story and postscript lose their indent, and the letter column takes the full width. Print lays every story open and removes the toggles.
+Two breakpoints. At 52rem and below the story drops to one column, the metadata column stops sticking, the tech list runs in two columns, and the strip becomes two by two. At 40rem and below the rail narrows to 2.2rem and the gap to 0.6rem, the greeting moves above the letter, the project name moves under its question, the story and postscript lose their indent, and the letter column takes the full width. Print lays every story open and removes the toggles.
 
 ## Elevation & Depth
 
@@ -269,12 +268,11 @@ Flat. Depth is carried by ink rules and by the single step from Paper to Surface
 - **Card on desk** (`box-shadow: 0 1px 1px oklch(0 0 0 / .12), 0 2px 4px oklch(0 0 0 / .08), 0 14px 28px -14px oklch(0 0 0 / .4)`): the index card only. A soft contact shadow plus a tucked drop, so the card reads as a physical object lying on the page.
 
 ### Named Rules
-**The One Object Rule.** Only the index card casts a shadow, and only the card and the hand are tilted (card -1.4deg, signature -3deg, "Keep in touch" -2deg). Everything else is flat and square to the page.
+**The One Object Rule.** Only the index card casts a shadow, and only the card and the hand are tilted (card -1.4deg, greeting and signature -3deg, "Keep in touch" -2deg). Everything else is flat and square to the page.
 
 ## Shapes
 
-Square corners everywhere: there is no border radius in the system. Structure is drawn with 1px Ink rules: under the nav, under each section head, between log rows, above the metadata column, above the footer row, and as a full frame around every screenshot. Underlines are 1.5px. The toggle is a plus drawn from two 2px bars, 0.95rem square, whose vertical bar collapses to leave a minus when the row is open. The one curved form is the spiral mark, a single 6.5-unit round-capped stroke with an arrowhead, drawn in `currentColor` at 1.6rem in the nav.
-
+Square corners everywhere: there is no border radius in the system. Structure is drawn with 1px Ink rules: under each section head, between log rows, above the metadata column, above the footer row, and as a full frame around every screenshot. Underlines are 1.5px. The toggle is a plus drawn from two 2px bars, 0.95rem square, whose vertical bar collapses to leave a minus when the row is open.
 **The Hairline Rule.** Rules are 1px and Ink. They separate; they never box text in. The only framed things are images.
 
 ## Components
@@ -282,7 +280,7 @@ Square corners everywhere: there is no border radius in the system. Structure is
 Quiet and mechanical: components are rows, rules and links, not boxes. Every interactive response is the same pair, a shift to Signal and a 3px nudge to the right, on `cubic-bezier(.16, 1, .3, 1)` over 350ms.
 
 ### Navigation
-A single row above a 1px rule, in the label voice. Left: the spiral mark and the name, linking home; the spiral slides 3px right on hover (600ms). Right: one text link, "Write to me", underlined with a 1.5px Signal inset line, turning Signal on hover. No menu, no mobile variant; it is the same row at every width.
+There is none. The page opens on the greeting; the contact block at the foot is the only way out besides the log.
 
 ### Section rule head
 A section's own heading set in the label voice, Muted, over a 1px rule. The log's head carries a bracketed count on the right. It is the heading itself: it is never stacked above a larger display heading as an eyebrow.
@@ -297,7 +295,7 @@ The signature component. A native `<details>` summary laid out as number, questi
 - **Script:** none needed to open. A small script only opens the right row when a link or URL hash points into a story.
 
 ### Inline link (highlighter)
-Links inside prose: no text decoration, a `mark` highlight behind the words with 0.14em of side padding, and a 1.5px Signal line along the bottom. On hover the highlight goes to full Hazard and the text to fixed near-black. Used in the letter, About, the postscript and stories. Links in the nav and footer row are plain label-voice links without the highlight.
+Links inside prose: no text decoration, a `mark` highlight behind the words with 0.14em of side padding, and a 1.5px Signal line along the bottom. On hover the highlight goes to full Hazard and the text to fixed near-black. Used in the letter, About, the postscript and stories. Links in the footer row are plain label-voice links without the highlight.
 
 ### Story metadata
 A narrow column topped by a 1px rule. Keys are label voice in Muted, each on its own line; values are body small. The tech list is label voice at 0.7rem, one item per line.
@@ -339,7 +337,7 @@ One easing (`cubic-bezier(.16, 1, .3, 1)`), two durations (350ms for controls, 6
 - **Don't** round a corner or add a shadow to anything but the index card.
 - **Don't** use Signal, Hazard or Track as a panel, button or section fill.
 - **Don't** set sentences in the hand, use it more than twice on a page, or let it be the only place a fact appears.
-- **Don't** set questions or sub-headings in caps; caps are for the greeting and the label voice.
+- **Don't** set questions or sub-headings in caps; caps are for the label voice.
 - **Don't** add a fourth typeface or a monospace face; code uses the label face on Surface.
 - **Don't** use gradient text, glass cards, glow effects, or mono-on-black terminal styling.
 - **Don't** add bounce, vertical slides or fades; motion is a rightward nudge or a left-to-right wipe.
