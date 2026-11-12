@@ -139,7 +139,7 @@ It refuses the developer-portfolio arrangement of hero, project cards and skill 
 Two palettes tuned by Harry himself in the type lab's colour tab; the values are his decisions. Both are built on one key hue, blue (260), for the paper, the ink and every structural tone, with the mark at hue 20. Blue ink, the light palette, is saturated blue ink on near-white paper with a red mark. Blue night, the dark palette, is pale blue ink on near-black navy with a coral mark. The CSS custom properties keep one set of names (`--paper`, `--ink`, `--pencil` and so on); the `-dark` tokens above are the same properties under `prefers-color-scheme: dark` or `data-theme="dark"` on the root. The stylesheet declares the Blue night values in both of those blocks, and the two must stay identical. OKLCH is the source of truth.
 
 ### Primary
-- **Red Mark** (`pencil`): link underlines, list and disclosure markers, the focus ring, the caret, form accent, today's dot on the commit graph and the dot under the pointer. Measures 4.9:1 on paper, so it is safe for marks and large glyphs.
+- **Red Mark** (`pencil`): link underlines, list markers, the focus ring, the caret, form accent, today's dot on the commit graph and the dot under the pointer. Measures 4.9:1 on paper, so it is safe for marks and large glyphs.
 - **Deep Red** (`pencil-ink`): the text colour a link or contact icon takes on hover. 7.6:1 on paper.
 - **Red Wash** (`pencil-wash`): text selection background only. Selected text is set in the ink, which measures 7.5:1 on the wash.
 - **Coral Mark** (`pencil-dark`): the same jobs as the red mark in Blue night. 7.1:1 on the navy paper.
@@ -178,7 +178,7 @@ Two palettes tuned by Harry himself in the type lab's colour tab; the values are
 - **Section head** (400 italic, 1.3125rem, line-height 1.3): `h2` on narrow screens, in ink. From 56rem up it hangs in the margin at body size (1rem, line-height 1.6) in soft ink.
 - **Title** (700, 1rem, line-height 1.6): entry names (`h3`): employers, projects, article titles. Album titles use the same weight at the small size.
 - **Body** (400, 1rem, line-height 1.6): all reading text. Maximum line length is the 37rem measure. Paragraphs and list items use `text-wrap: pretty`; entry names use `balance`.
-- **Small** (400, 0.875rem, line-height 1.35 in captions): dates, the commit readout, the month-by-month table, album text, the colophon's fine print.
+- **Small** (400, 0.875rem, line-height 1.35 in captions): dates, the commit readout, album labels, the footer's copyright line.
 
 Figures are proportional in running text and lining tabular wherever they align: dates beside entry names and the contributions table.
 
@@ -242,7 +242,7 @@ A row of five icon links under the intro: email (a `mailto:` link), GitHub, Link
 - **Style:** solid 1.25rem glyphs in ink, each in a 2.75rem round target, 0.125rem apart. The row is pulled 0.75rem left so the first glyph, not its target, sits on the text edge.
 - **States:** on hover the glyph takes the pencil's ink shade and the frame colour fills the circle, over 0.2s. Focus uses the shared pencil ring.
 - **Text:** every link carries its name and address as visually hidden text ("GitHub: github.com/hnipps"), so screen readers, agents reading the HTML and print all get words. In print the glyphs are dropped and that text is shown.
-- **Footer:** repeats the email at lede size and the profiles as a wrapping row of text links.
+- **Footer:** the "Contact" section is the page's footer. It shows the email address as text at lede size (the one place the address can be read and selected), then the same icon row without the envelope and with one more glyph, a pilcrow, that links to the colophon. Under it, in small soft ink: "© 2026 Nicholls Inc." The year is written by hand; update it each January.
 
 ### Entries
 The unit of the resume: a job, a project or an article.
@@ -256,7 +256,7 @@ A year of real GitHub contributions as a field of dots, one per day.
 - **Layout:** the year is built as two half-years that sit side by side as one row, each sized by its number of weeks, and stack below 30rem. Month labels sit under the weeks they start in, in italic soft ink at 0.75rem.
 - **Reading:** a line under the dots names the day under the pointer or finger ("12 contributions on Tuesday 14 April 2026.") in small italic soft ink, and the dot turns to the pencil. Its resting text is a prompt. Touch scrolling stays vertical.
 - **Motion:** when 35% of the graph enters view, the weeks ink in left to right: each fades up 4px over 0.8s, staggered 16ms per week. Reduced motion, no script and print all show the finished graph.
-- **Text equivalent:** the figure has a spoken summary, a caption with the bold total and the busiest day, and a disclosed month-by-month table with right-aligned tabular figures.
+- **Text equivalent:** the figure has a spoken summary, and a caption with the bold total and the busiest day.
 
 ### Albums
 - **Grid:** two columns on a phone, four from 30rem, so a shelf of sixteen never ends on a stray cover. Add or remove albums in fours where possible.
@@ -299,7 +299,7 @@ Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused
 ### Don't:
 - **Don't** use Instrument Serif anywhere but the name.
 - **Don't** add cards, boxes, panels, borders or background fills around content.
-- **Don't** add icons beyond the ones the page has: the five contact glyphs and the switcher's moon and sun.
+- **Don't** add icons beyond the ones the page has: the five contact glyphs, the colophon's pilcrow and the switcher's moon and sun.
 - **Don't** add a third hue to the interface (blue at 260 for paper and ink, the pencil at 20 for marks), or use the pencil as a fill or for running text.
 - **Don't** add shadows to anything but an album cover image.
 - **Don't** add a weight other than 400 and 700, or bold a phrase inside a paragraph.

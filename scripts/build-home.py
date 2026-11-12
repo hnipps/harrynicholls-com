@@ -106,14 +106,6 @@ def graph(data):
             f'</div>')
         base += sum(len(week) for week in part)
 
-    by_month = {}
-    for d in days:
-        by_month.setdefault(d['date'][:7], 0)
-        by_month[d['date'][:7]] += d['count']
-    rows = ''.join(
-        f'<tr><th scope="row">{date.fromisoformat(m + "-01").strftime("%B %Y")}</th><td>{n:,}</td></tr>'
-        for m, n in by_month.items())
-
     summary = (f'{data["total"]:,} contributions on GitHub in the year to {long_date(last)}. '
                f'The busiest day was {long_date(date.fromisoformat(busiest["date"]), year=False)}, '
                f'with {busiest["count"]:,}.')
@@ -124,9 +116,6 @@ def graph(data):
 </div>
 <figcaption class="in-measure">
 <p><strong>{data["total"]:,}</strong> contributions on <a href="https://github.com/{data.get("login", LOGIN)}">GitHub</a> in the year to {long_date(last)}. Each dot is a day, sized by how much I shipped. The busiest was {long_date(date.fromisoformat(busiest["date"]), year=False)}, with {busiest["count"]:,}.</p>
-<details><summary>Month by month</summary>
-<table><thead><tr><th scope="col">Month</th><th scope="col">Contributions</th></tr></thead><tbody>{rows}</tbody></table>
-</details>
 </figcaption>
 </figure>
 '''

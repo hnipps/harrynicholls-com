@@ -646,7 +646,7 @@
     "donts": [
       "Don't use Instrument Serif anywhere but the name.",
       "Don't add cards, boxes, panels, borders or background fills around content.",
-      "Don't add icons beyond the ones the page has: the five contact glyphs and the switcher's moon and sun.",
+      "Don't add icons beyond the ones the page has: the five contact glyphs, the colophon's pilcrow and the switcher's moon and sun.",
       "Don't add a third hue to the interface (blue at 260 for paper and ink, the pencil at 20 for marks), or use the pencil as a fill or for running text.",
       "Don't add shadows to anything but an album cover image.",
       "Don't add a weight other than 400 and 700, or bold a phrase inside a paragraph.",

@@ -589,53 +589,6 @@ h3 {
   font-weight: 700;
 }
 
-.graph details {
-  margin-top: 0.6rem;
-}
-
-.graph summary {
-  width: fit-content;
-  color: var(--ink-soft);
-  font-style: italic;
-  cursor: pointer;
-}
-
-.graph summary:hover {
-  color: var(--ink);
-}
-
-.graph summary::marker {
-  color: var(--pencil);
-}
-
-.graph table {
-  margin-top: 0.5rem;
-  border-collapse: collapse;
-  font-size: var(--small);
-  font-variant-numeric: lining-nums tabular-nums;
-}
-
-.graph th {
-  padding: 0.12rem 2.5rem 0.12rem 0;
-  font-weight: 400;
-  text-align: left;
-}
-
-.graph thead th {
-  color: var(--ink-soft);
-  font-style: italic;
-}
-
-.graph td {
-  padding: 0.12rem 0;
-  text-align: right;
-}
-
-.graph thead th + th {
-  padding-right: 0;
-  text-align: right;
-}
-
 /* The year inks in, week by week, when the reader reaches it. The script adds
    these classes; without it the graph is simply there. */
 @media (prefers-reduced-motion: no-preference) {
@@ -786,17 +739,12 @@ h3 {
   overflow-wrap: anywhere;
 }
 
-.colophon .elsewhere {
-  margin-top: 0.75rem;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.5rem;
+.colophon .reach {
+  margin-top: 0.4rem;
 }
 
 .colophon .fine {
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
   color: var(--ink-soft);
   font-size: var(--small);
 }
