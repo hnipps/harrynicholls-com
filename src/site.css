@@ -63,9 +63,11 @@
   scrollbar-color: var(--hairline) var(--paper);
 }
 
-/* Night shift: the dark mode. Deep indigo paper, pale ink, a persimmon mark. */
+/* Night shift: the dark mode. Deep indigo paper, pale ink, a persimmon mark.
+   It follows the system setting unless the reader has used the switcher, which
+   sets data-theme on the root. The two blocks below must stay identical. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper: oklch(20% 0.035 268);
     --ink: oklch(93% 0.015 265);
     --ink-soft: oklch(75% 0.03 265);
@@ -78,6 +80,25 @@
     --cover-shadow: oklch(10% 0.03 268 / 0.5);
     --cover-shadow-deep: oklch(10% 0.03 268 / 0.8);
   }
+}
+
+:root[data-theme="dark"] {
+  --paper: oklch(20% 0.035 268);
+  --ink: oklch(93% 0.015 265);
+  --ink-soft: oklch(75% 0.03 265);
+  --hairline: oklch(34% 0.04 268);
+  --rest: oklch(40% 0.045 268);
+  --frame: oklch(27% 0.035 268);
+  --pencil: oklch(72% 0.17 45);
+  --pencil-ink: oklch(81% 0.13 50);
+  --pencil-wash: oklch(40% 0.09 45);
+  --cover-shadow: oklch(10% 0.03 268 / 0.5);
+  --cover-shadow-deep: oklch(10% 0.03 268 / 0.8);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 *,
@@ -147,6 +168,7 @@ a:hover {
 }
 
 .page {
+  position: relative;
   max-width: calc(var(--margin-col) + var(--gutter) + var(--measure) + 2.5rem);
   margin-inline: auto;
   padding: clamp(2.5rem, 9vh, 6.5rem) 1.25rem 4rem;
@@ -160,6 +182,64 @@ ul,
 ol,
 figure {
   margin: 0;
+}
+
+/* ---------- Light and dark switcher ---------- */
+
+.theme-toggle {
+  appearance: none;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+  background: var(--frame);
+}
+
+.theme-toggle svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The icon shows the mode a click switches to: a moon by day, a sun by night. */
+.theme-toggle .sun {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .theme-toggle .sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .moon {
+  display: none;
 }
 
 /* ---------- Header ---------- */
@@ -723,6 +803,7 @@ h3 {
   }
 
   .copy,
+  .theme-toggle,
   .skip-link,
   .graph-readout,
   .note,

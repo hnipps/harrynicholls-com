@@ -1,4 +1,29 @@
-// Two small enhancements. The page reads the same without either.
+// Three small enhancements. The page reads the same without any of them.
+
+// Switch between light and dark. Until the reader clicks, the page follows the system.
+const toggle = document.querySelector('.theme-toggle');
+if (toggle) {
+  const root = document.documentElement;
+  const system = matchMedia('(prefers-color-scheme: dark)');
+  const current = () => root.dataset.theme ?? (system.matches ? 'dark' : 'light');
+  const paper = { light: '#fafafa', dark: '#0f1526' };
+  const sync = () => {
+    const next = current() === 'dark' ? 'light' : 'dark';
+    toggle.setAttribute('aria-label', `Switch to ${next} mode`);
+    toggle.title = `Switch to ${next} mode`;
+    if (root.dataset.theme) {
+      for (const meta of document.querySelectorAll('meta[name="theme-color"]')) meta.content = paper[current()];
+    }
+  };
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    root.dataset.theme = current() === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch { /* private mode: lasts for this visit */ }
+    sync();
+  });
+  system.addEventListener('change', sync);
+  sync();
+}
 
 // Copy the email address.
 const copy = document.querySelector('[data-copy]');
