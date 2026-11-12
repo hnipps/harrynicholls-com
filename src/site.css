@@ -45,6 +45,8 @@
   --pencil: oklch(55% 0.21 262);
   --pencil-ink: oklch(44% 0.2 262);
   --pencil-wash: oklch(92% 0.05 262);
+  --tint-l: 89.5%;
+  --tint-c: 0.03;
   --cover-shadow: oklch(22% 0.01 260 / 0.14);
   --cover-shadow-deep: oklch(22% 0.01 260 / 0.45);
 
@@ -77,6 +79,8 @@
     --pencil: oklch(72% 0.17 45);
     --pencil-ink: oklch(81% 0.13 50);
     --pencil-wash: oklch(40% 0.09 45);
+    --tint-l: 33%;
+    --tint-c: 0.045;
     --cover-shadow: oklch(10% 0.03 268 / 0.5);
     --cover-shadow-deep: oklch(10% 0.03 268 / 0.8);
   }
@@ -92,6 +96,8 @@
   --pencil: oklch(72% 0.17 45);
   --pencil-ink: oklch(81% 0.13 50);
   --pencil-wash: oklch(40% 0.09 45);
+  --tint-l: 33%;
+  --tint-c: 0.045;
   --cover-shadow: oklch(10% 0.03 268 / 0.5);
   --cover-shadow-deep: oklch(10% 0.03 268 / 0.8);
   color-scheme: dark;
@@ -606,7 +612,7 @@ h3 {
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 2px;
-  background: oklch(89.5% 0.03 var(--h));
+  background: oklch(var(--tint-l) var(--tint-c) var(--h));
 }
 
 .album img.cover {
@@ -685,6 +691,16 @@ h3 {
   margin-top: 2.5rem;
   color: var(--ink-soft);
   font-size: var(--small);
+}
+
+/* ---------- Reduced motion: no hover or lift transitions either ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
 }
 
 /* ---------- Narrow screens ---------- */

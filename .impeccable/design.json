@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "title": "Design System: harrynicholls.com",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "White Paper",
+        "canonical": "oklch(98.6% 0 0)",
+        "cssVar": "--paper",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(27% 0 0)",
+          "oklch(39% 0 0)",
+          "oklch(51% 0 0)",
+          "oklch(63% 0 0)",
+          "oklch(75% 0 0)",
+          "oklch(86% 0 0)",
+          "oklch(95% 0 0)"
+        ],
+        "renderedHex": "#fafafa"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "oklch(22% 0.01 260)",
+        "cssVar": "--ink",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0.01 260)",
+          "oklch(27% 0.01 260)",
+          "oklch(39% 0.01 260)",
+          "oklch(51% 0.01 260)",
+          "oklch(63% 0.01 260)",
+          "oklch(75% 0.01 260)",
+          "oklch(86% 0.01 260)",
+          "oklch(95% 0.01 260)"
+        ],
+        "contrastOnPaper": "16.6:1"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Graphite",
+        "canonical": "oklch(44% 0.012 260)",
+        "cssVar": "--ink-soft",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0.012 260)",
+          "oklch(27% 0.012 260)",
+          "oklch(39% 0.012 260)",
+          "oklch(51% 0.012 260)",
+          "oklch(63% 0.012 260)",
+          "oklch(75% 0.012 260)",
+          "oklch(86% 0.012 260)",
+          "oklch(95% 0.012 260)"
+        ],
+        "contrastOnPaper": "7.5:1"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(88% 0.004 260)",
+        "cssVar": "--hairline",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0.004 260)",
+          "oklch(27% 0.004 260)",
+          "oklch(39% 0.004 260)",
+          "oklch(51% 0.004 260)",
+          "oklch(63% 0.004 260)",
+          "oklch(75% 0.004 260)",
+          "oklch(86% 0.004 260)",
+          "oklch(95% 0.004 260)"
+        ]
+      },
+      "rest": {
+        "role": "neutral",
+        "displayName": "Rest",
+        "canonical": "oklch(83% 0.006 260)",
+        "cssVar": "--rest",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0.006 260)",
+          "oklch(27% 0.006 260)",
+          "oklch(39% 0.006 260)",
+          "oklch(51% 0.006 260)",
+          "oklch(63% 0.006 260)",
+          "oklch(75% 0.006 260)",
+          "oklch(86% 0.006 260)",
+          "oklch(95% 0.006 260)"
+        ]
+      },
+      "frame": {
+        "role": "neutral",
+        "displayName": "Frame",
+        "canonical": "oklch(93.5% 0.004 260)",
+        "cssVar": "--frame",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0.004 260)",
+          "oklch(27% 0.004 260)",
+          "oklch(39% 0.004 260)",
+          "oklch(51% 0.004 260)",
+          "oklch(63% 0.004 260)",
+          "oklch(75% 0.004 260)",
+          "oklch(86% 0.004 260)",
+          "oklch(95% 0.004 260)"
+        ]
+      },
+      "pencil": {
+        "role": "primary",
+        "displayName": "Cobalt Mark",
+        "canonical": "oklch(55% 0.21 262)",
+        "cssVar": "--pencil",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0.21 262)",
+          "oklch(27% 0.21 262)",
+          "oklch(39% 0.21 262)",
+          "oklch(51% 0.21 262)",
+          "oklch(63% 0.21 262)",
+          "oklch(75% 0.21 262)",
+          "oklch(86% 0.21 262)",
+          "oklch(95% 0.21 262)"
+        ],
+        "contrastOnPaper": "4.9:1"
+      },
+      "pencil-ink": {
+        "role": "primary",
+        "displayName": "Cobalt Ink",
+        "canonical": "oklch(44% 0.2 262)",
+        "cssVar": "--pencil-ink",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0.2 262)",
+          "oklch(27% 0.2 262)",
+          "oklch(39% 0.2 262)",
+          "oklch(51% 0.2 262)",
+          "oklch(63% 0.2 262)",
+          "oklch(75% 0.2 262)",
+          "oklch(86% 0.2 262)",
+          "oklch(95% 0.2 262)"
+        ],
+        "contrastOnPaper": "7.9:1"
+      },
+      "pencil-wash": {
+        "role": "primary",
+        "displayName": "Cobalt Wash",
+        "canonical": "oklch(92% 0.05 262)",
+        "cssVar": "--pencil-wash",
+        "scheme": "light (Graphite and cobalt)",
+        "tonalRamp": [
+          "oklch(15% 0.05 262)",
+          "oklch(27% 0.05 262)",
+          "oklch(39% 0.05 262)",
+          "oklch(51% 0.05 262)",
+          "oklch(63% 0.05 262)",
+          "oklch(75% 0.05 262)",
+          "oklch(86% 0.05 262)",
+          "oklch(95% 0.05 262)"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Indigo Paper",
+        "canonical": "oklch(20% 0.035 268)",
+        "cssVar": "--paper",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.035 268)",
+          "oklch(27% 0.035 268)",
+          "oklch(39% 0.035 268)",
+          "oklch(51% 0.035 268)",
+          "oklch(63% 0.035 268)",
+          "oklch(75% 0.035 268)",
+          "oklch(86% 0.035 268)",
+          "oklch(95% 0.035 268)"
+        ],
+        "renderedHex": "#0f1526"
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Pale Ink",
+        "canonical": "oklch(93% 0.015 265)",
+        "cssVar": "--ink",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.015 265)",
+          "oklch(27% 0.015 265)",
+          "oklch(39% 0.015 265)",
+          "oklch(51% 0.015 265)",
+          "oklch(63% 0.015 265)",
+          "oklch(75% 0.015 265)",
+          "oklch(86% 0.015 265)",
+          "oklch(95% 0.015 265)"
+        ],
+        "contrastOnPaper": "14.8:1"
+      },
+      "ink-soft-dark": {
+        "role": "neutral",
+        "displayName": "Soft Pale Ink",
+        "canonical": "oklch(75% 0.03 265)",
+        "cssVar": "--ink-soft",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.03 265)",
+          "oklch(27% 0.03 265)",
+          "oklch(39% 0.03 265)",
+          "oklch(51% 0.03 265)",
+          "oklch(63% 0.03 265)",
+          "oklch(75% 0.03 265)",
+          "oklch(86% 0.03 265)",
+          "oklch(95% 0.03 265)"
+        ],
+        "contrastOnPaper": "8.2:1"
+      },
+      "hairline-dark": {
+        "role": "neutral",
+        "displayName": "Indigo Hairline",
+        "canonical": "oklch(34% 0.04 268)",
+        "cssVar": "--hairline",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.04 268)",
+          "oklch(27% 0.04 268)",
+          "oklch(39% 0.04 268)",
+          "oklch(51% 0.04 268)",
+          "oklch(63% 0.04 268)",
+          "oklch(75% 0.04 268)",
+          "oklch(86% 0.04 268)",
+          "oklch(95% 0.04 268)"
+        ]
+      },
+      "rest-dark": {
+        "role": "neutral",
+        "displayName": "Indigo Rest",
+        "canonical": "oklch(40% 0.045 268)",
+        "cssVar": "--rest",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.045 268)",
+          "oklch(27% 0.045 268)",
+          "oklch(39% 0.045 268)",
+          "oklch(51% 0.045 268)",
+          "oklch(63% 0.045 268)",
+          "oklch(75% 0.045 268)",
+          "oklch(86% 0.045 268)",
+          "oklch(95% 0.045 268)"
+        ]
+      },
+      "frame-dark": {
+        "role": "neutral",
+        "displayName": "Indigo Frame",
+        "canonical": "oklch(27% 0.035 268)",
+        "cssVar": "--frame",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.035 268)",
+          "oklch(27% 0.035 268)",
+          "oklch(39% 0.035 268)",
+          "oklch(51% 0.035 268)",
+          "oklch(63% 0.035 268)",
+          "oklch(75% 0.035 268)",
+          "oklch(86% 0.035 268)",
+          "oklch(95% 0.035 268)"
+        ]
+      },
+      "pencil-dark": {
+        "role": "primary",
+        "displayName": "Persimmon Mark",
+        "canonical": "oklch(72% 0.17 45)",
+        "cssVar": "--pencil",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.17 45)",
+          "oklch(27% 0.17 45)",
+          "oklch(39% 0.17 45)",
+          "oklch(51% 0.17 45)",
+          "oklch(63% 0.17 45)",
+          "oklch(75% 0.17 45)",
+          "oklch(86% 0.17 45)",
+          "oklch(95% 0.17 45)"
+        ],
+        "contrastOnPaper": "6.9:1"
+      },
+      "pencil-ink-dark": {
+        "role": "primary",
+        "displayName": "Persimmon Ink",
+        "canonical": "oklch(81% 0.13 50)",
+        "cssVar": "--pencil-ink",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.13 50)",
+          "oklch(27% 0.13 50)",
+          "oklch(39% 0.13 50)",
+          "oklch(51% 0.13 50)",
+          "oklch(63% 0.13 50)",
+          "oklch(75% 0.13 50)",
+          "oklch(86% 0.13 50)",
+          "oklch(95% 0.13 50)"
+        ],
+        "contrastOnPaper": "9.5:1"
+      },
+      "pencil-wash-dark": {
+        "role": "primary",
+        "displayName": "Persimmon Wash",
+        "canonical": "oklch(40% 0.09 45)",
+        "cssVar": "--pencil-wash",
+        "scheme": "dark (Night shift)",
+        "tonalRamp": [
+          "oklch(15% 0.09 45)",
+          "oklch(27% 0.09 45)",
+          "oklch(39% 0.09 45)",
+          "oklch(51% 0.09 45)",
+          "oklch(63% 0.09 45)",
+          "oklch(75% 0.09 45)",
+          "oklch(86% 0.09 45)",
+          "oklch(95% 0.09 45)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name, the only h1. Instrument Serif appears nowhere else."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The first intro paragraph and the footer email address."
+      },
+      "section-head": {
+        "displayName": "Section head",
+        "purpose": "h2 below 56rem. Italic, in ink, above its section body.",
+        "fontStyle": "italic"
+      },
+      "section-head-margin": {
+        "displayName": "Section head, hanging",
+        "purpose": "h2 from 56rem. Italic, soft ink, in the 10rem margin column.",
+        "fontStyle": "italic"
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Entry names (h3): employers, projects, articles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading text, held to the 37rem measure. Proportional figures."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Dates, graph readout, contributions table, album text, fine print. Lining tabular figures where numbers align. Line-height 1.35 in captions, inherited 1.6 elsewhere."
+      }
+    },
+    "fonts": [
+      {
+        "family": "Instrument Serif",
+        "files": [
+          "/fonts/instrument-serif-regular.woff2"
+        ],
+        "weights": [
+          400
+        ],
+        "styles": [
+          "normal"
+        ],
+        "license": "SIL OFL 1.1",
+        "note": "Chosen by the user in the type lab. Name only."
+      },
+      {
+        "family": "Hyperlegible Sans",
+        "files": [
+          "/fonts/hyperlegible-sans-regular.woff",
+          "/fonts/hyperlegible-sans-italic.woff",
+          "/fonts/hyperlegible-sans-bold.woff"
+        ],
+        "weights": [
+          400,
+          700
+        ],
+        "styles": [
+          "normal",
+          "italic (400 only)"
+        ],
+        "license": "SIL OFL 1.1",
+        "note": "Chosen by the user in the type lab. Slashed zero by design, no plain alternate; accepted."
+      }
+    ],
+    "shadows": [
+      {
+        "name": "cover",
+        "value": "0 1px 2px var(--cover-shadow), 0 10px 22px -14px var(--cover-shadow-deep)",
+        "purpose": "Under album cover images only. The only shadow in the system."
+      },
+      {
+        "name": "cover-shadow",
+        "value": "oklch(22% 0.01 260 / 0.14)",
+        "purpose": "Contact layer colour, light."
+      },
+      {
+        "name": "cover-shadow-deep",
+        "value": "oklch(22% 0.01 260 / 0.45)",
+        "purpose": "Cast layer colour, light."
+      },
+      {
+        "name": "cover-shadow-dark",
+        "value": "oklch(10% 0.03 268 / 0.5)",
+        "purpose": "Contact layer colour, Night shift."
+      },
+      {
+        "name": "cover-shadow-deep-dark",
+        "value": "oklch(10% 0.03 268 / 0.8)",
+        "purpose": "Cast layer colour, Night shift."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The one easing curve: link underline, cover lift, graph ink-in."
+      },
+      {
+        "name": "state",
+        "value": "0.2s",
+        "purpose": "Link colour and underline thickness, copy control colour, theme switcher colour and ground."
+      },
+      {
+        "name": "cover-lift",
+        "value": "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); translateY(-3px) on hover",
+        "purpose": "A linked album cover lifts under the pointer."
+      },
+      {
+        "name": "ink-in",
+        "value": "0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards; from opacity 0, translateY(4px); delay = week index x 16ms",
+        "purpose": "The commit graph inks in week by week when 35% of it enters view. Only under prefers-reduced-motion: no-preference; off in print and without script."
+      },
+      {
+        "name": "copy-reset",
+        "value": "2400ms",
+        "purpose": "How long the copy control shows its result before returning to \"Copy\"."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "max-width: 30rem",
+        "purpose": "Commit graph stacks into two half-years; entry dates drop under names."
+      },
+      {
+        "name": "wide",
+        "value": "min-width: 56rem",
+        "purpose": "Margin column appears; section heads hang; albums go to four columns, photos to six; bullets hang in the gutter."
+      },
+      {
+        "name": "print",
+        "value": "print",
+        "purpose": "Black on white at 10.5pt; controls, notes and waiting sections removed; entries and figures kept whole."
+      },
+      {
+        "name": "dark",
+        "value": "prefers-color-scheme: dark, or data-theme=\"dark\" on the root",
+        "purpose": "Night shift palette. System setting until the reader uses the switcher; the choice is saved in localStorage under \"theme\". data-theme=\"light\" overrides a dark system."
+      }
+    ],
+    "graph": {
+      "source": "scripts/build-home.py",
+      "pitch": 14,
+      "rows": 7,
+      "firstRow": "Sunday",
+      "viewBox": "weeks x 14 by 98",
+      "restRadius": 1.1,
+      "minRadius": 1.6,
+      "maxRadius": 6.2,
+      "scale": "sqrt(min(count, cap) / cap), cap = 90th percentile of active days",
+      "split": "two half-years, first = ceil(weeks / 2)",
+      "revealThreshold": 0.35,
+      "staggerPerWeekMs": 16,
+      "monthLabels": "0.75rem italic soft ink, under the week a month starts in"
+    },
+    "albumFallback": {
+      "source": "scripts/build-home.py",
+      "hues": [
+        268,
+        40,
+        150,
+        320,
+        95,
+        210
+      ],
+      "value": "oklch(var(--tint-l) var(--tint-c) var(--h))",
+      "note": "Ground for an album with no cover art. --tint-l and --tint-c are 89.5% and 0.03 in Graphite and cobalt, 33% and 0.045 in Night shift."
+    },
+    "print": {
+      "paper": "#fff",
+      "ink": "#000",
+      "ink-soft": "#444",
+      "hairline": "#ccc",
+      "rest": "#bbb",
+      "pencil": "#1f4fd6",
+      "bodySize": "10.5pt"
+    }
+  },
+  "components": [
+    {
+      "name": "Name",
+      "kind": "custom",
+      "description": "The display line. Instrument Serif appears here and nowhere else.",
+      "html": "<h1 class=\"ds-name\">Harry Nicholls</h1>",
+      "css": ".ds-name { margin: 0; font-family: 'Instrument Serif', 'Iowan Old Style', Georgia, serif; font-size: clamp(3.25rem, 1.9rem + 6vw, 5.25rem); font-weight: 400; line-height: 1; letter-spacing: -0.012em; color: var(--ink); }"
+    },
+    {
+      "name": "Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "Text in the surrounding ink with a pencil underline; hover thickens the underline and inks the text.",
+      "html": "<p class=\"ds-link-line\">I build AI products at <a class=\"ds-link\" href=\"#\">ev.energy</a>.</p>",
+      "css": ".ds-link-line { margin: 0; font-family: 'Hyperlegible Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 1rem; line-height: 1.6; color: var(--ink); } .ds-link { color: inherit; text-decoration-line: underline; text-decoration-color: var(--pencil); text-decoration-thickness: 0.085em; text-underline-offset: 0.22em; transition: text-decoration-thickness 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s; } .ds-link:hover { color: var(--pencil-ink); text-decoration-thickness: 0.17em; } .ds-link:focus-visible { outline: 2px solid var(--pencil); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Contact line with copy control",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "A labelled link, an italic aside, and the only labelled button on the page.",
+      "html": "<p class=\"ds-reach\"><a class=\"ds-reach-link\" href=\"#\">name@example.com</a><span class=\"ds-reach-aside\">, the quickest way to reach me.</span> <button class=\"ds-copy\" type=\"button\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><rect x=\"5.5\" y=\"5.5\" width=\"8\" height=\"8\" rx=\"1.5\"/><path d=\"M10.5 5.5V4A1.5 1.5 0 0 0 9 2.5H4A1.5 1.5 0 0 0 2.5 4v5A1.5 1.5 0 0 0 4 10.5h1.5\"/></svg><span>Copy</span></button></p>",
+      "css": ".ds-reach { margin: 0; font-family: 'Hyperlegible Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 1rem; line-height: 1.6; color: var(--ink); } .ds-reach-link { color: inherit; text-decoration-line: underline; text-decoration-color: var(--pencil); text-decoration-thickness: 0.085em; text-underline-offset: 0.22em; transition: text-decoration-thickness 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s; } .ds-reach-link:hover { color: var(--pencil-ink); text-decoration-thickness: 0.17em; } .ds-reach-aside { font-style: italic; color: var(--ink-soft); } .ds-copy { appearance: none; display: inline-flex; align-items: center; gap: 0.35rem; margin: -0.55rem 0 -0.55rem 0.35rem; padding: 0.55rem 0.5rem; border: 0; background: none; color: var(--ink-soft); font: inherit; font-style: italic; cursor: pointer; transition: color 0.2s; } .ds-copy svg { width: 0.95em; height: 0.95em; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; } .ds-copy:hover { color: var(--ink); } .ds-copy:active { color: var(--pencil-ink); } .ds-copy:focus-visible, .ds-reach-link:focus-visible { outline: 2px solid var(--pencil); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Theme switcher",
+      "kind": "button",
+      "refersTo": "theme-switcher",
+      "description": "A round icon button at the top right of the page. Shows the palette a click switches to: a moon in light, a sun in Night shift.",
+      "html": "<button class=\"ds-theme\" type=\"button\" aria-label=\"Switch to dark mode\" title=\"Switch to dark mode\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z\"/></svg></button> <button class=\"ds-theme\" type=\"button\" aria-label=\"Switch to light mode\" title=\"Switch to light mode\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4\"/></svg></button>",
+      "css": ".ds-theme { appearance: none; display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--ink-soft); cursor: pointer; transition: color 0.2s, background-color 0.2s; } .ds-theme:hover { color: var(--ink); background: var(--frame); } .ds-theme:focus-visible { outline: 2px solid var(--pencil); outline-offset: 3px; border-radius: 2px; } .ds-theme svg { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Section with entry",
+      "kind": "custom",
+      "description": "A hairline, an italic section head, and one resume entry: bold name, tabular date, soft-ink role, paragraph, pencil-marked bullets.",
+      "html": "<section class=\"ds-section\"><h2 class=\"ds-section-head\">Selected work</h2><article><div class=\"ds-entry-head\"><h3 class=\"ds-entry-name\"><a href=\"#\">ev.energy</a></h3><p class=\"ds-when\">Apr 2024 to present</p></div><p class=\"ds-role\">Senior Product Engineer · Remote</p><p class=\"ds-entry-text\">Smart charging for EVs. I own data-heavy workflows end to end.</p><ul class=\"ds-entry-list\"><li>Support tickets fell 11% after it reached production.</li><li>Five MCP servers for colleagues, from nothing.</li></ul></article></section>",
+      "css": ".ds-section { max-width: 37rem; padding-top: 1.4rem; border-top: 1px solid var(--hairline); font-family: 'Hyperlegible Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 1rem; line-height: 1.6; color: var(--ink); } .ds-section-head { margin: 0 0 1.1rem; font-size: 1.3125rem; font-style: italic; font-weight: 400; line-height: 1.3; } .ds-entry-head { display: flex; align-items: baseline; justify-content: space-between; column-gap: 1.5rem; } .ds-entry-name { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.6; } .ds-entry-name a { color: inherit; text-decoration-line: underline; text-decoration-color: var(--pencil); text-decoration-thickness: 0.085em; text-underline-offset: 0.22em; transition: text-decoration-thickness 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s; } .ds-entry-name a:hover { color: var(--pencil-ink); text-decoration-thickness: 0.17em; } .ds-entry-name a:focus-visible { outline: 2px solid var(--pencil); outline-offset: 3px; border-radius: 2px; } .ds-when { margin: 0; flex: none; color: var(--ink-soft); font-size: 0.875rem; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; } .ds-role { margin: 0; color: var(--ink-soft); } .ds-entry-text { margin: 0.45rem 0 0; text-wrap: pretty; } .ds-entry-list { margin: 0.55rem 0 0; padding-left: 1.15em; } .ds-entry-list li { padding-left: 0.2em; text-wrap: pretty; } .ds-entry-list li + li { margin-top: 0.4rem; } .ds-entry-list li::marker { color: var(--pencil); }"
+    },
+    {
+      "name": "Commit graph",
+      "kind": "custom",
+      "refersTo": "graph-dot",
+      "description": "Signature component. One dot per day on a 14-unit pitch, sized by the count; rest days small and pale; today in the pencil. Shown here as five weeks.",
+      "html": "<figure class=\"ds-graph\"><svg class=\"ds-graph-dots\" viewBox=\"0 0 70 98\" aria-hidden=\"true\"><circle cx=\"7\" cy=\"7\" r=\"3.7\"/><circle cx=\"7\" cy=\"21\" r=\"3.9\"/><circle cx=\"7\" cy=\"35\" r=\"5\"/><circle cx=\"7\" cy=\"49\" r=\"4.6\"/><circle cx=\"7\" cy=\"63\" r=\"4.4\"/><circle cx=\"7\" cy=\"77\" r=\"4\"/><circle class=\"ds-rest\" cx=\"7\" cy=\"91\" r=\"1.1\"/><circle class=\"ds-rest\" cx=\"21\" cy=\"7\" r=\"1.1\"/><circle cx=\"21\" cy=\"21\" r=\"3.4\"/><circle class=\"ds-rest\" cx=\"21\" cy=\"35\" r=\"1.1\"/><circle cx=\"21\" cy=\"49\" r=\"6.2\"/><circle cx=\"21\" cy=\"63\" r=\"3.7\"/><circle cx=\"21\" cy=\"77\" r=\"2.3\"/><circle class=\"ds-rest\" cx=\"21\" cy=\"91\" r=\"1.1\"/><circle cx=\"35\" cy=\"7\" r=\"2.3\"/><circle cx=\"35\" cy=\"21\" r=\"5.6\"/><circle cx=\"35\" cy=\"35\" r=\"6.2\"/><circle cx=\"35\" cy=\"49\" r=\"5.2\"/><circle cx=\"35\" cy=\"63\" r=\"6.2\"/><circle cx=\"35\" cy=\"77\" r=\"4.6\"/><circle cx=\"35\" cy=\"91\" r=\"3.9\"/><circle class=\"ds-rest\" cx=\"49\" cy=\"7\" r=\"1.1\"/><circle cx=\"49\" cy=\"21\" r=\"2.9\"/><circle cx=\"49\" cy=\"35\" r=\"3.3\"/><circle cx=\"49\" cy=\"49\" r=\"3.1\"/><circle cx=\"49\" cy=\"63\" r=\"3.2\"/><circle cx=\"49\" cy=\"77\" r=\"2.3\"/><circle class=\"ds-rest\" cx=\"49\" cy=\"91\" r=\"1.1\"/><circle cx=\"63\" cy=\"7\" r=\"2.9\"/><circle cx=\"63\" cy=\"21\" r=\"4.2\"/><circle cx=\"63\" cy=\"35\" r=\"4.4\"/><circle cx=\"63\" cy=\"49\" r=\"3.9\"/><circle class=\"ds-now\" cx=\"63\" cy=\"63\" r=\"4.3\"/></svg><p class=\"ds-graph-readout\">Point at a day to read it.</p><figcaption class=\"ds-graph-caption\"><strong>6,376</strong> contributions in the year. Each dot is a day, sized by how much I shipped.</figcaption></figure>",
+      "css": ".ds-graph { margin: 0; font-family: 'Hyperlegible Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 1rem; line-height: 1.6; color: var(--ink); } .ds-graph-dots { display: block; width: 10rem; height: auto; overflow: visible; } .ds-graph-dots circle { fill: var(--ink); } .ds-graph-dots .ds-rest { fill: var(--rest); } .ds-graph-dots .ds-now, .ds-graph-dots circle:hover { fill: var(--pencil); } .ds-graph-readout { margin: 0.6rem 0 0; color: var(--ink-soft); font-size: 0.875rem; font-style: italic; font-variant-numeric: lining-nums; } .ds-graph-caption { margin-top: 0.9rem; max-width: 37rem; } .ds-graph-caption strong { font-weight: 700; }"
+    },
+    {
+      "name": "Album tile",
+      "kind": "card",
+      "refersTo": "album-title",
+      "description": "A square cover with the only shadow in the system, a bold title and a soft-ink artist. The inline swatch stands in for cover art.",
+      "html": "<a class=\"ds-album\" href=\"#\"><svg class=\"ds-album-cover\" viewBox=\"0 0 10 10\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><rect width=\"10\" height=\"10\" fill=\"oklch(62% 0.13 40)\"/><circle cx=\"5\" cy=\"5\" r=\"2.6\" fill=\"oklch(90% 0.06 95)\"/></svg><span class=\"ds-album-title\">Album title</span> <span class=\"ds-album-artist\">Artist</span></a>",
+      "css": ".ds-album { display: block; width: 9rem; text-decoration: none; color: var(--ink); font-family: 'Hyperlegible Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; } .ds-album-cover { display: block; width: 100%; aspect-ratio: 1; border-radius: 2px; box-shadow: 0 1px 2px var(--cover-shadow), 0 10px 22px -14px var(--cover-shadow-deep); transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-album:hover .ds-album-cover { transform: translateY(-3px); } .ds-album:focus-visible { outline: 2px solid var(--pencil); outline-offset: 3px; border-radius: 2px; } .ds-album-title, .ds-album-artist { display: block; font-size: 0.875rem; line-height: 1.35; } .ds-album-title { margin-top: 0.55rem; font-weight: 700; } .ds-album-artist { color: var(--ink-soft); }"
+    },
+    {
+      "name": "Photo tile",
+      "kind": "card",
+      "refersTo": "photo-frame",
+      "description": "A 4:5 portrait frame with no shadow and an optional italic caption. The frame colour shows until the photo loads.",
+      "html": "<figure class=\"ds-photo\"><span class=\"ds-photo-frame\"></span><figcaption class=\"ds-photo-caption\">A caption, said in passing.</figcaption></figure>",
+      "css": ".ds-photo { margin: 0; width: 6rem; font-family: 'Hyperlegible Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; } .ds-photo-frame { display: block; width: 100%; aspect-ratio: 4 / 5; border-radius: 2px; background: var(--frame); } .ds-photo-caption { display: block; margin-top: 0.35rem; color: var(--ink-soft); font-size: 0.8125rem; font-style: italic; line-height: 1.35; }"
+    },
+    {
+      "name": "Waiting gallery",
+      "kind": "custom",
+      "refersTo": "waiting-tile",
+      "description": "The empty state for albums and photos: an italic note, then one row of blank tiles in the frame colour. Hidden in print.",
+      "html": "<div class=\"ds-waiting\"><p class=\"ds-waiting-note\">The records are still being chosen. Covers to come.</p><div class=\"ds-waiting-row\"><span></span><span></span><span></span><span></span></div></div>",
+      "css": ".ds-waiting { max-width: 37rem; font-family: 'Hyperlegible Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 1rem; line-height: 1.6; } .ds-waiting-note { margin: 0 0 1rem; font-style: italic; color: var(--ink-soft); } .ds-waiting-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem 0.75rem; } .ds-waiting-row span { display: block; aspect-ratio: 1; border-radius: 2px; background: var(--frame); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Well-Made Page",
+    "overview": "This is a resume set like a well-made page: one column of reading on plain paper, a serif for the name, a sans for everything else, and a single coloured mark. The name is a description of the craft, not a metaphor to illustrate. Nothing on the page pretends to be a letter, a notebook or a terminal. Character comes from the type, the colour and the spacing, chosen by Harry himself in a local type lab, and from three pieces of real evidence: a year of commits, his records and his photos.\n\nThe page is quiet and dense with fact. Sections are separated by a hairline and a hanging head, never by a box. Light and dark are two named palettes, Graphite and cobalt and Night shift. The reader's system setting chooses between them until the reader uses the switcher, and that choice is remembered. The page works in full with JavaScript off; the three scripts (switch the palette, copy the email, read the commit graph) are additions.\n\nIt refuses the developer-portfolio arrangement of hero, project cards and skill badges.",
+    "keyCharacteristics": [
+      "One text column (37rem) with section heads hanging in a 10rem left margin on wide screens.",
+      "Instrument Serif for the name only; Hyperlegible Sans for all other text.",
+      "Upright for the record, italic for section heads and asides.",
+      "One coloured mark per palette: cobalt in light, persimmon in dark.",
+      "Flat paper. Hairlines divide; nothing is boxed or carded.",
+      "Two weights, 400 and 700.",
+      "Plain HTML first; motion and scripting are optional extras."
+    ],
+    "rules": [
+      {
+        "name": "The One Mark Rule",
+        "body": "Each palette has exactly one hue, the pencil. It draws lines, dots, markers and rings. It never fills a block, never backs a button and never sets running text. Text only takes the pencil's ink shade as a response: on hover, or to confirm a copy.",
+        "section": "colors"
+      },
+      {
+        "name": "The Covers Bring the Colour Rule",
+        "body": "Beyond the mark, colour belongs to content: album covers and photographs. The interface around them stays graphite or indigo so the covers are the only saturated things on the page.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reader's Setting Rule",
+        "body": "The palette follows `prefers-color-scheme` until the reader uses the switcher; after that their saved choice wins, in either direction. Every colour token has a value in both palettes; a new token is not finished until it has both.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Is the Name Rule",
+        "body": "Instrument Serif appears once, on the name. No other heading, number or pull-out borrows it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Italic Is the Aside Rule",
+        "body": "Upright type carries the record: names, roles, dates, descriptions. Italic carries everything said in passing: section heads, the asides after each contact link, placeholder notes, photo captions, month labels, the graph readout and the copy control.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Weights Rule",
+        "body": "Only 400 and 700 exist. Bold marks entry names, album titles and the one total in the commit caption. Emphasis inside a paragraph is not bolded.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Left Edge Rule",
+        "body": "Wide screens have two left edges and no more: the page edge (name, hairlines, margin heads, wide figures) and the text edge (everything read). New content aligns to one of them.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Page Rule",
+        "body": "Only an album cover image casts a shadow. Placeholder tiles, photos, text and controls do not.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do set new reading text in Hyperlegible Sans at 1rem and 1.6, inside the 37rem measure.",
+      "Do open every section with the 1px hairline and a hanging italic head; let space and the hairline do the dividing.",
+      "Do use the pencil for marks only: underlines, markers, the focus ring, a highlighted dot.",
+      "Do give every new colour token a Graphite and cobalt value and a Night shift value, and check text against the measured floor (soft ink is 7.5:1 in light, 8.2:1 in dark).",
+      "Do use italic soft ink for anything said in passing, and upright ink for the record.",
+      "Do use lining tabular figures wherever numbers or dates line up.",
+      "Do make every enhancement optional: content in the HTML in reading order, scripted states added on top, motion inside `prefers-reduced-motion: no-preference`.",
+      "Do give an empty gallery the waiting state (a note and one row of frame-coloured tiles) and hide it in print.",
+      "Do keep print working: a new component needs a decision about how it prints."
+    ],
+    "donts": [
+      "Don't use Instrument Serif anywhere but the name.",
+      "Don't add cards, boxes, panels, borders or background fills around content.",
+      "Don't add icons beyond the two the page has: the copy mark and the switcher's moon and sun.",
+      "Don't add a second hue to the interface, or use the pencil as a fill or for running text.",
+      "Don't add shadows to anything but an album cover image.",
+      "Don't add a weight other than 400 and 700, or bold a phrase inside a paragraph.",
+      "Don't build the developer-portfolio arrangement: a hero, project cards, skill badges.",
+      "Don't dress the page in a governing metaphor.",
+      "Don't force a palette. The system setting decides until the reader uses the switcher, and Night shift's values are kept identical in both places the stylesheet declares them.",
+      "Don't put content behind script, hover or an animation that must finish before it can be read."
+    ]
+  }
+}
