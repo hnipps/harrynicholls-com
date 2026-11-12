@@ -428,7 +428,7 @@
       {
         "name": "ease-out",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "The one easing curve: link underline, cover lift, graph ink-in."
+        "purpose": "The one easing curve: link underline, album label, graph ink-in."
       },
       {
         "name": "state",
@@ -436,9 +436,9 @@
         "purpose": "Link colour and underline thickness, contact icon and theme switcher colour and ground."
       },
       {
-        "name": "cover-lift",
-        "value": "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); translateY(-3px) on hover",
-        "purpose": "A linked album cover lifts under the pointer."
+        "name": "album-label",
+        "value": "opacity and translate 0.28s cubic-bezier(0.16, 1, 0.3, 1); rises 0.4rem on hover or focus",
+        "purpose": "The title and artist band fades in along the bottom of a cover. Pointer devices only; on touch the label sits under the cover."
       },
       {
         "name": "ink-in",

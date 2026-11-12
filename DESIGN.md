@@ -210,7 +210,7 @@ One centred page, 52rem at most (10rem margin column + 2.5rem gutter + 37rem mea
 Flat. The page is one sheet of paper with no surfaces above it: no cards, panels, sticky bars or overlays. Structure is carried by hairlines and by space. The single exception is a real album cover, which is an object lying on the page and casts a small contact shadow.
 
 ### Shadow Vocabulary
-- **Cover shadow** (`box-shadow: 0 1px 2px var(--cover-shadow), 0 10px 22px -14px var(--cover-shadow-deep)`): under album cover images only. The shadow colours are a dark blue at 14% and 45% alpha in light, and a near-black blue at 55% and 85% in Blue night. A linked cover lifts 3px on hover over 0.35s.
+- **Cover shadow** (`box-shadow: 0 1px 2px var(--cover-shadow), 0 10px 22px -14px var(--cover-shadow-deep)`): under album cover images only. The shadow colours are a dark blue at 14% and 45% alpha in light, and a near-black blue at 55% and 85% in Blue night. Covers do not move on hover.
 
 ### Named Rules
 **The Flat Page Rule.** Only an album cover image casts a shadow. Placeholder tiles, photos, text and controls do not.
@@ -261,7 +261,10 @@ A year of real GitHub contributions as a field of dots, one per day.
 ### Albums
 - **Grid:** two columns on a phone, four from 30rem, so a shelf of sixteen never ends on a stray cover. Add or remove albums in fours where possible.
 - **Content:** sixteen albums chosen by Harry, in `content/albums.json`. Covers are 600px JPEGs in `src/albums/`, fetched from Apple's catalogue by `scripts/fetch-album-art.py`; each cover links to the album on Apple Music.
-- **Real tile:** a square cover with the 2px radius and the cover shadow, a bold title and a soft-ink artist under it at the small size (line-height 1.35). An album without cover art shows a square in a low-chroma tint of one of six rotating hues (268, 40, 150, 320, 95, 210): pale in Blue ink, deep in Blue night.
+- **Real tile:** a square cover with the 2px radius and the cover shadow, and nothing else at rest: with a pointer the gallery is a wall of covers, 1rem apart.
+- **Label on hover:** pointing at a cover, or tabbing to it, raises a band along its bottom edge: the page's own paper at 94% opacity, with a bold ink title and a soft-ink artist at the small size. It fades in and rises 0.4rem over 0.28s. The title stays ink; it does not take the link hover colour.
+- **Without hover:** on touch screens the label sits under the cover all the time, because otherwise it would never be seen. Print does the same.
+- **No cover art:** the label always shows. An album without cover art shows a square in a low-chroma tint of one of six rotating hues (268, 40, 150, 320, 95, 210): pale in Blue ink, deep in Blue night.
 - **Waiting state:** an italic soft-ink note, then one row of blank square tiles in the frame colour: three on narrow screens, four on wide.
 
 ### Photos

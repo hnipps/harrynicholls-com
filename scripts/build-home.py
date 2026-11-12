@@ -153,10 +153,14 @@ def albums(entries):
         text = f'<span class="album-title">{escape(title)}</span>'
         if artist:
             text += f' <span class="album-artist">{escape(artist)}</span>'
-        inner = cover + text
+        inner = f'{cover}<span class="album-label">{text}</span>'
         if a.get('url'):
-            inner = f'<a href="{escape(a["url"])}" aria-label="{label}">{inner}</a>'
-        tiles.append(f'<li class="album" style="--h:{hue}">{inner}</li>')
+            tile = f'<a class="album-tile" href="{escape(a["url"])}" aria-label="{label}">{inner}</a>'
+        else:
+            tile = f'<span class="album-tile">{inner}</span>'
+        # Without cover art the label is all there is, so it always shows.
+        bare = '' if a.get('cover') else ' is-bare'
+        tiles.append(f'<li class="album{bare}" style="--h:{hue}">{tile}</li>')
     return f'\n<ul class="albums" role="list">\n{chr(10).join(tiles)}\n</ul>\n'
 
 
