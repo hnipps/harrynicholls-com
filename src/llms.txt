@@ -37,4 +37,5 @@ The home page, https://harrynicholls.com/, is his resume as plain HTML: selected
 ## Optional
 
 - [Medium](https://harrynicholls.medium.com/): Older writing
+- [Colophon](https://harrynicholls.com/colophon.html): How the site is built, its style guide and where its data comes from
 - [Site source](https://github.com/hnipps/harrynicholls-com)

@@ -801,6 +801,139 @@ h3 {
   font-size: var(--small);
 }
 
+/* ---------- Colophon page ---------- */
+
+.home-link {
+  margin-bottom: 0.75rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.facts {
+  margin: 0;
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  padding: 0.28rem 0;
+}
+
+.facts dt {
+  color: var(--ink-soft);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.entry > h3 + p {
+  margin-top: 0.3rem;
+}
+
+.body > p + .entry {
+  margin-top: 2rem;
+}
+
+.inks {
+  width: 100%;
+  margin-top: 0.9rem;
+  border-collapse: collapse;
+  font-size: var(--small);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.inks th,
+.inks td {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-top: 1px solid var(--hairline);
+  font-weight: 400;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.inks thead th {
+  border-top: 0;
+  padding-top: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.inks tbody th {
+  font-size: var(--text);
+}
+
+.inks small {
+  display: block;
+  color: var(--ink-soft);
+  font-size: var(--small);
+  line-height: 1.35;
+}
+
+.inks td {
+  white-space: nowrap;
+}
+
+/* Paper-coloured chips need an edge to be seen on their own paper. */
+.chip {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--hairline);
+  vertical-align: middle;
+}
+
+.voice {
+  margin-top: 1rem;
+}
+
+.voice + .voice {
+  margin-top: 1.5rem;
+}
+
+.specimen {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.specimen-name {
+  font-family: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  font-size: 2.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+}
+
+.voice .role {
+  margin-top: 0.3rem;
+  font-size: var(--small);
+  line-height: 1.45;
+}
+
+@media (max-width: 30rem) {
+  .facts div {
+    grid-template-columns: 1fr;
+    padding: 0.4rem 0;
+  }
+
+  .facts dt {
+    font-size: var(--small);
+  }
+
+  .inks th,
+  .inks td {
+    padding-right: 0.5rem;
+  }
+
+  .chip {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.35rem;
+  }
+}
+
 /* ---------- Reduced motion: no hover or lift transitions either ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -846,7 +979,8 @@ h3 {
     grid-column: 2;
   }
 
-  .masthead > h1 {
+  .masthead > h1,
+  .masthead > .home-link {
     grid-column: 1 / -1;
   }
 

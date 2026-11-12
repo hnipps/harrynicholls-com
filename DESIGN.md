@@ -275,6 +275,14 @@ A year of real GitHub contributions as a field of dots, one per day.
 ### Skip link
 Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused. The one place the ink is used as a fill.
 
+### Colophon page
+`src/colophon.html`, linked from the home page's footer. It says how the site is built, in the site's own system: the same page, sections, margin heads and footer.
+- **Masthead:** an italic soft-ink link back to "Harry Nicholls", then "Colophon" in Instrument Serif at the display size. There is no name to carry the switcher's dot here, so the switcher is the round button in the top right corner.
+- **Facts list** (`.facts`): a term in soft ink in a 6.5rem column, the fact beside it. Stacks under 30rem. Used for the stack and the credits.
+- **Inks table** (`.inks`): one row per colour with its name and job, then a 1.5rem chip and hex value for light and for dark. Chips carry a hairline edge so a paper-coloured chip shows on its own paper. Both palettes are always shown, whichever mode is on.
+- **Voices:** a specimen line for each typeface (the name at 2.75rem in the serif, a sentence at 1.5rem in the sans) with its credit and licence in small soft ink.
+- Keep it true. When the stack, the palettes, the typefaces or the data sources change, this page changes with them.
+
 ## Do's and Don'ts
 
 ### Do:
