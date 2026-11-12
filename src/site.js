@@ -25,10 +25,8 @@ if (copy && navigator.clipboard) {
 // Name the day under the pointer on the commit graph.
 const graph = document.querySelector('.graph[data-counts]');
 if (graph) {
-  const svg = graph.querySelector('svg');
-  const dots = svg.querySelectorAll('circle');
+  const dots = graph.querySelectorAll('circle');
   const counts = graph.dataset.counts.split(',').map(Number);
-  const weeks = Number(graph.dataset.weeks);
   const start = new Date(`${graph.dataset.start}T00:00:00Z`);
   const offset = start.getUTCDay();
   const day = new Intl.DateTimeFormat('en-GB', {
@@ -40,7 +38,7 @@ if (graph) {
   readout.className = 'graph-readout in-measure';
   readout.setAttribute('aria-hidden', 'true');
   readout.textContent = prompt;
-  graph.querySelector('.graph-months').after(readout);
+  graph.querySelector('.graph-year').after(readout);
 
   let lit;
   const clear = () => {
@@ -50,10 +48,14 @@ if (graph) {
   };
 
   const read = (event) => {
+    const svg = event.currentTarget;
+    const weeks = Number(svg.dataset.weeks);
+    const base = Number(svg.dataset.base);
     const box = svg.getBoundingClientRect();
     const column = Math.floor(((event.clientX - box.left) / box.width) * weeks);
     const row = Math.floor(((event.clientY - box.top) / box.height) * 7);
-    const index = column * 7 + row - offset;
+    // Only the year's very first week can start mid-week.
+    const index = base + column * 7 + row - (base === 0 ? offset : 0);
     if (column < 0 || column >= weeks || row < 0 || row > 6 || index < 0 || index >= counts.length) {
       clear();
       return;
@@ -69,9 +71,23 @@ if (graph) {
     readout.textContent = `${what} on ${day.format(date)}.`;
   };
 
-  svg.addEventListener('pointermove', read);
-  svg.addEventListener('pointerdown', read);
-  svg.addEventListener('pointerleave', (event) => {
-    if (event.pointerType === 'mouse') clear();
-  });
+  for (const svg of graph.querySelectorAll('svg')) {
+    svg.addEventListener('pointermove', read);
+    svg.addEventListener('pointerdown', read);
+    svg.addEventListener('pointerleave', (event) => {
+      if (event.pointerType === 'mouse') clear();
+    });
+  }
+
+  // Ink the year in when the reader reaches it, not at page load where nobody sees it.
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!still && 'IntersectionObserver' in window) {
+    graph.classList.add('is-waiting');
+    const watch = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      graph.classList.replace('is-waiting', 'is-inking');
+      watch.disconnect();
+    }, { threshold: 0.35 });
+    watch.observe(graph.querySelector('.graph-year'));
+  }
 }

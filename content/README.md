@@ -12,7 +12,7 @@ One entry per record, in the order they should appear.
 
 - `cover` is a square image saved under `src/albums/`. 600px wide is plenty.
 - `url` is optional. With one, the cover links out.
-- An entry with an empty `title` renders as a blank placeholder square.
+- Entries with an empty `title` are skipped. While every entry is empty, the section shows a "covers to come" note and one row of blank tiles.
 
 ## photos.json
 
@@ -21,7 +21,7 @@ One entry per record, in the order they should appear.
 ```
 
 - Images go under `src/photos/`, cropped 4:5.
-- An entry with an empty `src` renders as a blank placeholder frame.
+- Entries with an empty `src` are skipped. While every entry is empty, the section shows a "photos to come" note and one row of blank frames.
 
 ## contributions.json
 

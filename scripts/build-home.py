@@ -67,29 +67,43 @@ def graph(data):
     first, last = date.fromisoformat(days[0]['date']), date.fromisoformat(days[-1]['date'])
     busiest = max(days, key=lambda d: d['count'])
 
-    groups = []
-    for i, week in enumerate(weeks):
-        dots = []
-        for d in week:
-            row = (date.fromisoformat(d['date']).weekday() + 1) % 7  # Sunday on the top row
-            cx, cy = i * PITCH + PITCH / 2, row * PITCH + PITCH / 2
-            if d['count']:
-                r = R_MIN + (R_MAX - R_MIN) * math.sqrt(min(d['count'], cap) / cap)
-                cls = ' class="now"' if d is days[-1] else ''
-            else:
-                r, cls = R_REST, ' class="rest"'
-            dots.append(f'<circle{cls} cx="{cx:g}" cy="{cy:g}" r="{r:.1f}"/>')
-        groups.append(f'<g style="--w:{i}">{"".join(dots)}</g>')
+    # Two halves: side by side they read as one year, and on a phone they stack
+    # so the dots stay big enough to touch.
+    split = math.ceil(len(weeks) / 2)
+    halves, base = [], 0
+    for part_start, part in ((0, weeks[:split]), (split, weeks[split:])):
+        groups = []
+        for i, week in enumerate(part):
+            dots = []
+            for d in week:
+                row = (date.fromisoformat(d['date']).weekday() + 1) % 7  # Sunday on the top row
+                cx, cy = i * PITCH + PITCH / 2, row * PITCH + PITCH / 2
+                if d['count']:
+                    r = R_MIN + (R_MAX - R_MIN) * math.sqrt(min(d['count'], cap) / cap)
+                    cls = ' class="now"' if d is days[-1] else ''
+                else:
+                    r, cls = R_REST, ' class="rest"'
+                dots.append(f'<circle{cls} cx="{cx:g}" cy="{cy:g}" r="{r:.1f}"/>')
+            groups.append(f'<g style="--w:{part_start + i}">{"".join(dots)}</g>')
 
-    months, previous = [], None
-    for i, week in enumerate(weeks):
-        start = date.fromisoformat(week[0]['date'])
-        if start.month != previous:
-            if previous is not None or i == 0:
-                months.append((i + 1, start.strftime('%b')))
-            previous = start.month
-    if len(months) > 1 and months[1][0] - months[0][0] < 3:
-        months.pop(0)  # a sliver of a month at the left edge would collide with the next label
+        # Label the half's first week and every week a new month starts in.
+        months, previous = [], None
+        for i, week in enumerate(part):
+            month = date.fromisoformat(week[0]['date'])
+            if month.month != previous:
+                months.append((i + 1, month.strftime('%b')))
+                previous = month.month
+        if len(months) > 1 and months[1][0] - months[0][0] < 3:
+            months.pop(0)  # a sliver of a month at the left edge would collide with the next label
+        months = [m for m in months if m[0] <= len(part) - 2]  # nor may one overhang the right edge
+
+        halves.append(
+            f'<div class="graph-half" style="--weeks:{len(part)}">'
+            f'<svg class="graph-dots" viewBox="0 0 {len(part) * PITCH} {7 * PITCH}" '
+            f'data-base="{base}" data-weeks="{len(part)}" aria-hidden="true">{"".join(groups)}</svg>'
+            f'<ol class="graph-months">{"".join(f"<li style={chr(34)}grid-column:{c}{chr(34)}>{m}</li>" for c, m in months)}</ol>'
+            f'</div>')
+        base += sum(len(week) for week in part)
 
     by_month = {}
     for d in days:
@@ -99,16 +113,14 @@ def graph(data):
         f'<tr><th scope="row">{date.fromisoformat(m + "-01").strftime("%B %Y")}</th><td>{n:,}</td></tr>'
         for m, n in by_month.items())
 
-    width, height = len(weeks) * PITCH, 7 * PITCH
     summary = (f'{data["total"]:,} contributions on GitHub in the year to {long_date(last)}. '
                f'The busiest day was {long_date(date.fromisoformat(busiest["date"]), year=False)}, '
                f'with {busiest["count"]:,}.')
     return f'''
-<figure class="graph" data-start="{first.isoformat()}" data-weeks="{len(weeks)}" data-counts="{",".join(map(str, counts))}">
-<svg class="graph-dots" viewBox="0 0 {width} {height}" role="img" aria-label="{escape(summary)}">
-{"".join(groups)}
-</svg>
-<ol class="graph-months" aria-hidden="true">{"".join(f'<li style="grid-column:{c}">{m}</li>' for c, m in months)}</ol>
+<figure class="graph" data-start="{first.isoformat()}" data-counts="{",".join(map(str, counts))}">
+<div class="graph-year" style="--span:{split}" role="img" aria-label="{escape(summary)}">
+{chr(10).join(halves)}
+</div>
 <figcaption class="in-measure">
 <p><strong>{data["total"]:,}</strong> contributions on <a href="https://github.com/{data.get("login", LOGIN)}">GitHub</a> in the year to {long_date(last)}. Each dot is a day, sized by how much I shipped. The busiest was {long_date(date.fromisoformat(busiest["date"]), year=False)}, with {busiest["count"]:,}.</p>
 <details><summary>Month by month</summary>
@@ -119,14 +131,21 @@ def graph(data):
 '''
 
 
+def waiting(kind, note, count, in_measure=''):
+    """The empty state: the note first, then one quiet row of blank tiles."""
+    tiles = '<span></span>' * count
+    return (f'\n<p class="note{in_measure}">{note}</p>\n'
+            f'<div class="{kind} is-waiting" aria-hidden="true">{tiles}</div>\n')
+
+
 def albums(entries):
+    entries = [a for a in entries if a.get('title', '').strip()]
+    if not entries:
+        return waiting('albums', 'The records are still being chosen. Covers to come.', 4, ' in-measure')
     tiles = []
     for i, a in enumerate(entries):
         hue = ALBUM_HUES[i % len(ALBUM_HUES)]
         title, artist = a.get('title', '').strip(), a.get('artist', '').strip()
-        if not title:
-            tiles.append(f'<li class="album is-empty" style="--h:{hue}"><span class="cover"></span></li>')
-            continue
         label = escape(f'{title} by {artist}' if artist else title)
         cover = (f'<img class="cover" src="{escape(a["cover"])}" alt="" width="600" height="600" loading="lazy">'
                  if a.get('cover') else '<span class="cover"></span>')
@@ -137,22 +156,19 @@ def albums(entries):
         if a.get('url'):
             inner = f'<a href="{escape(a["url"])}" aria-label="{label}">{inner}</a>'
         tiles.append(f'<li class="album" style="--h:{hue}">{inner}</li>')
-    note = ('\n<p class="note in-measure">The records are still being chosen. Covers to come.</p>'
-            if any(not a.get('title', '').strip() for a in entries) else '')
-    return f'\n<ul class="albums" role="list">\n{chr(10).join(tiles)}\n</ul>{note}\n'
+    return f'\n<ul class="albums" role="list">\n{chr(10).join(tiles)}\n</ul>\n'
 
 
 def photos(entries):
+    entries = [p for p in entries if p.get('src')]
+    if not entries:
+        return waiting('photos', 'Photos to come.', 6)
     tiles = []
     for p in entries:
-        if not p.get('src'):
-            tiles.append('<li class="photo is-empty"><span class="frame"></span></li>')
-            continue
         caption = f'<span class="photo-caption">{escape(p["caption"])}</span>' if p.get('caption') else ''
         tiles.append(f'<li class="photo"><img class="frame" src="{escape(p["src"])}" '
                      f'alt="{escape(p.get("alt", ""))}" width="800" height="1000" loading="lazy">{caption}</li>')
-    note = ('\n<p class="note">Photos to come.</p>' if any(not p.get('src') for p in entries) else '')
-    return f'\n<ul class="photos" role="list">\n{chr(10).join(tiles)}\n</ul>{note}\n'
+    return f'\n<ul class="photos" role="list">\n{chr(10).join(tiles)}\n</ul>\n'
 
 
 def main():

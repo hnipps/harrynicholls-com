@@ -138,15 +138,20 @@ h1 {
 
 .lede {
   margin-top: 1.75rem;
-  font-size: var(--lede);
+  font-size: 1.3125rem;
   line-height: 1.45;
+}
+
+/* Each sentence keeps to its own line when the measure allows it. */
+.lede span {
+  display: inline-block;
 }
 
 .intro p + p {
   margin-top: 0.9rem;
 }
 
-.intro p {
+.intro p:not(.lede) {
   text-wrap: pretty;
 }
 
@@ -304,12 +309,40 @@ h3 {
 }
 
 .note {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-style: italic;
   color: var(--ink-soft);
 }
 
+/* The empty state for albums and photos: one quiet row in a single paper tint. */
+.is-waiting span {
+  display: block;
+  border-radius: 2px;
+  background: var(--frame);
+}
+
+.albums.is-waiting span {
+  aspect-ratio: 1;
+}
+
+.photos.is-waiting span {
+  aspect-ratio: 4 / 5;
+}
+
+.is-waiting span:nth-child(n + 4) {
+  display: none;
+}
+
 /* ---------- Commit graph ---------- */
+
+.graph-year {
+  display: flex;
+}
+
+.graph-half {
+  flex: var(--weeks) 1 0;
+  min-width: 0;
+}
 
 .graph-dots {
   display: block;
@@ -334,7 +367,7 @@ h3 {
 
 .graph-months {
   display: grid;
-  grid-template-columns: repeat(53, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--weeks), minmax(0, 1fr));
   margin-top: 0.5rem;
   padding: 0;
   list-style: none;
@@ -414,8 +447,14 @@ h3 {
   text-align: right;
 }
 
+/* The year inks in, week by week, when the reader reaches it. The script adds
+   these classes; without it the graph is simply there. */
 @media (prefers-reduced-motion: no-preference) {
-  .graph-dots g {
+  .graph.is-waiting .graph-dots g {
+    opacity: 0;
+  }
+
+  .graph.is-inking .graph-dots g {
     animation: ink-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
     animation-delay: calc(var(--w) * 16ms);
   }
@@ -534,8 +573,15 @@ h3 {
 /* ---------- Narrow screens ---------- */
 
 @media (max-width: 30rem) {
-  .graph-months li:nth-child(even) {
-    display: none;
+  /* The year stacks into two half-years so a day stays big enough to touch. */
+  .graph-year {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .graph-half {
+    flex: none;
+    width: calc(var(--weeks) / var(--span) * 100%);
   }
 
   /* Dates drop under the name rather than squeezing it. */
@@ -602,6 +648,19 @@ h3 {
   .photos {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
+
+  .is-waiting span:nth-child(n + 4) {
+    display: block;
+  }
+
+  /* Bullets hang in the gutter so the text keeps one left edge. */
+  .entry ul {
+    padding-left: 0;
+  }
+
+  .entry li {
+    padding-left: 0;
+  }
 }
 
 /* ---------- Print: this is a resume ---------- */
@@ -623,7 +682,8 @@ h3 {
   .copy,
   .skip-link,
   .graph-readout,
-  .note {
+  .note,
+  .is-waiting {
     display: none !important;
   }
 
@@ -639,7 +699,8 @@ h3 {
     break-inside: avoid;
   }
 
-  .graph-dots g {
+  .graph .graph-dots g {
     animation: none;
+    opacity: 1;
   }
 }
