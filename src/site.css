@@ -1,6 +1,6 @@
 /* harrynicholls.com home page.
-   One column, a serif for the name and a sans for the reading, one ink.
-   Colour arrives with the album covers. */
+   One column, a serif for the name and a sans for the reading, one blue ink
+   and one red mark. Any other colour arrives with the album covers. */
 
 @font-face {
   font-family: "Instrument Serif";
@@ -876,13 +876,18 @@ h3 {
 /* ---------- Print: this is a resume ---------- */
 
 @media print {
-  :root {
+  /* The tripled :root outranks both dark blocks, so a reader in dark mode
+     still prints black on white. */
+  :root:root:root {
     --paper: #fff;
     --ink: #000;
     --ink-soft: #444;
     --hairline: #ccc;
     --rest: #bbb;
+    --frame: #eee;
     --pencil: #a70029;
+    --pencil-ink: #a70029;
+    --pencil-wash: #fdd;
     color-scheme: light;
   }
 

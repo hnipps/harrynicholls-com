@@ -1,25 +1,25 @@
 ---
 name: harrynicholls.com
-description: A resume set like a well-made page. One column, a serif for the name, a sans for the reading, one coloured mark.
+description: A resume set like a well-made page. One column, a serif for the name, a sans for the reading, blue ink and one red mark.
 colors:
-  paper: "oklch(98.6% 0 0)"
-  ink: "oklch(22% 0.01 260)"
-  ink-soft: "oklch(44% 0.012 260)"
-  hairline: "oklch(88% 0.004 260)"
-  rest: "oklch(83% 0.006 260)"
-  frame: "oklch(93.5% 0.004 260)"
-  pencil: "oklch(55% 0.21 262)"
-  pencil-ink: "oklch(44% 0.2 262)"
-  pencil-wash: "oklch(92% 0.05 262)"
-  paper-dark: "oklch(20% 0.035 268)"
-  ink-dark: "oklch(93% 0.015 265)"
-  ink-soft-dark: "oklch(75% 0.03 265)"
-  hairline-dark: "oklch(34% 0.04 268)"
-  rest-dark: "oklch(40% 0.045 268)"
-  frame-dark: "oklch(27% 0.035 268)"
-  pencil-dark: "oklch(72% 0.17 45)"
-  pencil-ink-dark: "oklch(81% 0.13 50)"
-  pencil-wash-dark: "oklch(40% 0.09 45)"
+  paper: "oklch(99% 0.005 260)"
+  ink: "oklch(40% 0.16 260)"
+  ink-soft: "oklch(55.9% 0.133 260)"
+  hairline: "oklch(89.6% 0.051 260)"
+  rest: "oklch(84.8% 0.075 260)"
+  frame: "oklch(94.3% 0.027 260)"
+  pencil: "oklch(57% 0.229 20)"
+  pencil-ink: "oklch(46% 0.186 20)"
+  pencil-wash: "oklch(92.5% 0.038 20)"
+  paper-dark: "oklch(8.5% 0.06 260)"
+  ink-dark: "oklch(84% 0.08 260)"
+  ink-soft-dark: "oklch(63.6% 0.133 260)"
+  hairline-dark: "oklch(20.6% 0.076 260)"
+  rest-dark: "oklch(26.6% 0.084 260)"
+  frame-dark: "oklch(14.5% 0.068 260)"
+  pencil-dark: "oklch(70% 0.192 20)"
+  pencil-ink-dark: "oklch(79% 0.122 20)"
+  pencil-wash-dark: "oklch(28.5% 0.117 20)"
 typography:
   display:
     fontFamily: "'Instrument Serif', 'Iowan Old Style', Georgia, serif"
@@ -119,9 +119,9 @@ components:
 
 **Creative North Star: "The Well-Made Page"**
 
-This is a resume set like a well-made page: one column of reading on plain paper, a serif for the name, a sans for everything else, and a single coloured mark. The name is a description of the craft, not a metaphor to illustrate. Nothing on the page pretends to be a letter, a notebook or a terminal. Character comes from the type, the colour and the spacing, chosen by Harry himself in a local type lab, and from three pieces of real evidence: a year of commits, his records and his photos.
+This is a resume set like a well-made page: one column of reading on plain paper, a serif for the name, a sans for everything else, blue ink and a single red mark. The name is a description of the craft, not a metaphor to illustrate. Nothing on the page pretends to be a letter, a notebook or a terminal. Character comes from the type, the colour and the spacing, chosen by Harry himself in a local type lab, and from three pieces of real evidence: a year of commits, his records and his photos.
 
-The page is quiet and dense with fact. Sections are separated by a hairline and a hanging head, never by a box. Light and dark are two named palettes, Graphite and cobalt and Night shift. The reader's system setting chooses between them until the reader uses the switcher, and that choice is remembered. The page works in full with JavaScript off; the three scripts (switch the palette, copy the email, read the commit graph) are additions.
+The page is quiet and dense with fact. Sections are separated by a hairline and a hanging head, never by a box. Light and dark are two named palettes, Blue ink and Blue night. The reader's system setting chooses between them until the reader uses the switcher, and that choice is remembered. The page works in full with JavaScript off; the three scripts (switch the palette, copy the email, read the commit graph) are additions.
 
 It refuses the developer-portfolio arrangement of hero, project cards and skill badges.
 
@@ -129,39 +129,39 @@ It refuses the developer-portfolio arrangement of hero, project cards and skill 
 - One text column (37rem) with section heads hanging in a 10rem left margin on wide screens.
 - Instrument Serif for the name only; Hyperlegible Sans for all other text.
 - Upright for the record, italic for section heads and asides.
-- One coloured mark per palette: cobalt in light, persimmon in dark.
+- One hue of blue for paper and ink, and one mark per palette: red in light, coral in dark.
 - Flat paper. Hairlines divide; nothing is boxed or carded.
 - Two weights, 400 and 700.
 - Plain HTML first; motion and scripting are optional extras.
 
 ## Colors
 
-Two palettes chosen by Harry in the type lab: near-neutral graphite on white paper with a cobalt mark, and pale ink on deep indigo with a persimmon mark. The CSS custom properties keep one set of names (`--paper`, `--ink`, `--pencil` and so on); the `-dark` tokens above are the same properties under `prefers-color-scheme: dark` or `data-theme="dark"` on the root. The stylesheet declares the Night shift values in both of those blocks, and the two must stay identical. OKLCH is the source of truth.
+Two palettes tuned by Harry himself in the type lab's colour tab; the values are his decisions. Both are built on one key hue, blue (260), for the paper, the ink and every structural tone, with the mark at hue 20. Blue ink, the light palette, is saturated blue ink on near-white paper with a red mark. Blue night, the dark palette, is pale blue ink on near-black navy with a coral mark. The CSS custom properties keep one set of names (`--paper`, `--ink`, `--pencil` and so on); the `-dark` tokens above are the same properties under `prefers-color-scheme: dark` or `data-theme="dark"` on the root. The stylesheet declares the Blue night values in both of those blocks, and the two must stay identical. OKLCH is the source of truth.
 
 ### Primary
-- **Cobalt Mark** (`pencil`): link underlines, list and disclosure markers, the focus ring, the caret, form accent, today's dot on the commit graph and the dot under the pointer. Measures 4.9:1 on paper, so it is safe for marks and large glyphs.
-- **Cobalt Ink** (`pencil-ink`): the text colour a link takes on hover, and the "Copied" confirmation. 7.9:1 on paper.
-- **Cobalt Wash** (`pencil-wash`): text selection background only.
-- **Persimmon Mark** (`pencil-dark`): the same jobs as the cobalt mark in Night shift. 6.9:1 on the indigo paper.
-- **Persimmon Ink** (`pencil-ink-dark`): hover and confirmation text in Night shift. 9.5:1.
-- **Persimmon Wash** (`pencil-wash-dark`): selection background in Night shift.
+- **Red Mark** (`pencil`): link underlines, list and disclosure markers, the focus ring, the caret, form accent, today's dot on the commit graph and the dot under the pointer. Measures 4.9:1 on paper, so it is safe for marks and large glyphs.
+- **Deep Red** (`pencil-ink`): the text colour a link takes on hover, and the "Copied" confirmation. 7.6:1 on paper.
+- **Red Wash** (`pencil-wash`): text selection background only. Selected text is set in the ink, which measures 7.5:1 on the wash.
+- **Coral Mark** (`pencil-dark`): the same jobs as the red mark in Blue night. 7.1:1 on the navy paper.
+- **Pale Coral** (`pencil-ink-dark`): hover and confirmation text in Blue night. 10.2:1.
+- **Coral Wash** (`pencil-wash-dark`): selection background in Blue night. The ink measures 9.2:1 on it.
 
 ### Neutral
-- **White Paper** (`paper`, renders #fafafa): the page. Also the `theme-color` for light.
-- **Graphite Ink** (`ink`): all primary text, entry names, link text at rest, active commit dots. 16.6:1 on paper.
-- **Soft Graphite** (`ink-soft`): dates, roles, asides, notes, captions, margin heads, month labels, the copy control at rest. 7.5:1 on paper.
+- **Near-White Paper** (`paper`, renders #fafcff): the page, with a trace of the blue in it. Also the `theme-color` for light.
+- **Blue Ink** (`ink`): all primary text, entry names, link text at rest, active commit dots. A saturated blue, not a near-black. 9.2:1 on paper.
+- **Soft Blue Ink** (`ink-soft`): dates, roles, asides, notes, captions, margin heads, month labels, the copy control at rest. 4.58:1 on paper, just above the 4.5 floor, so it has no headroom: it sits on the paper only, and it cannot be lightened.
 - **Hairline** (`hairline`): the 1px rule above every section and the footer; the scrollbar thumb.
 - **Rest** (`rest`): commit-graph dots for days with no contributions.
 - **Frame** (`frame`): waiting tiles, the ground behind a photo while it loads, and the round ground under the theme switcher on hover.
-- **Indigo Paper** (`paper-dark`, renders #0f1526): the Night shift page and its `theme-color`.
-- **Pale Ink** (`ink-dark`): primary text in Night shift. 14.8:1.
-- **Soft Pale Ink** (`ink-soft-dark`): secondary text in Night shift. 8.2:1.
-- **Indigo Hairline, Rest and Frame** (`hairline-dark`, `rest-dark`, `frame-dark`): the same three structural roles, tinted toward the paper's indigo.
+- **Navy Paper** (`paper-dark`, renders #000014): the Blue night page and its `theme-color`.
+- **Pale Blue Ink** (`ink-dark`): primary text in Blue night. 12.7:1.
+- **Soft Pale Blue Ink** (`ink-soft-dark`): secondary text in Blue night. 6.0:1.
+- **Navy Hairline, Rest and Frame** (`hairline-dark`, `rest-dark`, `frame-dark`): the same three structural roles, in darker steps of the same blue.
 
 ### Named Rules
-**The One Mark Rule.** Each palette has exactly one hue, the pencil. It draws lines, dots, markers and rings. It never fills a block, never backs a button and never sets running text. Text only takes the pencil's ink shade as a response: on hover, or to confirm a copy.
+**The One Mark Rule.** Each palette has exactly one accent, the pencil, at hue 20 against the blue of everything else. It draws lines, dots, markers and rings. It never fills a block, never backs a button and never sets running text. Text only takes the pencil's ink shade as a response: on hover, or to confirm a copy.
 
-**The Covers Bring the Colour Rule.** Beyond the mark, colour belongs to content: album covers and photographs. The interface around them stays graphite or indigo so the covers are the only saturated things on the page.
+**The Covers Bring the Colour Rule.** The page is one hue of blue (260) plus one red mark. Every other colour belongs to content: album covers and photographs are the only things on the page that are neither.
 
 **The Reader's Setting Rule.** The palette follows `prefers-color-scheme` until the reader uses the switcher; after that their saved choice wins, in either direction. Every colour token has a value in both palettes; a new token is not finished until it has both.
 
@@ -200,7 +200,7 @@ One centred page, 52rem at most (10rem margin column + 2.5rem gutter + 37rem mea
 - **Below 30rem:** the commit graph stacks into two half-years so a day stays big enough to touch, and an entry's date drops under its name.
 - **Rhythm:** entries are 2rem apart; a role line or first paragraph sits 0.45rem under its entry head; list items 0.4rem apart; gallery gaps are 0.75rem, opening to 1.75rem by 1.5rem for albums on wide screens.
 - **The theme switcher** has no place of its own: it is the dot of the "i" in the name. Where the browser cannot anchor it there, or the display face has not loaded, it falls back to the page's top right corner (0.75rem down, 0.5rem in).
-- **Print:** this is a resume, so print is a first-class layout. Pure black ink on white, soft text #444, hairlines #ccc, the mark #1f4fd6, body at 10.5pt, sections 1.5rem apart, no page padding. The copy control, skip link, graph readout, placeholder notes and any section still waiting for content are removed, and so is the theme switcher. Entries, the graph, albums and photos never break across pages.
+- **Print:** this is a resume, so print is a first-class layout. Pure black ink on white, soft text #444, hairlines #ccc, the mark #a70029, body at 10.5pt, sections 1.5rem apart, no page padding. The copy control, skip link, graph readout, placeholder notes and any section still waiting for content are removed, and so is the theme switcher. Entries, the graph, albums and photos never break across pages.
 
 ### Named Rules
 **The One Left Edge Rule.** Wide screens have two left edges and no more: the page edge (name, hairlines, margin heads, wide figures) and the text edge (everything read). New content aligns to one of them.
@@ -210,7 +210,7 @@ One centred page, 52rem at most (10rem margin column + 2.5rem gutter + 37rem mea
 Flat. The page is one sheet of paper with no surfaces above it: no cards, panels, sticky bars or overlays. Structure is carried by hairlines and by space. The single exception is a real album cover, which is an object lying on the page and casts a small contact shadow.
 
 ### Shadow Vocabulary
-- **Cover shadow** (`box-shadow: 0 1px 2px var(--cover-shadow), 0 10px 22px -14px var(--cover-shadow-deep)`): under album cover images only. The shadow colours are the ink at 14% and 45% alpha in light, and a near-black indigo at 50% and 80% in Night shift. A linked cover lifts 3px on hover over 0.35s.
+- **Cover shadow** (`box-shadow: 0 1px 2px var(--cover-shadow), 0 10px 22px -14px var(--cover-shadow-deep)`): under album cover images only. The shadow colours are a dark blue at 14% and 45% alpha in light, and a near-black blue at 55% and 85% in Blue night. A linked cover lifts 3px on hover over 0.35s.
 
 ### Named Rules
 **The Flat Page Rule.** Only an album cover image casts a shadow. Placeholder tiles, photos, text and controls do not.
@@ -235,7 +235,7 @@ The only labelled button on the page, and one of its two icon marks.
 - **States:** ink on hover; on success the label reads "Copied" in the pencil's ink shade for 2.4s; on failure it says so in words. Hidden until script and the clipboard are available.
 
 ### Theme switcher
-The dot of the "i" in "Nicholls". It shows the palette in use: a sun by day, a crescent moon in Night shift.
+The dot of the "i" in "Nicholls". It shows the palette in use: a sun by day, a crescent moon in Blue night.
 - **Style:** a solid icon in the name's own ink, `max(0.24em, 0.875rem)` across, measured in the display size. The letter's real dot is clipped away at 0.28em and the icon is anchored to the letter (CSS anchor positioning), centred 0.1825em below the top of the line. These numbers are Instrument Serif's and must be re-measured if the display face changes. An invisible 2.75rem square around the dot is the touch target. The moon is mirrored so its heavy side faces the "c", clear of the N's serif.
 - **States:** on hover the icon takes the pencil colour and turns (the sun 45 degrees, the moon 24) over 0.5s. The icon's size and position are rounded to whole pixels and it stays on its own layer (`will-change: rotate`), so it does not snap when the turn ends; keep both if the positioning changes. Focus uses the shared pencil ring. Its accessible name and tooltip say "Switch to dark mode" or "Switch to light mode".
 - **Fallback:** the script adds `name-ready` to the root only when anchor positioning is supported and Instrument Serif has loaded. Otherwise the letter keeps its dot and the same icon sits in a 2.75rem round button at the page's top right corner, in soft ink, with the frame colour filling the circle on hover.
@@ -261,7 +261,7 @@ A year of real GitHub contributions as a field of dots, one per day.
 
 ### Albums
 - **Grid:** three columns, four from 56rem.
-- **Real tile:** a square cover with the 2px radius and the cover shadow, a bold title and a soft-ink artist under it at the small size (line-height 1.35). An album without cover art shows a square in a pale tint of one of six rotating hues (268, 40, 150, 320, 95, 210).
+- **Real tile:** a square cover with the 2px radius and the cover shadow, a bold title and a soft-ink artist under it at the small size (line-height 1.35). An album without cover art shows a square in a low-chroma tint of one of six rotating hues (268, 40, 150, 320, 95, 210): pale in Blue ink, deep in Blue night.
 - **Waiting state:** an italic soft-ink note, then one row of blank square tiles in the frame colour: three on narrow screens, four on wide.
 
 ### Photos
@@ -278,7 +278,7 @@ Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused
 - **Do** set new reading text in Hyperlegible Sans at 1rem and 1.6, inside the 37rem measure.
 - **Do** open every section with the 1px hairline and a hanging italic head; let space and the hairline do the dividing.
 - **Do** use the pencil for marks only: underlines, markers, the focus ring, a highlighted dot.
-- **Do** give every new colour token a Graphite and cobalt value and a Night shift value, and check text against the measured floor (soft ink is 7.5:1 in light, 8.2:1 in dark).
+- **Do** give every new colour token a Blue ink value and a Blue night value, and check text against the measured floor (soft ink is 4.58:1 in light, which leaves no headroom above 4.5, and 6.0:1 in dark).
 - **Do** use italic soft ink for anything said in passing, and upright ink for the record.
 - **Do** use lining tabular figures wherever numbers or dates line up.
 - **Do** make every enhancement optional: content in the HTML in reading order, scripted states added on top, motion inside `prefers-reduced-motion: no-preference`.
@@ -289,10 +289,10 @@ Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused
 - **Don't** use Instrument Serif anywhere but the name.
 - **Don't** add cards, boxes, panels, borders or background fills around content.
 - **Don't** add icons beyond the two the page has: the copy mark and the switcher's moon and sun.
-- **Don't** add a second hue to the interface, or use the pencil as a fill or for running text.
+- **Don't** add a third hue to the interface (blue at 260 for paper and ink, the pencil at 20 for marks), or use the pencil as a fill or for running text.
 - **Don't** add shadows to anything but an album cover image.
 - **Don't** add a weight other than 400 and 700, or bold a phrase inside a paragraph.
 - **Don't** build the developer-portfolio arrangement: a hero, project cards, skill badges.
 - **Don't** dress the page in a governing metaphor.
-- **Don't** force a palette. The system setting decides until the reader uses the switcher, and Night shift's values are kept identical in both places the stylesheet declares them.
+- **Don't** force a palette. The system setting decides until the reader uses the switcher, and Blue night's values are kept identical in both places the stylesheet declares them.
 - **Don't** put content behind script, hover or an animation that must finish before it can be read.
