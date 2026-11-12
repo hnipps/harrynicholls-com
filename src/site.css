@@ -669,12 +669,20 @@ h3 {
 
 /* ---------- Albums ---------- */
 
+/* Two across on a phone, four from there up, so a full shelf never ends on a stray cover. */
 .albums {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
   padding: 0;
   list-style: none;
+}
+
+@media (min-width: 30rem) {
+  .albums {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem 0.875rem;
+  }
 }
 
 .album a {

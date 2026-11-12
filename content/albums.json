@@ -1,74 +1,98 @@
 [
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "10,000 Days",
+    "artist": "Tool",
+    "cover": "/albums/tool-10-000-days.jpg",
+    "url": "https://music.apple.com/ca/album/10-000-days/1474250650"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "The Ends, Never Ends",
+    "artist": "Joe James",
+    "cover": "/albums/joe-james-the-ends-never-ends.jpg",
+    "url": "https://music.apple.com/ca/album/the-ends-never-ends/6770642298"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Untrue",
+    "artist": "Burial",
+    "cover": "/albums/burial-untrue.jpg",
+    "url": "https://music.apple.com/ca/album/untrue/893175779"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Gemini Rights",
+    "artist": "Steve Lacy",
+    "cover": "/albums/steve-lacy-gemini-rights.jpg",
+    "url": "https://music.apple.com/ca/album/gemini-rights/6788150539"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "ATLiens",
+    "artist": "Outkast",
+    "cover": "/albums/outkast-atliens.jpg",
+    "url": "https://music.apple.com/ca/album/atliens/298566410"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Purple",
+    "artist": "Stone Temple Pilots",
+    "cover": "/albums/stone-temple-pilots-purple.jpg",
+    "url": "https://music.apple.com/ca/album/purple-2019-remaster/1483792702"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Crush",
+    "artist": "Floating Points",
+    "cover": "/albums/floating-points-crush.jpg",
+    "url": "https://music.apple.com/ca/album/crush/1475361065"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Remain in Light",
+    "artist": "Talking Heads",
+    "cover": "/albums/talking-heads-remain-in-light.jpg",
+    "url": "https://music.apple.com/ca/album/remain-in-light/300948043"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Hoodies All Summer",
+    "artist": "Kano",
+    "cover": "/albums/kano-hoodies-all-summer.jpg",
+    "url": "https://music.apple.com/ca/album/hoodies-all-summer/1472208568"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Frances the Mute",
+    "artist": "The Mars Volta",
+    "cover": "/albums/the-mars-volta-frances-the-mute.jpg",
+    "url": "https://music.apple.com/ca/album/frances-the-mute/1443080465"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Currents",
+    "artist": "Tame Impala",
+    "cover": "/albums/tame-impala-currents.jpg",
+    "url": "https://music.apple.com/ca/album/currents/1440838039"
   },
   {
-    "title": "",
-    "artist": "",
-    "cover": "",
-    "url": ""
+    "title": "Fantasy Black Channel",
+    "artist": "Late of the Pier",
+    "cover": "/albums/late-of-the-pier-fantasy-black-channel.jpg",
+    "url": "https://music.apple.com/ca/album/fantasy-black-channel/691530447"
+  },
+  {
+    "title": "Kasabian",
+    "artist": "Kasabian",
+    "cover": "/albums/kasabian-kasabian.jpg",
+    "url": "https://music.apple.com/ca/album/kasabian/254328852"
+  },
+  {
+    "title": "Stadium Arcadium",
+    "artist": "Red Hot Chili Peppers",
+    "cover": "/albums/red-hot-chili-peppers-stadium-arcadium.jpg",
+    "url": "https://music.apple.com/ca/album/stadium-arcadium/945562992"
+  },
+  {
+    "title": "Limbo, Panto",
+    "artist": "Wild Beasts",
+    "cover": "/albums/wild-beasts-limbo-panto.jpg",
+    "url": "https://music.apple.com/ca/album/limbo-panto/282134228"
+  },
+  {
+    "title": "Dummy",
+    "artist": "Portishead",
+    "cover": "/albums/portishead-dummy.jpg",
+    "url": "https://music.apple.com/ca/album/dummy/1440653096"
   }
 ]

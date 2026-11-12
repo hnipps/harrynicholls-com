@@ -260,7 +260,8 @@ A year of real GitHub contributions as a field of dots, one per day.
 - **Text equivalent:** the figure has a spoken summary, a caption with the bold total and the busiest day, and a disclosed month-by-month table with right-aligned tabular figures.
 
 ### Albums
-- **Grid:** three columns, four from 56rem.
+- **Grid:** two columns on a phone, four from 30rem, so a shelf of sixteen never ends on a stray cover. Add or remove albums in fours where possible.
+- **Content:** sixteen albums chosen by Harry, in `content/albums.json`. Covers are 600px JPEGs in `src/albums/`, fetched from Apple's catalogue by `scripts/fetch-album-art.py`; each cover links to the album on Apple Music.
 - **Real tile:** a square cover with the 2px radius and the cover shadow, a bold title and a soft-ink artist under it at the small size (line-height 1.35). An album without cover art shows a square in a low-chroma tint of one of six rotating hues (268, 40, 150, 320, 95, 210): pale in Blue ink, deep in Blue night.
 - **Waiting state:** an italic soft-ink note, then one row of blank square tiles in the frame colour: three on narrow screens, four on wide.
 

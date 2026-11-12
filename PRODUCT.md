@@ -35,7 +35,8 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
 - A stylized commit graph is built from real GitHub contributions by a scheduled GitHub Action, so the deployed page stays plain HTML.
 - Selected work lists ev.energy, Restaurant Brands International, SpotHero, Rangle.io and Northstar Robotics. The Flyfish Club and Seed Club contracts, the consulting years and education fold into one "Earlier" entry.
 - Side projects are the ones under Projects on Harry's resume: gitrove, Crosscheck and Recommender. The other case studies stay in `src/portfolio.html`.
-- Undecided: which albums and photos. Both sections ship as placeholders until Harry fills `content/albums.json` and `content/photos.json`.
+- Albums: sixteen chosen by Harry, listed in `content/albums.json`, each with its cover and a link to Apple Music.
+- Undecided: which photos. That section ships as a placeholder until Harry fills `content/photos.json`.
 
 ## Brand Commitments
 

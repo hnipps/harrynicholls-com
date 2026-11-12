@@ -10,7 +10,9 @@ One entry per record, in the order they should appear.
 { "title": "Album title", "artist": "Artist", "cover": "/albums/album-title.jpg", "url": "https://..." }
 ```
 
-- `cover` is a square image saved under `src/albums/`. 600px wide is plenty.
+- To add an album, add an entry with just `title` and `artist` and run `python3 scripts/fetch-album-art.py`. It finds the album in Apple's catalogue, saves the cover to `src/albums/` and fills in `cover` and `url` (the Apple Music page). It leaves albums that already have a cover alone.
+- `cover` is a square image saved under `src/albums/`. 600px wide is plenty. You can also add one by hand.
+- The gallery is four across, so it looks best with a multiple of four.
 - `url` is optional. With one, the cover links out.
 - Entries with an empty `title` are skipped. While every entry is empty, the section shows a "covers to come" note and one row of blank tiles.
 
