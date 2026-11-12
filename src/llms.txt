@@ -4,11 +4,24 @@
 
 Senior software engineer and technical leader with over 10 years' experience designing, building and shipping software. Works in TypeScript, React, Node.js, Python and Go, on PostgreSQL and SQLite. Builds LLM agents, MCP servers, agent gateways and agentic CI workflows, and uses formal methods (Dafny, Lean 4) to verify AI-generated code.
 
+The home page, https://harrynicholls.com/, is his resume as plain HTML: selected work, side projects, a year of GitHub contributions, writing and contact.
+
+## Work
+
+- Senior Product Engineer, [ev.energy](https://ev.energy/), remote, April 2024 to present. Smart charging for EVs. Owns data-heavy workflows end to end and builds the company's internal AI tooling: an agent platform, five MCP servers, and LLM code-review agents running in 12 repos.
+- Tech Lead, Restaurant Brands International (Tim Hortons), Toronto, February 2023 to April 2024. Led eight engineers on the Tims app, used by more than two million people a day.
+- Senior Engineer, Front End, SpotHero, Toronto, March 2020 to July 2021.
+- Software Developer, Rangle.io, Toronto, August 2018 to March 2020.
+- Software Engineer and Project Lead, Northstar Robotics, Winnipeg area, September 2016 to July 2018.
+- Earlier: contract work for VCR Group (project lead, Flyfish Club launch) and Seed Club; consultant at BCS Consulting and Sapient Global Markets.
+- Education: MChem, First Class Honours, University of Bath, 2009 to 2013.
+
 ## Projects
 
 - [gitrove](https://gitrove.com): Daily digest of your GitHub network. Go and PostgreSQL backend, Qwik City frontend.
 - [Crosscheck](https://github.com/nicholls-inc/crosscheck): Claude Code plugin for formally verifying AI-generated code with Dafny and Lean 4, plus a contract graph verifier for Python.
-- [Portfolio](https://harrynicholls.com/portfolio.html): Case studies for gitrove, Crosscheck, opsdeck, GoHome and Covered, with tech stacks and screenshots.
+- [Recommender](https://harrynicholls.com/portfolio.html#recommender): Personal film and TV recommender. A nightly coding agent proposes model changes, which ship only if they beat the live model on hidden tests.
+- [Portfolio](https://harrynicholls.com/portfolio.html): Case studies for gitrove, Crosscheck, Recommender, opsdeck, GoHome and LLM Cover Letters, with tech stacks and screenshots.
 
 ## Profiles
 

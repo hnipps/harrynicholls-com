@@ -1,0 +1,645 @@
+/* harrynicholls.com home page.
+   One column, one typeface, one ink. Colour arrives with the album covers. */
+
+@font-face {
+  font-family: "Literata";
+  src: url("/fonts/literata-roman.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Literata";
+  src: url("/fonts/literata-italic.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Blue-black ink on cool white paper, with a persimmon pencil for marks. */
+  --paper: oklch(97.8% 0.006 255);
+  --ink: oklch(27% 0.075 268);
+  --ink-soft: oklch(44% 0.055 268);
+  --hairline: oklch(87% 0.018 265);
+  --rest: oklch(83% 0.03 265);
+  --frame: oklch(92.5% 0.012 265);
+  --pencil: oklch(64% 0.19 40);
+  --pencil-ink: oklch(46% 0.15 40);
+  --pencil-wash: oklch(92% 0.055 55);
+
+  --margin-col: 10rem;
+  --gutter: 2.5rem;
+  --measure: 37rem;
+
+  --text: 1.0625rem;
+  --small: 0.9375rem;
+  --lede: 1.375rem;
+  --display: clamp(2.75rem, 1.6rem + 5vw, 4.25rem);
+  --leading: 1.62;
+
+  color-scheme: light;
+  accent-color: var(--pencil);
+  scrollbar-color: var(--hairline) var(--paper);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Literata", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: var(--text);
+  line-height: var(--leading);
+  font-optical-sizing: auto;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-kerning: normal;
+  caret-color: var(--pencil);
+}
+
+::selection {
+  background: var(--pencil-wash);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--pencil);
+  text-decoration-thickness: 0.085em;
+  text-underline-offset: 0.22em;
+  transition: text-decoration-thickness 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s;
+}
+
+a:hover {
+  color: var(--pencil-ink);
+  text-decoration-thickness: 0.17em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--pencil);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1.25rem;
+  top: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  transform: translateY(-120%);
+}
+
+.skip-link:focus,
+.skip-link:hover {
+  transform: translateY(0.75rem);
+  color: var(--paper);
+}
+
+.page {
+  max-width: calc(var(--margin-col) + var(--gutter) + var(--measure) + 2.5rem);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 9vh, 6.5rem) 1.25rem 4rem;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+/* ---------- Header ---------- */
+
+h1 {
+  font-size: var(--display);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+}
+
+.lede {
+  margin-top: 1.75rem;
+  font-size: var(--lede);
+  line-height: 1.45;
+}
+
+.intro p + p {
+  margin-top: 0.9rem;
+}
+
+.intro p {
+  text-wrap: pretty;
+}
+
+.reach {
+  margin-top: 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.reach li + li {
+  margin-top: 0.3rem;
+}
+
+.reach .aside {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.copy {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: -0.55rem 0 -0.55rem 0.35rem;
+  padding: 0.55rem 0.5rem;
+  border: 0;
+  background: none;
+  color: var(--ink-soft);
+  font: inherit;
+  font-style: italic;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.copy svg {
+  width: 0.95em;
+  height: 0.95em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.copy:hover {
+  color: var(--ink);
+}
+
+.copy.is-done {
+  color: var(--pencil-ink);
+}
+
+/* ---------- Sections ---------- */
+
+.section,
+.colophon {
+  margin-top: 3.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--hairline);
+}
+
+h2 {
+  margin-bottom: 1.1rem;
+  font-size: var(--lede);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: var(--text);
+  font-weight: 650;
+  line-height: var(--leading);
+}
+
+.entry + .entry {
+  margin-top: 2rem;
+}
+
+.entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 1.5rem;
+}
+
+.entry-head h3 {
+  min-width: 0;
+  text-wrap: balance;
+}
+
+.entry-head .when {
+  flex: none;
+}
+
+.when {
+  color: var(--ink-soft);
+  font-size: var(--small);
+  font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
+}
+
+.role {
+  color: var(--ink-soft);
+}
+
+.entry > p,
+.entry > ul {
+  max-width: var(--measure);
+}
+
+.role + p,
+.entry-head + p:not(.role) {
+  margin-top: 0.45rem;
+}
+
+.entry ul {
+  margin-top: 0.55rem;
+  padding-left: 1.15em;
+}
+
+.entry li {
+  padding-left: 0.2em;
+  text-wrap: pretty;
+}
+
+.entry li + li {
+  margin-top: 0.4rem;
+}
+
+.entry li::marker {
+  color: var(--pencil);
+}
+
+.entry-links {
+  margin-top: 0.45rem;
+  color: var(--ink-soft);
+}
+
+.entry-links a {
+  color: var(--ink);
+}
+
+.entry-links a:hover {
+  color: var(--pencil-ink);
+}
+
+.more {
+  margin-top: 2rem;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+.more a {
+  color: var(--ink);
+}
+
+.note {
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- Commit graph ---------- */
+
+.graph-dots {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  touch-action: pan-y;
+}
+
+.graph-dots circle {
+  fill: var(--ink);
+}
+
+.graph-dots .rest {
+  fill: var(--rest);
+}
+
+.graph-dots .now,
+.graph-dots .is-on {
+  fill: var(--pencil);
+}
+
+.graph-months {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  margin-top: 0.5rem;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.graph-months li {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.graph-readout {
+  min-height: 1.5rem;
+  margin-top: 0.6rem;
+  color: var(--ink-soft);
+  font-size: var(--small);
+  font-style: italic;
+  font-variant-numeric: lining-nums;
+}
+
+.graph figcaption {
+  margin-top: 0.9rem;
+  max-width: var(--measure);
+}
+
+.graph strong {
+  font-weight: 650;
+}
+
+.graph details {
+  margin-top: 0.6rem;
+}
+
+.graph summary {
+  width: fit-content;
+  color: var(--ink-soft);
+  font-style: italic;
+  cursor: pointer;
+}
+
+.graph summary:hover {
+  color: var(--ink);
+}
+
+.graph summary::marker {
+  color: var(--pencil);
+}
+
+.graph table {
+  margin-top: 0.5rem;
+  border-collapse: collapse;
+  font-size: var(--small);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.graph th {
+  padding: 0.12rem 2.5rem 0.12rem 0;
+  font-weight: 400;
+  text-align: left;
+}
+
+.graph thead th {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.graph td {
+  padding: 0.12rem 0;
+  text-align: right;
+}
+
+.graph thead th + th {
+  padding-right: 0;
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .graph-dots g {
+    animation: ink-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(var(--w) * 16ms);
+  }
+
+  @keyframes ink-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  }
+}
+
+/* ---------- Albums ---------- */
+
+.albums {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.album a {
+  display: block;
+  text-decoration: none;
+}
+
+.album .cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+  background: oklch(89.5% 0.03 var(--h));
+}
+
+.album img.cover {
+  box-shadow: 0 1px 2px oklch(27% 0.075 268 / 0.14), 0 10px 22px -14px oklch(27% 0.075 268 / 0.45);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.album a:hover img.cover {
+  transform: translateY(-3px);
+}
+
+.album-title,
+.album-artist {
+  display: block;
+  font-size: var(--small);
+  line-height: 1.35;
+}
+
+.album-title {
+  margin-top: 0.55rem;
+  font-weight: 650;
+}
+
+.album-artist {
+  color: var(--ink-soft);
+}
+
+/* ---------- Photos ---------- */
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: var(--measure);
+  padding: 0;
+  list-style: none;
+}
+
+.photo .frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--frame);
+}
+
+.photo-caption {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+/* ---------- Footer ---------- */
+
+.colophon .mail {
+  font-size: var(--lede);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.colophon .elsewhere {
+  margin-top: 0.75rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.colophon .fine {
+  margin-top: 2.5rem;
+  color: var(--ink-soft);
+  font-size: var(--small);
+}
+
+/* ---------- Narrow screens ---------- */
+
+@media (max-width: 30rem) {
+  .graph-months li:nth-child(even) {
+    display: none;
+  }
+
+  /* Dates drop under the name rather than squeezing it. */
+  .entry-head {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Wide screens: section heads hang in the margin ---------- */
+
+@media (min-width: 56rem) {
+  .masthead,
+  .section,
+  .colophon {
+    display: grid;
+    grid-template-columns: var(--margin-col) minmax(0, 1fr);
+    column-gap: var(--gutter);
+  }
+
+  .masthead > * {
+    grid-column: 2;
+  }
+
+  .masthead > h1 {
+    grid-column: 1 / -1;
+  }
+
+  .section,
+  .colophon {
+    margin-top: 4.5rem;
+    padding-top: 1.5rem;
+  }
+
+  h2 {
+    grid-column: 1;
+    margin-bottom: 0;
+    font-size: var(--text);
+    line-height: var(--leading);
+    color: var(--ink-soft);
+  }
+
+  .body {
+    grid-column: 2;
+  }
+
+  .section.is-wide > h2,
+  .section.is-wide > .body {
+    grid-column: 1 / -1;
+  }
+
+  .section.is-wide > h2 {
+    margin-bottom: 1.1rem;
+  }
+
+  .section.is-wide .in-measure {
+    margin-left: calc(var(--margin-col) + var(--gutter));
+  }
+
+  .albums {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+  }
+
+  .photos {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Print: this is a resume ---------- */
+
+@media print {
+  :root {
+    --paper: #fff;
+  }
+
+  body {
+    font-size: 10.5pt;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  .copy,
+  .skip-link,
+  .graph-readout,
+  .note {
+    display: none !important;
+  }
+
+  .section,
+  .colophon {
+    margin-top: 1.5rem;
+  }
+
+  .entry,
+  .graph,
+  .album,
+  .photo {
+    break-inside: avoid;
+  }
+
+  .graph-dots g {
+    animation: none;
+  }
+}

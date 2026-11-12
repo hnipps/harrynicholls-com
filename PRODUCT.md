@@ -22,8 +22,8 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
 
 ## Operating Context
 
-- Static site. `src/` holds committed build output, built by `scripts/build-portfolio.py`, checked by `scripts/check-links.py`, and synced to S3 by GitHub Actions on push to `main`.
-- The home page replaces the paper-stack experience, which is retired from the deployed site.
+- Static site. `src/` holds committed build output. `scripts/build-home.py` generates the commit graph, albums and photos regions of `src/index.html` from `content/`; `scripts/check-links.py` checks every local reference; GitHub Actions syncs `src/` to S3 on push to `main` and once a day.
+- The home page replaces the earlier personal-letter landing page. The paper-stack experience before it is already retired.
 
 ## Capabilities and Constraints
 
@@ -33,7 +33,9 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
 - An album gallery is a primary personality element. A personal photo album is included and is secondary to the albums.
 - Albums and photos are hand-curated in the repo.
 - A stylized commit graph is built from real GitHub contributions by a scheduled GitHub Action, so the deployed page stays plain HTML.
-- Undecided: which albums and photos (Harry supplies these), and which of the roles under Evidence on Hand appear in selected work.
+- Selected work lists ev.energy, Restaurant Brands International, SpotHero, Rangle.io and Northstar Robotics. The Flyfish Club and Seed Club contracts, the consulting years and education fold into one "Earlier" entry.
+- Side projects are the ones under Projects on Harry's resume: gitrove, Crosscheck and Recommender. The other case studies stay in `src/portfolio.html`.
+- Undecided: which albums and photos. Both sections ship as placeholders until Harry fills `content/albums.json` and `content/photos.json`.
 
 ## Brand Commitments
 
@@ -59,7 +61,7 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
   - Consultant, BCS Consulting and Sapient Global Markets, 2013 to 2016.
 - Education: MChem, First Class Honours, University of Bath, 2009 to 2013.
 - Side projects also include Recommender, a personal film and TV recommender (`src/assets/recommender/`).
-- The resume's per-role bullets carry internal metrics and colleague names. Harry approves which of those go on the public page; do not copy them across wholesale. No phone number on the site.
+- Harry approved publishing any of the resume's per-role detail, metrics included. Colleagues are not named, and there is no phone number on the site.
 - Not on hand, do not fabricate: the album list and cover art; personal photos; testimonials.
 
 ## Product Principles
