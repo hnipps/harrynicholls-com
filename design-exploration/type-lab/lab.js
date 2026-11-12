@@ -83,7 +83,9 @@ const TOKENS = [
 const col = (l, c, h) => ({ l, c, h });
 const PRESETS = {
   blue: ['Blue ink', col(99, 0.005, 260), col(40, 0.2925, 260), col(57, 0.27, 20)],
-  blueNight: ['Blue night', col(8.5, 0.06, 260), col(84, 0.16, 260), col(70, 0.2295, 20)],
+  // The three structural colours are lifted by hand so they show on near-black paper.
+  blueNight: ['Blue night', col(8.5, 0.06, 260), col(84, 0.16, 260), col(70, 0.2295, 20),
+    { hairline: col(26, 0.08, 260), rest: col(31, 0.09, 260), frame: col(20, 0.07, 260) }],
   graphite: ['Graphite and cobalt', col(98.6, 0, 260), col(22, 0.01, 260), col(55, 0.21, 262)],
   ink: ['Ink and persimmon', col(97.8, 0.006, 255), col(27, 0.075, 268), col(64, 0.19, 40)],
   spruce: ['Spruce and brass', col(97.6, 0.008, 150), col(27, 0.05, 165), col(68, 0.13, 80)],
@@ -93,8 +95,8 @@ const PRESETS = {
   blueprint: ['Blueprint', col(40, 0.15, 262), col(97, 0.012, 250), col(87, 0.15, 95)],
 };
 const fromPreset = (id) => {
-  const [, paper, ink, accent] = PRESETS[id];
-  return { paper: { ...paper }, ink: { ...ink }, accent: { ...accent }, harmony: 'free', flip: false, overrides: {}, touched: false };
+  const [, paper, ink, accent, pinned = {}] = PRESETS[id];
+  return { paper: { ...paper }, ink: { ...ink }, accent: { ...accent }, harmony: 'free', flip: false, overrides: structuredClone(pinned), touched: false };
 };
 const SHIPPED = { light: 'blue', dark: 'blueNight' };
 
