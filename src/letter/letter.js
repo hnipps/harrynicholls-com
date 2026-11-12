@@ -1,3 +1,30 @@
+// Links to a story open its question and scroll to it; they work without this too.
+function openStory(hash) {
+  if (!hash || hash === '#') return;
+  const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (!target) return;
+  for (let ancestor = target; ancestor; ancestor = ancestor.parentElement) {
+    if (ancestor.tagName === 'DETAILS') ancestor.open = true;
+  }
+  const story = target.closest('.story');
+  story?.querySelectorAll('details').forEach(details => { details.open = true; });
+  if (target.tagName === 'DETAILS') target.open = true;
+  requestAnimationFrame(() => target.scrollIntoView());
+}
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="#"]');
+  if (link) {
+    const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+    if (target) {
+      event.preventDefault();
+      history.replaceState(null, '', link.hash);
+      openStory(link.hash);
+    }
+  }
+});
+window.addEventListener('hashchange', () => openStory(location.hash));
+openStory(location.hash);
+
 // Styled papers share the native story revealer; bare HTML keeps its own behavior.
 function focusReadingTarget(hash) {
   openStory(hash);

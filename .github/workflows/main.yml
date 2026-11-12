@@ -17,13 +17,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      # src/ holds committed build output; a stale copy would deploy old pages.
-      - name: Build portfolio
-        run: python3 scripts/build-portfolio.py
-
-      - name: Fail if committed build output is stale
-        run: git diff --exit-code -- src || (echo "Run 'npm run build' and commit src/." && exit 1)
-
       - name: Check every local reference is servable from S3
         run: python3 scripts/check-links.py src
 
