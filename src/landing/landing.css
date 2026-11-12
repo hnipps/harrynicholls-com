@@ -69,10 +69,17 @@ a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.2em;text-
 
 .page{max-width:76rem;margin:0 auto;padding:0 var(--gutter)}
 
-/* letter: the greeting hangs in the left margin, on the baseline of the letter's first line */
-.hero{display:grid;grid-template-columns:minmax(max-content,1fr) minmax(0,36rem);column-gap:clamp(1.5rem,4vw,3.5rem);padding:clamp(3.5rem,9vw,7rem) clamp(0rem,9vw,8rem) clamp(2.5rem,5vw,4rem) 0}
-.hero h1{align-self:baseline;font-family:var(--voice);font-weight:400;font-feature-settings:"ss03";font-size:clamp(3.6rem,7vw,6rem);line-height:1;color:var(--signal-text);transform:rotate(-3deg);transform-origin:left bottom;padding-right:.2em;white-space:nowrap}
-.letter{display:grid;gap:1.2rem;max-width:36rem;align-self:baseline}
+/* letter: one word fills the left column, the letter is read in the right.
+   Both share the log's edges, so the hero and the log hang off one axis. */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,36rem);column-gap:clamp(2rem,5vw,5rem);align-items:center;padding:clamp(3.5rem,8vw,6.5rem) 0 clamp(3rem,6vw,5rem)}
+.hero h1{container-type:inline-size;line-height:1}
+.hero h1 span{display:block;width:fit-content;white-space:nowrap}
+/* A: the type says hello, the hand only signs */
+.hero[data-greeting="type"] h1 span{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:-.025em;font-size:31cqi;line-height:.8;margin-left:-.06em}
+/* B: the hand says hello, at poster size */
+.hero[data-greeting="hand"] h1 span{font-family:var(--voice);font-weight:400;font-feature-settings:"ss03";font-size:43cqi;line-height:.9;color:var(--signal-text);transform:rotate(-4deg);transform-origin:left bottom;padding-right:.15em}
+.letter{display:grid;gap:1.2rem;max-width:36rem}
+.letter .sign{justify-self:end;margin-right:clamp(0rem,4vw,3rem)}
 .letter p{text-wrap:pretty}
 .letter .intro{font-size:clamp(1.25rem,2.1vw,1.5rem);line-height:1.42}
 .letter a,.about a,.postscript a,.story a:not(.story-image){text-decoration:none;background:var(--mark);padding:0 .14em;box-shadow:inset 0 -1.5px 0 var(--signal-text);transition:background var(--t-control) var(--ease)}
@@ -173,6 +180,13 @@ a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.2em;text-
 }
 
 /* narrow screens */
+@media (max-width:62rem){
+  /* below this the left column is too thin to hold the word, so it goes on top */
+  .hero{grid-template-columns:minmax(0,1fr);row-gap:clamp(1.75rem,5vw,2.75rem);align-items:start}
+  .hero[data-greeting="type"] h1 span{font-size:min(30cqi,9rem)}
+  .hero[data-greeting="hand"] h1 span{font-size:min(40cqi,10rem)}
+  .letter .sign{margin-right:0}
+}
 @media (max-width:52rem){
   .story-content{grid-template-columns:minmax(0,1fr)}
   .story-content>*,.story-content>.project-metadata{grid-column:1;grid-row:auto}
@@ -183,7 +197,6 @@ a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.2em;text-
 @media (max-width:40rem){
   :root{--rail:2.2rem;--gap:.6rem}
   .about-body{margin-right:0}
-  .hero{grid-template-columns:minmax(0,1fr);row-gap:1.5rem;padding-right:0}
   .entry>summary{grid-template-columns:var(--rail) minmax(0,1fr) 1.25rem;padding:.95rem 0 .85rem}
   .nm{grid-column:2;grid-row:2;text-align:left;white-space:normal}
   .tog{grid-column:3;grid-row:1;align-self:start;margin-top:.45rem}

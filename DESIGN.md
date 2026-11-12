@@ -181,7 +181,7 @@ The system is one hand-written static page: one stylesheet of custom properties,
 - Chroma-free grey ground, near-black ink, 1px ink rules, square corners throughout.
 - Three type voices with fixed jobs: say (Hyperlegible Sans), count (Space Grotesk caps), sign (Casimir Dunmore).
 - Three livery colours with fixed jobs: Signal for state and the hand, Hazard for the highlighter, Track for focus.
-- A handwritten "Hello" in the left margin beside a narrow letter column pushed right, then a full-width log.
+- One word, "Hello", filling the left column beside a narrow letter column on the right, then a full-width log on the same edges.
 - Motion on one axis only: 3px nudges to the right and left-to-right wipes, no bounce.
 - Flat everywhere except one tilted index card, the only object that casts a shadow.
 
@@ -230,7 +230,9 @@ A photocopy: greys with zero chroma for everything structural, and three saturat
 **Character:** One legible grotesque does both the shouting and the reading, in Bold and Regular only. A second, more mechanical grotesque counts and labels in small tracked caps with tabular figures and a slashed zero. A felt-tip hand signs. All four files are self-hosted Latin subsets with `font-display: swap`; the two Hyperlegible weights are preloaded.
 
 ### Hierarchy
-- **Greeting** (hand, 400, `clamp(3.6rem, 7vw, 6rem)`, line-height 1, `"ss03"`, Signal, -3deg from its bottom-left corner, nowrap): "Hello", the page's h1. It hangs in the left margin on the baseline of the letter's first line; at 40rem and below it sits above the letter.
+- **Greeting** ("Hello", the page's h1, sized in `cqi` to fill the left column, centred on the letter; at 62rem and below it sits above the letter). Two treatments, chosen by `data-greeting` on `.hero`, pending a decision:
+  - `type` (default): Hyperlegible Sans 700, uppercase, 31cqi, line-height 0.8, -0.025em, Ink. The type says hello and the hand only signs.
+  - `hand`: Casimir Dunmore 400, `"ss03"`, 43cqi, line-height 0.9, Signal, -4deg from its bottom-left corner.
 - **Headline** (700, `clamp(1.3rem, 2.7vw, 2.05rem)`, 1.12, -0.022em, sentence case, balanced): the question in each log row.
 - **Headline, contact** (700, `clamp(1.45rem, 4.6vw, 3.4rem)`, 1.1, -0.03em): the email address, underlined at 0.07em.
 - **Title** (700, 1.3rem, 1.2, -0.018em): sub-headings inside a story, with 2.4rem above and 0.6rem below.
@@ -252,13 +254,13 @@ A photocopy: greys with zero chroma for everything structural, and three saturat
 
 ## Layout
 
-One centred page, 76rem at most, with a fluid gutter (`clamp(1rem, 3.2vw, 2.5rem)`). Inside it there are two widths of attention. Full width belongs to things that are scanned: the log, the screenshot strip, the contact block. A narrow 36rem column pushed to the right (right margin `clamp(0rem, 9vw, 8rem)`) belongs to things that are read: the letter and About. The greeting takes whatever is left of the letter's row, on its left.
+One centred page, 76rem at most, with a fluid gutter (`clamp(1rem, 3.2vw, 2.5rem)`). Inside it there are two widths of attention. Full width belongs to things that are scanned: the log, the screenshot strip, the contact block. A narrow 36rem column pushed to the right (right margin `clamp(0rem, 9vw, 8rem)`) belongs to things that are read: About. The hero is a two-column grid on the log's edges: the greeting fills the left, the 36rem letter sits flush right, and the signature closes the letter flush right.
 
 The log is a four-column row: a number rail (3.4rem), the question, the project name right-aligned, and a 1.5rem toggle, on a 1rem gap, baseline aligned. Everything that hangs under a row (the story, the postscript) indents by rail plus gap so it lines up with the question, not the number. An open story is a two-column grid: a sticky metadata column (11rem to 15rem, topped with an ink rule) and the text column, with a `clamp(1.5rem, 4vw, 3.5rem)` gutter. Story images cap at 60rem and pair up in an auto-fit grid with a 19rem minimum. The screenshot strip is four equal columns on a 1.25rem gap.
 
 Vertical rhythm is fluid rather than stepped: sections open with `clamp(3.5rem, 8vw, 6.5rem)` of space, the contact block with `clamp(4rem, 9vw, 7.5rem)`. Rows are tight (about 1rem above and below) so six questions read as one list.
 
-Two breakpoints. At 52rem and below the story drops to one column, the metadata column stops sticking, the tech list runs in two columns, and the strip becomes two by two. At 40rem and below the rail narrows to 2.2rem and the gap to 0.6rem, the greeting moves above the letter, the project name moves under its question, the story and postscript lose their indent, and the letter column takes the full width. Print lays every story open and removes the toggles.
+Three breakpoints. At 62rem and below the greeting moves above the letter. At 52rem and below the story drops to one column, the metadata column stops sticking, the tech list runs in two columns, and the strip becomes two by two. At 40rem and below the rail narrows to 2.2rem and the gap to 0.6rem, the project name moves under its question, the story and postscript lose their indent, and the letter column takes the full width. Print lays every story open and removes the toggles.
 
 ## Elevation & Depth
 
