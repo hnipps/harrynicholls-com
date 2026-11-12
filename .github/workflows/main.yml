@@ -41,3 +41,14 @@ jobs:
         run: |
           aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "max-age=0,no-cache,no-store,must-revalidate" --exclude "*.png" --exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --exclude "*.mp4" --exclude ".github/*" --recursive
           aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "public,max-age=63072000" --exclude "*" --include "*.png" --include "*.mp4" --recursive
+
+      - name: Remove objects deleted from src
+        run: |
+          # cp never deletes. Mirror removals so pages dropped from src/ stop being served.
+          # --size-only: the cp passes above already uploaded everything, so nothing is re-uploaded
+          # and cache-control metadata is left alone. Excluded patterns are also protected from
+          # deletion, which is fine: none of them should exist in the bucket.
+          EXCLUDES=(--exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --exclude ".github/*")
+          echo "Objects that will be deleted:"
+          aws s3 sync ./src s3://harrynicholls.com-website/ --delete --size-only --dryrun "${EXCLUDES[@]}" | grep '^(dryrun) delete' || echo "(none)"
+          aws s3 sync ./src s3://harrynicholls.com-website/ --delete --size-only "${EXCLUDES[@]}"
