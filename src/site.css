@@ -684,7 +684,8 @@ h3 {
   .skip-link,
   .graph-readout,
   .note,
-  .is-waiting {
+  .is-waiting,
+  .section:has(.is-waiting) {
     display: none !important;
   }
 

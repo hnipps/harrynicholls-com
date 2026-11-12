@@ -26,3 +26,6 @@ terraform.rc
 .impeccable/review/
 .impeccable/questions/
 .impeccable/build/
+
+# Trial fonts for the type lab: fetched by design-exploration/type-lab/fetch-fonts.sh
+design-exploration/type-lab/fonts/
