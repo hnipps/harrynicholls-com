@@ -70,7 +70,7 @@ def graph(data):
     # Two halves: side by side they read as one year, and on a phone they stack
     # so the dots stay big enough to touch.
     split = math.ceil(len(weeks) / 2)
-    halves, base = [], 0
+    halves, base, previous = [], 0, None
     for part_start, part in ((0, weeks[:split]), (split, weeks[split:])):
         groups = []
         for i, week in enumerate(part):
@@ -86,8 +86,9 @@ def graph(data):
                 dots.append(f'<circle{cls} cx="{cx:g}" cy="{cy:g}" r="{r:.1f}"/>')
             groups.append(f'<g style="--w:{part_start + i}">{"".join(dots)}</g>')
 
-        # Label the half's first week and every week a new month starts in.
-        months, previous = [], None
+        # Label every week a new month starts in. The month carries across the
+        # halves so a month is never labelled twice.
+        months = []
         for i, week in enumerate(part):
             month = date.fromisoformat(week[0]['date'])
             if month.month != previous:
@@ -95,7 +96,7 @@ def graph(data):
                 previous = month.month
         if len(months) > 1 and months[1][0] - months[0][0] < 3:
             months.pop(0)  # a sliver of a month at the left edge would collide with the next label
-        months = [m for m in months if m[0] <= len(part) - 2]  # nor may one overhang the right edge
+        months = [m for m in months if m[0] < len(part)]  # nor may one start in the last column and overhang
 
         halves.append(
             f'<div class="graph-half" style="--weeks:{len(part)}">'

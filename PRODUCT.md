@@ -61,6 +61,7 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
   - Consultant, BCS Consulting and Sapient Global Markets, 2013 to 2016.
 - Education: MChem, First Class Honours, University of Bath, 2009 to 2013.
 - Side projects also include Recommender, a personal film and TV recommender (`src/assets/recommender/`).
+- Figures on the page, each taken from Harry's current resume: support tickets fell 11% after the verification re-architecture; 1,249 tool calls in 30 days, 77% from colleagues; LLM code review in 12 repos with about 1,100 reviews in 30 days; the Tims app has over 2 million daily users, and Harry led 8 engineers on it; FlyfishClub.com generated $16m in NFT sales, built by 4 engineers and 1 designer; Recommender has run about 248 experiments and shipped one; gitrove launched 09/2026.
 - Harry approved publishing any of the resume's per-role detail, metrics included. Colleagues are not named, and there is no phone number on the site.
 - Not on hand, do not fabricate: the album list and cover art; personal photos; testimonials.
 

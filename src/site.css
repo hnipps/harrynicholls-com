@@ -145,6 +145,7 @@ h1 {
 /* Each sentence keeps to its own line when the measure allows it. */
 .lede span {
   display: inline-block;
+  text-wrap: pretty;
 }
 
 .intro p + p {
@@ -450,7 +451,7 @@ h3 {
 /* The year inks in, week by week, when the reader reaches it. The script adds
    these classes; without it the graph is simply there. */
 @media (prefers-reduced-motion: no-preference) {
-  .graph.is-waiting .graph-dots g {
+  .graph.is-pending .graph-dots g {
     opacity: 0;
   }
 
@@ -699,8 +700,8 @@ h3 {
     break-inside: avoid;
   }
 
-  .graph .graph-dots g {
-    animation: none;
-    opacity: 1;
+  .graph.graph .graph-dots g {
+    animation: none !important;
+    opacity: 1 !important;
   }
 }

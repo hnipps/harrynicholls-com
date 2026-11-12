@@ -82,10 +82,10 @@ if (graph) {
   // Ink the year in when the reader reaches it, not at page load where nobody sees it.
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!still && 'IntersectionObserver' in window) {
-    graph.classList.add('is-waiting');
+    graph.classList.add('is-pending');
     const watch = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
-      graph.classList.replace('is-waiting', 'is-inking');
+      graph.classList.replace('is-pending', 'is-inking');
       watch.disconnect();
     }, { threshold: 0.35 });
     watch.observe(graph.querySelector('.graph-year'));
