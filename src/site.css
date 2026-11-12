@@ -335,15 +335,11 @@ h1 {
   white-space: nowrap;
 }
 
-.lede {
+.intro {
   margin-top: 1.5rem;
-  font-size: var(--lede);
-  line-height: 1.42;
 }
 
-/* Each sentence keeps to its own line when the measure allows it. */
-.lede span {
-  display: inline-block;
+.intro p {
   text-wrap: pretty;
 }
 
@@ -351,56 +347,49 @@ h1 {
   margin-top: 0.9rem;
 }
 
-.intro p:not(.lede) {
-  text-wrap: pretty;
-}
-
+/* Contact and profiles: a row of icon links. Each carries its name and address
+   as text, for screen readers, for print and for anyone reading the HTML. */
 .reach {
-  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.125rem;
+  margin: 1.1rem 0 0 -0.75rem;
   padding: 0;
   list-style: none;
 }
 
-.reach li + li {
-  margin-top: 0.3rem;
-}
-
-.reach .aside {
-  font-style: italic;
-  color: var(--ink-soft);
-}
-
-.copy {
-  appearance: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin: -0.55rem 0 -0.55rem 0.35rem;
-  padding: 0.55rem 0.5rem;
-  border: 0;
-  background: none;
-  color: var(--ink-soft);
-  font: inherit;
-  font-style: italic;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.copy svg {
-  width: 0.95em;
-  height: 0.95em;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linejoin: round;
-}
-
-.copy:hover {
+.reach a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
   color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s, background-color 0.2s;
 }
 
-.copy.is-done {
+.reach a:hover {
   color: var(--pencil-ink);
+  background: var(--frame);
+}
+
+.reach svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ---------- Sections ---------- */
@@ -908,7 +897,6 @@ h3 {
     padding: 0;
   }
 
-  .copy,
   .theme-toggle,
   .skip-link,
   .graph-readout,
@@ -933,6 +921,30 @@ h3 {
   .graph.graph .graph-dots g {
     animation: none !important;
     opacity: 1 !important;
+  }
+
+  /* On paper the icon links print as their names and addresses. */
+  .reach {
+    gap: 0 1.25rem;
+    margin-left: 0;
+  }
+
+  .reach a {
+    display: inline;
+    width: auto;
+    height: auto;
+  }
+
+  .reach svg {
+    display: none;
+  }
+
+  .reach .sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip-path: none;
   }
 
   /* On paper the name gets its own dot back. */

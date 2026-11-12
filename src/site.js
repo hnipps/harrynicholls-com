@@ -1,4 +1,4 @@
-// Three small enhancements. The page reads the same without any of them.
+// Two small enhancements. The page reads the same without either.
 
 // Switch between light and dark. Until the reader clicks, the page follows the system.
 const toggle = document.querySelector('.theme-toggle');
@@ -32,28 +32,6 @@ if (toggle) {
   });
   system.addEventListener('change', sync);
   sync();
-}
-
-// Copy the email address.
-const copy = document.querySelector('[data-copy]');
-if (copy && navigator.clipboard) {
-  const label = copy.querySelector('.copy-label');
-  let reset;
-  copy.hidden = false;
-  copy.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(copy.dataset.copy);
-      label.textContent = 'Copied';
-      copy.classList.add('is-done');
-    } catch {
-      label.textContent = 'Could not copy. Select the address instead.';
-    }
-    clearTimeout(reset);
-    reset = setTimeout(() => {
-      label.textContent = 'Copy';
-      copy.classList.remove('is-done');
-    }, 2400);
-  });
 }
 
 // Name the day under the pointer on the commit graph.

@@ -140,7 +140,7 @@ Two palettes tuned by Harry himself in the type lab's colour tab; the values are
 
 ### Primary
 - **Red Mark** (`pencil`): link underlines, list and disclosure markers, the focus ring, the caret, form accent, today's dot on the commit graph and the dot under the pointer. Measures 4.9:1 on paper, so it is safe for marks and large glyphs.
-- **Deep Red** (`pencil-ink`): the text colour a link takes on hover, and the "Copied" confirmation. 7.6:1 on paper.
+- **Deep Red** (`pencil-ink`): the text colour a link or contact icon takes on hover. 7.6:1 on paper.
 - **Red Wash** (`pencil-wash`): text selection background only. Selected text is set in the ink, which measures 7.5:1 on the wash.
 - **Coral Mark** (`pencil-dark`): the same jobs as the red mark in Blue night. 7.1:1 on the navy paper.
 - **Pale Coral** (`pencil-ink-dark`): hover and confirmation text in Blue night. 10.2:1.
@@ -149,7 +149,7 @@ Two palettes tuned by Harry himself in the type lab's colour tab; the values are
 ### Neutral
 - **Near-White Paper** (`paper`, renders #fafcff): the page, with a trace of the blue in it. Also the `theme-color` for light.
 - **Blue Ink** (`ink`): all primary text, entry names, link text at rest, active commit dots. A saturated blue, not a near-black. 9.2:1 on paper.
-- **Soft Blue Ink** (`ink-soft`): dates, roles, asides, notes, captions, margin heads, month labels, the copy control at rest. 4.58:1 on paper, just above the 4.5 floor, so it has no headroom: it sits on the paper only, and it cannot be lightened.
+- **Soft Blue Ink** (`ink-soft`): dates, roles, asides, notes, captions, margin heads, month labels. 4.58:1 on paper, just above the 4.5 floor, so it has no headroom: it sits on the paper only, and it cannot be lightened.
 - **Hairline** (`hairline`): the 1px rule above every section and the footer; the scrollbar thumb.
 - **Rest** (`rest`): commit-graph dots for days with no contributions.
 - **Frame** (`frame`): waiting tiles, the ground behind a photo while it loads, and the round ground under the theme switcher on hover.
@@ -174,7 +174,7 @@ Two palettes tuned by Harry himself in the type lab's colour tab; the values are
 
 ### Hierarchy
 - **Display** (400, clamp(3.25rem, 1.9rem + 6vw, 5.25rem), line-height 1, tracking -0.012em): the name, the page's only `h1`.
-- **Lede** (400, 1.3125rem, line-height 1.42): the first intro paragraph and the footer email address. Each sentence of the lede is kept to its own line where the measure allows.
+- **Lede** (400, 1.3125rem, line-height 1.42): section heads on narrow screens and the footer email address. The intro itself is set at body size, as four short paragraphs 0.9rem apart.
 - **Section head** (400 italic, 1.3125rem, line-height 1.3): `h2` on narrow screens, in ink. From 56rem up it hangs in the margin at body size (1rem, line-height 1.6) in soft ink.
 - **Title** (700, 1rem, line-height 1.6): entry names (`h3`): employers, projects, article titles. Album titles use the same weight at the small size.
 - **Body** (400, 1rem, line-height 1.6): all reading text. Maximum line length is the 37rem measure. Paragraphs and list items use `text-wrap: pretty`; entry names use `balance`.
@@ -185,7 +185,7 @@ Figures are proportional in running text and lining tabular wherever they align:
 ### Named Rules
 **The Serif Is the Name Rule.** Instrument Serif appears once, on the name. No other heading, number or pull-out borrows it.
 
-**The Italic Is the Aside Rule.** Upright type carries the record: names, roles, dates, descriptions. Italic carries everything said in passing: section heads, the asides after each contact link, placeholder notes, photo captions, month labels, the graph readout and the copy control.
+**The Italic Is the Aside Rule.** Upright type carries the record: names, roles, dates, descriptions. Italic carries everything said in passing: section heads, placeholder notes, photo captions, month labels and the graph readout.
 
 **The Two Weights Rule.** Only 400 and 700 exist. Bold marks entry names, album titles and the one total in the commit caption. Emphasis inside a paragraph is not bolded.
 
@@ -195,12 +195,12 @@ One centred page, 52rem at most (10rem margin column + 2.5rem gutter + 37rem mea
 
 - **Below 56rem:** a single column. Each section opens with a 1px hairline, 1.4rem of padding, then its head above its body. Sections sit 3.5rem apart.
 - **From 56rem:** the masthead, every section and the footer become a two-column grid: a 10rem margin column and the text column, 2.5rem apart. Section heads hang in the margin column on the first line of their body. Sections sit 4.5rem apart with 1.5rem of padding under the hairline. List bullets hang in the gutter so text keeps one left edge.
-- **The name** spans both columns, so on wide screens it starts at the page's left edge, in line with the hairlines and the margin heads, while the intro and contact list sit in the text column.
+- **The name** spans both columns, so on wide screens it starts at the page's left edge, in line with the hairlines and the margin heads, while the intro and contact icons sit in the text column.
 - **Wide sections** (the commit graph and the albums) span both columns with their head on top. Prose inside them (the caption, the readout, a placeholder note) is indented back to the text column.
 - **Below 30rem:** the commit graph stacks into two half-years so a day stays big enough to touch, and an entry's date drops under its name.
 - **Rhythm:** entries are 2rem apart; a role line or first paragraph sits 0.45rem under its entry head; list items 0.4rem apart; gallery gaps are 0.75rem, opening to 1.75rem by 1.5rem for albums on wide screens.
 - **The theme switcher** has no place of its own: it is the dot of the "i" in the name. Where the browser cannot anchor it there, or the display face has not loaded, it falls back to the page's top right corner (0.75rem down, 0.5rem in).
-- **Print:** this is a resume, so print is a first-class layout. Pure black ink on white, soft text #444, hairlines #ccc, the mark #a70029, body at 10.5pt, sections 1.5rem apart, no page padding. The copy control, skip link, graph readout, placeholder notes and any section still waiting for content are removed, and so is the theme switcher. Entries, the graph, albums and photos never break across pages.
+- **Print:** this is a resume, so print is a first-class layout. Pure black ink on white, soft text #444, hairlines #ccc, the mark #a70029, body at 10.5pt, sections 1.5rem apart, no page padding. The contact icons print as their names and addresses. The skip link, graph readout, placeholder notes and any section still waiting for content are removed, and so is the theme switcher. Entries, the graph, albums and photos never break across pages.
 
 ### Named Rules
 **The One Left Edge Rule.** Wide screens have two left edges and no more: the page edge (name, hairlines, margin heads, wide figures) and the text edge (everything read). New content aligns to one of them.
@@ -229,11 +229,6 @@ The page's main interactive element, and where the mark is seen most.
 - **In soft-ink lines** (entry links, "more" lines): the link itself returns to full ink so it stands out from the sentence around it.
 - **Album links** carry no underline; the cover is the affordance.
 
-### Copy control
-The only labelled button on the page, and one of its two icon marks.
-- **Style:** no border, no background. A 16-unit outline copy mark (1.5 stroke, no fill, 0.95em) and an italic label in soft ink, sitting inline after the email aside. Padding of 0.55rem by 0.5rem with matching negative block margins gives a touch target without disturbing the line.
-- **States:** ink on hover; on success the label reads "Copied" in the pencil's ink shade for 2.4s; on failure it says so in words. Hidden until script and the clipboard are available.
-
 ### Theme switcher
 The dot of the "i" in "Nicholls". It shows the palette in use: a sun by day, a crescent moon in Blue night.
 - **Style:** a solid icon in the name's own ink, `max(0.24em, 0.875rem)` across, measured in the display size. The letter's real dot is clipped away at 0.28em and the icon is anchored to the letter (CSS anchor positioning), centred 0.1825em below the top of the line. These numbers are Instrument Serif's and must be re-measured if the display face changes. An invisible 2.75rem square around the dot is the touch target. The moon is mirrored so its heavy side faces the "c", clear of the N's serif.
@@ -242,8 +237,12 @@ The dot of the "i" in "Nicholls". It shows the palette in use: a sun by day, a c
 - **Text:** the heading's text is still "Harry Nicholls". The button is a sibling of the heading, not inside it. In print the letter gets its dot back.
 - **Behaviour:** the first click sets the opposite of the current palette on the root and saves it; a small inline script in the head applies a saved choice before first paint, and `theme-color` follows. Hidden without script and in print.
 
-### Contact list
-Each line is a labelled link followed by an italic aside in soft ink that says what the link is for. Lines sit 0.3rem apart. The footer repeats the email at lede size and the profiles as a wrapping row.
+### Contact icons
+A row of five icon links under the intro: email (a `mailto:` link), GitHub, LinkedIn, Brainflow on Substack, and X. There are no labels, asides or copy button.
+- **Style:** solid 1.25rem glyphs in ink, each in a 2.75rem round target, 0.125rem apart. The row is pulled 0.75rem left so the first glyph, not its target, sits on the text edge.
+- **States:** on hover the glyph takes the pencil's ink shade and the frame colour fills the circle, over 0.2s. Focus uses the shared pencil ring.
+- **Text:** every link carries its name and address as visually hidden text ("GitHub: github.com/hnipps"), so screen readers, agents reading the HTML and print all get words. In print the glyphs are dropped and that text is shown.
+- **Footer:** repeats the email at lede size and the profiles as a wrapping row of text links.
 
 ### Entries
 The unit of the resume: a job, a project or an article.
@@ -289,7 +288,7 @@ Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused
 ### Don't:
 - **Don't** use Instrument Serif anywhere but the name.
 - **Don't** add cards, boxes, panels, borders or background fills around content.
-- **Don't** add icons beyond the two the page has: the copy mark and the switcher's moon and sun.
+- **Don't** add icons beyond the ones the page has: the five contact glyphs and the switcher's moon and sun.
 - **Don't** add a third hue to the interface (blue at 260 for paper and ink, the pencil at 20 for marks), or use the pencil as a fill or for running text.
 - **Don't** add shadows to anything but an album cover image.
 - **Don't** add a weight other than 400 and 700, or bold a phrase inside a paragraph.
