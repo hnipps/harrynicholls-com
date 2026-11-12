@@ -1,47 +1,83 @@
 /* harrynicholls.com home page.
-   One column, one typeface, one ink. Colour arrives with the album covers. */
+   One column, a serif for the name and a sans for the reading, one ink.
+   Colour arrives with the album covers. */
 
 @font-face {
-  font-family: "Literata";
-  src: url("/fonts/literata-roman.woff2") format("woff2");
-  font-weight: 300 700;
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif-regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Literata";
-  src: url("/fonts/literata-italic.woff2") format("woff2");
-  font-weight: 300 700;
+  font-family: "Hyperlegible Sans";
+  src: url("/fonts/hyperlegible-sans-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hyperlegible Sans";
+  src: url("/fonts/hyperlegible-sans-italic.woff") format("woff");
+  font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Hyperlegible Sans";
+  src: url("/fonts/hyperlegible-sans-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* Blue-black ink on cool white paper, with a persimmon pencil for marks. */
-  --paper: oklch(97.8% 0.006 255);
-  --ink: oklch(27% 0.075 268);
-  --ink-soft: oklch(44% 0.055 268);
-  --hairline: oklch(87% 0.018 265);
-  --rest: oklch(83% 0.03 265);
-  --frame: oklch(92.5% 0.012 265);
-  --pencil: oklch(64% 0.19 40);
-  --pencil-ink: oklch(46% 0.15 40);
-  --pencil-wash: oklch(92% 0.055 55);
+  /* Graphite and cobalt: graphite ink on white paper, cobalt for marks. */
+  --paper: oklch(98.6% 0 0);
+  --ink: oklch(22% 0.01 260);
+  --ink-soft: oklch(44% 0.012 260);
+  --hairline: oklch(88% 0.004 260);
+  --rest: oklch(83% 0.006 260);
+  --frame: oklch(93.5% 0.004 260);
+  --pencil: oklch(55% 0.21 262);
+  --pencil-ink: oklch(44% 0.2 262);
+  --pencil-wash: oklch(92% 0.05 262);
+  --cover-shadow: oklch(22% 0.01 260 / 0.14);
+  --cover-shadow-deep: oklch(22% 0.01 260 / 0.45);
 
   --margin-col: 10rem;
   --gutter: 2.5rem;
   --measure: 37rem;
 
-  --text: 1.0625rem;
-  --small: 0.9375rem;
-  --lede: 1.375rem;
-  --display: clamp(2.75rem, 1.6rem + 5vw, 4.25rem);
-  --leading: 1.62;
+  --text: 1rem;
+  --small: 0.875rem;
+  --lede: 1.3125rem;
+  --display: clamp(3.25rem, 1.9rem + 6vw, 5.25rem);
+  --leading: 1.6;
 
-  color-scheme: light;
+  color-scheme: light dark;
   accent-color: var(--pencil);
   scrollbar-color: var(--hairline) var(--paper);
+}
+
+/* Night shift: the dark mode. Deep indigo paper, pale ink, a persimmon mark. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: oklch(20% 0.035 268);
+    --ink: oklch(93% 0.015 265);
+    --ink-soft: oklch(75% 0.03 265);
+    --hairline: oklch(34% 0.04 268);
+    --rest: oklch(40% 0.045 268);
+    --frame: oklch(27% 0.035 268);
+    --pencil: oklch(72% 0.17 45);
+    --pencil-ink: oklch(81% 0.13 50);
+    --pencil-wash: oklch(40% 0.09 45);
+    --cover-shadow: oklch(10% 0.03 268 / 0.5);
+    --cover-shadow-deep: oklch(10% 0.03 268 / 0.8);
+  }
 }
 
 *,
@@ -60,11 +96,10 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Literata", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-family: "Hyperlegible Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: var(--text);
   line-height: var(--leading);
-  font-optical-sizing: auto;
-  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-variant-numeric: proportional-nums;
   font-kerning: normal;
   caret-color: var(--pencil);
 }
@@ -130,16 +165,17 @@ figure {
 /* ---------- Header ---------- */
 
 h1 {
+  font-family: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   font-size: var(--display);
-  font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: -0.022em;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.012em;
 }
 
 .lede {
-  margin-top: 1.75rem;
-  font-size: 1.3125rem;
-  line-height: 1.45;
+  margin-top: 1.5rem;
+  font-size: var(--lede);
+  line-height: 1.42;
 }
 
 /* Each sentence keeps to its own line when the measure allows it. */
@@ -223,7 +259,7 @@ h2 {
 
 h3 {
   font-size: var(--text);
-  font-weight: 650;
+  font-weight: 700;
   line-height: var(--leading);
 }
 
@@ -373,7 +409,7 @@ h3 {
   padding: 0;
   list-style: none;
   color: var(--ink-soft);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-style: italic;
   line-height: 1.3;
 }
@@ -398,7 +434,7 @@ h3 {
 }
 
 .graph strong {
-  font-weight: 650;
+  font-weight: 700;
 }
 
 .graph details {
@@ -494,7 +530,7 @@ h3 {
 }
 
 .album img.cover {
-  box-shadow: 0 1px 2px oklch(27% 0.075 268 / 0.14), 0 10px 22px -14px oklch(27% 0.075 268 / 0.45);
+  box-shadow: 0 1px 2px var(--cover-shadow), 0 10px 22px -14px var(--cover-shadow-deep);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -511,7 +547,7 @@ h3 {
 
 .album-title {
   margin-top: 0.55rem;
-  font-weight: 650;
+  font-weight: 700;
 }
 
 .album-artist {
@@ -669,6 +705,12 @@ h3 {
 @media print {
   :root {
     --paper: #fff;
+    --ink: #000;
+    --ink-soft: #444;
+    --hairline: #ccc;
+    --rest: #bbb;
+    --pencil: #1f4fd6;
+    color-scheme: light;
   }
 
   body {

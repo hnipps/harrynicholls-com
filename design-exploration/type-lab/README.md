@@ -8,7 +8,7 @@ python3 scripts/lab-server.py                   # then open http://127.0.0.1:314
 ```
 
 - **Pairings** set all three roles at once. **Mix by role** sets them one at a time: display is the name, text is the reading face, detail is section heads, dates and labels.
-- Text and detail faces are scaled to the same x-height as Literata, so options are compared at the same apparent size.
+- Text and detail faces are scaled to the same x-height as the shipped text face, so options are compared at the same apparent size.
 - **Your own font** takes any `.woff2`, `.otf` or `.ttf` you drop on it. Dropped fonts last until you reload.
 - The choice is kept in the URL, so a link reproduces it. **Copy choice** puts it on the clipboard.
 

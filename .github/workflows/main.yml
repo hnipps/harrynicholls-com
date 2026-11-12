@@ -56,8 +56,8 @@ jobs:
 
       - name: Sync S3 bucket
         run: |
-          aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "max-age=0,no-cache,no-store,must-revalidate" --exclude "*.png" --exclude "*.woff2" --exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --exclude "*.mp4" --exclude ".github/*" --recursive
-          aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "public,max-age=63072000" --exclude "*" --include "*.png" --include "*.woff2" --include "*.mp4" --recursive
+          aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "max-age=0,no-cache,no-store,must-revalidate" --exclude "*.png" --exclude "*.woff2" --exclude "*.woff" --exclude ".git/*" --exclude "terraform/*" --exclude ".DS_Store" --exclude ".gitignore" --exclude "*.mp4" --exclude ".github/*" --recursive
+          aws s3 cp ./src s3://harrynicholls.com-website/ --metadata-directive REPLACE --cache-control "public,max-age=63072000" --exclude "*" --include "*.png" --include "*.woff2" --include "*.woff" --include "*.mp4" --recursive
 
       - name: Remove objects deleted from src
         run: |

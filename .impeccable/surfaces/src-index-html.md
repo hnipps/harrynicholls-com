@@ -19,9 +19,9 @@ Unresolved: the album list, the photo files, and Harry's own wording for the lin
 
 ## Direction contract
 
-THESIS: A resume set like a well-made page of a book. One column, one typeface, one ink. It refuses the developer-portfolio arrangement of hero, project cards and skill badges, and it refuses a governing metaphor.
+THESIS: A resume set like a well-made page. One column, a serif for the name and a sans for the reading, one ink. It refuses the developer-portfolio arrangement of hero, project cards and skill badges, and it refuses a governing metaphor.
 
-OWN-WORLD: Blue-black fountain-pen ink on cool white paper, with a proofreader's persimmon pencil for underlines and marks. Literata throughout, roman for the record and italic for section heads and asides. No cards, no boxes, no icons beyond one copy mark. Colour arrives only with the album covers; until they exist the galleries wait as one row of blank tiles in a single paper tint.
+OWN-WORLD: Chosen by the user in the type lab. Light is Graphite and cobalt: graphite ink on white paper, cobalt for underlines and marks. Dark is Night shift, following the reader's system setting: pale ink on deep indigo, a persimmon mark. The name is set in Instrument Serif; everything else in Hyperlegible Sans, upright for the record and italic for section heads and asides. No cards, no boxes, no icons beyond one copy mark. Colour arrives only with the album covers; until they exist the galleries wait as one row of blank tiles in a single paper tint.
 
 STORY: The reader learns who Harry is in two sentences, sees where he has worked and what he built on his own, then sees a year of real commits, his records and his photos, and knows how to write to him.
 

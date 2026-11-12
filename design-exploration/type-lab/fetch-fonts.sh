@@ -14,6 +14,10 @@ get() { # <file> <url>
 FS="https://cdn.jsdelivr.net/fontsource/fonts"
 RAW="https://raw.githubusercontent.com"
 
+# The page's first typeface, kept for comparison (SIL OFL 1.1)
+get literata-roman.woff2               "https://fonts.gstatic.com/s/literata/v40/or3hQ6P12-iJxAIgLYTwJrUXnTPm.woff2"
+get literata-italic.woff2              "https://fonts.gstatic.com/s/literata/v40/or3nQ6P12-iJxAIgLYT1FrcdmhHkjko.woff2"
+
 # From the Fontsource catalogue (all SIL OFL 1.1)
 get instrument-serif-400.woff2         "$FS/instrument-serif@latest/latin-400-normal.woff2"
 get instrument-serif-400-italic.woff2  "$FS/instrument-serif@latest/latin-400-italic.woff2"

@@ -10,7 +10,8 @@ const F = '/lab/fonts/';
 const face = (name, stack, files, extra = {}) => ({ name, stack, files, italic: false, ...extra });
 
 const FACES = {
-  literata: face('Literata', '"Literata", Georgia, serif', [], { italic: true, note: 'current' }),
+  literata: face('Literata', '"Lab Literata", Georgia, serif', [
+    ['literata-roman.woff2', '300 700'], ['literata-italic.woff2', '300 700', 'italic']], { italic: true }),
 
   // Two pairings of my own
   besley: face('Besley', '"Lab Besley", Georgia, serif', [
@@ -26,7 +27,7 @@ const FACES = {
   saint: face('Saint', '"Lab Saint", Georgia, serif', [['saint-saint-regular.ttf', '400']]),
   hikaru: face('Hikaru Mono', '"Lab Hikaru", ui-monospace, monospace', [['hikaru-mono.otf', '400']]),
   instrumentSerif: face('Instrument Serif', '"Lab Instrument Serif", Georgia, serif', [
-    ['instrument-serif-400.woff2', '400'], ['instrument-serif-400-italic.woff2', '400', 'italic']], { italic: true }),
+    ['instrument-serif-400.woff2', '400'], ['instrument-serif-400-italic.woff2', '400', 'italic']], { italic: true, note: 'current' }),
   redaction: face('Redaction', '"Lab Redaction", Georgia, serif', [
     ['redaction-400.woff2', '400'], ['redaction-400-italic.woff2', '400', 'italic'], ['redaction-700.woff2', '700']], { italic: true }),
   redaction20: face('Redaction 20', '"Lab Redaction 20", Georgia, serif', [['redaction-20-400.woff2', '400']]),
@@ -36,7 +37,7 @@ const FACES = {
   spaceGrotesk: face('Space Grotesk', '"Lab Space Grotesk", system-ui, sans-serif', [['space-grotesk.woff2', '300 700']]),
   hyperlegible: face('Hyperlegible Sans', '"Lab Hyperlegible", system-ui, sans-serif', [
     ['hyperlegible-sans-400.otf', '400'], ['hyperlegible-sans-400-italic.otf', '400', 'italic'],
-    ['hyperlegible-sans-500.otf', '500'], ['hyperlegible-sans-700.otf', '700']], { italic: true }),
+    ['hyperlegible-sans-500.otf', '500'], ['hyperlegible-sans-700.otf', '700']], { italic: true, note: 'current' }),
   haskoy: face('Hasköy', '"Lab Haskoy", system-ui, sans-serif', [
     ['haskoy-400.otf', '400'], ['haskoy-400-italic.otf', '400', 'italic'], ['haskoy-500.otf', '500'], ['haskoy-700.otf', '700']], { italic: true }),
   instrumentSans: face('Instrument Sans', '"Lab Instrument Sans", system-ui, sans-serif', [
@@ -45,7 +46,8 @@ const FACES = {
 };
 
 const PAIRINGS = [
-  ['Literata throughout', 'What the page ships with today.', 'literata', 'literata', 'literata'],
+  ['Instrument Serif + Hyperlegible', 'What the page ships with today.', 'instrumentSerif', 'hyperlegible', 'hyperlegible'],
+  ['Literata throughout', 'The first version: one book serif for everything.', 'literata', 'literata', 'literata'],
   ['Besley + Hanken Grotesk', 'My pick. A sturdy Clarendon for the name, a plain grotesk to read.', 'besley', 'hanken', 'hanken'],
   ['Mona Sans + Monaspace', 'My pick. GitHub’s own faces, next to your GitHub graph.', 'mona', 'mona', 'monaspace'],
   ['Instrument Serif + Sans', 'A tall, sharp display serif over its sibling sans.', 'instrumentSerif', 'instrumentSans', 'instrumentSans'],
@@ -68,7 +70,7 @@ const PALETTES = {
 };
 const TOKENS = ['paper', 'ink', 'ink-soft', 'hairline', 'rest', 'frame', 'pencil', 'pencil-ink', 'pencil-wash'];
 const ROLES = ['display', 'text', 'detail'];
-const DEFAULTS = { display: 'literata', text: 'literata', detail: 'literata', palette: 'ink' };
+const DEFAULTS = { display: 'instrumentSerif', text: 'hyperlegible', detail: 'hyperlegible', palette: 'graphite' };
 
 // ---------- Fonts ----------
 
@@ -137,7 +139,7 @@ for (const role of ROLES) if (!FACES[state[role]]) state[role] = DEFAULTS[role];
 if (!PALETTES[state.palette]) state.palette = DEFAULTS.palette;
 
 // x-height of a face relative to its em, read from the font itself. Text and detail
-// faces are scaled to match Literata's, so every option is compared at the same apparent size.
+// faces are scaled to match the shipped text face, so every option is compared at the same apparent size.
 const probe = document.createElement('canvas').getContext('2d');
 const xHeight = (stack) => {
   probe.font = `200px ${stack}`;
@@ -149,13 +151,15 @@ const apply = async () => {
   const root = document.documentElement;
   for (const role of ROLES) root.style.setProperty(`--lab-${role}`, FACES[state[role]].stack);
   await Promise.all(ROLES.map((role) => document.fonts.load(`16px ${FACES[state[role]].stack}`).catch(() => {})));
-  target ??= xHeight(FACES.literata.stack);
+  target ??= xHeight(FACES[DEFAULTS.text].stack);
   for (const role of ['text', 'detail']) {
-    root.style.setProperty(`--lab-${role}-x`, state[role] === 'literata' ? 'none' : target.toFixed(3));
+    root.style.setProperty(`--lab-${role}-x`, state[role] === DEFAULTS.text ? 'none' : target.toFixed(3));
   }
   const [, scheme, ...values] = PALETTES[state.palette];
   TOKENS.forEach((token, i) => root.style.setProperty(`--${token}`, values[i]));
   root.style.colorScheme = scheme;
+  root.style.setProperty('--cover-shadow', 'rgb(0 0 0 / .16)');
+  root.style.setProperty('--cover-shadow-deep', 'rgb(0 0 0 / .5)');
   root.style.scrollbarColor = `${values[3]} ${values[0]}`;
   try { localStorage.setItem('type-lab', JSON.stringify(state)); } catch { /* private mode */ }
   history.replaceState(null, '', `#lab=${state.display}.${state.text}.${state.detail}.${state.palette}`);
