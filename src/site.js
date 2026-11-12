@@ -15,7 +15,16 @@ if (toggle) {
       for (const meta of document.querySelectorAll('meta[name="theme-color"]')) meta.content = paper[current()];
     }
   };
-  toggle.hidden = false;
+  // The button is the dot of the "i" in the name, but only where the browser can
+  // anchor it there and the display face it was measured for has loaded.
+  const show = () => { toggle.hidden = false; };
+  if (document.fonts && CSS.supports('anchor-name: --tittle')) {
+    document.fonts.load('1em "Instrument Serif"')
+      .then((faces) => { if (faces.length) root.classList.add('name-ready'); })
+      .finally(show);
+  } else {
+    show();
+  }
   toggle.addEventListener('click', () => {
     root.dataset.theme = current() === 'dark' ? 'light' : 'dark';
     try { localStorage.setItem('theme', root.dataset.theme); } catch { /* private mode: lasts for this visit */ }

@@ -150,6 +150,8 @@ let target;
 const apply = async () => {
   const root = document.documentElement;
   for (const role of ROLES) root.style.setProperty(`--lab-${role}`, FACES[state[role]].stack);
+  // The switcher sits on the name's dot only in the face it was measured for.
+  root.classList.toggle('name-ready', state.display === DEFAULTS.display && CSS.supports('anchor-name: --tittle'));
   await Promise.all(ROLES.map((role) => document.fonts.load(`16px ${FACES[state[role]].stack}`).catch(() => {})));
   target ??= xHeight(FACES[DEFAULTS.text].stack);
   for (const role of ['text', 'detail']) {

@@ -199,7 +199,7 @@ One centred page, 52rem at most (10rem margin column + 2.5rem gutter + 37rem mea
 - **Wide sections** (the commit graph and the albums) span both columns with their head on top. Prose inside them (the caption, the readout, a placeholder note) is indented back to the text column.
 - **Below 30rem:** the commit graph stacks into two half-years so a day stays big enough to touch, and an entry's date drops under its name.
 - **Rhythm:** entries are 2rem apart; a role line or first paragraph sits 0.45rem under its entry head; list items 0.4rem apart; gallery gaps are 0.75rem, opening to 1.75rem by 1.5rem for albums on wide screens.
-- **The theme switcher** is the one element placed outside the columns: pinned to the page's top right corner (0.75rem down, 0.5rem in), level with the top padding.
+- **The theme switcher** has no place of its own: it is the dot of the "i" in the name. Where the browser cannot anchor it there, or the display face has not loaded, it falls back to the page's top right corner (0.75rem down, 0.5rem in).
 - **Print:** this is a resume, so print is a first-class layout. Pure black ink on white, soft text #444, hairlines #ccc, the mark #1f4fd6, body at 10.5pt, sections 1.5rem apart, no page padding. The copy control, skip link, graph readout, placeholder notes and any section still waiting for content are removed, and so is the theme switcher. Entries, the graph, albums and photos never break across pages.
 
 ### Named Rules
@@ -235,9 +235,11 @@ The only labelled button on the page, and one of its two icon marks.
 - **States:** ink on hover; on success the label reads "Copied" in the pencil's ink shade for 2.4s; on failure it says so in words. Hidden until script and the clipboard are available.
 
 ### Theme switcher
-A quiet icon button at the page's top right corner.
-- **Style:** a 2.75rem round target with no border and no background at rest, holding a 1.2rem outline icon (1.5 stroke, round caps, no fill) in soft ink. The icon shows the palette a click switches to: a moon in light, a sun in Night shift.
-- **States:** on hover the icon goes to ink and the frame colour fills the circle, over 0.2s. Focus uses the shared pencil ring. Its accessible name and tooltip say "Switch to dark mode" or "Switch to light mode".
+The dot of the "i" in "Nicholls". It shows the palette in use: a sun by day, a crescent moon in Night shift.
+- **Style:** a solid icon in the name's own ink, `max(0.24em, 0.875rem)` across, measured in the display size. The letter's real dot is clipped away at 0.28em and the icon is anchored to the letter (CSS anchor positioning), centred 0.1825em below the top of the line. These numbers are Instrument Serif's and must be re-measured if the display face changes. An invisible 2.75rem square around the dot is the touch target. The moon is mirrored so its heavy side faces the "c", clear of the N's serif.
+- **States:** on hover the icon takes the pencil colour and turns (the sun 45 degrees, the moon 24) over 0.5s. Focus uses the shared pencil ring. Its accessible name and tooltip say "Switch to dark mode" or "Switch to light mode".
+- **Fallback:** the script adds `name-ready` to the root only when anchor positioning is supported and Instrument Serif has loaded. Otherwise the letter keeps its dot and the same icon sits in a 2.75rem round button at the page's top right corner, in soft ink, with the frame colour filling the circle on hover.
+- **Text:** the heading's text is still "Harry Nicholls". The button is a sibling of the heading, not inside it. In print the letter gets its dot back.
 - **Behaviour:** the first click sets the opposite of the current palette on the root and saves it; a small inline script in the head applies a saved choice before first paint, and `theme-color` follows. Hidden without script and in print.
 
 ### Contact list

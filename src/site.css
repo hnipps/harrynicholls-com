@@ -192,6 +192,10 @@ figure {
 
 /* ---------- Light and dark switcher ---------- */
 
+/* A sun by day, a moon by night. By default it is a small icon button in the
+   page's top right corner. Where the browser can anchor it and the display face
+   has loaded, it becomes the dot of the "i" in the name: see "The name's dot". */
+
 .theme-toggle {
   appearance: none;
   position: absolute;
@@ -210,6 +214,10 @@ figure {
   transition: color 0.2s, background-color 0.2s;
 }
 
+.theme-toggle[hidden] {
+  display: none;
+}
+
 .theme-toggle:hover {
   color: var(--ink);
   background: var(--frame);
@@ -218,34 +226,96 @@ figure {
 .theme-toggle svg {
   width: 1.2rem;
   height: 1.2rem;
-  fill: none;
+  fill: currentColor;
   stroke: currentColor;
-  stroke-width: 1.5;
+  stroke-width: 2;
   stroke-linecap: round;
-  stroke-linejoin: round;
+  transition: rotate 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* The icon shows the mode a click switches to: a moon by day, a sun by night. */
-.theme-toggle .sun {
+.theme-toggle .moon {
   display: none;
+  stroke: none;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .sun {
+  :root:not([data-theme="light"]) .theme-toggle .moon {
     display: block;
   }
 
-  :root:not([data-theme="light"]) .theme-toggle .moon {
+  :root:not([data-theme="light"]) .theme-toggle .sun {
     display: none;
   }
 }
 
-:root[data-theme="dark"] .theme-toggle .sun {
+:root[data-theme="dark"] .theme-toggle .moon {
   display: block;
 }
 
-:root[data-theme="dark"] .theme-toggle .moon {
+:root[data-theme="dark"] .theme-toggle .sun {
   display: none;
+}
+
+/* The name's dot. The numbers are Instrument Serif's own, in em: its dot is
+   centred 0.1825em below the top of the line, and the gap between dot and stem
+   is at 0.28em. The script adds .name-ready only once that face has loaded, so
+   a fallback face keeps its real dot and the button stays in the corner. */
+
+.tittle {
+  display: inline-block;
+  anchor-name: --tittle;
+}
+
+@supports (anchor-name: --tittle) {
+  .name-ready .tittle {
+    clip-path: inset(0.28em -0.2em -0.4em -0.2em);
+  }
+
+  .name-ready .theme-toggle {
+    --dot: max(0.24em, 0.875rem);
+    position-anchor: --tittle;
+    top: calc(anchor(top) + 0.1825em - var(--dot) / 2);
+    left: calc(anchor(center) - var(--dot) / 2);
+    right: auto;
+    width: var(--dot);
+    height: var(--dot);
+    font-size: var(--display);
+    color: var(--ink);
+  }
+
+  /* The dot is small; the place to press is not. */
+  .name-ready .theme-toggle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.75rem;
+    height: 2.75rem;
+    translate: -50% -50%;
+  }
+
+  .name-ready .theme-toggle:hover {
+    background: none;
+    color: var(--pencil);
+  }
+
+  .name-ready .theme-toggle svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* The crescent's heavy side faces the low "c", clear of the N's serif. */
+  .name-ready .theme-toggle .moon {
+    scale: -0.9 0.9;
+  }
+
+  .name-ready .theme-toggle:hover .sun {
+    rotate: 45deg;
+  }
+
+  .name-ready .theme-toggle:hover .moon {
+    rotate: 24deg;
+  }
 }
 
 /* ---------- Header ---------- */
@@ -256,6 +326,7 @@ h1 {
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.012em;
+  white-space: nowrap;
 }
 
 .lede {
@@ -843,5 +914,10 @@ h3 {
   .graph.graph .graph-dots g {
     animation: none !important;
     opacity: 1 !important;
+  }
+
+  /* On paper the name gets its own dot back. */
+  .tittle {
+    clip-path: none !important;
   }
 }
