@@ -309,12 +309,10 @@ figure {
     scale: -0.9 0.9;
   }
 
+  /* Only the sun turns on hover. It is symmetric, so it turns in place; a
+     crescent's weight is off-centre, and turning it reads as a jump. */
   .name-ready .theme-toggle:hover .sun {
     rotate: 45deg;
-  }
-
-  .name-ready .theme-toggle:hover .moon {
-    rotate: 24deg;
   }
 }
 
