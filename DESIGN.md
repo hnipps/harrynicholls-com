@@ -242,7 +242,7 @@ A row of five icon links under the intro: email (a `mailto:` link), GitHub, Link
 - **Style:** solid 1.25rem glyphs in ink, each in a 2.75rem round target, 0.125rem apart. The row is pulled 0.75rem left so the first glyph, not its target, sits on the text edge.
 - **States:** on hover the glyph takes the pencil's ink shade and the frame colour fills the circle, over 0.2s. Focus uses the shared pencil ring.
 - **Text:** every link carries its name and address as visually hidden text ("GitHub: github.com/hnipps"), so screen readers, agents reading the HTML and print all get words. In print the glyphs are dropped and that text is shown.
-- **Footer:** the "Contact" section is the page's footer. It shows the email address as text at lede size (the one place the address can be read and selected), then the same icon row without the envelope and with one more glyph, a pilcrow, that links to the colophon. Under it, in small soft ink: "© 2026 Nicholls Inc." The year is written by hand; update it each January.
+- **Footer:** the "Contact" section is the page's footer. It repeats the header's icon row, envelope first, with one more glyph, a pilcrow, that links to the colophon. The email address is not shown as text anywhere on screen; it is in each envelope's hidden label and appears in print. Under it, in small soft ink: "© 2026 Nicholls Inc." The year is written by hand; update it each January.
 
 ### Entries
 The unit of the resume: a job, a project or an article.

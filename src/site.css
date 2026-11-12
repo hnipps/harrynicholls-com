@@ -740,7 +740,7 @@ h3 {
 }
 
 .colophon .reach {
-  margin-top: 0.4rem;
+  margin-top: 0;
 }
 
 .colophon .fine {
@@ -948,6 +948,10 @@ h3 {
 
   .body {
     grid-column: 2;
+  }
+
+  .colophon .reach {
+    margin-top: -0.55rem;
   }
 
   .section.is-wide > h2,
