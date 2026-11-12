@@ -82,6 +82,8 @@ const TOKENS = [
 ];
 const col = (l, c, h) => ({ l, c, h });
 const PRESETS = {
+  blue: ['Blue ink', col(99, 0.005, 260), col(40, 0.2925, 260), col(57, 0.27, 20)],
+  blueNight: ['Blue night', col(8.5, 0.06, 260), col(84, 0.16, 260), col(70, 0.2295, 20)],
   graphite: ['Graphite and cobalt', col(98.6, 0, 260), col(22, 0.01, 260), col(55, 0.21, 262)],
   ink: ['Ink and persimmon', col(97.8, 0.006, 255), col(27, 0.075, 268), col(64, 0.19, 40)],
   spruce: ['Spruce and brass', col(97.6, 0.008, 150), col(27, 0.05, 165), col(68, 0.13, 80)],
@@ -94,7 +96,7 @@ const fromPreset = (id) => {
   const [, paper, ink, accent] = PRESETS[id];
   return { paper: { ...paper }, ink: { ...ink }, accent: { ...accent }, harmony: 'free', flip: false, overrides: {}, touched: false };
 };
-const SHIPPED = { light: 'graphite', dark: 'night' };
+const SHIPPED = { light: 'blue', dark: 'blueNight' };
 
 const HARMONIES = {
   free: ['Free', null, 'The accent hue is whatever you set.'],
@@ -569,7 +571,7 @@ function colourTab(scroll) {
     scroll.append(mirror, el('p', { className: 'hint', style: 'margin-top:6px' }, 'Dark mode is not an inversion. The paper takes the ink’s hue at low lightness, and the accent gets lighter and a little less saturated so it does not glare.'));
   }
 
-  const copy = el('button', { type: 'button' }, 'Copy palette');
+  const copy = el('button', { type: 'button' }, 'Copy both palettes');
   copy.onclick = async () => {
     try { await navigator.clipboard.writeText(exportCss()); copy.textContent = 'Copied'; } catch { copy.textContent = 'Could not copy'; }
   };

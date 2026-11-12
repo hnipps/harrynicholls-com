@@ -35,20 +35,20 @@
 }
 
 :root {
-  /* Graphite and cobalt: graphite ink on white paper, cobalt for marks. */
-  --paper: oklch(98.6% 0 0);
-  --ink: oklch(22% 0.01 260);
-  --ink-soft: oklch(44% 0.012 260);
-  --hairline: oklch(88% 0.004 260);
-  --rest: oklch(83% 0.006 260);
-  --frame: oklch(93.5% 0.004 260);
-  --pencil: oklch(55% 0.21 262);
-  --pencil-ink: oklch(44% 0.2 262);
-  --pencil-wash: oklch(92% 0.05 262);
-  --tint-l: 89.5%;
-  --tint-c: 0.03;
-  --cover-shadow: oklch(22% 0.01 260 / 0.14);
-  --cover-shadow-deep: oklch(22% 0.01 260 / 0.45);
+  /* Blue ink: the light palette. Blue ink on near-white paper, red for marks. */
+  --paper: oklch(99% 0.005 260);
+  --ink: oklch(40% 0.16 260);
+  --ink-soft: oklch(55.9% 0.133 260);
+  --hairline: oklch(89.6% 0.051 260);
+  --rest: oklch(84.8% 0.075 260);
+  --frame: oklch(94.3% 0.027 260);
+  --pencil: oklch(57% 0.229 20);
+  --pencil-ink: oklch(46% 0.186 20);
+  --pencil-wash: oklch(92.5% 0.038 20);
+  --tint-l: 90%;
+  --tint-c: 0.035;
+  --cover-shadow: oklch(25% 0.1 260 / 0.14);
+  --cover-shadow-deep: oklch(25% 0.1 260 / 0.45);
 
   --margin-col: 10rem;
   --gutter: 2.5rem;
@@ -65,41 +65,41 @@
   scrollbar-color: var(--hairline) var(--paper);
 }
 
-/* Night shift: the dark mode. Deep indigo paper, pale ink, a persimmon mark.
+/* Blue night: the dark mode. Pale blue ink on near-black navy, a coral mark.
    It follows the system setting unless the reader has used the switcher, which
    sets data-theme on the root. The two blocks below must stay identical. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: oklch(20% 0.035 268);
-    --ink: oklch(93% 0.015 265);
-    --ink-soft: oklch(75% 0.03 265);
-    --hairline: oklch(34% 0.04 268);
-    --rest: oklch(40% 0.045 268);
-    --frame: oklch(27% 0.035 268);
-    --pencil: oklch(72% 0.17 45);
-    --pencil-ink: oklch(81% 0.13 50);
-    --pencil-wash: oklch(40% 0.09 45);
-    --tint-l: 33%;
-    --tint-c: 0.045;
-    --cover-shadow: oklch(10% 0.03 268 / 0.5);
-    --cover-shadow-deep: oklch(10% 0.03 268 / 0.8);
+    --paper: oklch(8.5% 0.06 260);
+    --ink: oklch(84% 0.08 260);
+    --ink-soft: oklch(63.6% 0.133 260);
+    --hairline: oklch(20.6% 0.076 260);
+    --rest: oklch(26.6% 0.084 260);
+    --frame: oklch(14.5% 0.068 260);
+    --pencil: oklch(70% 0.192 20);
+    --pencil-ink: oklch(79% 0.122 20);
+    --pencil-wash: oklch(28.5% 0.117 20);
+    --tint-l: 24%;
+    --tint-c: 0.06;
+    --cover-shadow: oklch(3% 0.03 260 / 0.55);
+    --cover-shadow-deep: oklch(3% 0.03 260 / 0.85);
   }
 }
 
 :root[data-theme="dark"] {
-  --paper: oklch(20% 0.035 268);
-  --ink: oklch(93% 0.015 265);
-  --ink-soft: oklch(75% 0.03 265);
-  --hairline: oklch(34% 0.04 268);
-  --rest: oklch(40% 0.045 268);
-  --frame: oklch(27% 0.035 268);
-  --pencil: oklch(72% 0.17 45);
-  --pencil-ink: oklch(81% 0.13 50);
-  --pencil-wash: oklch(40% 0.09 45);
-  --tint-l: 33%;
-  --tint-c: 0.045;
-  --cover-shadow: oklch(10% 0.03 268 / 0.5);
-  --cover-shadow-deep: oklch(10% 0.03 268 / 0.8);
+  --paper: oklch(8.5% 0.06 260);
+  --ink: oklch(84% 0.08 260);
+  --ink-soft: oklch(63.6% 0.133 260);
+  --hairline: oklch(20.6% 0.076 260);
+  --rest: oklch(26.6% 0.084 260);
+  --frame: oklch(14.5% 0.068 260);
+  --pencil: oklch(70% 0.192 20);
+  --pencil-ink: oklch(79% 0.122 20);
+  --pencil-wash: oklch(28.5% 0.117 20);
+  --tint-l: 24%;
+  --tint-c: 0.06;
+  --cover-shadow: oklch(3% 0.03 260 / 0.55);
+  --cover-shadow-deep: oklch(3% 0.03 260 / 0.85);
   color-scheme: dark;
 }
 
@@ -882,7 +882,7 @@ h3 {
     --ink-soft: #444;
     --hairline: #ccc;
     --rest: #bbb;
-    --pencil: #1f4fd6;
+    --pencil: #a70029;
     color-scheme: light;
   }
 

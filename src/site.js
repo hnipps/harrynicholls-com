@@ -6,7 +6,7 @@ if (toggle) {
   const root = document.documentElement;
   const system = matchMedia('(prefers-color-scheme: dark)');
   const current = () => root.dataset.theme ?? (system.matches ? 'dark' : 'light');
-  const paper = { light: '#fafafa', dark: '#0f1526' };
+  const paper = { light: '#fafcff', dark: '#000014' };
   const sync = () => {
     const next = current() === 'dark' ? 'light' : 'dark';
     toggle.setAttribute('aria-label', `Switch to ${next} mode`);

@@ -25,7 +25,7 @@ A palette is three chosen colours (paper, ink, accent). The other six theme colo
 - **Value:** lightness, with live contrast ratios against the paper.
 - **See it another way:** greyscale shows value alone; three more views simulate colour blindness. These filter the whole window, the panel included.
 - **Every colour:** a picker for each theme colour. A hand-picked mixed colour stays pinned until you clear it with its x.
-- **Start from** loads a preset into the mode you are editing. **Copy palette** puts both modes on the clipboard as CSS.
+- **Start from** loads a preset into the mode you are editing. **Copy both palettes** puts light and dark together on the clipboard as CSS.
 
 A mode you have not touched is left to the real stylesheet. The first change switches that mode to mixed colours, so the soft ink, hairline and tile colours can shift a little from the hand-tuned shipped values.
 
