@@ -33,7 +33,7 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
 - An album gallery is a primary personality element. A personal photo album is included and is secondary to the albums.
 - Albums and photos are hand-curated in the repo.
 - A stylized commit graph is built from real GitHub contributions by a scheduled GitHub Action, so the deployed page stays plain HTML.
-- Undecided: which albums and photos, and which past roles count as highlights. Harry supplies these.
+- Undecided: which albums and photos (Harry supplies these), and which of the roles under Evidence on Hand appear in selected work.
 
 ## Brand Commitments
 
@@ -48,7 +48,19 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
 - Five project case studies with screenshots: gitrove, Crosscheck, opsdeck, GoHome, Covered (`src/portfolio.html`, `src/assets/`).
 - Portraits: `src/assets/hi-im-harry*.png`.
 - Writing: Brainflow on Substack, older posts on Medium.
-- Not on hand, do not fabricate: past employers, titles and dates; the album list and cover art; personal photos; testimonials.
+- Work history, from Harry's current resume (newest first):
+  - Senior Product Engineer, ev.energy, remote, 04/2024 to present. Smart charging for EVs.
+  - Tech Lead, Restaurant Brands International (Tim Hortons), Toronto, 02/2023 to 04/2024. Led 8 engineers on the Tims app.
+  - Software Engineer (contractor), Seed Club, remote, 02/2022 to 12/2022.
+  - Project Lead, Flyfish Club NFT launch (contractor), VCR Group, remote, 08/2021 to 01/2022.
+  - Senior Engineer I, Front End, SpotHero, Toronto, 03/2020 to 07/2021.
+  - Software Developer, Rangle.io, Toronto, 08/2018 to 03/2020.
+  - Software Engineer and Project Lead, Northstar Robotics, Winnipeg area, 09/2016 to 07/2018.
+  - Consultant, BCS Consulting and Sapient Global Markets, 2013 to 2016.
+- Education: MChem, First Class Honours, University of Bath, 2009 to 2013.
+- Side projects also include Recommender, a personal film and TV recommender (`src/assets/recommender/`).
+- The resume's per-role bullets carry internal metrics and colleague names. Harry approves which of those go on the public page; do not copy them across wholesale. No phone number on the site.
+- Not on hand, do not fabricate: the album list and cover art; personal photos; testimonials.
 
 ## Product Principles
 
