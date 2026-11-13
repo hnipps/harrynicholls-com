@@ -31,6 +31,16 @@ A mode you have not touched is left to the real stylesheet. The first change swi
 
 Colours are worked in OKLCH, where equal steps in lightness look equal. A colour outside what a screen can show has its chroma pulled in until it fits.
 
+## Motion tab
+
+Tunes the sunset that plays when the theme is switched.
+
+- **Play** switches the theme. **Slow motion** stretches every time by five so you can watch the icon meet the letter.
+- **Timing:** how long setting and rising take, their curves, the pause between them, and how long the page's colours take to fade.
+- **Shape of the move:** the icon's size at rest, how far it sinks, how small each icon ends, and when it finishes drawing in and starts opening out.
+- The green or red line at the top says whether the letter hides the icon the whole way with the current values. It runs the same test that set the shipped values: whenever any part of an icon is below the top of the stem of the "i", the icon must be narrower than the stem.
+- **Copy motion** puts the values on the clipboard as the CSS variables the site uses.
+
 ## Fonts that are not fetched
 
 Not fetched, because neither has a direct download: Lastik (https://www.thatthattype.com/fonts/lastik) and Bispo (https://www.behance.net/gallery/6779205/New-Bispo-Free-Font). Fonts from https://ifthisfindsyou.app/fonts are generated in the browser. Download any of these and drop them on the panel.

@@ -251,6 +251,8 @@ ${DETAIL} { font-family: var(--lab-detail); font-size-adjust: var(--lab-detail-x
 document.head.append(style);
 const paletteStyle = document.createElement('style');
 document.head.append(paletteStyle);
+const motionStyle = document.createElement('style');
+document.head.append(motionStyle);
 
 // Filters for the colour checks.
 const filters = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -279,18 +281,19 @@ const saved = (() => { try { return JSON.parse(localStorage.getItem('type-lab'))
 const hashed = location.hash.match(/lab=(\w+)\.(\w+)\.(\w+)/);
 const state = {
   ...DEFAULTS,
-  tab: saved.tab === 'colour' ? 'colour' : 'type',
+  tab: ['colour', 'motion'].includes(saved.tab) ? saved.tab : 'type',
   ...(hashed ? { display: hashed[1], text: hashed[2], detail: hashed[3] } : { display: saved.display, text: saved.text, detail: saved.detail }),
   colour: {
     light: saved.colour?.light?.paper ? saved.colour.light : fromPreset(SHIPPED.light),
     dark: saved.colour?.dark?.paper ? saved.colour.dark : fromPreset(SHIPPED.dark),
   },
   view: 'normal',
+  motion: null,
 };
 for (const role of ROLES) if (!FACES[state[role]]) state[role] = DEFAULTS[role];
 
 const save = () => {
-  try { localStorage.setItem('type-lab', JSON.stringify({ display: state.display, text: state.text, detail: state.detail, tab: state.tab, colour: state.colour })); } catch { /* private mode */ }
+  try { localStorage.setItem('type-lab', JSON.stringify({ display: state.display, text: state.text, detail: state.detail, tab: state.tab, colour: state.colour, motion: state.motion })); } catch { /* private mode */ }
   history.replaceState(null, '', `#lab=${state.display}.${state.text}.${state.detail}`);
 };
 
@@ -349,6 +352,90 @@ const exportCss = () => ['light', 'dark'].map((m) => {
   const note = state.colour[m].touched ? '' : '  /* unchanged from what ships */';
   return `${name} {${note}\n${TOKENS.map(([token]) => `  --${token}: ${css(tokens[token])};  /* ${hex(tokens[token])} */`).join('\n')}\n}`;
 }).join('\n\n');
+
+// ---------- Motion: the sunset on the theme switch ----------
+//
+// Times are seconds; distances are em of the name's size; "ends at" is the fraction
+// of its size an icon has shrunk to by the time it is behind the letter.
+
+const MOTION = { fall: 0.55, rise: 0.7, wait: 0.42, dusk: 0.85, sink: 0.2575, sunEnd: 0.2, moonEnd: 0.26,
+  drawIn: 0.7, openAfter: 0.2, dot: 0.24, fallEase: 'accelerate', riseEase: 'settle', slow: false };
+const CURVES = {
+  fall: { accelerate: ['Accelerating', [0.5, 0, 0.9, 0.5]], steady: ['Steady', [0.3, 0.3, 0.7, 0.7]], gentle: ['Gentle at both ends', [0.45, 0, 0.55, 1]] },
+  rise: { settle: ['Settling', [0.22, 0.7, 0.25, 1]], quick: ['Quick, then slow', [0.16, 1, 0.3, 1]], steady: ['Steady', [0.3, 0.3, 0.7, 0.7]], gentle: ['Gentle at both ends', [0.45, 0, 0.55, 1]] },
+};
+const SHRINK = [0.45, 0, 0.8, 0.6];
+state.motion = { ...MOTION, ...(saved.motion ?? {}), slow: false };
+if (!CURVES.fall[state.motion.fallEase]) state.motion.fallEase = MOTION.fallEase;
+if (!CURVES.rise[state.motion.riseEase]) state.motion.riseEase = MOTION.riseEase;
+
+const bezier = ([x1, y1, x2, y2]) => (time) => {
+  let lo = 0, hi = 1;
+  for (let i = 0; i < 30; i += 1) {
+    const u = (lo + hi) / 2;
+    const x = 3 * (1 - u) ** 2 * u * x1 + 3 * (1 - u) * u * u * x2 + u ** 3;
+    if (x < time) lo = u; else hi = u;
+  }
+  const u = (lo + hi) / 2;
+  return 3 * (1 - u) ** 2 * u * y1 + 3 * (1 - u) * u * u * y2 + u ** 3;
+};
+const curveCss = (curve) => `cubic-bezier(${curve.join(', ')})`;
+const motionChanged = () => Object.keys(MOTION).some((key) => key !== 'slow' && state.motion[key] !== MOTION[key]);
+
+const applyMotion = () => {
+  const m = state.motion, k = m.slow ? 5 : 1;
+  motionStyle.textContent = !motionChanged() && !m.slow ? '' : `
+:root:root { --dusk: ${(m.dusk * k).toFixed(3)}s ease; }
+:root:root .theme-toggle { --fall: ${(m.fall * k).toFixed(3)}s; --rise: ${(m.rise * k).toFixed(3)}s; --wait: ${(m.wait * k).toFixed(3)}s;
+  --draw-in: ${m.drawIn}; --open-after: ${m.openAfter};
+  --fall-ease: ${curveCss(CURVES.fall[m.fallEase][1])}; --rise-ease: ${curveCss(CURVES.rise[m.riseEase][1])}; }
+:root:root.name-ready .theme-toggle { --sink: ${m.sink}em; --sun-shrunk: ${m.sunEnd}; --moon-shrunk: ${m.moonEnd}; --dot-em: ${m.dot}em; }`;
+  save();
+};
+
+// Does the letter hide the icon the whole way? The same test that set the shipped
+// values: at every instant, an icon with any part below the stem's top must be
+// narrower than the stem. Geometry is Instrument Serif's, in em.
+const lettersHide = () => {
+  const m = state.motion;
+  const font = parseFloat(getComputedStyle(document.querySelector('h1')).fontSize);
+  const dot = Math.round(Math.max(m.dot * font, 14) / 2) * 2 / font;
+  const REST = 0.1825, PEAK = 0.3275, HALF_STEM = 0.0305, COVERED = 0.37;
+  const fall = bezier(CURVES.fall[m.fallEase][1]), rise = bezier(CURVES.rise[m.riseEase][1]), shrink = bezier(SHRINK);
+  const problems = [];
+  for (const [name, radius, end] of [['sun', 0.4333 * dot, m.sunEnd], ['moon', 0.345 * dot, m.moonEnd]]) {
+    let setting = 0, rising = 0;
+    for (let i = 0; i <= 400; i += 1) {
+      const time = i / 400;
+      let r = radius * (1 - (1 - end) * shrink(Math.min(1, time / m.drawIn)));
+      if (REST + m.sink * fall(time) + r > PEAK) setting = Math.max(setting, r - HALF_STEM);
+      const opened = Math.max(0, Math.min(1, (time - m.openAfter) / Math.max(0.001, 1 - m.openAfter)));
+      r = radius * (end + (1 - end) * rise(opened));
+      if (REST + m.sink * (1 - rise(time)) + r > PEAK) rising = Math.max(rising, r - HALF_STEM);
+    }
+    if (setting > 0) problems.push(`The ${name} is ${(setting * font * 2).toFixed(1)}px wider than the stem while it sets, so it will show beside the “i”.`);
+    if (rising > 0) problems.push(`The ${name} is ${(rising * font * 2).toFixed(1)}px wider than the stem while it rises.`);
+    if (REST + m.sink - radius * end < COVERED) problems.push(`The ${name} does not sink far enough: its top stays above the stem.`);
+  }
+  return problems;
+};
+
+const motionSummary = () => {
+  const m = state.motion;
+  return `Sunset motion
+--fall: ${m.fall}s (${CURVES.fall[m.fallEase][0].toLowerCase()})
+--rise: ${m.rise}s (${CURVES.rise[m.riseEase][0].toLowerCase()})
+--wait: ${m.wait}s
+--dusk: ${m.dusk}s
+--sink: ${m.sink}em
+--sun-shrunk: ${m.sunEnd}
+--moon-shrunk: ${m.moonEnd}
+--draw-in: ${m.drawIn}
+--open-after: ${m.openAfter}
+--dot-em: ${m.dot}em
+fall curve: ${curveCss(CURVES.fall[m.fallEase][1])}
+rise curve: ${curveCss(CURVES.rise[m.riseEase][1])}`;
+};
 
 // ---------- Panel ----------
 
@@ -582,15 +669,80 @@ function colourTab(scroll) {
   scroll.append(el('div', { className: 'actions', style: 'margin-top:14px' }, copy, reset));
 }
 
+function motionTab(scroll) {
+  const m = state.motion;
+  const dial = (label, key, min, max, step, format) => {
+    const input = el('input', { type: 'range', min, max, step });
+    const output = el('output');
+    input.oninput = () => { m[key] = Number(input.value); applyMotion(); refresh(); };
+    live.push(() => { if (document.activeElement !== input) input.value = m[key]; output.textContent = format(m[key]); });
+    return el('label', { className: 'slide' }, el('span', {}, label, output), input);
+  };
+  const seconds = (v) => `${v.toFixed(2)}s`;
+  const em = (v) => `${v.toFixed(3)}em`;
+  const share = (v) => `${Math.round(v * 100)}%`;
+  const pick = (label, key, options) => {
+    const select = el('select');
+    for (const [id, [name]] of Object.entries(options)) select.append(el('option', { value: id, selected: m[key] === id }, name));
+    select.onchange = () => { m[key] = select.value; applyMotion(); refresh(); };
+    return el('label', { className: 'field', style: 'margin-top:8px' }, label, select);
+  };
+
+  const play = el('button', { type: 'button', style: 'padding:9px;width:100%' });
+  play.onclick = () => document.querySelector('.theme-toggle')?.click();
+  const slow = pressed(el('button', { type: 'button', style: 'padding:7px;width:100%;margin-top:4px' }, 'Slow motion (5x)'), m.slow);
+  slow.onclick = () => { m.slow = !m.slow; pressed(slow, m.slow); applyMotion(); };
+  live.push(() => { play.textContent = mode() === 'dark' ? 'Play sunrise' : 'Play sunset'; });
+  scroll.append(el('h4', {}, 'Play'), play, slow,
+    el('p', { className: 'hint', style: 'margin-top:6px' }, 'Clicking the dot on the “i” does the same. Slow motion stretches every time below so you can watch the icon meet the letter.'));
+
+  const verdict = el('p', { className: 'hint', style: 'margin:10px 0 0;padding:8px 9px;border-radius:6px;background:#0e0f11' });
+  live.push(() => {
+    const problems = lettersHide();
+    verdict.replaceChildren(...(problems.length
+      ? [el('b', { className: 'fail' }, 'The letter will not hide it. '), problems.join(' ')]
+      : [el('b', { className: 'pass' }, 'Hidden by the letter the whole way. '), 'With these values no part of either icon shows beside or below the “i”.']));
+  });
+  scroll.append(verdict);
+
+  scroll.append(el('h4', {}, 'Timing'),
+    el('p', { className: 'hint' }, 'The outgoing icon sets, there is a pause, then the incoming one rises. Setting faster than rising reads as natural; long pauses read as a dropped frame.'),
+    dial('Setting takes', 'fall', 0.2, 1.6, 0.01, seconds),
+    pick('Curve', 'fallEase', CURVES.fall),
+    dial('Pause before the rise', 'wait', 0, 1.2, 0.01, seconds),
+    dial('Rising takes', 'rise', 0.2, 1.6, 0.01, seconds),
+    pick('Curve', 'riseEase', CURVES.rise),
+    dial('Page colours fade over', 'dusk', 0, 2.5, 0.05, seconds));
+
+  scroll.append(el('h4', {}, 'Shape of the move'),
+    el('p', { className: 'hint' }, 'The icon is wider than the stem, so it has to draw in before it reaches the “i”. These decide how small it gets and when.'),
+    dial('Icon size at rest', 'dot', 0.1, 0.34, 0.005, em),
+    dial('How far it sinks', 'sink', 0.12, 0.45, 0.0025, em),
+    dial('Sun ends at', 'sunEnd', 0.05, 1, 0.01, share),
+    dial('Moon ends at', 'moonEnd', 0.05, 1, 0.01, share),
+    dial('Finishes drawing in at', 'drawIn', 0.2, 1, 0.01, (v) => `${share(v)} of the fall`),
+    dial('Starts opening out at', 'openAfter', 0, 0.8, 0.01, (v) => `${share(v)} of the rise`));
+
+  const summary = el('div', { className: 'pick' });
+  live.push(() => { summary.textContent = motionSummary(); });
+  const copy = el('button', { type: 'button' }, 'Copy motion');
+  copy.onclick = async () => {
+    try { await navigator.clipboard.writeText(motionSummary()); copy.textContent = 'Copied'; } catch { copy.textContent = 'Select the text above'; }
+  };
+  const reset = el('button', { type: 'button' }, 'Reset motion');
+  reset.onclick = () => { state.motion = { ...MOTION }; applyMotion(); render(); };
+  scroll.append(summary, el('div', { className: 'actions' }, copy, reset));
+}
+
 function render() {
   const closed = panel.classList.contains('is-closed');
   const previous = panel.querySelector('.scroll')?.scrollTop ?? 0;
   const scroll = el('div', { className: 'scroll' });
   live = [];
-  if (state.tab === 'colour') colourTab(scroll); else typeTab(scroll);
+  if (state.tab === 'colour') colourTab(scroll); else if (state.tab === 'motion') motionTab(scroll); else typeTab(scroll);
 
   const tabs = el('div', { className: 'tabs' });
-  for (const [id, name] of [['type', 'Type'], ['colour', 'Colour']]) {
+  for (const [id, name] of [['type', 'Type'], ['colour', 'Colour'], ['motion', 'Motion']]) {
     const button = pressed(el('button', { type: 'button' }, name), state.tab === id);
     button.onclick = () => { state.tab = id; save(); panel.querySelector('.scroll').scrollTop = 0; render(); };
     tabs.append(button);
@@ -603,10 +755,11 @@ function render() {
 }
 
 // Follow the page's own light and dark switcher.
-new MutationObserver(() => { if (state.tab === 'colour') render(); }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+new MutationObserver(() => { if (state.tab === 'colour') render(); else refresh(); }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
 systemDark.addEventListener('change', () => { if (state.tab === 'colour') render(); });
 
 if (matchMedia('(max-width: 30rem)').matches || /[#&]lab-closed/.test(location.hash)) panel.classList.add('is-closed');
 if (!/[#&]lab-hidden/.test(location.hash)) document.body.append(panel);
 applyColour();
+applyMotion();
 applyType();
