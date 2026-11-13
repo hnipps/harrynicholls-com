@@ -286,12 +286,18 @@ Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused
 - **Voices:** a specimen line for each typeface (the name at 2.75rem in the serif, a sentence at 1.5rem in the sans) with its credit and licence in small soft ink.
 - Keep it true. When the stack, the palettes, the typefaces or the data sources change, this page changes with them.
 
+### Favicon and share images
+- **Favicon:** the H of Instrument Serif in ink on a paper square with rounded corners (`src/favicon.svg`). The glyph is an outline, so the icon needs no font, and it swaps to the Blue night pair under a dark system setting. `favicon.ico` (32px) and `apple-touch-icon.png` (180px, square and opaque) are drawn from it.
+- **Share images:** one 1200 by 630 card per page in `src/og/`, in the Blue ink palette: the page title in Instrument Serif, one line under it in the sans, then a hairline with "Harry Nicholls" in italic soft ink and the address underlined in the pencil.
+- `scripts/make-share-images.js` draws the cards and the icon rasters. Run it by hand when a title or description changes; it is not part of the build.
+- Every page carries the full Open Graph and Twitter card set, pointing at its own card.
+
 ### Lightbox
 Clicking a gallery photo or a case study screenshot opens it over the page (`.lightbox`, built by `site.js` as a native `<dialog>`). Without JavaScript, or with a modified click, each one is still a plain link to its file.
 - **Surface:** the page's own paper, edge to edge, with no dimmed backdrop, panel or shadow. The picture sits centred in the space left, never larger than its file.
-- **Controls:** words, styled as links: "Close" top right, "Previous" and "Next" bottom left and right, each at least 2.75rem to touch. A count ("2 of 6") in small soft ink sits top left. No icons.
-- **Caption:** small soft ink, centred under the picture: a screenshot's own caption, or a photo's `alt` text.
-- **Behaviour:** the pictures on a page form one set and wrap round. Left and right arrow keys and a sideways swipe turn; Escape, "Close", or a click on the picture or the space round it closes. Focus returns to the picture last shown. The page behind does not scroll. The thumbnail stands in until the full file loads.
+- **Controls:** one word, "Close", top right, styled as a link and at least 2.75rem to touch. No icons, no caption and no count.
+- **Thumbnails:** under the picture, a single row of the page's pictures at 3.25rem tall, 0.5rem apart, centred while it fits and scrolling sideways when it does not. The picture on show is at full strength; the others sit at half strength until pointed at or focused. Nothing else marks it. Each is a button named by the picture's `alt` text. The row is hidden when a page has one picture.
+- **Behaviour:** the pictures on a page form one set and wrap round. A thumbnail, the left and right arrow keys or a sideways swipe changes the picture, and the row scrolls to keep the current thumbnail in view. Escape, "Close", or a click on the picture or the space round it closes. While it is open, focus rests on the viewer itself, so "Close" and the thumbnails show a focus ring only when the reader tabs to them. Focus returns to the picture last shown. The page behind does not scroll. The thumbnail stands in until the full file loads.
 - **Motion:** a 0.24s fade in, only under `prefers-reduced-motion: no-preference`.
 
 ### Case study pages

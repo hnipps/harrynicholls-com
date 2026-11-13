@@ -112,33 +112,49 @@ if (zoomable.length && window.HTMLDialogElement && HTMLDialogElement.prototype.s
   const box = document.createElement('dialog');
   box.className = 'lightbox';
   box.setAttribute('aria-label', 'Image viewer');
+  // Focus rests on the viewer itself, so no control wears a focus ring until the
+  // reader tabs to one.
+  box.tabIndex = -1;
   box.innerHTML = `
-    <div class="lightbox-bar">
-      <p class="lightbox-count" aria-live="polite"></p>
-      <button class="lightbox-close" type="button">Close</button>
-    </div>
+    <div class="lightbox-bar"><button class="lightbox-close" type="button">Close</button></div>
     <div class="lightbox-stage"><img alt=""></div>
-    <div class="lightbox-foot">
-      <button class="lightbox-prev" type="button">Previous</button>
-      <p class="lightbox-caption"></p>
-      <button class="lightbox-next" type="button">Next</button>
-    </div>`;
+    <ul class="lightbox-strip" role="list" aria-label="Pictures"></ul>`;
   document.body.append(box);
 
   const stage = box.querySelector('.lightbox-stage');
   const image = stage.querySelector('img');
-  const count = box.querySelector('.lightbox-count');
-  const caption = box.querySelector('.lightbox-caption');
+  const strip = box.querySelector('.lightbox-strip');
   const alone = zoomable.length === 1;
-  box.querySelector('.lightbox-prev').hidden = alone;
-  box.querySelector('.lightbox-next').hidden = alone;
+  strip.hidden = alone;
   let at = 0;
+
+  // One small picture per image, in a row that scrolls sideways.
+  const picks = zoomable.map((link, index) => {
+    const thumb = link.querySelector('img');
+    const item = document.createElement('li');
+    const pick = document.createElement('button');
+    const small = new Image();
+    pick.type = 'button';
+    pick.setAttribute('aria-label', thumb.alt);
+    small.src = thumb.getAttribute('src');
+    small.alt = '';
+    small.width = thumb.getAttribute('width');
+    small.height = thumb.getAttribute('height');
+    pick.append(small);
+    pick.addEventListener('click', (event) => {
+      show(index);
+      // A pointer click leaves focus on the viewer; a keyboard press keeps it here.
+      if (event.detail > 0) box.focus({ preventScroll: true });
+    });
+    item.append(pick);
+    strip.append(item);
+    return pick;
+  });
 
   const show = (index) => {
     at = (index + zoomable.length) % zoomable.length;
     const link = zoomable[at];
     const thumb = link.querySelector('img');
-    const words = link.closest('figure')?.querySelector('figcaption')?.textContent ?? thumb.alt;
     // The picture already on the page stands in until the full file arrives.
     image.src = thumb.currentSrc || thumb.src;
     image.alt = thumb.alt;
@@ -155,22 +171,24 @@ if (zoomable.length && window.HTMLDialogElement && HTMLDialogElement.prototype.s
       };
       full.src = link.href;
     }
-    caption.textContent = words.trim();
-    count.textContent = alone ? '' : `${at + 1} of ${zoomable.length}`;
+    picks.forEach((pick, i) => {
+      if (i === at) pick.setAttribute('aria-current', 'true');
+      else pick.removeAttribute('aria-current');
+    });
+    if (box.open) picks[at].scrollIntoView({ block: 'nearest', inline: 'center' });
   };
 
   zoomable.forEach((link, index) => {
     link.addEventListener('click', (event) => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
-      show(index);
       box.showModal();
+      box.focus({ preventScroll: true });
+      show(index);
     });
   });
 
   box.querySelector('.lightbox-close').addEventListener('click', () => box.close());
-  box.querySelector('.lightbox-prev').addEventListener('click', () => show(at - 1));
-  box.querySelector('.lightbox-next').addEventListener('click', () => show(at + 1));
 
   // A click anywhere on the picture or the space round it closes; a sideways
   // swipe turns to the next or the previous one.
@@ -187,9 +205,10 @@ if (zoomable.length && window.HTMLDialogElement && HTMLDialogElement.prototype.s
   stage.addEventListener('click', () => { if (!swiped) box.close(); });
 
   box.addEventListener('keydown', (event) => {
-    if (alone) return;
-    if (event.key === 'ArrowRight') show(at + 1);
-    if (event.key === 'ArrowLeft') show(at - 1);
+    if (alone || (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft')) return;
+    event.preventDefault();
+    show(at + (event.key === 'ArrowRight' ? 1 : -1));
+    if (strip.contains(document.activeElement)) box.focus({ preventScroll: true });
   });
 
   // Back to the picture the reader ended on, wherever the browser put focus.
