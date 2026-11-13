@@ -1207,34 +1207,13 @@ html:has(.lightbox[open]) {
   overflow: hidden;
 }
 
-.lightbox-bar,
-.lightbox-foot {
+.lightbox-bar {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: flex-end;
   padding: 0.25rem 1.25rem;
 }
 
-.lightbox-count,
-.lightbox-caption {
-  color: var(--ink-soft);
-  font-size: var(--small);
-}
-
-.lightbox-count {
-  font-variant-numeric: lining-nums tabular-nums;
-}
-
-.lightbox-caption {
-  flex: 1;
-  max-width: var(--measure);
-  margin-inline: auto;
-  text-align: center;
-  text-wrap: balance;
-}
-
-.lightbox button {
+.lightbox-close {
   min-width: 2.75rem;
   min-height: 2.75rem;
   padding: 0;
@@ -1248,13 +1227,63 @@ html:has(.lightbox[open]) {
   transition: text-decoration-thickness 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s;
 }
 
-.lightbox button:hover {
+.lightbox-close:hover {
   color: var(--pencil-ink);
   text-decoration-thickness: 0.17em;
 }
 
-.lightbox-close {
+/* The other pictures, small, in one row that scrolls sideways. The one on show
+   is at full strength with a pencil line under it; the rest stand back. */
+.lightbox-strip {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.75rem 1.25rem 0.9rem;
+  overflow-x: auto;
+  list-style: none;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+
+.lightbox-strip[hidden] {
+  display: none;
+}
+
+/* Centred while the row fits, and scrollable from its first picture when not. */
+.lightbox-strip li:first-child {
   margin-left: auto;
+}
+
+.lightbox-strip li:last-child {
+  margin-right: auto;
+}
+
+.lightbox-strip button {
+  display: block;
+  padding: 0 0 0.3rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.lightbox-strip button:hover,
+.lightbox-strip button:focus-visible,
+.lightbox-strip button[aria-current] {
+  opacity: 1;
+}
+
+.lightbox-strip button[aria-current] {
+  border-bottom-color: var(--pencil);
+}
+
+.lightbox-strip img {
+  display: block;
+  width: auto;
+  height: 3.25rem;
+  border-radius: 2px;
 }
 
 .lightbox-stage {
