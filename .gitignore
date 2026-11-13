@@ -21,3 +21,15 @@ terraform.rc
 
 # Local design research and browser captures
 .taste-skill/
+
+# Impeccable working files: review captures and decision-page state
+.impeccable/review/
+.impeccable/questions/
+.impeccable/build/
+
+# Trial fonts for the type lab: fetched by design-exploration/type-lab/fetch-fonts.sh
+design-exploration/type-lab/fonts/
+
+# Impeccable live mode: keep the config, ignore session state
+.impeccable/live/*
+!.impeccable/live/config.json

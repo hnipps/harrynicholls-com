@@ -1,0 +1,32 @@
+[
+  {
+    "src": "/photos/purple-light.jpg",
+    "thumb": "/photos/purple-light-thumb.jpg",
+    "alt": "Purple light and shadow across a wall, crossed by a dark diagonal edge."
+  },
+  {
+    "src": "/photos/frosted-tree.jpg",
+    "thumb": "/photos/frosted-tree-thumb.jpg",
+    "alt": "A lone tree covered in frost in a snowy field under a clear blue sky."
+  },
+  {
+    "src": "/photos/stroller.jpg",
+    "thumb": "/photos/stroller-thumb.jpg",
+    "alt": "A small child in a stroller, bundled up in a coat with a fur-trimmed hood pulled low."
+  },
+  {
+    "src": "/photos/forest-sunset.jpg",
+    "thumb": "/photos/forest-sunset-thumb.jpg",
+    "alt": "An orange sunset seen through tall dark pines beside a lake."
+  },
+  {
+    "src": "/photos/house-sign.jpg",
+    "thumb": "/photos/house-sign-thumb.jpg",
+    "alt": "Old brick buildings against a clear sky, one with the word HOUSE in white letters along its roofline."
+  },
+  {
+    "src": "/photos/between-buildings.jpg",
+    "thumb": "/photos/between-buildings-thumb.jpg",
+    "alt": "Looking straight up between two brick factory buildings at a sky of small clouds."
+  }
+]

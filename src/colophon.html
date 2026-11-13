@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Colophon | Harry Nicholls</title>
+  <meta name="description" content="How harrynicholls.com is built: what it runs on, the few rules it is designed by, and where its data comes from.">
+  <meta property="og:title" content="Colophon | Harry Nicholls">
+  <meta property="og:description" content="How harrynicholls.com is built: what it runs on, the few rules it is designed by, and where its data comes from.">
+  <meta name="theme-color" content="#fafcff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000014" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://harrynicholls.com/colophon.html">
+  <link rel="preload" href="/fonts/hyperlegible-sans-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // Apply a saved light or dark choice before the first paint.
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/site.css">
+  <script type="module" src="/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page">
+
+<header class="masthead">
+  <p class="home-link"><a href="/">Harry Nicholls</a></p>
+  <h1>Colophon</h1>
+  <button class="theme-toggle" type="button" hidden>
+    <span class="sky">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" stroke="none"/><path fill="none" d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.4A9.2 9.2 0 0 1 9.6 3a9.2 9.2 0 1 0 11.4 11.4Z"/></svg>
+    </span>
+  </button>
+  <div class="intro">
+    <p>How this site is built: what it runs on, the few rules it is designed by, and where its data comes from.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section" aria-labelledby="stack-heading">
+  <h2 id="stack-heading">Stack</h2>
+  <div class="body">
+    <dl class="facts">
+      <div><dt>Pages</dt><dd>Hand-written HTML and CSS. No framework, one stylesheet, one small script.</dd></div>
+      <div><dt>Build</dt><dd>A Python script fills in the commit graph and the album gallery from data files.</dd></div>
+      <div><dt>Hosting</dt><dd>Amazon S3 behind CloudFront.</dd></div>
+      <div><dt>Deploys</dt><dd>GitHub Actions, on every push and once a day to refresh the commit graph.</dd></div>
+      <div><dt>Type</dt><dd>Instrument Serif and Hyperlegible Sans, both served from this site.</dd></div>
+      <div><dt>JavaScript</dt><dd>Optional. It runs the light and dark switch and names the day you point at on the commit graph. Everything else is plain HTML.</dd></div>
+      <div><dt>For agents</dt><dd>A <a href="/llms.txt">plain-text version</a>, and structured data in the page.</dd></div>
+      <div><dt>Source</dt><dd><a href="https://github.com/hnipps/harrynicholls-com">hnipps/harrynicholls-com</a> on GitHub.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="style-heading">
+  <h2 id="style-heading">Style guide</h2>
+  <div class="body">
+
+    <p>One column, a serif for the name and a sans for the reading, one blue and one red. Any other colour belongs to the album covers.</p>
+
+    <article class="entry">
+      <h3>Inks</h3>
+      <p>Paper and ink share one hue of blue. The accent is a red a third of the way round the colour wheel. Both palettes were tuned in OKLCH, where equal steps in lightness look equal.</p>
+      <table class="inks">
+        <thead><tr><th scope="col">Ink</th><th scope="col">Light</th><th scope="col">Dark</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Paper <small>The page</small></th><td><i class="chip" style="background:oklch(99% 0.005 260)"></i>#fafcff</td><td><i class="chip" style="background:oklch(8.5% 0.06 260)"></i>#000014</td></tr>
+          <tr><th scope="row">Ink <small>Text and the name</small></th><td><i class="chip" style="background:oklch(40% 0.16 260)"></i>#03409c</td><td><i class="chip" style="background:oklch(84% 0.08 260)"></i>#adccff</td></tr>
+          <tr><th scope="row">Soft ink <small>Dates, roles, headings</small></th><td><i class="chip" style="background:oklch(55.9% 0.133 260)"></i>#4373c1</td><td><i class="chip" style="background:oklch(63.6% 0.133 260)"></i>#598adb</td></tr>
+          <tr><th scope="row">Hairline <small>The rule above a section</small></th><td><i class="chip" style="background:oklch(89.6% 0.051 260)"></i>#c9deff</td><td><i class="chip" style="background:oklch(26% 0.08 260)"></i>#0a224a</td></tr>
+          <tr><th scope="row">Accent <small>Underlines, bullets, today’s dot</small></th><td><i class="chip" style="background:oklch(57% 0.229 20)"></i>#de0039</td><td><i class="chip" style="background:oklch(70% 0.192 20)"></i>#ff616b</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="entry">
+      <h3>Voices</h3>
+      <div class="voice">
+        <p class="specimen specimen-name">Harry Nicholls</p>
+        <p class="role">Instrument Serif, for the name and page titles and nothing else. By Rodrigo Fuenzalida and Jordan Egstad for Instrument. SIL Open Font License.</p>
+      </div>
+      <div class="voice">
+        <p class="specimen">Upright for the record, <em>italic for the aside.</em></p>
+        <p class="role">Hyperlegible Sans, for everything read. By Matthew Larn, after Atkinson Hyperlegible from the Braille Institute. SIL Open Font License.</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h3>Rules</h3>
+      <ul>
+        <li>One accent. The red marks things: underlines, bullets, today’s dot. It never fills a shape or sets a paragraph.</li>
+        <li>The serif is the name. Everything else is the sans, in two weights.</li>
+        <li>Upright for the record, italic for anything said in passing.</li>
+        <li>No cards, no boxes. Sections are a hairline and a heading.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <h3>Grid</h3>
+      <p>A wide screen has two left edges and no more. The page edge carries the name, the hairlines and headings like the ones beside this text. The text edge carries everything read, in a column about seventy characters wide.</p>
+    </article>
+
+    <article class="entry" id="interaction">
+      <h3>Interaction</h3>
+      <p>Links are underlined in the accent, and the underline thickens under the pointer. <a href="#interaction">Try this one.</a> On the home page, the dot on the “i” of my name switches between light and dark. Album titles stay out of the way until you point at a cover.</p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section" aria-labelledby="data-heading">
+  <h2 id="data-heading">Data</h2>
+  <div class="body">
+
+    <article class="entry">
+      <h3>My commitments</h3>
+      <p>The graph is my public GitHub contribution calendar, fetched when the site deploys. Each dot is a day. Its size follows the square root of that day’s count, capped so a few huge days do not flatten the rest. If GitHub cannot be reached, the last good graph stays up.</p>
+    </article>
+
+    <article class="entry">
+      <h3>In my ears</h3>
+      <p>Chosen by hand and kept in a short list. Cover art and links come from Apple’s catalogue.</p>
+    </article>
+
+    <article class="entry">
+      <h3>Gallery</h3>
+      <p>My own photos. Location, camera and time data are removed before they are published.</p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section" aria-labelledby="credits-heading">
+  <h2 id="credits-heading">Credits</h2>
+  <div class="body">
+    <dl class="facts">
+      <div><dt>The shape</dt><dd><a href="https://www.hamiltonulmer.com/">hamiltonulmer.com</a>, a resume with character.</dd></div>
+      <div><dt>The albums</dt><dd><a href="https://jrhu.me">jrhu.me</a></dd></div>
+      <div><dt>The graph</dt><dd><a href="https://marcelochaman.com/">marcelochaman.com</a></dd></div>
+      <div><dt>This page</dt><dd><a href="https://varun.ca/colophon/">varun.ca/colophon</a></dd></div>
+      <div><dt>Tools</dt><dd>Built with Claude Code.</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon" aria-labelledby="back-heading">
+  <h2 id="back-heading">Back</h2>
+  <div class="body">
+    <p class="mail"><a href="/">Harry Nicholls</a></p>
+    <p class="fine">© 2026 Nicholls Inc.</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

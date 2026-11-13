@@ -1,0 +1,1308 @@
+/* harrynicholls.com home page.
+   One column, a serif for the name and a sans for the reading, one blue ink
+   and one red mark. Any other colour arrives with the album covers. */
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hyperlegible Sans";
+  src: url("/fonts/hyperlegible-sans-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hyperlegible Sans";
+  src: url("/fonts/hyperlegible-sans-italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hyperlegible Sans";
+  src: url("/fonts/hyperlegible-sans-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Dusk. The colour tokens are registered as colours so the browser can blend
+   them. When the palette changes, by the switcher or by the system, the whole
+   page fades from day to night instead of cutting. */
+@property --paper {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --ink-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --hairline {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --rest {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --frame {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --pencil {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --pencil-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --pencil-wash {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --cover-shadow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --cover-shadow-deep {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+:root {
+  --dusk: 0.85s ease;
+  transition:
+    --paper var(--dusk),
+    --ink var(--dusk),
+    --ink-soft var(--dusk),
+    --hairline var(--dusk),
+    --rest var(--dusk),
+    --frame var(--dusk),
+    --pencil var(--dusk),
+    --pencil-ink var(--dusk),
+    --pencil-wash var(--dusk),
+    --cover-shadow var(--dusk),
+    --cover-shadow-deep var(--dusk);
+}
+
+:root {
+  /* Blue ink: the light palette. Blue ink on near-white paper, red for marks. */
+  --paper: oklch(99% 0.005 260);
+  --ink: oklch(40% 0.16 260);
+  --ink-soft: oklch(55.9% 0.133 260);
+  --hairline: oklch(89.6% 0.051 260);
+  --rest: oklch(84.8% 0.075 260);
+  --frame: oklch(94.3% 0.027 260);
+  --pencil: oklch(57% 0.229 20);
+  --pencil-ink: oklch(46% 0.186 20);
+  --pencil-wash: oklch(92.5% 0.038 20);
+  --tint-l: 90%;
+  --tint-c: 0.035;
+  --cover-shadow: oklch(25% 0.1 260 / 0.14);
+  --cover-shadow-deep: oklch(25% 0.1 260 / 0.45);
+
+  --margin-col: 10rem;
+  --gutter: 2.5rem;
+  --measure: 37rem;
+
+  --text: 1rem;
+  --small: 0.875rem;
+  --lede: 1.3125rem;
+  --display: clamp(3.25rem, 1.9rem + 6vw, 5.25rem);
+  --leading: 1.6;
+
+  color-scheme: light dark;
+  accent-color: var(--pencil);
+  scrollbar-color: var(--hairline) var(--paper);
+}
+
+/* Blue night: the dark mode. Pale blue ink on near-black navy, a coral mark.
+   It follows the system setting unless the reader has used the switcher, which
+   sets data-theme on the root. The two blocks below must stay identical. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: oklch(8.5% 0.06 260);
+    --ink: oklch(84% 0.08 260);
+    --ink-soft: oklch(63.6% 0.133 260);
+    --hairline: oklch(26% 0.08 260);
+    --rest: oklch(31% 0.09 260);
+    --frame: oklch(20% 0.07 260);
+    --pencil: oklch(70% 0.192 20);
+    --pencil-ink: oklch(79% 0.122 20);
+    --pencil-wash: oklch(28.5% 0.117 20);
+    --tint-l: 27%;
+    --tint-c: 0.06;
+    --cover-shadow: oklch(3% 0.03 260 / 0.55);
+    --cover-shadow-deep: oklch(3% 0.03 260 / 0.85);
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: oklch(8.5% 0.06 260);
+  --ink: oklch(84% 0.08 260);
+  --ink-soft: oklch(63.6% 0.133 260);
+  --hairline: oklch(26% 0.08 260);
+  --rest: oklch(31% 0.09 260);
+  --frame: oklch(20% 0.07 260);
+  --pencil: oklch(70% 0.192 20);
+  --pencil-ink: oklch(79% 0.122 20);
+  --pencil-wash: oklch(28.5% 0.117 20);
+  --tint-l: 27%;
+  --tint-c: 0.06;
+  --cover-shadow: oklch(3% 0.03 260 / 0.55);
+  --cover-shadow-deep: oklch(3% 0.03 260 / 0.85);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Hyperlegible Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: var(--text);
+  line-height: var(--leading);
+  font-variant-numeric: proportional-nums;
+  font-kerning: normal;
+  caret-color: var(--pencil);
+}
+
+::selection {
+  background: var(--pencil-wash);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--pencil);
+  text-decoration-thickness: 0.085em;
+  text-underline-offset: 0.22em;
+  transition: text-decoration-thickness 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s;
+}
+
+a:hover {
+  color: var(--pencil-ink);
+  text-decoration-thickness: 0.17em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--pencil);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1.25rem;
+  top: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  transform: translateY(-120%);
+}
+
+.skip-link:focus,
+.skip-link:hover {
+  transform: translateY(0.75rem);
+  color: var(--paper);
+}
+
+.page {
+  position: relative;
+  max-width: calc(var(--margin-col) + var(--gutter) + var(--measure) + 2.5rem);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 9vh, 6.5rem) 1.25rem 4rem;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+/* ---------- Light and dark switcher ---------- */
+
+/* A sun by day, a moon by night. By default it is a small icon button in the
+   page's top right corner. Where the browser can anchor it and the display face
+   has loaded, it becomes the dot of the "i" in the name: see "The name's dot". */
+
+.theme-toggle {
+  appearance: none;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+}
+
+/* Sunset and moonrise. Both icons are always there; --night says which is up.
+   The one going down sinks and draws in; the one coming up waits for it, then
+   rises and opens out. Nothing is ever clipped. In the name the icon is hidden
+   by the "i" itself (see "The name's dot"); in the corner, with no letter to
+   go behind, it fades as it goes. */
+.theme-toggle {
+  --night: 0;
+  --fall: 0.5s;
+  --rise: 0.5s;
+  --wait: 0.45s;
+  --fall-ease: cubic-bezier(0.3, 0.3, 0.7, 0.7);
+  --shrink-ease: cubic-bezier(0.45, 0, 0.8, 0.6);
+  --rise-ease: cubic-bezier(0.22, 0.7, 0.25, 1);
+
+  /* How far an icon sinks, how small each one ends, and whether it also fades. */
+  --sink: 70%;
+  --sun-shrunk: 0.2;
+  --moon-shrunk: 0.2;
+  --fade: 1;
+  --moon-flip: 1;
+  --moon-size: 1;
+
+  /* An icon finishes drawing in during the first --draw-in of its fall, and
+     starts opening out --open-after of the way into its rise. Those fractions
+     are what keep it narrower than the stem whenever any part of it is below
+     the stem's top; the lab's Motion tab checks any change to them. */
+  --draw-in: 0.5;
+  --open-after: 0.1;
+
+  /* Day: the sun is rising, the moon setting. */
+  --sun-time: var(--rise);
+  --sun-ease: var(--rise-ease);
+  --sun-wait: var(--wait);
+  --sun-size-time: calc(var(--rise) * (1 - var(--open-after)));
+  --sun-size-ease: var(--rise-ease);
+  --sun-size-wait: calc(var(--wait) + var(--rise) * var(--open-after));
+  --moon-time: var(--fall);
+  --moon-ease: var(--fall-ease);
+  --moon-wait: 0s;
+  --moon-size-time: calc(var(--fall) * var(--draw-in));
+  --moon-size-ease: var(--shrink-ease);
+  --moon-size-wait: 0s;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle {
+    --night: 1;
+    --sun-time: var(--fall);
+    --sun-ease: var(--fall-ease);
+    --sun-wait: 0s;
+    --sun-size-time: calc(var(--fall) * var(--draw-in));
+    --sun-size-ease: var(--shrink-ease);
+    --sun-size-wait: 0s;
+    --moon-time: var(--rise);
+    --moon-ease: var(--rise-ease);
+    --moon-wait: var(--wait);
+    --moon-size-time: calc(var(--rise) * (1 - var(--open-after)));
+    --moon-size-ease: var(--rise-ease);
+    --moon-size-wait: calc(var(--wait) + var(--rise) * var(--open-after));
+  }
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  --night: 1;
+  --sun-time: var(--fall);
+  --sun-ease: var(--fall-ease);
+  --sun-wait: 0s;
+  --sun-size-time: calc(var(--fall) * var(--draw-in));
+  --sun-size-ease: var(--shrink-ease);
+  --sun-size-wait: 0s;
+  --moon-time: var(--rise);
+  --moon-ease: var(--rise-ease);
+  --moon-wait: var(--wait);
+  --moon-size-time: calc(var(--rise) * (1 - var(--open-after)));
+  --moon-size-ease: var(--rise-ease);
+  --moon-size-wait: calc(var(--wait) + var(--rise) * var(--open-after));
+}
+
+:root[data-theme="light"] .theme-toggle {
+  --night: 0;
+  --sun-time: var(--rise);
+  --sun-ease: var(--rise-ease);
+  --sun-wait: var(--wait);
+  --sun-size-time: calc(var(--rise) * (1 - var(--open-after)));
+  --sun-size-ease: var(--rise-ease);
+  --sun-size-wait: calc(var(--wait) + var(--rise) * var(--open-after));
+  --moon-time: var(--fall);
+  --moon-ease: var(--fall-ease);
+  --moon-wait: 0s;
+  --moon-size-time: calc(var(--fall) * var(--draw-in));
+  --moon-size-ease: var(--shrink-ease);
+  --moon-size-wait: 0s;
+}
+
+.sky {
+  display: grid;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.theme-toggle svg {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  will-change: translate, scale, rotate;
+}
+
+/* --up is 1 when the icon is in the sky and 0 when it has set. */
+.theme-toggle .sun {
+  --up: calc(1 - var(--night));
+  translate: 0 calc(var(--night) * var(--sink));
+  scale: calc(var(--sun-shrunk) + var(--up) * (1 - var(--sun-shrunk)));
+  opacity: calc(1 - var(--night) * var(--fade));
+  transition:
+    translate var(--sun-time) var(--sun-ease) var(--sun-wait),
+    scale var(--sun-size-time) var(--sun-size-ease) var(--sun-size-wait),
+    opacity var(--sun-size-time) var(--sun-size-ease) var(--sun-size-wait),
+    rotate 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-toggle .moon {
+  --up: var(--night);
+  --size: calc(var(--moon-size) * (var(--moon-shrunk) + var(--up) * (1 - var(--moon-shrunk))));
+  stroke: none;
+  translate: 0 calc((1 - var(--night)) * var(--sink));
+  scale: calc(var(--moon-flip) * var(--size)) var(--size);
+  opacity: calc(1 - (1 - var(--night)) * var(--fade));
+  transition:
+    translate var(--moon-time) var(--moon-ease) var(--moon-wait),
+    scale var(--moon-size-time) var(--moon-size-ease) var(--moon-size-wait),
+    opacity var(--moon-size-time) var(--moon-size-ease) var(--moon-size-wait),
+    rotate 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* The name's dot. The numbers are Instrument Serif's own, in em: its dot is
+   centred 0.1825em below the top of the line, and the gap between dot and stem
+   is at 0.28em. The script adds .name-ready only once that face has loaded, so
+   a fallback face keeps its real dot and the button stays in the corner. */
+
+.tittle {
+  display: inline-block;
+  anchor-name: --tittle;
+}
+
+@supports (anchor-name: --tittle) {
+  .name-ready .tittle {
+    clip-path: inset(0.28em -0.2em -0.4em -0.2em);
+  }
+
+  .name-ready .theme-toggle {
+    /* Size and place are rounded to whole pixels. At a fractional position the
+       icon is drawn in one place while it turns and snaps to the pixel grid when
+       the turn ends, which shows as a small jump. */
+    --dot: round(max(var(--dot-em, 0.24em), 0.875rem), 2px);
+    position-anchor: --tittle;
+    top: round(calc(anchor(top) + 0.1825em - var(--dot) / 2), 1px);
+    left: round(calc(anchor(center) - var(--dot) / 2), 1px);
+    right: auto;
+    width: var(--dot);
+    height: var(--dot);
+    font-size: var(--display);
+    color: var(--ink);
+  }
+
+  /* The dot is small; the place to press is not. */
+  .name-ready .theme-toggle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.75rem;
+    height: 2.75rem;
+    translate: -50% -50%;
+  }
+
+  .name-ready .theme-toggle:hover {
+    background: none;
+    color: var(--pencil);
+  }
+
+  /* In the name, the icon goes down behind the "i", and the letter is the only
+     thing that ever hides it: no clipping, no fading. The sky is painted under
+     the text. The stem is 0.0675em wide, under the dot, and its top is 0.33em
+     below the top of the line. As the icon sinks it draws in, and it is narrower
+     than the stem before any part of it is below the stem's top; it then slides
+     0.31em down, well inside the stem. The crescent is mirrored so its heavy
+     side faces the low "c", clear of the N's serif. */
+  .name-ready .theme-toggle {
+    --sink: 0.31em;
+    --sun-shrunk: 0.1;
+    --moon-shrunk: 0.15;
+    --fade: 0;
+    --moon-flip: -1;
+    --moon-size: 0.9;
+  }
+
+  .name-ready .sky {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .name-ready .theme-toggle:hover .sun {
+    rotate: 45deg;
+  }
+
+  .name-ready .theme-toggle:hover .moon {
+    rotate: 24deg;
+  }
+}
+
+/* ---------- Header ---------- */
+
+h1 {
+  font-family: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  font-size: var(--display);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.012em;
+  white-space: nowrap;
+}
+
+.intro {
+  margin-top: 1.5rem;
+}
+
+.intro p {
+  text-wrap: pretty;
+}
+
+.intro p + p {
+  margin-top: 0.9rem;
+}
+
+/* Contact and profiles: a row of icon links. Each carries its name and address
+   as text, for screen readers, for print and for anyone reading the HTML. */
+.reach {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.125rem;
+  margin: 1.1rem 0 0 -0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.reach a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.reach a:hover {
+  color: var(--pencil-ink);
+}
+
+.reach svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Sections ---------- */
+
+.section,
+.colophon {
+  margin-top: 3.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--hairline);
+}
+
+h2 {
+  margin-bottom: 1.1rem;
+  font-size: var(--lede);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: var(--text);
+  font-weight: 700;
+  line-height: var(--leading);
+}
+
+.entry + .entry {
+  margin-top: 2rem;
+}
+
+.entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 1.5rem;
+}
+
+.entry-head h3 {
+  min-width: 0;
+  text-wrap: balance;
+}
+
+.entry-head .when {
+  flex: none;
+}
+
+.when {
+  color: var(--ink-soft);
+  font-size: var(--small);
+  font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
+}
+
+.role {
+  color: var(--ink-soft);
+}
+
+.entry > p,
+.entry > ul {
+  max-width: var(--measure);
+}
+
+.role + p,
+.entry-head + p:not(.role) {
+  margin-top: 0.45rem;
+}
+
+.entry ul {
+  margin-top: 0.55rem;
+  padding-left: 1.15em;
+}
+
+.entry li {
+  padding-left: 0.2em;
+  text-wrap: pretty;
+}
+
+.entry li + li {
+  margin-top: 0.4rem;
+}
+
+.entry li::marker {
+  color: var(--pencil);
+}
+
+.entry-links {
+  margin-top: 0.45rem;
+  color: var(--ink-soft);
+}
+
+.entry-links a {
+  color: var(--ink);
+}
+
+.entry-links a:hover {
+  color: var(--pencil-ink);
+}
+
+.more {
+  margin-top: 2rem;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+.more a {
+  color: var(--ink);
+}
+
+.note {
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* The empty state for albums and photos: one quiet row in a single paper tint. */
+.is-waiting span {
+  display: block;
+  border-radius: 2px;
+  background: var(--frame);
+}
+
+.albums.is-waiting span {
+  aspect-ratio: 1;
+}
+
+.photos.is-waiting span {
+  aspect-ratio: 1;
+}
+
+.is-waiting span:nth-child(n + 4) {
+  display: none;
+}
+
+/* ---------- Commit graph ---------- */
+
+.graph-year {
+  display: flex;
+}
+
+.graph-half {
+  flex: var(--weeks) 1 0;
+  min-width: 0;
+}
+
+.graph-dots {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  touch-action: pan-y;
+}
+
+.graph-dots circle {
+  fill: var(--ink);
+}
+
+.graph-dots .rest {
+  fill: var(--rest);
+}
+
+.graph-dots .now,
+.graph-dots .is-on {
+  fill: var(--pencil);
+}
+
+.graph-months {
+  display: grid;
+  grid-template-columns: repeat(var(--weeks), minmax(0, 1fr));
+  margin-top: 0.5rem;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.graph-months li {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.graph-readout {
+  min-height: 1.5rem;
+  margin-top: 0.6rem;
+  color: var(--ink-soft);
+  font-size: var(--small);
+  font-style: italic;
+  font-variant-numeric: lining-nums;
+}
+
+.graph figcaption {
+  margin-top: 0.9rem;
+  max-width: var(--measure);
+}
+
+.graph strong {
+  font-weight: 700;
+}
+
+/* The year inks in, week by week, when the reader reaches it. The script adds
+   these classes; without it the graph is simply there. */
+@media (prefers-reduced-motion: no-preference) {
+  .graph.is-pending .graph-dots g {
+    opacity: 0;
+  }
+
+  .graph.is-inking .graph-dots g {
+    animation: ink-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(var(--w) * 16ms);
+  }
+
+  @keyframes ink-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  }
+}
+
+/* ---------- Albums ---------- */
+
+/* A wall of covers: two across on a phone, four from there up, so a full shelf
+   never ends on a stray cover. */
+.albums {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 30rem) {
+  .albums {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.album-tile,
+.album-tile:hover {
+  position: relative;
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.album .cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+  background: oklch(var(--tint-l) var(--tint-c) var(--h));
+}
+
+.album img.cover {
+  box-shadow: 0 1px 2px var(--cover-shadow), 0 10px 22px -14px var(--cover-shadow-deep);
+}
+
+/* Title and artist. Where there is no pointer to hover with, they sit under the
+   cover, because otherwise they would never be seen. */
+.album-label {
+  display: block;
+  padding-top: 0.55rem;
+  font-size: var(--small);
+  line-height: 1.3;
+}
+
+.album-title,
+.album-artist {
+  display: block;
+}
+
+.album-title {
+  font-weight: 700;
+}
+
+.album-artist {
+  color: var(--ink-soft);
+}
+
+/* With a pointer, the covers stand alone. Pointing at one, or tabbing to it,
+   raises a band of the page's own paper along its bottom edge with the label
+   on it. An album with no cover art keeps its label showing. */
+@media (hover: hover) {
+  .albums {
+    gap: 1rem;
+  }
+
+  .album-tile {
+    overflow: clip;
+    border-radius: 2px;
+  }
+
+  .album:not(.is-bare) .album-label {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 0.5rem 0.65rem 0.55rem;
+    background: color-mix(in oklch, var(--paper) 94%, transparent);
+    opacity: 0;
+    translate: 0 0.4rem;
+    transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), translate 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .album-tile:hover .album-label,
+  .album-tile:focus-visible .album-label {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* ---------- Photos ---------- */
+
+/* A strip of small square crops, quieter than the album wall. Each opens the
+   whole photograph. Three across on a phone, six from there up. */
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 30rem) {
+  .photos {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.photo a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.photo .frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--frame);
+}
+
+/* ---------- Footer ---------- */
+
+/* The home page's footer: a centred sign-off. Icons first, then the copyright. */
+.site-foot {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  margin-top: 4.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--hairline);
+  text-align: center;
+}
+
+.site-foot .reach {
+  justify-content: center;
+  margin: 0;
+}
+
+.site-foot .fine {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--small);
+}
+
+/* The colophon page keeps a headed footer with a link back. */
+
+.colophon .mail {
+  font-size: var(--lede);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.colophon .reach {
+  margin-top: 0;
+}
+
+.colophon .fine {
+  margin-top: 1.75rem;
+  color: var(--ink-soft);
+  font-size: var(--small);
+}
+
+/* ---------- Colophon page ---------- */
+
+.home-link {
+  margin-bottom: 0.75rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.facts {
+  margin: 0;
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  padding: 0.28rem 0;
+}
+
+.facts dt {
+  color: var(--ink-soft);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.entry > h3 + p {
+  margin-top: 0.3rem;
+}
+
+.body > p + .entry {
+  margin-top: 2rem;
+}
+
+.inks {
+  width: 100%;
+  margin-top: 0.9rem;
+  border-collapse: collapse;
+  font-size: var(--small);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.inks th,
+.inks td {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-top: 1px solid var(--hairline);
+  font-weight: 400;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.inks thead th {
+  border-top: 0;
+  padding-top: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.inks tbody th {
+  font-size: var(--text);
+}
+
+.inks small {
+  display: block;
+  color: var(--ink-soft);
+  font-size: var(--small);
+  line-height: 1.35;
+}
+
+.inks td {
+  white-space: nowrap;
+}
+
+/* Paper-coloured chips need an edge to be seen on their own paper. */
+.chip {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--hairline);
+  vertical-align: middle;
+}
+
+.voice {
+  margin-top: 1rem;
+}
+
+.voice + .voice {
+  margin-top: 1.5rem;
+}
+
+.specimen {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.specimen-name {
+  font-family: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  font-size: 2.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+}
+
+.voice .role {
+  margin-top: 0.3rem;
+  font-size: var(--small);
+  line-height: 1.45;
+}
+
+@media (max-width: 30rem) {
+  .facts div {
+    grid-template-columns: 1fr;
+    padding: 0.4rem 0;
+  }
+
+  .facts dt {
+    font-size: var(--small);
+  }
+
+  .inks th,
+  .inks td {
+    padding-right: 0.5rem;
+  }
+
+  .chip {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.35rem;
+  }
+}
+
+/* ---------- Reduced motion: no hover or lift transitions either ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+/* ---------- Narrow screens ---------- */
+
+@media (max-width: 30rem) {
+  /* The year stacks into two half-years so a day stays big enough to touch. */
+  .graph-year {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .graph-half {
+    flex: none;
+    width: calc(var(--weeks) / var(--span) * 100%);
+  }
+
+  /* Dates drop under the name rather than squeezing it. */
+  .entry-head {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Wide screens: section heads hang in the margin ---------- */
+
+@media (min-width: 56rem) {
+  .masthead,
+  .section,
+  .colophon {
+    display: grid;
+    grid-template-columns: var(--margin-col) minmax(0, 1fr);
+    column-gap: var(--gutter);
+  }
+
+  .masthead > * {
+    grid-column: 2;
+  }
+
+  .masthead > h1,
+  .masthead > .home-link {
+    grid-column: 1 / -1;
+  }
+
+  .section,
+  .colophon {
+    margin-top: 4.5rem;
+    padding-top: 1.5rem;
+  }
+
+  h2 {
+    grid-column: 1;
+    margin-bottom: 0;
+    font-size: var(--text);
+    line-height: var(--leading);
+    color: var(--ink-soft);
+  }
+
+  .body {
+    grid-column: 2;
+  }
+
+  .colophon .reach {
+    margin-top: -0.55rem;
+  }
+
+  .section.is-wide > h2,
+  .section.is-wide > .body {
+    grid-column: 1 / -1;
+  }
+
+  .section.is-wide > h2 {
+    margin-bottom: 1.1rem;
+  }
+
+  .section.is-wide .in-measure {
+    margin-left: calc(var(--margin-col) + var(--gutter));
+  }
+
+
+  .is-waiting span:nth-child(n + 4) {
+    display: block;
+  }
+
+  /* Bullets hang in the gutter so the text keeps one left edge. */
+  .entry ul {
+    padding-left: 0;
+  }
+
+  .entry li {
+    padding-left: 0;
+  }
+}
+
+/* ---------- Print: this is a resume ---------- */
+
+@media print {
+  /* The tripled :root outranks both dark blocks, so a reader in dark mode
+     still prints black on white. */
+  :root:root:root {
+    --paper: #fff;
+    --ink: #000;
+    --ink-soft: #444;
+    --hairline: #ccc;
+    --rest: #bbb;
+    --frame: #eee;
+    --pencil: #a70029;
+    --pencil-ink: #a70029;
+    --pencil-wash: #fdd;
+    color-scheme: light;
+  }
+
+  body {
+    font-size: 10.5pt;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  .theme-toggle,
+  .skip-link,
+  .graph-readout,
+  .note,
+  .is-waiting,
+  .section:has(.is-waiting) {
+    display: none !important;
+  }
+
+  .section,
+  .colophon {
+    margin-top: 1.5rem;
+  }
+
+  .entry,
+  .graph,
+  .album,
+  .photo {
+    break-inside: avoid;
+  }
+
+  .graph.graph .graph-dots g {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  /* On paper every album shows its label under its cover. */
+  .albums {
+    gap: 1rem;
+  }
+
+  .album-tile {
+    overflow: visible;
+  }
+
+  .album .album-label {
+    position: static;
+    padding: 0.4rem 0 0;
+    background: none;
+    opacity: 1;
+    translate: none;
+  }
+
+  /* On paper the icon links print as their names and addresses. */
+  .reach {
+    gap: 0 1.25rem;
+    margin-left: 0;
+  }
+
+  .reach a {
+    display: inline;
+    width: auto;
+    height: auto;
+  }
+
+  .reach svg {
+    display: none;
+  }
+
+  .reach .sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip-path: none;
+  }
+
+  /* On paper the name gets its own dot back. */
+  .tittle {
+    clip-path: none !important;
+  }
+}
