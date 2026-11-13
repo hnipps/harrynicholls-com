@@ -1175,6 +1175,120 @@ kbd {
   max-width: 17rem;
 }
 
+/* ---------- Lightbox ---------- */
+
+/* A photo or a screenshot opened over the page: the page's own paper, edge to
+   edge, with the picture as large as it will go. The controls are words. */
+.lightbox {
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--paper);
+  color: var(--ink);
+  overscroll-behavior: contain;
+}
+
+.lightbox[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.lightbox::backdrop {
+  background: var(--paper);
+}
+
+html:has(.lightbox[open]) {
+  overflow: hidden;
+}
+
+.lightbox-bar,
+.lightbox-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 1.25rem;
+}
+
+.lightbox-count,
+.lightbox-caption {
+  color: var(--ink-soft);
+  font-size: var(--small);
+}
+
+.lightbox-count {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.lightbox-caption {
+  flex: 1;
+  max-width: var(--measure);
+  margin-inline: auto;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.lightbox button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline var(--pencil) 0.085em;
+  text-underline-offset: 0.22em;
+  transition: text-decoration-thickness 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s;
+}
+
+.lightbox button:hover {
+  color: var(--pencil-ink);
+  text-decoration-thickness: 0.17em;
+}
+
+.lightbox-close {
+  margin-left: auto;
+}
+
+.lightbox-stage {
+  position: relative;
+  margin: 0.25rem 1.25rem;
+  cursor: zoom-out;
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Never larger than the file, never larger than the space. */
+.lightbox-stage img {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  border-radius: 2px;
+  object-fit: contain;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lightbox[open] {
+    animation: lightbox-in 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes lightbox-in {
+    from {
+      opacity: 0;
+    }
+  }
+}
+
 /* ---------- Reduced motion: no hover or lift transitions either ---------- */
 
 @media (prefers-reduced-motion: reduce) {

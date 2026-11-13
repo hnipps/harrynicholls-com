@@ -271,7 +271,7 @@ A year of real GitHub contributions as a field of dots, one per day.
 ### Photos
 The section is headed "Gallery". Six of Harry's own photographs, in `content/photos.json`.
 - **Grid:** a single strip spanning the page: three across on a phone, six from 30rem, 0.75rem apart. Smaller than the album covers on purpose; the albums lead.
-- **Real tile:** a 480px square thumbnail cropped from the centre, 2px radius, no shadow and no caption. The whole tile is a link to the full photograph (at most 1600px on its long side), with a zoom-in cursor. The description of each photo is its `alt` text.
+- **Real tile:** a 480px square thumbnail cropped from the centre, 2px radius, no shadow and no caption. The whole tile is a link to the full photograph (at most 1600px on its long side), with a zoom-in cursor; it opens in the lightbox. The description of each photo is its `alt` text.
 - **Preparation:** `scripts/prepare-photo.sh` makes both files as sRGB JPEGs, rotated upright, with every piece of metadata removed: no EXIF, GPS position, camera details or timestamps. Never add a photo to `src/photos/` any other way.
 - **Waiting state:** if the list is ever empty, the same note-then-tiles pattern in squares: three tiles on narrow screens, six on wide.
 
@@ -286,13 +286,21 @@ Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused
 - **Voices:** a specimen line for each typeface (the name at 2.75rem in the serif, a sentence at 1.5rem in the sans) with its credit and licence in small soft ink.
 - Keep it true. When the stack, the palettes, the typefaces or the data sources change, this page changes with them.
 
+### Lightbox
+Clicking a gallery photo or a case study screenshot opens it over the page (`.lightbox`, built by `site.js` as a native `<dialog>`). Without JavaScript, or with a modified click, each one is still a plain link to its file.
+- **Surface:** the page's own paper, edge to edge, with no dimmed backdrop, panel or shadow. The picture sits centred in the space left, never larger than its file.
+- **Controls:** words, styled as links: "Close" top right, "Previous" and "Next" bottom left and right, each at least 2.75rem to touch. A count ("2 of 6") in small soft ink sits top left. No icons.
+- **Caption:** small soft ink, centred under the picture: a screenshot's own caption, or a photo's `alt` text.
+- **Behaviour:** the pictures on a page form one set and wrap round. Left and right arrow keys and a sideways swipe turn; Escape, "Close", or a click on the picture or the space round it closes. Focus returns to the picture last shown. The page behind does not scroll. The thumbnail stands in until the full file loads.
+- **Motion:** a 0.24s fade in, only under `prefers-reduced-motion: no-preference`.
+
 ### Case study pages
 `src/projects/*.html`, one page per project: gitrove, Crosscheck, Recommender, opsdeck and GoHome. They are hand-written HTML in the site's own system and follow the colophon page: the same masthead, sections, margin heads and headed footer. `src/portfolio.html` is a short index of the five, with each entry's `id` matching the old portfolio anchors.
 - **Masthead:** the italic link back to "Harry Nicholls", the project name in Instrument Serif at the display size, then one sentence saying what the project is. The switcher is the round button in the top right corner.
 - **In brief:** a facts list (`.facts`) with purpose, link or access, status where one is known, and stack.
 - **How it works** (`.prose`): running paragraphs 0.9rem apart, inside the measure. Inline `code` and `kbd` are the system monospace at 0.9em with no fill. A block of commands (`.commands`) scrolls sideways inside itself on a narrow screen.
 - **Principle** (`.principle`): the one rule a project is built on, set once in the lede size in italic, with no rule or mark beside it.
-- **Screens** (`.shots`): a wide section. Each screenshot is a figure spanning both columns, 2.5rem apart, with a small soft-ink caption indented back to the text column. A phone screenshot (`.is-phone`) is held to 17rem and starts at the text edge. Each image links to its own file and carries a zoom-in cursor, as the photos do. Images are 1664px wide, cropped to the window edge with no baked-in shadow or padding. A page with nothing to show has no Screens section; Crosscheck lists its published studies as entries instead.
+- **Screens** (`.shots`): a wide section. Each screenshot is a figure spanning both columns, 2.5rem apart, with a small soft-ink caption indented back to the text column. A phone screenshot (`.is-phone`) is held to 17rem and starts at the text edge. Each image opens in the lightbox, as the photos do. Images are 1664px wide, cropped to the window edge with no baked-in shadow or padding. A page with nothing to show has no Screens section; Crosscheck lists its published studies as entries instead.
 - **Other projects:** the last section is one sentence linking the other four pages.
 - **Print:** a screenshot or a principle never breaks across pages.
 
