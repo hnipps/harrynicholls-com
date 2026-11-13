@@ -36,7 +36,8 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
 - Selected work lists ev.energy, Restaurant Brands International, SpotHero, Rangle.io and Northstar Robotics. The Flyfish Club and Seed Club contracts, the consulting years and education fold into one "Earlier" entry.
 - Side projects are the ones under Projects on Harry's resume: gitrove, Crosscheck and Recommender. The other case studies stay in `src/portfolio.html`.
 - Albums: sixteen chosen by Harry, listed in `content/albums.json`, each with its cover and a link to Apple Music.
-- Undecided: which photos. That section ships as a placeholder until Harry fills `content/photos.json`.
+- Photos: six of Harry's own, listed in `content/photos.json`. All metadata, including location, is stripped before a photo is published.
+- Section names on the page are Harry's: Selected work, Projects, My commitments, In my ears, Gallery, Writing.
 
 ## Brand Commitments
 

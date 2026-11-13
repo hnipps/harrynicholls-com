@@ -19,10 +19,11 @@ One entry per record, in the order they should appear.
 ## photos.json
 
 ```json
-{ "src": "/photos/workshop.jpg", "alt": "What is in the photo", "caption": "Optional caption" }
+{ "src": "/photos/workshop.jpg", "thumb": "/photos/workshop-thumb.jpg", "alt": "What is in the photo" }
 ```
 
-- Images go under `src/photos/`, cropped 4:5.
+- Prepare every photo with `sh scripts/prepare-photo.sh <input image> <name>`. It takes JPEG or HEIC, writes `src/photos/<name>.jpg` and `src/photos/<name>-thumb.jpg` as web-safe JPEGs, and removes all metadata, including the GPS position phones record. Do not copy photos in by hand.
+- The gallery is six across, so it looks best with a multiple of three.
 - Entries with an empty `src` are skipped. While every entry is empty, the section shows a "photos to come" note and one row of blank frames.
 
 ## contributions.json

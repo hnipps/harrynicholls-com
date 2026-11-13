@@ -305,7 +305,6 @@ figure {
 
 .theme-toggle:hover {
   color: var(--ink);
-  background: var(--frame);
 }
 
 /* Sunset and moonrise. Both icons are always there; --night says which is up.
@@ -566,12 +565,11 @@ h1 {
   border-radius: 50%;
   color: var(--ink);
   text-decoration: none;
-  transition: color 0.2s, background-color 0.2s;
+  transition: color 0.2s;
 }
 
 .reach a:hover {
   color: var(--pencil-ink);
-  background: var(--frame);
 }
 
 .reach svg {
@@ -715,7 +713,7 @@ h3 {
 }
 
 .photos.is-waiting span {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
 }
 
 .is-waiting span:nth-child(n + 4) {
@@ -903,32 +901,35 @@ h3 {
 
 /* ---------- Photos ---------- */
 
+/* A strip of small square crops, quieter than the album wall. Each opens the
+   whole photograph. Three across on a phone, six from there up. */
 .photos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
-  max-width: var(--measure);
   padding: 0;
   list-style: none;
+}
+
+@media (min-width: 30rem) {
+  .photos {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.photo a {
+  display: block;
+  cursor: zoom-in;
 }
 
 .photo .frame {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 2px;
   background: var(--frame);
-}
-
-.photo-caption {
-  display: block;
-  margin-top: 0.35rem;
-  color: var(--ink-soft);
-  font-size: 0.8125rem;
-  font-style: italic;
-  line-height: 1.35;
 }
 
 /* ---------- Footer ---------- */
@@ -1191,10 +1192,6 @@ h3 {
     margin-left: calc(var(--margin-col) + var(--gutter));
   }
 
-
-  .photos {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
 
   .is-waiting span:nth-child(n + 4) {
     display: block;

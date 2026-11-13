@@ -528,7 +528,7 @@
       "refersTo": "contact-icons",
       "description": "A row of five icon links (email, GitHub, LinkedIn, Substack, X). Solid glyphs in ink, each in a round 2.75rem target; the name and address ride along as visually hidden text.",
       "html": "<ul class=\"ds-reach\"><li><a href=\"#\" title=\"Email\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v.4l-10 6.2L2 5.9v-.4Zm0 2.75V18.5A1.5 1.5 0 0 0 3.5 20h17a1.5 1.5 0 0 0 1.5-1.5V8.25l-9.47 5.87a1 1 0 0 1-1.06 0L2 8.25Z\"/></svg></a></li><li><a href=\"#\" title=\"X\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z\"/></svg></a></li></ul>",
-      "css": ".ds-reach { display: flex; gap: 0.125rem; margin: 0; padding: 0; list-style: none; } .ds-reach a { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; color: var(--ink); transition: color 0.2s, background-color 0.2s; } .ds-reach a:hover { color: var(--pencil-ink); background: var(--frame); } .ds-reach svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }"
+      "css": ".ds-reach { display: flex; gap: 0.125rem; margin: 0; padding: 0; list-style: none; } .ds-reach a { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; color: var(--ink); transition: color 0.2s, background-color 0.2s; } .ds-reach a:hover { color: var(--pencil-ink); } .ds-reach svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }"
     },
     {
       "name": "Theme switcher",

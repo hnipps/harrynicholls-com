@@ -115,7 +115,7 @@ def graph(data):
 {chr(10).join(halves)}
 </div>
 <figcaption class="in-measure">
-<p><strong>{data["total"]:,}</strong> contributions on <a href="https://github.com/{data.get("login", LOGIN)}">GitHub</a> in the year to {long_date(last)}. Each dot is a day, sized by how much I shipped. The busiest was {long_date(date.fromisoformat(busiest["date"]), year=False)}, with {busiest["count"]:,}.</p>
+<p><strong>{data["total"]:,}</strong> contributions on <a href="https://github.com/{data.get("login", LOGIN)}">GitHub</a> year-to-date.</p>
 </figcaption>
 </figure>
 '''
@@ -159,9 +159,9 @@ def photos(entries):
         return waiting('photos', 'Photos to come.', 6)
     tiles = []
     for p in entries:
-        caption = f'<span class="photo-caption">{escape(p["caption"])}</span>' if p.get('caption') else ''
-        tiles.append(f'<li class="photo"><img class="frame" src="{escape(p["src"])}" '
-                     f'alt="{escape(p.get("alt", ""))}" width="800" height="1000" loading="lazy">{caption}</li>')
+        thumb = p.get('thumb') or p['src']
+        tiles.append(f'<li class="photo"><a href="{escape(p["src"])}"><img class="frame" src="{escape(thumb)}" '
+                     f'alt="{escape(p.get("alt", ""))}" width="480" height="480" loading="lazy"></a></li>')
     return f'\n<ul class="photos" role="list">\n{chr(10).join(tiles)}\n</ul>\n'
 
 

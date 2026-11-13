@@ -152,7 +152,7 @@ Two palettes tuned by Harry himself in the type lab's colour tab; the values are
 - **Soft Blue Ink** (`ink-soft`): dates, roles, asides, notes, captions, margin heads, month labels. 4.58:1 on paper, just above the 4.5 floor, so it has no headroom: it sits on the paper only, and it cannot be lightened.
 - **Hairline** (`hairline`): the 1px rule above every section and the footer; the scrollbar thumb.
 - **Rest** (`rest`): commit-graph dots for days with no contributions.
-- **Frame** (`frame`): waiting tiles, the ground behind a photo while it loads, and the round ground under the theme switcher on hover.
+- **Frame** (`frame`): waiting tiles and the ground behind a photo while it loads.
 - **Navy Paper** (`paper-dark`, renders #000014): the Blue night page and its `theme-color`.
 - **Pale Blue Ink** (`ink-dark`): primary text in Blue night. 12.7:1.
 - **Soft Pale Blue Ink** (`ink-soft-dark`): secondary text in Blue night. 6.0:1.
@@ -241,7 +241,7 @@ The dot of the "i" in "Nicholls". It shows the palette in use: a sun by day, a c
 ### Contact icons
 A row of five icon links under the intro: email (a `mailto:` link), GitHub, LinkedIn, Brainflow on Substack, and X. There are no labels, asides or copy button.
 - **Style:** solid 1.25rem glyphs in ink, each in a 2.75rem round target, 0.125rem apart. The row is pulled 0.75rem left so the first glyph, not its target, sits on the text edge.
-- **States:** on hover the glyph takes the pencil's ink shade and the frame colour fills the circle, over 0.2s. Focus uses the shared pencil ring.
+- **States:** on hover the glyph takes the pencil's ink shade over 0.2s. There is no background behind a hovered icon button, here or on the theme switcher. Focus uses the shared pencil ring.
 - **Text:** every link carries its name and address as visually hidden text ("GitHub: github.com/hnipps"), so screen readers, agents reading the HTML and print all get words. In print the glyphs are dropped and that text is shown.
 - **Footer:** a centred sign-off under a hairline, with no heading. It repeats the header's icon row, envelope first, with one more glyph, a pilcrow, that links to the colophon. The email address is not shown as text anywhere on screen; it is in each envelope's hidden label and appears in print. Under it, in small soft ink: "© 2026 Nicholls Inc." The year is written by hand; update it each January.
 
@@ -269,9 +269,11 @@ A year of real GitHub contributions as a field of dots, one per day.
 - **Waiting state:** an italic soft-ink note, then one row of blank square tiles in the frame colour: three on narrow screens, four on wide.
 
 ### Photos
-- **Grid:** three columns, six from 56rem, held to the measure with 0.75rem gaps.
-- **Real tile:** a 4:5 portrait frame, cropped to fill, 2px radius, no shadow, with an optional italic soft-ink caption (0.8125rem).
-- **Waiting state:** the same note-then-tiles pattern in 4:5: three tiles on narrow screens, six on wide.
+The section is headed "Gallery". Six of Harry's own photographs, in `content/photos.json`.
+- **Grid:** a single strip spanning the page: three across on a phone, six from 30rem, 0.75rem apart. Smaller than the album covers on purpose; the albums lead.
+- **Real tile:** a 480px square thumbnail cropped from the centre, 2px radius, no shadow and no caption. The whole tile is a link to the full photograph (at most 1600px on its long side), with a zoom-in cursor. The description of each photo is its `alt` text.
+- **Preparation:** `scripts/prepare-photo.sh` makes both files as sRGB JPEGs, rotated upright, with every piece of metadata removed: no EXIF, GPS position, camera details or timestamps. Never add a photo to `src/photos/` any other way.
+- **Waiting state:** if the list is ever empty, the same note-then-tiles pattern in squares: three tiles on narrow screens, six on wide.
 
 ### Skip link
 Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused. The one place the ink is used as a fill.
