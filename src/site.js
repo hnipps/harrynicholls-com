@@ -112,6 +112,9 @@ if (zoomable.length && window.HTMLDialogElement && HTMLDialogElement.prototype.s
   const box = document.createElement('dialog');
   box.className = 'lightbox';
   box.setAttribute('aria-label', 'Image viewer');
+  // Focus rests on the viewer itself, so no control wears a focus ring until the
+  // reader tabs to one.
+  box.tabIndex = -1;
   box.innerHTML = `
     <div class="lightbox-bar"><button class="lightbox-close" type="button">Close</button></div>
     <div class="lightbox-stage"><img alt=""></div>
@@ -138,7 +141,11 @@ if (zoomable.length && window.HTMLDialogElement && HTMLDialogElement.prototype.s
     small.width = thumb.getAttribute('width');
     small.height = thumb.getAttribute('height');
     pick.append(small);
-    pick.addEventListener('click', () => show(index));
+    pick.addEventListener('click', (event) => {
+      show(index);
+      // A pointer click leaves focus on the viewer; a keyboard press keeps it here.
+      if (event.detail > 0) box.focus({ preventScroll: true });
+    });
     item.append(pick);
     strip.append(item);
     return pick;
@@ -176,6 +183,7 @@ if (zoomable.length && window.HTMLDialogElement && HTMLDialogElement.prototype.s
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       box.showModal();
+      box.focus({ preventScroll: true });
       show(index);
     });
   });
@@ -200,7 +208,7 @@ if (zoomable.length && window.HTMLDialogElement && HTMLDialogElement.prototype.s
     if (alone || (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft')) return;
     event.preventDefault();
     show(at + (event.key === 'ArrowRight' ? 1 : -1));
-    if (strip.contains(document.activeElement)) picks[at].focus({ preventScroll: true });
+    if (strip.contains(document.activeElement)) box.focus({ preventScroll: true });
   });
 
   // Back to the picture the reader ended on, wherever the browser put focus.
