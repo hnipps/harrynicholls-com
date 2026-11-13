@@ -286,6 +286,12 @@ Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused
 - **Voices:** a specimen line for each typeface (the name at 2.75rem in the serif, a sentence at 1.5rem in the sans) with its credit and licence in small soft ink.
 - Keep it true. When the stack, the palettes, the typefaces or the data sources change, this page changes with them.
 
+### Favicon and share images
+- **Favicon:** the H of Instrument Serif in ink on a paper square with rounded corners (`src/favicon.svg`). The glyph is an outline, so the icon needs no font, and it swaps to the Blue night pair under a dark system setting. `favicon.ico` (32px) and `apple-touch-icon.png` (180px, square and opaque) are drawn from it.
+- **Share images:** one 1200 by 630 card per page in `src/og/`, in the Blue ink palette: the page title in Instrument Serif, one line under it in the sans, then a hairline with "Harry Nicholls" in italic soft ink and the address underlined in the pencil.
+- `scripts/make-share-images.js` draws the cards and the icon rasters. Run it by hand when a title or description changes; it is not part of the build.
+- Every page carries the full Open Graph and Twitter card set, pointing at its own card.
+
 ### Lightbox
 Clicking a gallery photo or a case study screenshot opens it over the page (`.lightbox`, built by `site.js` as a native `<dialog>`). Without JavaScript, or with a modified click, each one is still a plain link to its file.
 - **Surface:** the page's own paper, edge to edge, with no dimmed backdrop, panel or shadow. The picture sits centred in the space left, never larger than its file.
