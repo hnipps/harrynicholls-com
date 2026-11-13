@@ -34,7 +34,7 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
 - Albums and photos are hand-curated in the repo.
 - A stylized commit graph is built from real GitHub contributions by a scheduled GitHub Action, so the deployed page stays plain HTML.
 - Selected work lists ev.energy, Restaurant Brands International, SpotHero, Rangle.io and Northstar Robotics. The Flyfish Club and Seed Club contracts, the consulting years and education fold into one "Earlier" entry.
-- Side projects are the ones under Projects on Harry's resume: gitrove, Crosscheck and Recommender. The other case studies stay in `src/portfolio.html`.
+- Side projects on the home page are gitrove, Crosscheck, the Lean OCPP study and Recommender. The study links out to crosscheck.harrynicholls.com. Five projects have a case study page in `src/projects/`: gitrove, Crosscheck, Recommender, opsdeck and GoHome. `src/portfolio.html` is a short index of those five.
 - Albums: sixteen chosen by Harry, listed in `content/albums.json`, each with its cover and a link to Apple Music.
 - Photos: six of Harry's own, listed in `content/photos.json`. All metadata, including location, is stripped before a photo is published.
 - Section names on the page are Harry's: Selected work, Projects, My commitments, In my ears, Gallery, Writing.
@@ -49,7 +49,7 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
 ## Evidence on Hand
 
 - Summary, projects, profiles and contact: `src/llms.txt` and the JSON-LD in `src/index.html`.
-- Five project case studies with screenshots: gitrove, Crosscheck, opsdeck, GoHome, Covered (`src/portfolio.html`, `src/assets/`).
+- Five project case studies: gitrove, Crosscheck, Recommender, opsdeck and GoHome (`src/projects/`, screenshots in `src/assets/`). Crosscheck has no screenshots; its page lists the studies on crosscheck.harrynicholls.com.
 - Portraits: `src/assets/hi-im-harry*.png`.
 - Writing: Brainflow on Substack, older posts on Medium.
 - Work history, from Harry's current resume (newest first):
@@ -62,7 +62,6 @@ A resume that also shows the person. Harry is a Senior Product Engineer at ev.en
   - Software Engineer and Project Lead, Northstar Robotics, Winnipeg area, 09/2016 to 07/2018.
   - Consultant, BCS Consulting and Sapient Global Markets, 2013 to 2016.
 - Education: MChem, First Class Honours, University of Bath, 2009 to 2013.
-- Side projects also include Recommender, a personal film and TV recommender (`src/assets/recommender/`).
 - Figures on the page, each taken from Harry's current resume: support tickets fell 11% after the verification re-architecture; 1,249 tool calls in 30 days, 77% from colleagues; LLM code review in 12 repos with about 1,100 reviews in 30 days; the Tims app has over 2 million daily users, and Harry led 8 engineers on it; FlyfishClub.com generated $16m in NFT sales, built by 4 engineers and 1 designer; Recommender has run about 248 experiments and shipped one; gitrove launched 09/2026.
 - Harry approved publishing any of the resume's per-role detail, metrics included. Colleagues are not named, and there is no phone number on the site.
 - Not on hand, do not fabricate: the album list and cover art; personal photos; testimonials.

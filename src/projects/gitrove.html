@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>gitrove | Harry Nicholls</title>
+  <meta name="description" content="Daily discoveries from your GitHub network. A case study by Harry Nicholls.">
+  <meta property="og:title" content="gitrove | Harry Nicholls">
+  <meta property="og:description" content="Daily discoveries from your GitHub network. A case study by Harry Nicholls.">
+  <meta name="theme-color" content="#fafcff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000014" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://harrynicholls.com/projects/gitrove.html">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="preload" href="/fonts/hyperlegible-sans-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // Apply a saved light or dark choice before the first paint.
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/site.css">
+  <script type="module" src="/site.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://harrynicholls.com/projects/gitrove.html",
+  "name": "gitrove | Harry Nicholls",
+  "description": "Daily discoveries from your GitHub network.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://harrynicholls.com/",
+    "name": "Harry Nicholls"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Harry Nicholls",
+    "url": "https://harrynicholls.com/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "gitrove",
+    "description": "A daily digest of your GitHub network."
+  }
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page">
+
+<header class="masthead">
+  <p class="home-link"><a href="/">Harry Nicholls</a></p>
+  <h1>gitrove</h1>
+  <button class="theme-toggle" type="button" hidden>
+    <span class="sky">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" stroke="none"/><path fill="none" d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.4A9.2 9.2 0 0 1 9.6 3a9.2 9.2 0 1 0 11.4 11.4Z"/></svg>
+    </span>
+  </button>
+  <div class="intro">
+    <p>Daily discoveries from your GitHub network.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section" aria-labelledby="facts-heading">
+  <h2 id="facts-heading">In brief</h2>
+  <div class="body">
+    <dl class="facts">
+      <div><dt>Purpose</dt><dd>A daily digest of your GitHub network.</dd></div>
+      <div><dt>Link</dt><dd><a href="https://gitrove.com">gitrove.com</a></dd></div>
+      <div><dt>Status</dt><dd>Launched <time datetime="2026-09">Sep 2026</time>.</dd></div>
+      <div><dt>Stack</dt><dd>TypeScript, Qwik City, Go, PostgreSQL, GitHub API, GH Archive, Stripe, Cloudflare Tunnel.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how-heading">
+  <h2 id="how-heading">How it works</h2>
+  <div class="body prose">
+    <p>gitrove is a discovery tool for open-source developers and repositories, built around a personal daily digest. A user signs in with GitHub, and gitrove watches the developers they follow and the repositories they star. Once a day it sends one digest: repositories where several people in their network are converging, new releases from starred repositories, who their follows started following, and everything else.</p>
+    <p>A free Discover page ranks rising developers by language and across 13 topic streams, such as MCP, AI agents and PostgreSQL. Ranking is relative to each developer’s own baseline: their last 7 days of activity are compared with a 28-day baseline, smoothed by a constant. Minimum event and active-day floors keep out short bursts and bots. A weekly Founder’s Digest, one real day of the founder’s own digest, is published free on the blog as a sample. Pro has a 14-day trial, with billing through Stripe.</p>
+    <p>The backend is one Go binary on PostgreSQL. It uses the standard library’s net/http and pgx, with no web framework. Its subcommands include <code>serve</code>, <code>ingest</code>, <code>migrate</code>, <code>collect</code> and <code>mail</code>. <code>ingest</code> loads GH Archive hourly event files in a daily batch and is the only writer of the ranking tables, with bot filtering and pruning. <code>collect</code> refreshes each account’s network mirror and follow diffs through the GitHub API, and <code>mail</code> renders and sends digests through listmonk. The frontend is server-rendered Qwik City in TypeScript, with plain per-route CSS for a dark monospace design. A pull-based deployer polls main every minute and rolls back automatically. The app runs under systemd behind a Cloudflare Tunnel, and each pull request gets its own preview environment.</p>
+  </div>
+</section>
+
+<section class="section is-wide" aria-labelledby="screens-heading">
+  <h2 id="screens-heading">Screens</h2>
+  <div class="body shots">
+    <figure class="shot">
+      <a href="/assets/gitrove/landing.png"><img src="/assets/gitrove/landing.png" alt="gitrove landing page with the headline ‘See which repos are gaining traction with the developers you follow’ beside a sample Founder’s Digest card" width="1664" height="1091" decoding="async"></a>
+      <figcaption class="in-measure">The landing page, with a sample Founder’s Digest card.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="/assets/gitrove/discover.png"><img src="/assets/gitrove/discover.png" alt="gitrove Discover page ranking rising Go developers by score, with 7-day and 28-day activity counts and topic and language streams in the sidebar" width="1664" height="1091" loading="lazy" decoding="async"></a>
+      <figcaption class="in-measure">Discover, ranking rising Go developers against their own 28-day baseline.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="/assets/gitrove/digest.png"><img src="/assets/gitrove/digest.png" alt="A published Founder’s Digest for 12 October 2026, grouped into repositories converging in the network and new releases from starred repositories" width="1664" height="1091" loading="lazy" decoding="async"></a>
+      <figcaption class="in-measure">A published Founder’s Digest, for 12 October 2026.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="more-heading">
+  <h2 id="more-heading">Other projects</h2>
+  <div class="body">
+    <p><a href="/projects/crosscheck.html">Crosscheck</a>, <a href="/projects/recommender.html">Recommender</a>, <a href="/projects/opsdeck.html">opsdeck</a> and <a href="/projects/go-home.html">GoHome</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon" aria-labelledby="back-heading">
+  <h2 id="back-heading">Back</h2>
+  <div class="body">
+    <p class="mail"><a href="/">Harry Nicholls</a></p>
+    <p class="fine">© 2026 Nicholls Inc.</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
