@@ -34,6 +34,91 @@
   font-display: swap;
 }
 
+/* Dusk. The colour tokens are registered as colours so the browser can blend
+   them. When the palette changes, by the switcher or by the system, the whole
+   page fades from day to night instead of cutting. */
+@property --paper {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --ink-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --hairline {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --rest {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --frame {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --pencil {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --pencil-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --pencil-wash {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --cover-shadow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --cover-shadow-deep {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
+:root {
+  --dusk: 0.85s ease;
+  transition:
+    --paper var(--dusk),
+    --ink var(--dusk),
+    --ink-soft var(--dusk),
+    --hairline var(--dusk),
+    --rest var(--dusk),
+    --frame var(--dusk),
+    --pencil var(--dusk),
+    --pencil-ink var(--dusk),
+    --pencil-wash var(--dusk),
+    --cover-shadow var(--dusk),
+    --cover-shadow-deep var(--dusk);
+}
+
 :root {
   /* Blue ink: the light palette. Blue ink on near-white paper, red for marks. */
   --paper: oklch(99% 0.005 260);
@@ -223,37 +308,142 @@ figure {
   background: var(--frame);
 }
 
-.theme-toggle svg {
+/* Sunset and moonrise. Both icons are always there; --night says which is up.
+   The one going down sinks and draws in; the one coming up waits for it, then
+   rises and opens out. Nothing is ever clipped. In the name the icon is hidden
+   by the "i" itself (see "The name's dot"); in the corner, with no letter to
+   go behind, it fades as it goes. */
+.theme-toggle {
+  --night: 0;
+  --fall: 0.55s;
+  --rise: 0.7s;
+  --wait: 0.42s;
+  --fall-ease: cubic-bezier(0.5, 0, 0.9, 0.5);
+  --shrink-ease: cubic-bezier(0.45, 0, 0.8, 0.6);
+  --rise-ease: cubic-bezier(0.22, 0.7, 0.25, 1);
+
+  /* How far an icon sinks, how small each one ends, and whether it also fades. */
+  --sink: 70%;
+  --sun-shrunk: 0.2;
+  --moon-shrunk: 0.2;
+  --fade: 1;
+  --moon-flip: 1;
+  --moon-size: 1;
+
+  /* An icon finishes drawing in during the first --draw-in of its fall, and
+     starts opening out --open-after of the way into its rise. Those fractions
+     are what keep it narrower than the stem whenever any part of it is below
+     the stem's top; the lab's Motion tab checks any change to them. */
+  --draw-in: 0.7;
+  --open-after: 0.2;
+
+  /* Day: the sun is rising, the moon setting. */
+  --sun-time: var(--rise);
+  --sun-ease: var(--rise-ease);
+  --sun-wait: var(--wait);
+  --sun-size-time: calc(var(--rise) * (1 - var(--open-after)));
+  --sun-size-ease: var(--rise-ease);
+  --sun-size-wait: calc(var(--wait) + var(--rise) * var(--open-after));
+  --moon-time: var(--fall);
+  --moon-ease: var(--fall-ease);
+  --moon-wait: 0s;
+  --moon-size-time: calc(var(--fall) * var(--draw-in));
+  --moon-size-ease: var(--shrink-ease);
+  --moon-size-wait: 0s;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle {
+    --night: 1;
+    --sun-time: var(--fall);
+    --sun-ease: var(--fall-ease);
+    --sun-wait: 0s;
+    --sun-size-time: calc(var(--fall) * var(--draw-in));
+    --sun-size-ease: var(--shrink-ease);
+    --sun-size-wait: 0s;
+    --moon-time: var(--rise);
+    --moon-ease: var(--rise-ease);
+    --moon-wait: var(--wait);
+    --moon-size-time: calc(var(--rise) * (1 - var(--open-after)));
+    --moon-size-ease: var(--rise-ease);
+    --moon-size-wait: calc(var(--wait) + var(--rise) * var(--open-after));
+  }
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  --night: 1;
+  --sun-time: var(--fall);
+  --sun-ease: var(--fall-ease);
+  --sun-wait: 0s;
+  --sun-size-time: calc(var(--fall) * var(--draw-in));
+  --sun-size-ease: var(--shrink-ease);
+  --sun-size-wait: 0s;
+  --moon-time: var(--rise);
+  --moon-ease: var(--rise-ease);
+  --moon-wait: var(--wait);
+  --moon-size-time: calc(var(--rise) * (1 - var(--open-after)));
+  --moon-size-ease: var(--rise-ease);
+  --moon-size-wait: calc(var(--wait) + var(--rise) * var(--open-after));
+}
+
+:root[data-theme="light"] .theme-toggle {
+  --night: 0;
+  --sun-time: var(--rise);
+  --sun-ease: var(--rise-ease);
+  --sun-wait: var(--wait);
+  --sun-size-time: calc(var(--rise) * (1 - var(--open-after)));
+  --sun-size-ease: var(--rise-ease);
+  --sun-size-wait: calc(var(--wait) + var(--rise) * var(--open-after));
+  --moon-time: var(--fall);
+  --moon-ease: var(--fall-ease);
+  --moon-wait: 0s;
+  --moon-size-time: calc(var(--fall) * var(--draw-in));
+  --moon-size-ease: var(--shrink-ease);
+  --moon-size-wait: 0s;
+}
+
+.sky {
+  display: grid;
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.theme-toggle svg {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
   fill: currentColor;
   stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
-  transition: rotate 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: translate, scale, rotate;
+}
+
+/* --up is 1 when the icon is in the sky and 0 when it has set. */
+.theme-toggle .sun {
+  --up: calc(1 - var(--night));
+  translate: 0 calc(var(--night) * var(--sink));
+  scale: calc(var(--sun-shrunk) + var(--up) * (1 - var(--sun-shrunk)));
+  opacity: calc(1 - var(--night) * var(--fade));
+  transition:
+    translate var(--sun-time) var(--sun-ease) var(--sun-wait),
+    scale var(--sun-size-time) var(--sun-size-ease) var(--sun-size-wait),
+    opacity var(--sun-size-time) var(--sun-size-ease) var(--sun-size-wait),
+    rotate 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .theme-toggle .moon {
-  display: none;
+  --up: var(--night);
+  --size: calc(var(--moon-size) * (var(--moon-shrunk) + var(--up) * (1 - var(--moon-shrunk))));
   stroke: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .moon {
-    display: block;
-  }
-
-  :root:not([data-theme="light"]) .theme-toggle .sun {
-    display: none;
-  }
-}
-
-:root[data-theme="dark"] .theme-toggle .moon {
-  display: block;
-}
-
-:root[data-theme="dark"] .theme-toggle .sun {
-  display: none;
+  translate: 0 calc((1 - var(--night)) * var(--sink));
+  scale: calc(var(--moon-flip) * var(--size)) var(--size);
+  opacity: calc(1 - (1 - var(--night)) * var(--fade));
+  transition:
+    translate var(--moon-time) var(--moon-ease) var(--moon-wait),
+    scale var(--moon-size-time) var(--moon-size-ease) var(--moon-size-wait),
+    opacity var(--moon-size-time) var(--moon-size-ease) var(--moon-size-wait),
+    rotate 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* The name's dot. The numbers are Instrument Serif's own, in em: its dot is
@@ -275,7 +465,7 @@ figure {
     /* Size and place are rounded to whole pixels. At a fractional position the
        icon is drawn in one place while it turns and snaps to the pixel grid when
        the turn ends, which shows as a small jump. */
-    --dot: round(max(0.24em, 0.875rem), 2px);
+    --dot: round(max(var(--dot-em, 0.24em), 0.875rem), 2px);
     position-anchor: --tittle;
     top: round(calc(anchor(top) + 0.1825em - var(--dot) / 2), 1px);
     left: round(calc(anchor(center) - var(--dot) / 2), 1px);
@@ -302,17 +492,27 @@ figure {
     color: var(--pencil);
   }
 
-  /* Kept on its own layer at rest as well as in motion, so nothing is redrawn
-     when the turn finishes. */
-  .name-ready .theme-toggle svg {
-    width: 100%;
-    height: 100%;
-    will-change: rotate;
+  /* In the name, the icon goes down behind the "i", and the letter is the only
+     thing that ever hides it: no clipping, no fading. The sky is painted under
+     the text. The stem is 0.0675em wide, under the dot, and its top is 0.33em
+     below the top of the line. As the icon sinks it draws in, and it is narrower
+     than the stem before any part of it is below the stem's top; it then slides
+     0.26em down, well inside the stem. The crescent is mirrored so its heavy
+     side faces the low "c", clear of the N's serif. */
+  .name-ready .theme-toggle {
+    --sink: 0.2575em;
+    --sun-shrunk: 0.2;
+    --moon-shrunk: 0.26;
+    --fade: 0;
+    --moon-flip: -1;
+    --moon-size: 0.9;
   }
 
-  /* The crescent's heavy side faces the low "c", clear of the N's serif. */
-  .name-ready .theme-toggle .moon {
-    scale: -0.9 0.9;
+  .name-ready .sky {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
   }
 
   .name-ready .theme-toggle:hover .sun {
@@ -732,6 +932,30 @@ h3 {
 }
 
 /* ---------- Footer ---------- */
+
+/* The home page's footer: a centred sign-off. Icons first, then the copyright. */
+.site-foot {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  margin-top: 4.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--hairline);
+  text-align: center;
+}
+
+.site-foot .reach {
+  justify-content: center;
+  margin: 0;
+}
+
+.site-foot .fine {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--small);
+}
+
+/* The colophon page keeps a headed footer with a link back. */
 
 .colophon .mail {
   font-size: var(--lede);

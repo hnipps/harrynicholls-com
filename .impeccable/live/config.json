@@ -1,0 +1,6 @@
+{
+  "files": ["src/index.html", "src/colophon.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}

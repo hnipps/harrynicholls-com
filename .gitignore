@@ -29,3 +29,7 @@ terraform.rc
 
 # Trial fonts for the type lab: fetched by design-exploration/type-lab/fetch-fonts.sh
 design-exploration/type-lab/fonts/
+
+# Impeccable live mode: keep the config, ignore session state
+.impeccable/live/*
+!.impeccable/live/config.json
