@@ -315,10 +315,10 @@ figure {
    go behind, it fades as it goes. */
 .theme-toggle {
   --night: 0;
-  --fall: 0.55s;
-  --rise: 0.7s;
-  --wait: 0.42s;
-  --fall-ease: cubic-bezier(0.5, 0, 0.9, 0.5);
+  --fall: 0.5s;
+  --rise: 0.5s;
+  --wait: 0.45s;
+  --fall-ease: cubic-bezier(0.3, 0.3, 0.7, 0.7);
   --shrink-ease: cubic-bezier(0.45, 0, 0.8, 0.6);
   --rise-ease: cubic-bezier(0.22, 0.7, 0.25, 1);
 
@@ -334,8 +334,8 @@ figure {
      starts opening out --open-after of the way into its rise. Those fractions
      are what keep it narrower than the stem whenever any part of it is below
      the stem's top; the lab's Motion tab checks any change to them. */
-  --draw-in: 0.7;
-  --open-after: 0.2;
+  --draw-in: 0.5;
+  --open-after: 0.1;
 
   /* Day: the sun is rising, the moon setting. */
   --sun-time: var(--rise);
@@ -497,12 +497,12 @@ figure {
      the text. The stem is 0.0675em wide, under the dot, and its top is 0.33em
      below the top of the line. As the icon sinks it draws in, and it is narrower
      than the stem before any part of it is below the stem's top; it then slides
-     0.26em down, well inside the stem. The crescent is mirrored so its heavy
+     0.31em down, well inside the stem. The crescent is mirrored so its heavy
      side faces the low "c", clear of the N's serif. */
   .name-ready .theme-toggle {
-    --sink: 0.2575em;
-    --sun-shrunk: 0.2;
-    --moon-shrunk: 0.26;
+    --sink: 0.31em;
+    --sun-shrunk: 0.1;
+    --moon-shrunk: 0.15;
     --fade: 0;
     --moon-flip: -1;
     --moon-size: 0.9;

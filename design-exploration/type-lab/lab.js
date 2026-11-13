@@ -358,8 +358,8 @@ const exportCss = () => ['light', 'dark'].map((m) => {
 // Times are seconds; distances are em of the name's size; "ends at" is the fraction
 // of its size an icon has shrunk to by the time it is behind the letter.
 
-const MOTION = { fall: 0.55, rise: 0.7, wait: 0.42, dusk: 0.85, sink: 0.2575, sunEnd: 0.2, moonEnd: 0.26,
-  drawIn: 0.7, openAfter: 0.2, dot: 0.24, fallEase: 'accelerate', riseEase: 'settle', slow: false };
+const MOTION = { fall: 0.5, rise: 0.5, wait: 0.45, dusk: 0.85, sink: 0.31, sunEnd: 0.1, moonEnd: 0.15,
+  drawIn: 0.5, openAfter: 0.1, dot: 0.24, fallEase: 'steady', riseEase: 'settle', slow: false };
 const CURVES = {
   fall: { accelerate: ['Accelerating', [0.5, 0, 0.9, 0.5]], steady: ['Steady', [0.3, 0.3, 0.7, 0.7]], gentle: ['Gentle at both ends', [0.45, 0, 0.55, 1]] },
   rise: { settle: ['Settling', [0.22, 0.7, 0.25, 1]], quick: ['Quick, then slow', [0.16, 1, 0.3, 1]], steady: ['Steady', [0.3, 0.3, 0.7, 0.7]], gentle: ['Gentle at both ends', [0.45, 0, 0.55, 1]] },
