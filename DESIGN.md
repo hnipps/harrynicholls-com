@@ -286,6 +286,16 @@ Paper text on an ink block (0.5rem by 0.75rem padding), off-screen until focused
 - **Voices:** a specimen line for each typeface (the name at 2.75rem in the serif, a sentence at 1.5rem in the sans) with its credit and licence in small soft ink.
 - Keep it true. When the stack, the palettes, the typefaces or the data sources change, this page changes with them.
 
+### Case study pages
+`src/projects/*.html`, one page per project: gitrove, Crosscheck, Recommender, opsdeck and GoHome. They are hand-written HTML in the site's own system and follow the colophon page: the same masthead, sections, margin heads and headed footer. `src/portfolio.html` is a short index of the five, with each entry's `id` matching the old portfolio anchors.
+- **Masthead:** the italic link back to "Harry Nicholls", the project name in Instrument Serif at the display size, then one sentence saying what the project is. The switcher is the round button in the top right corner.
+- **In brief:** a facts list (`.facts`) with purpose, link or access, status where one is known, and stack.
+- **How it works** (`.prose`): running paragraphs 0.9rem apart, inside the measure. Inline `code` and `kbd` are the system monospace at 0.9em with no fill. A block of commands (`.commands`) scrolls sideways inside itself on a narrow screen.
+- **Principle** (`.principle`): the one rule a project is built on, set once in the lede size in italic, with no rule or mark beside it.
+- **Screens** (`.shots`): a wide section. Each screenshot is a figure spanning both columns, 2.5rem apart, with a small soft-ink caption indented back to the text column. A phone screenshot (`.is-phone`) is held to 17rem and starts at the text edge. Each image links to its own file and carries a zoom-in cursor, as the photos do. Images are 1664px wide, cropped to the window edge with no baked-in shadow or padding. A page with nothing to show has no Screens section; Crosscheck lists its published studies as entries instead.
+- **Other projects:** the last section is one sentence linking the other four pages.
+- **Print:** a screenshot or a principle never breaks across pages.
+
 ## Do's and Don'ts
 
 ### Do:

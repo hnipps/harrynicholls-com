@@ -1107,6 +1107,74 @@ h3 {
   }
 }
 
+/* ---------- Case study pages ---------- */
+
+/* Running prose: paragraphs a little apart, held to the measure. */
+.prose > * {
+  max-width: var(--measure);
+}
+
+.prose > * + * {
+  margin-top: 0.9rem;
+}
+
+.prose p {
+  text-wrap: pretty;
+}
+
+code,
+kbd {
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+/* Commands to copy. A long one scrolls inside its own line, never the page. */
+.commands {
+  margin: 0.9rem 0 0;
+  overflow-x: auto;
+  line-height: 1.7;
+  scrollbar-width: thin;
+}
+
+/* The rule a project is built on, said once in the larger italic. */
+.principle {
+  margin: 1.75rem 0 0;
+  font-size: var(--lede);
+  font-style: italic;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+/* Screenshots run the full width of the page, as the graph and the albums do,
+   each with its caption back in the text column. */
+.shot + .shot {
+  margin-top: 2.5rem;
+}
+
+.shot a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.shot figcaption {
+  margin-top: 0.6rem;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  font-size: var(--small);
+}
+
+/* A phone screenshot keeps a phone's width. */
+.shot.is-phone a {
+  max-width: 17rem;
+}
+
 /* ---------- Reduced motion: no hover or lift transitions either ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1134,6 +1202,23 @@ h3 {
   /* Dates drop under the name rather than squeezing it. */
   .entry-head {
     flex-direction: column;
+  }
+
+  /* The name starts near the top: a phone has no height to spend above it. */
+  .page {
+    padding-top: 2rem;
+  }
+}
+
+/* On a phone the covers stand alone. Each link still carries the title and
+   artist as its accessible name. An album with no cover art keeps its label. */
+@media screen and (max-width: 30rem) {
+  .albums {
+    gap: 1rem;
+  }
+
+  .album:not(.is-bare) .album-label {
+    display: none;
   }
 }
 
@@ -1188,7 +1273,8 @@ h3 {
     margin-bottom: 1.1rem;
   }
 
-  .section.is-wide .in-measure {
+  .section.is-wide .in-measure,
+  .shot.is-phone a {
     margin-left: calc(var(--margin-col) + var(--gutter));
   }
 
@@ -1251,7 +1337,9 @@ h3 {
   .entry,
   .graph,
   .album,
-  .photo {
+  .photo,
+  .shot,
+  .principle {
     break-inside: avoid;
   }
 

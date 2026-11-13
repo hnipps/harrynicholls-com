@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Crosscheck | Harry Nicholls</title>
+  <meta name="description" content="Formal verification for AI-generated code. A case study by Harry Nicholls.">
+  <meta property="og:title" content="Crosscheck | Harry Nicholls">
+  <meta property="og:description" content="Formal verification for AI-generated code. A case study by Harry Nicholls.">
+  <meta name="theme-color" content="#fafcff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000014" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://harrynicholls.com/projects/crosscheck.html">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="preload" href="/fonts/hyperlegible-sans-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // Apply a saved light or dark choice before the first paint.
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/site.css">
+  <script type="module" src="/site.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://harrynicholls.com/projects/crosscheck.html",
+  "name": "Crosscheck | Harry Nicholls",
+  "description": "Formal verification for AI-generated code.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://harrynicholls.com/",
+    "name": "Harry Nicholls"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Harry Nicholls",
+    "url": "https://harrynicholls.com/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "Crosscheck",
+    "description": "Formal verification for AI-generated code."
+  }
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page">
+
+<header class="masthead">
+  <p class="home-link"><a href="/">Harry Nicholls</a></p>
+  <h1>Crosscheck</h1>
+  <button class="theme-toggle" type="button" hidden>
+    <span class="sky">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" stroke="none"/><path fill="none" d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.4A9.2 9.2 0 0 1 9.6 3a9.2 9.2 0 1 0 11.4 11.4Z"/></svg>
+    </span>
+  </button>
+  <div class="intro">
+    <p>Formal verification for AI-generated code.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section" aria-labelledby="facts-heading">
+  <h2 id="facts-heading">In brief</h2>
+  <div class="body">
+    <dl class="facts">
+      <div><dt>Purpose</dt><dd>Formal verification for AI-generated code.</dd></div>
+      <div><dt>Link</dt><dd><a href="https://github.com/nicholls-inc/crosscheck">nicholls-inc/crosscheck</a> on GitHub.</dd></div>
+      <div><dt>Status</dt><dd>Open source.</dd></div>
+      <div><dt>Stack</dt><dd>TypeScript, MCP, Dafny, Lean 4, Rust, Docker, SQLite, Vitest and fast-check.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how-heading">
+  <h2 id="how-heading">How it works</h2>
+  <div class="body prose">
+    <p>Crosscheck is a Claude Code plugin for checking the code an AI assistant writes. It has 30 skills, 5 agents and an MCP server with 7 tools across two engines. With Dafny, a pure functional core is specified and verified, then compiled to Python or Go. With Lean 4, an executable model acts as an oracle for differential random testing of the real implementation. Skills such as <code>/reason</code>, <code>/locate-fault</code> and <code>/trace-execution</code> add structured, semi-formal code analysis.</p>
+    <p>The repository also holds CGV, a contract graph verifier. A Rust extractor, built on ruff’s Python parser, reads Django models, dataclasses and pydantic models. It stores their declared field and function constraints in SQLite. A checker written and proved sound in Lean 4 then checks that data passed between calls meets those constraints. Its soundness theorem says exit code 0 means every discovered data path is consistent. CI regenerates a manifest of the protected theorem statements and replays the proofs through Lean’s kernel with leanchecker.</p>
+    <p>The Dafny and Lean toolchains run in sandboxed Docker containers with no network access and fixed memory and time limits. The plugin installs from the nicholls marketplace:</p>
+    <pre class="commands"><code>claude plugin marketplace add nicholls-inc/claude-code-marketplace
+claude plugin install crosscheck@nicholls</code></pre>
+    <blockquote class="principle">
+      <p>No guarantee rests on the judgement of an LLM. An LLM may draft code, specs and proofs, but only deterministic checks and human judgement count as evidence.</p>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="studies-heading">
+  <h2 id="studies-heading">Studies</h2>
+  <div class="body">
+
+    <p>Crosscheck has no interface to show. Its results are the studies published at <a href="https://crosscheck.harrynicholls.com/">crosscheck.harrynicholls.com</a>.</p>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3><a href="https://crosscheck.harrynicholls.com/studies/everest-ocpp/">EVerest and OCPP 1.6: a formal study</a></h3>
+        <p class="when"><time datetime="2026-10-24">24 Oct 2026</time></p>
+      </div>
+      <p>EVerest restarts a daily charging schedule one second early. Three rules of a Lean model are proved, and 2,000 generated cases per configuration compare EVerest with it.</p>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3><a href="https://crosscheck.harrynicholls.com/studies/spec-kit/">Spec Kit: 28 reported defects</a></h3>
+        <p class="when"><time datetime="2026-10-23">23 Oct 2026</time></p>
+      </div>
+      <p>28 defects in GitHub’s Spec Kit, each with a reproduction script and the line of Spec Kit’s own documentation it contradicts. 19 have a merged fix.</p>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3><a href="https://crosscheck.harrynicholls.com/studies/spec-kit-expressions/">Spec Kit’s workflow expressions</a></h3>
+        <p class="when"><time datetime="2026-10-23">23 Oct 2026</time></p>
+      </div>
+      <p>The evaluator called itself a safe Jinja2 subset, but answered some comparisons differently from Jinja2. What the reports showed, and what changed upstream.</p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section" aria-labelledby="more-heading">
+  <h2 id="more-heading">Other projects</h2>
+  <div class="body">
+    <p><a href="/projects/gitrove.html">gitrove</a>, <a href="/projects/recommender.html">Recommender</a>, <a href="/projects/opsdeck.html">opsdeck</a> and <a href="/projects/go-home.html">GoHome</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon" aria-labelledby="back-heading">
+  <h2 id="back-heading">Back</h2>
+  <div class="body">
+    <p class="mail"><a href="/">Harry Nicholls</a></p>
+    <p class="fine">© 2026 Nicholls Inc.</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

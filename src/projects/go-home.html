@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GoHome | Harry Nicholls</title>
+  <meta name="description" content="One home for the services on my home server. A case study by Harry Nicholls.">
+  <meta property="og:title" content="GoHome | Harry Nicholls">
+  <meta property="og:description" content="One home for the services on my home server. A case study by Harry Nicholls.">
+  <meta name="theme-color" content="#fafcff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000014" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://harrynicholls.com/projects/go-home.html">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="preload" href="/fonts/hyperlegible-sans-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // Apply a saved light or dark choice before the first paint.
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/site.css">
+  <script type="module" src="/site.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://harrynicholls.com/projects/go-home.html",
+  "name": "GoHome | Harry Nicholls",
+  "description": "One home for the services on my home server.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://harrynicholls.com/",
+    "name": "Harry Nicholls"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Harry Nicholls",
+    "url": "https://harrynicholls.com/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "GoHome",
+    "description": "A self-hosted home server dashboard."
+  }
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page">
+
+<header class="masthead">
+  <p class="home-link"><a href="/">Harry Nicholls</a></p>
+  <h1>GoHome</h1>
+  <button class="theme-toggle" type="button" hidden>
+    <span class="sky">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" stroke="none"/><path fill="none" d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.4A9.2 9.2 0 0 1 9.6 3a9.2 9.2 0 1 0 11.4 11.4Z"/></svg>
+    </span>
+  </button>
+  <div class="intro">
+    <p>One home for the services on my home server.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section" aria-labelledby="facts-heading">
+  <h2 id="facts-heading">In brief</h2>
+  <div class="body">
+    <dl class="facts">
+      <div><dt>Purpose</dt><dd>A self-hosted home server dashboard.</dd></div>
+      <div><dt>Access</dt><dd>Private, self-hosted.</dd></div>
+      <div><dt>Stack</dt><dd>Go, chi, Bun ORM, PostgreSQL, Docker Engine API, Hotwire Turbo, WebSockets, Go html/template.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how-heading">
+  <h2 id="how-heading">How it works</h2>
+  <div class="body prose">
+    <p>GoHome is a dashboard for homelab servers that run on Docker. It reads containers from the Docker socket and recognises common apps, such as Plex, Jellyfin, Home Assistant, Pi-hole, Nextcloud and the *arr stack, by matching image names, ports and labels against configurable rules. No service has to be registered by hand.</p>
+    <p>Services are grouped into stacks by Compose project. Each card shows whether the service is running, degraded, stopped or starting, with a launch link and Restart, Stop, Start and Logs actions. A status strip shows the Docker socket state and a tally of nominal, degraded and stopped services. Status is never shown by colour alone: each state has its own glyph and text label. There is a keyboard filter (<kbd>/</kbd>, <kbd>j</kbd>/<kbd>k</kbd>, <kbd>Esc</kbd>) and a recent-activity feed. The design brief follows Dieter Rams’s “less, but better”.</p>
+    <p>The backend is a Go service split into handlers, repositories and services. It uses Bun ORM on PostgreSQL, with migrations run at startup. A scheduler runs discovery with retries, a listener follows Docker events, and HTTP, TCP and Docker health checks feed status and metrics. Pages are server-rendered Go templates. Live updates are pushed over WebSockets as Turbo Streams, so there is no SPA framework or JavaScript build step. Config comes from YAML plus environment variables.</p>
+  </div>
+</section>
+
+<section class="section is-wide" aria-labelledby="screens-heading">
+  <h2 id="screens-heading">Screens</h2>
+  <div class="body shots">
+    <figure class="shot">
+      <a href="/assets/go-home/dashboard.png"><img src="/assets/go-home/dashboard.png" alt="GoHome dashboard with 24 services grouped into stacks, a Docker socket status strip and running, degraded and starting service cards" width="1664" height="1091" decoding="async"></a>
+      <figcaption class="in-measure">The dashboard: 24 services grouped into stacks.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="/assets/go-home/stacks.png"><img src="/assets/go-home/stacks.png" alt="GoHome home, monitoring and network stacks, including a stopped Node-RED container with a Start button" width="1664" height="1091" loading="lazy" decoding="async"></a>
+      <figcaption class="in-measure">The home, monitoring and network stacks, with one stopped container.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="/assets/go-home/degraded.png"><img src="/assets/go-home/degraded.png" alt="GoHome filtered to degraded services, showing an unhealthy Bazarr card and a restarting Paperless-ngx card" width="1664" height="1091" loading="lazy" decoding="async"></a>
+      <figcaption class="in-measure">Filtered to degraded services.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="more-heading">
+  <h2 id="more-heading">Other projects</h2>
+  <div class="body">
+    <p><a href="/projects/gitrove.html">gitrove</a>, <a href="/projects/crosscheck.html">Crosscheck</a>, <a href="/projects/recommender.html">Recommender</a> and <a href="/projects/opsdeck.html">opsdeck</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon" aria-labelledby="back-heading">
+  <h2 id="back-heading">Back</h2>
+  <div class="body">
+    <p class="mail"><a href="/">Harry Nicholls</a></p>
+    <p class="fine">© 2026 Nicholls Inc.</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
