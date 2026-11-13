@@ -1135,6 +1135,23 @@ h3 {
   .entry-head {
     flex-direction: column;
   }
+
+  /* The name starts near the top: a phone has no height to spend above it. */
+  .page {
+    padding-top: 2rem;
+  }
+}
+
+/* On a phone the covers stand alone. Each link still carries the title and
+   artist as its accessible name. An album with no cover art keeps its label. */
+@media screen and (max-width: 30rem) {
+  .albums {
+    gap: 1rem;
+  }
+
+  .album:not(.is-bare) .album-label {
+    display: none;
+  }
 }
 
 /* ---------- Wide screens: section heads hang in the margin ---------- */

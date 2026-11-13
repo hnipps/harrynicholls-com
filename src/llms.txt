@@ -20,6 +20,7 @@ The home page, https://harrynicholls.com/, is his resume as plain HTML: selected
 
 - [gitrove](https://gitrove.com): Daily digest of your GitHub network. Go and PostgreSQL backend, Qwik City frontend.
 - [Crosscheck](https://github.com/nicholls-inc/crosscheck): Claude Code plugin for formally verifying AI-generated code with Dafny and Lean 4, plus a contract graph verifier for Python.
+- [Lean OCPP study](https://crosscheck.harrynicholls.com/studies/everest-ocpp/): A Crosscheck study comparing EVerest, open-source EV charger software, with a Lean reference model of OCPP 1.6 charging schedules. It found EVerest restarts a daily schedule one second early.
 - [Recommender](https://harrynicholls.com/portfolio.html#recommender): Personal film and TV recommender. A nightly coding agent proposes model changes, which ship only if they beat the live model on hidden tests.
 - [Portfolio](https://harrynicholls.com/portfolio.html): Case studies for gitrove, Crosscheck, Recommender, opsdeck, GoHome and LLM Cover Letters, with tech stacks and screenshots.
 
