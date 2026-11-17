@@ -31,6 +31,8 @@ The home page, https://harrynicholls.com/, is his resume as plain HTML: selected
 - [GitHub](https://github.com/hnipps)
 - [LinkedIn](https://www.linkedin.com/in/harry-nicholls-91779959/)
 - [X](https://x.com/harrynicholls)
+- [Instagram](https://www.instagram.com/slow___victory)
+- [Are.na](https://www.are.na/harry-nicholls)
 - [Brainflow on Substack](https://brainflow.substack.com/): Newsletter on agentic AI, rationality, self-improvement and mindfulness
 
 ## Contact

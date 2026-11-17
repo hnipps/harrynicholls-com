@@ -578,6 +578,18 @@ h1 {
   fill: currentColor;
 }
 
+/* Eight icons on a phone: narrow the targets a touch so the row never
+   strands the last one on a line of its own. */
+@media (max-width: 30rem) {
+  .reach {
+    gap: 0;
+  }
+
+  .reach a {
+    width: 2.5rem;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
