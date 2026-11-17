@@ -13,8 +13,8 @@ const src = path.join(__dirname, '..', 'src');
 const font = (file) => `data:font/woff2;base64,${fs.readFileSync(path.join(src, 'fonts', file)).toString('base64')}`;
 
 // One card per page: the title in the serif, one line under it, the address below.
+// The home card (src/og/home-lets-build.png) is hand-made, so it is not in this list.
 const cards = [
-  ['home', 'Harry Nicholls', 'Software Engineer'],
   ['portfolio', 'Portfolio', 'Five projects of my own, each written up on its own page.'],
   ['colophon', 'Colophon', 'How this site is built.'],
   ['gitrove', 'gitrove', 'Daily discoveries from your GitHub network.'],
