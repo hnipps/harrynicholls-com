@@ -23,7 +23,7 @@ OWN-WORLD: The landing page's system, unchanged. Blue ink on near-white paper, a
 
 STORY: The reader sees who Harry is and where he has worked, in his resume's own words, and can take the PDF with them. The way back to the site is the footer, not a listing of this page.
 
-FIRST VIEWPORT: The name at display size, outdented on wide screens, with the dot of the "i" as the light and dark switch. Under it, in the text column: the title, the place and the addresses, then Download PDF, then the summary. Skills begins as the first section.
+FIRST VIEWPORT: The name at display size, outdented on wide screens, with the dot of the "i" as the light and dark switch. Under it, in the text column: the title, the place, then the same icon row as the home page for email, LinkedIn, GitHub, the site and the PDF. The summary follows. Skills begins as the first section. Project source links use that same icon button.
 
 FORM: The landing page, played straight, because the brief pinned that page as the reference. seed:e600fa0105e3e2bb. Signature interaction: the existing sunset on the name's dot, already on the site. Build path: code-led.
 
