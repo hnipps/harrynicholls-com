@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Resume | Harry Nicholls</title>
+  <meta name="description" content="Full stack product engineer shipping production software since 2016, now in applied AI.">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Harry Nicholls">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://harrynicholls.com/resume.html">
+  <meta property="og:title" content="Resume | Harry Nicholls">
+  <meta property="og:description" content="Full stack product engineer shipping production software since 2016, now in applied AI.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@harrynicholls">
+  <meta name="twitter:title" content="Resume | Harry Nicholls">
+  <meta name="twitter:description" content="Full stack product engineer shipping production software since 2016, now in applied AI.">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#fafcff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000014" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://harrynicholls.com/resume.html">
+  <link rel="preload" href="/fonts/hyperlegible-sans-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // Apply a saved light or dark choice before the first paint.
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/site.css">
+  <script type="module" src="/site.js"></script>
+</head>
+<body class="resume">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page">
+
+<header class="masthead">
+  <h1>Harry N<span class="tittle">i</span>cholls</h1>
+  <button class="theme-toggle" type="button" hidden>
+    <span class="sky">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" stroke="none"/><path fill="none" d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.4A9.2 9.2 0 0 1 9.6 3a9.2 9.2 0 1 0 11.4 11.4Z"/></svg>
+    </span>
+  </button>
+  <div class="intro">
+    <p>Senior Product Engineer, Full Stack and Applied AI</p>
+    <p>Richmond Hill, Ontario, Canada (remote) · <a href="mailto:harry.m.nicholls@gmail.com">harry.m.nicholls@gmail.com</a></p>
+    <p><a href="https://www.linkedin.com/in/harry-nicholls-91779959/">linkedin.com/in/<wbr>harry-nicholls-91779959</a> · <a href="https://github.com/hnipps">github.com/hnipps</a> · <a href="/portfolio.html">harrynicholls.com/<wbr>portfolio.html</a></p>
+    <p><a href="/Harry_Nicholls_Resume.pdf" download="Harry_Nicholls_Resume.pdf">Download PDF</a></p>
+    <p>Full stack product engineer shipping production software since 2016, now in applied AI. At ev.energy I own the agent platform colleagues build on and build Eve, an AI product for utility clients. Earlier, led 8 engineers on the Tims app (over 2 million daily users).</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section" aria-labelledby="skills-heading">
+  <h2 id="skills-heading">Skills</h2>
+  <div class="body">
+    <div class="entry">
+      <ul>
+        <li><strong>Applied AI and agents:</strong> LLM agents, MCP (Model Context Protocol), agentgateway, Claude Code, GitHub Agentic Workflows</li>
+        <li><strong>Languages:</strong> Python, TypeScript, Go</li>
+        <li><strong>Full stack:</strong> React, Next.js, Node.js, Django (DRF), federated GraphQL, Postgres, Snowflake</li>
+        <li><strong>Cloud and tooling:</strong> AWS EKS (Kubernetes), GitHub Actions, Datadog</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="experience-heading">
+  <h2 id="experience-heading">Experience</h2>
+  <div class="body">
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Senior Product Engineer · ev.energy · Remote</h3>
+        <p class="when"><time datetime="2024-04">04/2024</time> - Present</p>
+      </div>
+      <p class="aside">Smart charging for EVs</p>
+      <ul>
+        <li>Own ev.energy's agent platform: agentgateway on AWS EKS with 9 MCP servers, per-agent identity and no static keys. Colleagues made 77% of 1,249 tool calls in 30 days; 91.8% succeeded.</li>
+        <li>Took ownership on own initiative: 11-vendor evaluation, design doc, production in 07/2026. Still own it; pooled Snowflake connections cut rejected sessions from 411 a month to 0.</li>
+        <li>Second engineer on Eve, ev.energy's AI product for utility clients: set up GitHub Agentic Workflows that hand bug fixes, maintenance and issue refinement to agents; 141 agent PRs merged.</li>
+        <li>Lead AI enablement: built Valet, a Go client that connects non-technical colleagues' Claude Code to the MCP servers, and help them deploy agents with Claude skills and direct support.</li>
+        <li>Re-architected user verification (Django/DRF, Postgres) over 31 PRs as sole author; support tickets fell 11% after launch. Built a rebate flow across the TypeScript/React app and Python API (22 PRs).</li>
+        <li>Prototyped a PR-review regression eval: 11 cases, 8 bug-introducing PRs and 3 controls, drawn from 27 LLM-classified bugs in 100 reverted PRs. Opus caught 6 of 8 bugs.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Tech Lead · Restaurant Brands International (Tim Hortons) · Toronto, ON</h3>
+        <p class="when"><time datetime="2023-02">02/2023</time> - <time datetime="2024-04">04/2024</time></p>
+      </div>
+      <ul>
+        <li>Led 8 engineers on the Tims app (over 2 million daily users) and formed a Web Team for Tim Hortons US and Canadian web properties.</li>
+        <li>Wrote backend code in the Tims Node.js and TypeScript microservices behind a federated GraphQL service, alongside the React and React Native frontends.</li>
+        <li>Added Datadog real-user monitoring and alerts for the Tims app and critical web apps, and was on call for them.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Project Lead, Flyfish Club NFT Launch (Contractor) · VCR Group · Remote</h3>
+        <p class="when"><time datetime="2021-08">08/2021</time> - <time datetime="2022-01">01/2022</time></p>
+      </div>
+      <p class="aside">NYC-based restaurant group</p>
+      <ul>
+        <li>Led 4 engineers and 1 designer who built <a href="https://flyfishclub.com">FlyfishClub.com</a> from scratch, generating $16m in NFT sales; set the launch roadmap with the executives.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Senior Engineer I, Front End · SpotHero · Toronto, ON</h3>
+        <p class="when"><time datetime="2020-03">03/2020</time> - <time datetime="2021-07">07/2021</time></p>
+      </div>
+      <p class="aside">Parking reservation marketplace for drivers in over 400 US and Canadian cities</p>
+      <ul>
+        <li>Defined frontend architecture for an authentication provider, presented it to leadership, led its Next.js rollout on <a href="https://spothero.com">SpotHero.com</a>, and was on call for the web app.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Earlier</h3>
+        <p class="when"><time datetime="2013">2013</time> - <time datetime="2022">2022</time></p>
+      </div>
+      <p>Software Engineer (Contractor), Seed Club, 2022 · Software Developer, Rangle.io, 2018 - 2020 · Northstar Robotics, 2016 - 2018, frontend engineer who also took on the project manager role · Consultant, BCS Consulting, 2015 - 2016 · Associate, Sapient Global Markets, 2013 - 2015.</p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section" aria-labelledby="projects-heading">
+  <h2 id="projects-heading">Projects</h2>
+  <div class="body">
+
+    <article class="entry">
+      <h3>Crosscheck · Open-source Claude Code plugin · <a href="https://crosscheck.harrynicholls.com/studies/everest-ocpp/">https://crosscheck.harrynicholls.com/<wbr>studies/<wbr>everest-ocpp/</a></h3>
+      <ul>
+        <li>ev.energy's DevOps team adopted its AI PR review workflow and runs it as a shared GitHub Actions workflow: about 1,100 reviews in 30 days.</li>
+        <li>Tested open-source EV charger firmware against a Lean model as part of research applying formal methods to agentic engineering; it found a leap-second bug that is now fixed upstream.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <h3>Xylem · Agent job queue · <a href="https://github.com/nicholls-inc/xylem">github.com/<wbr>nicholls-inc/xylem</a></h3>
+      <ul>
+        <li>Wrote a Go daemon that queues agent jobs from GitHub and runs each in an isolated worktree; queue transitions and retries use formally verified kernels.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <h3>Gitrove · Sole founder · <a href="https://gitrove.com">gitrove.com</a></h3>
+      <ul>
+        <li>Built Gitrove end to end (Go API, Postgres, Qwik/TypeScript frontend): daily digests of a developer's GitHub network, with Stripe billing. Launched 09/2026.</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<section class="section" aria-labelledby="education-heading">
+  <h2 id="education-heading">Education</h2>
+  <div class="body">
+    <p>MChem Chemistry, First Class Honours · University of Bath · <time datetime="2009">2009</time> - <time datetime="2013">2013</time></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="colophon" aria-labelledby="back-heading">
+  <h2 id="back-heading">Back</h2>
+  <div class="body">
+    <p class="mail"><a href="/">Harry Nicholls</a></p>
+    <p class="fine">© 2026 Nicholls Inc.</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
