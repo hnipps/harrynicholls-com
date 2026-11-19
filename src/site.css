@@ -1548,3 +1548,17 @@ html:has(.lightbox[open]) {
     clip-path: none !important;
   }
 }
+
+/* Resume. Same page as the rest of the site. Addresses in the PDF have no
+   spaces, so they are allowed to break rather than widen a phone. */
+.resume .intro a,
+.resume .entry h3 {
+  overflow-wrap: break-word;
+}
+
+/* The short italic lines under a role. Not .note: that class is omitted in print,
+   and these lines are part of the resume. */
+.resume .aside {
+  font-style: italic;
+  color: var(--ink-soft);
+}
