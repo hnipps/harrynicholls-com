@@ -1562,3 +1562,28 @@ html:has(.lightbox[open]) {
   font-style: italic;
   color: var(--ink-soft);
 }
+
+/* Icon links sit with the title. The home page's row already draws them;
+   here the row is one button, held to the right of the heading. */
+.resume .entry-head .reach {
+  flex: none;
+  align-self: center;
+  margin: 0 -0.75rem 0 0;
+}
+
+.resume .intro .reach + p {
+  margin-top: 0.9rem;
+}
+
+/* Five icons fit a phone at the full 44px target. The shared row narrows
+   only when eight icons would wrap. */
+@media (max-width: 30rem) {
+  .resume .reach a {
+    width: 2.75rem;
+  }
+
+  .resume .entry-head .reach {
+    align-self: start;
+    margin: 0.2rem 0 0 -0.75rem;
+  }
+}
